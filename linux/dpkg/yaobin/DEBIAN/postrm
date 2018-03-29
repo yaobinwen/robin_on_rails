@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+
+from __future__ import print_function
+import sys
+
+
+def main(script_name, argv):
+    print("'{script}' is called with {num} input argument(s) '{argv}'".format(
+        script=script_name, num=len(argv), argv=str(argv)
+    ))
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[0], sys.argv[1:]))

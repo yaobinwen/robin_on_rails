@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Echo the input arguments.
+echo "'$0' is called with $# input argument(s) '$@'"
+
+exit 0
