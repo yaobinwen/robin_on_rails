@@ -39,8 +39,11 @@ def _get_edges():
     edges = []
     for k, deps in _DEPENDENCIES.iteritems():
         if deps is not None:
-            for r, d in deps:
-                edges.append((k, r, d))
+            if isinstance(deps, tuple):
+                edges.append((k, deps[0], deps[1]))
+            else:
+                for r, d in deps:
+                    edges.append((k, r, d))
         else:
             edges.append((k, '(N/A)', '(N/A)'))
     return edges
