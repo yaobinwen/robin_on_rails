@@ -10,7 +10,8 @@ import subprocess32
 
 _DEPENDENCIES = {
     'dpkg': set([
-        'dpkg-deb',
+        # Relation; Dependent package
+        ('calls', 'dpkg-deb'),
     ]),
 
     'dpkg-deb': None,
@@ -38,10 +39,10 @@ def _get_edges():
     edges = []
     for k, deps in _DEPENDENCIES.iteritems():
         if deps is not None:
-            for d in deps:
-                edges.append((k, d))
+            for r, d in deps:
+                edges.append((k, r, d))
         else:
-            edges.append((k, '(N/A)'))
+            edges.append((k, '(N/A)', '(N/A)'))
     return edges
 
 
@@ -57,7 +58,7 @@ digraph dpkg_ecosystem {
     node[fontname=Courier fontsize=12 shape=box]
     edge[fontname=Courier fontsize=8 arrowhead=empty fontcolor=red]
 
-{% for e in edges %}    "{{e[0]}}" -> "{{e[1]}}"[label="calls"]
+{% for e in edges %}    "{{e[0]}}" -> "{{e[2]}}"[label="{{e[1]}}"]
 {% endfor %}}
 '''.lstrip('\n').decode('UTF-8')
     )
