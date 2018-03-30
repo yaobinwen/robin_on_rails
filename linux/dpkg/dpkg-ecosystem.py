@@ -9,12 +9,37 @@ import subprocess32
 
 
 _DEPENDENCIES = {
-    'dpkg': set([
-        # Relation; Dependent package
-        ('calls', 'dpkg-deb'),
+    'apt': set([
+        ('(basically) wraps', 'apt-cache'),
+        ('(basically) wraps', 'apt-get'),
     ]),
-
-    'dpkg-deb': None,
+    'apt-cache': None,
+    'apt-file': None,
+    'apt-get': None,
+    'apt-listbugs': None,
+    'apt-listchanges': None,
+    'apt-rdepends': None,
+    'apt-utils': set([
+        ('contains', 'apt-extracttemplates'),
+        ('contains', 'apt-ftparchive'),
+        ('contains', 'apt-sortpkgs'),
+    ]),
+    'aptitude': None,
+    'configure-debian': ('is front-end of', 'dpkg-reconfigure'),
+    'debconf': None,
+    'debi': None,
+    'debtags': None,
+    'debuild': None,
+    'dget': None,
+    'dselect': None,
+    'dpkg': set([
+        ('calls', 'dpkg-deb'),
+        ('calls', 'debconf'),   # preinst & postinst
+    ]),
+    'dpkg-reconfigure': ('is front-end of', 'debconf'),
+    'synaptic': ('is front-end of', 'apt'),
+    'tasksel': None,
+    'unattended-upgrades': None,
 }
 
 
