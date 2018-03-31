@@ -1,5 +1,7 @@
 # dpkg
 
+---
+
 References & tutorials:
 
 - [1] See [Manpages of dpkg in Debian stretch](https://manpages.debian.org/stretch/dpkg/index.html) for all the `dpkg`-related manuals.
@@ -35,3 +37,17 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 > If you install a package, all packages that that package depends upon are also installed. For example if you install the package `vlc`, it will automatically install `vlc-nox`. The automatically installed packages (in this case, `vlc-nox`) are set as **"automatically installed"** -- if you remove `vlc`, the package manager will suggest to remove `vlc-nox` as well (aptitude will do this automatically, if you use apt-get you can remove all automatically installed packages with apt-get autoremove).
 >
 > Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
+
+---
+
+Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
+
+---
+
+How to set up your own APT repository? Here are some references:
+
+- [DebianRepository: Setup With Reprepro](https://wiki.debian.org/DebianRepository/SetupWithReprepro)
+- [Creating your own Signed APT Repository and Debian Packages](http://blog.jonliv.es/blog/2011/04/26/creating-your-own-signed-apt-repository-and-debian-packages/)
+- [15.3. Creating a Package Repository for APT](https://debian-handbook.info/browse/stable/sect.setup-apt-package-repository.html)
+- [DebianRepository: Setup](https://wiki.debian.org/DebianRepository/Setup): This link teaches how to set up Debian's official package repository.
+- [DebianRepository: Format](https://wiki.debian.org/DebianRepository/Format): This link "documents the structure of the official Debian repository and the format that is officially understood by clients".

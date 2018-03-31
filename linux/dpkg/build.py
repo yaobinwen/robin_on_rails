@@ -33,13 +33,21 @@ def _build_pkg(pkg_name, pkg_version):
     control_file_path = '{cwd}/{pkg_name}/DEBIAN/control'.format(
         cwd=os.getcwd(), pkg_name=pkg_name
     )
+    # Change the version in 'control'.
     subprocess32.check_call([
         'perl', '-pi', '-e',
         's/Version: (.*)/Version: {pkg_ver}/'.format(pkg_ver=pkg_version),
         control_file_path,
     ])
+    # Build the package.
     subprocess32.check_call([
         'dpkg', '--build', pkg_name, os.getcwd(),
+    ])
+    # Change back the version in 'control'.
+    subprocess32.check_call([
+        'perl', '-pi', '-e',
+        's/Version: (.*)/Version: <placeholder>/',
+        control_file_path,
     ])
 
 
