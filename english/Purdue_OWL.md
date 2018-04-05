@@ -99,3 +99,55 @@ For example:
 > - "Self-Reliance," by Ralph Waldo Emerson
 > - "Just Like a Woman," by Bob Dylan
 > - "The Smelly Car," an episode of Seinfeld
+
+---
+
+Add 's to the singular form of the word (even if it ends in -s):
+
+- the owner's car
+- James's hat (James' hat is also acceptable. For plural, proper nouns that are possessive, use an apostrophe after the 's': "The Eggleses' presentation was good." The Eggleses are a husband and wife consultant team.)
+
+Add 's to the plural forms that do not end in -s:
+
+- the children's game 
+- the geese's honking
+
+Add ' to the end of plural nouns that end in -s:
+
+- two cats' toys
+- three friends' letters
+- the countries' laws
+
+Add 's to the end of compound words:
+
+- my brother-in-law's money
+
+Add 's to the last noun to show joint possession of an object:
+
+- Todd and Anne's apartment
+
+---
+
+Do not use quotation marks for words used as words themselves. In this case, you should use italics.
+
+> The English word _nuance_ comes from a Middle French word meaning "shades of color."
+
+---
+
+Put commas and periods within quotation marks, except when a parenthetical reference follows.
+
+> - He said, "I may forget your name, but I never forget a face."
+> - History is stained with blood spilled in the name of "civilization."
+> - Mullen, criticizing the apparent inaction, writes, "Donahue's policy was to do nothing" (24).
+
+Place colons and semicolons outside closed quotation marks.
+
+> - Williams described the experiment as "a definitive step forward"; other scientists disagreed.
+> - Benedetto emphasizes three elements of what she calls her "Olympic journey": family support, personal commitment, and great coaching.
+
+Place a question mark or exclamation point within closing quotation marks if the punctuation applies to the quotation itself. Place the punctuation outside the closing quotation marks if the punctuation applies to the whole sentence.
+
+> - Phillip asked, "Do you need this book?"
+> - Does Dr. Lim always say to her students, "You must work harder"?
+
+Note that in the last example, a comma is used before quoting the words ("...to her students, 'You must...'").
