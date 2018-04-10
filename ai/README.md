@@ -4,6 +4,10 @@
 
 This folder has the notes taken from learning artificial intelligence.
 
+## Big Names
+
+- [John McCarthy](http://jmc.stanford.edu/index.html): Father of AI who coined the term "Artificial Intelligence".
+
 ## References
 
 - Artificial Intelligence Overview
