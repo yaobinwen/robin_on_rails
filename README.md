@@ -12,6 +12,7 @@ I tried to build my site on some other platforms. Eventually, I came back to a r
 
 I put every topic I'm interested in into a folder, and I put a `README.md` file under every of them. I'll briefly describe what each folder is all about. You can click that folder and GitHub will nicely and automatically show the details in its README file.
 
+- `ai`: Notes taken from learning Artificial Intelligence.
 - `english`: Notes taken when learning English.
 - `git`: Knowledge about Git.
 - `linux`: Knowledge about Linux.
