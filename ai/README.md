@@ -10,8 +10,10 @@ This folder has the notes taken from learning artificial intelligence.
 
 ## References
 
-- Artificial Intelligence Overview
-  - [1] [What is AI? / Branches of AI](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/branches-of-ai.html)
-  - [2] [Artificial Intelligence: Overview](http://www.hutter1.net/ai/sintro2ai.pdf)
-  - [3] [Artificial Intelligence Industry – An Overview by Segment](https://www.techemergence.com/artificial-intelligence-industry-an-overview-by-segment/)
-  - [4] [Understanding the Four Types of Artificial Intelligence](http://www.govtech.com/computing/Understanding-the-Four-Types-of-Artificial-Intelligence.html)
+- Artificial Intelligence Overview (AIO)
+  - [AIO-1] [What is AI? / Branches of AI](http://jmc.stanford.edu/artificial-intelligence/what-is-ai/branches-of-ai.html)
+  - [AIO-2] [Artificial Intelligence: Overview](http://www.hutter1.net/ai/sintro2ai.pdf)
+  - [AIO-3] [Artificial Intelligence Industry – An Overview by Segment](https://www.techemergence.com/artificial-intelligence-industry-an-overview-by-segment/)
+  - [AIO-4] [Understanding the Four Types of Artificial Intelligence](http://www.govtech.com/computing/Understanding-the-Four-Types-of-Artificial-Intelligence.html)
+- Machine Morality (MM)
+  - [MM-1] [Moral Machine](http://moralmachine.mit.edu/)
