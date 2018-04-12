@@ -17,3 +17,7 @@ This folder has the notes taken from learning artificial intelligence.
   - [AIO-4] [Understanding the Four Types of Artificial Intelligence](http://www.govtech.com/computing/Understanding-the-Four-Types-of-Artificial-Intelligence.html)
 - Machine Morality (MM)
   - [MM-1] [Moral Machine](http://moralmachine.mit.edu/)
+
+## Isaac Asimov's Books
+
+A chronology of events in Isaac Asimov's positronic robot and Foundation stories: [Johnny Pez's Insanely Complete Fiction List](http://www.asimovonline.com/oldsite/insane_list.html)
