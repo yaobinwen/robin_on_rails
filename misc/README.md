@@ -4,3 +4,4 @@
 - [TED: What makes a good life? Lessons from the longest study on happiness](https://www.ted.com/talks/robert_waldinger_what_makes_a_good_life_lessons_from_the_longest_study_on_happiness)
 - [Neo4j native graph data](https://neo4j.com/product/): A database that takes the relationships between data as the first-class citizen.
 - [Apache TinkerPop](http://tinkerpop.apache.org/): "Apache TinkerPop™ is a graph computing framework for both graph databases (OLTP) and graph analytic systems (OLAP)."
+- [What is **Polyglot Persistence**?](http://www.jamesserra.com/archive/2015/07/what-is-polyglot-persistence/)
