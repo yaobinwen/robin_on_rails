@@ -5,3 +5,5 @@
 - [Neo4j native graph data](https://neo4j.com/product/): A database that takes the relationships between data as the first-class citizen.
 - [Apache TinkerPop](http://tinkerpop.apache.org/): "Apache TinkerPop™ is a graph computing framework for both graph databases (OLTP) and graph analytic systems (OLAP)."
 - [What is **Polyglot Persistence**?](http://www.jamesserra.com/archive/2015/07/what-is-polyglot-persistence/)
+- Movie: _Ex Machia_
+- Book: [Augmented: Life in the Smart Lane](https://www.amazon.com/Augmented-Life-Smart-Brett-King/dp/9814634034)
