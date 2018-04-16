@@ -7,3 +7,5 @@
 - [What is **Polyglot Persistence**?](http://www.jamesserra.com/archive/2015/07/what-is-polyglot-persistence/)
 - Movie: _Ex Machia_
 - Book: [Augmented: Life in the Smart Lane](https://www.amazon.com/Augmented-Life-Smart-Brett-King/dp/9814634034)
+- Movie: _The Barbarian Invasions_
+- 朋友推荐了陈丹青的美育节目[《局部》](https://www.youtube.com/playlist?list=PLvWfRmQ8sEi4eM9awXWHx8dodWdQRvDDY)。
