@@ -17,10 +17,11 @@ I put every topic I'm interested in into a folder, and I put a `README.md` file 
 - `git`: Knowledge about Git.
 - `linux`: Knowledge about Linux.
 - `mining`: Knowledge about the mining industry ([2018/03/31] My current employer serves the mining industry so I want to learn about this domain.)
+- `misc`: All the other miscellaneous stuff.
 
 ## Knowledge & Data Sources
 
 This section lists the other sources of kownledge and data.
 
 - [Internet World Stats](https://internetworldstats.com/): "Internet World Stats is an International website that features up to date world Internet Usage, Population Statistics, Social Media Stats and Internet Market Research Data, for over 243 individual countries and world regions."
-- [RFC series](https://www.rfc-editor.org/): "contains technical and organizational documents about the Internet, including the specifications and policy documents produced by four streams: the Internet Engineering Task Force ([IETF](https://www.ietf.org/)), the Internet Research Task Force ([IRTF](https://irtf.org/)), the Internet Architecture Board ([IAB](https://www.iab.org/)), and [Independent Submissions](https://www.rfc-editor.org/about/independent/)." 
+- [RFC series](https://www.rfc-editor.org/): "contains technical and organizational documents about the Internet, including the specifications and policy documents produced by four streams: the Internet Engineering Task Force ([IETF](https://www.ietf.org/)), the Internet Research Task Force ([IRTF](https://irtf.org/)), the Internet Architecture Board ([IAB](https://www.iab.org/)), and [Independent Submissions](https://www.rfc-editor.org/about/independent/)."
