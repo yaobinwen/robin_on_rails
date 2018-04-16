@@ -42,3 +42,35 @@
 > TCP and UDP extend IP addresses with a con- cept known as a port, a 16-bit number that supplements an IP address to specify a particular communication channel.
 
 - You can find a full list of assigned ports at [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml).
+
+### 14.4 IP ADDRESSES: THE GORY DETAILS
+
+---
+
+> ... you can now reassign part of the host portion to the network portion ...The 1s must be leftmost and contiguous. At least eight bits must be allocated to the network part and at least two bits to the host part. Ergo, there are really only **22 possible** values for an IPv4 netmask.
+
+- There are only **22** possible values for an IPv4 netmask because of the following reasons:
+  - Firstly, an IPv4 address has 32 bits in total: xxxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx
+  - Secondly, 8 bits are reserved for the network part, leaving 24 bits for the host part. Note that the "network" in "network part" does not refer to the concept of "subnet": (nnnnnnnn)(network part).xxxxxxxx.xxxxxxxx.xxxxxxxx
+  - Thirdly, 2 bits must be used for the host part, leaving only 22 bits for the subnet mask: (nnnnnnnn)(network part).xxxxxxxx.xxxxxxxx.xxxxxx(hh)(host part)
+  - Finally, the 1st must be leftmost and contiguous, so the 22 possible subnet mask values are:
+    - 1). (nnnnnnnn)(network part).10000000.00000000.000000(hh)(host part)
+    - 2). (nnnnnnnn)(network part).11000000.00000000.000000(hh)(host part)
+    - 3). (nnnnnnnn)(network part).11100000.00000000.000000(hh)(host part)
+    - ...
+    - 20). (nnnnnnnn)(network part).11111111.11111111.111100(hh)(host part)
+    - 21). (nnnnnnnn)(network part).11111111.11111111.111110(hh)(host part)
+    - 22). (nnnnnnnn)(network part).11111111.11111111.111111(hh)(host part)
+
+---
+
+> For example, the network address 128.138.243.0/26 refers to the first of four networks whose first bytes are 128.138.243. The other three net- works have 64, 128, and 192 as their fourth bytes.
+
+- There are "four" networks because of the following reasons:
+  - The prefix "/26" indicates that 26 bits are used as the subnet mask. In other words, 2 leftmost bits from the last octet are used as the "network" part of the IP addresses.
+  - If we keep the first three bytes the same as "128.138.243", then there are only 4 possible values for those 2 bits borrowed from the last octet: 00(0), 01(1), 10(2), and 11(3).
+  - Because these 2 bits are the lelftmost ones, putting them back to the octet makes it, respectively, the following values ("h" indicates a host bit):
+    - 00hhhhhh(0), which is the one shown in "128.138.243.0/26".
+    - 01hhhhhh(64)
+    - 10hhhhhh(128)
+    - 11hhhhhh(192)
