@@ -18,6 +18,7 @@ I put every topic I'm interested in into a folder, and I put a `README.md` file 
 - `linux`: Knowledge about Linux.
 - `mining`: Knowledge about the mining industry ([2018/03/31] My current employer serves the mining industry so I want to learn about this domain.)
 - `misc`: All the other miscellaneous stuff.
+- `web`: All about the web development.
 
 ## Knowledge & Data Sources
 
