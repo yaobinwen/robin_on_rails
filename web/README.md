@@ -21,6 +21,8 @@ According to [Wikipedia: Front-end development](https://en.wikipedia.org/wiki/Fr
 - `JavaScript`: Implemnet the user interaction of the web page with the user so the web page content, arrange, and visual effect can be dynamically changed as the user interacts with it.
 - `WebAssembly`: I didn't know this technology until I read the Wikipedia page. I know nothing about it so can't provide a reasonable summary of my own. Please read the Wikipedia page for more details. I put it here just to make things complete.
 
+Personally (aka "I could be wrong"), I think HTML and CSS are easy to learn. They are just a fixed set of tags that you can look up in the standards ([HTML](https://www.w3.org/standards/techs/html#completed) and [CSS](https://www.w3.org/standards/techs/css#completed)). The function of each tag is clearly defined. Your task is to learn the existence of a tag that can meet your need.
+
 ## References
 
 - [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks): "Manually curated collection of resources for frontend web developers."
