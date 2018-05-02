@@ -23,6 +23,17 @@ According to [Wikipedia: Front-end development](https://en.wikipedia.org/wiki/Fr
 
 Personally (aka "I could be wrong"), I think HTML and CSS are easy to learn. They are just a fixed set of tags that you can look up in the standards ([HTML](https://www.w3.org/standards/techs/html#completed) and [CSS](https://www.w3.org/standards/techs/css#completed)). The function of each tag is clearly defined. Your task is to learn the existence of a tag that can meet your need.
 
+JavaScript is the most interesting one.
+
+I'm not a historian. Neither do I want to include too many historical details here. But initially JavaScript code was mostly embedded in the web pages shown to the users and was executed by the browser to add dynamic interaction with the users. This is called the **"client-side JavaScript"**. In the early days, JavaScript was mostly run on the browser (aka the client) side by the 
+JavaScript engine in the browser.
+
+[Chrome V8](https://developers.google.com/v8/) is a JavaScript engine developed for Google Chrome browser, but it's also used by [Node.js](https://nodejs.org/en/) to execute JavaScript on the server-side, as said in its official website:
+
+> Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, [npm](https://www.npmjs.com/), is the largest ecosystem of open source libraries in the world.
+
+Thus start our front-end development journey along with Node.js and npm.
+
 ## References
 
 - [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks): "Manually curated collection of resources for frontend web developers."
