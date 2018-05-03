@@ -1,9 +1,49 @@
 # JavaScript
 
-## Module
+## Anonymous Function
 
-- [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)
+An example of anonymous function is [here](https://gist.github.com/iam-peekay/e29fa76b94ff56163446#file-anonymousclosurewithglobal-js), which is used in the article [Mod-001]:
+
+```javascript
+var global = 'Hello, I am a global variable :)';
+
+(function () {
+  // We keep these variables private inside this closure scope
+  
+  var myGrades = [93, 95, 88, 0, 55, 91];
+  
+  var average = function() {
+    var total = myGrades.reduce(function(accumulator, item) {
+      return accumulator + item}, 0);
+    
+    return 'Your average grade is ' + total / myGrades.length + '.';
+  }
+
+  var failing = function(){
+    var failingGrades = myGrades.filter(function(item) {
+      return item < 70;});
+      
+    return 'You failed ' + failingGrades.length + ' times.';
+  }
+
+  console.log(failing());
+  console.log(global);
+}());
+
+// 'You failed 2 times.'
+// 'Hello, I am a global variable :)'
+```
+
+As [Mod-001] says:
+
+> With this construct, our anonymous function has its own evaluation environment or “closure”, and then we immediately evaluate it. This lets us hide variables from the parent (global) namespace.
+
+[Mod-001] reminds us to pay attention to the surrounding parentheses as they are required. Read [this post](https://stackoverflow.com/questions/1634268/explain-the-encapsulated-anonymous-function-syntax) for more details.
 
 ## Bind
 
-- [Understanding JavaScript Bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
+- [Bind-001] [Understanding JavaScript Bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
+
+## Module
+
+- [Mod-001] [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)
