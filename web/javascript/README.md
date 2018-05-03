@@ -48,3 +48,4 @@ As [Mod-001] says:
 
 - [Mod-001] [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)
   - This article introduces how to implement the **"module pattern"** in JavaScript and it provides very good examples.
+- [Mod-002] [JavaScript Modules Part 2: Module Bundling](https://medium.freecodecamp.org/javascript-modules-part-2-module-bundling-5020383cf306)
