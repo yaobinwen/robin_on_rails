@@ -47,3 +47,4 @@ As [Mod-001] says:
 ## Module
 
 - [Mod-001] [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)
+  - This article introduces how to implement the **"module pattern"** in JavaScript and it provides very good examples.
