@@ -4,6 +4,8 @@
 
 This folder has the notes taken from learning artificial intelligence.
 
+AI is divided broadly into three stages: `artificial narrow intelligence` (ANI), `artificial general intelligence` (AGI) and `artificial super intelligence` (ASI). [AIO-5]
+
 ## Names
 
 - [John McCarthy](http://jmc.stanford.edu/index.html): Father of AI who coined the term "Artificial Intelligence".
@@ -18,6 +20,7 @@ This folder has the notes taken from learning artificial intelligence.
   - [AIO-2] [Artificial Intelligence: Overview](http://www.hutter1.net/ai/sintro2ai.pdf)
   - [AIO-3] [Artificial Intelligence Industry – An Overview by Segment](https://www.techemergence.com/artificial-intelligence-industry-an-overview-by-segment/)
   - [AIO-4] [Understanding the Four Types of Artificial Intelligence](http://www.govtech.com/computing/Understanding-the-Four-Types-of-Artificial-Intelligence.html)
+  - [AIO-5] [The evolution of artificial intelligence](https://www.ubs.com/microsites/artificial-intelligence/en/new-dawn.html)
 - AI Ethics (Eth)
   - [Eth-1] [CMU - K&L Gates Conference on Ethics and AI (webcast)](https://www.cmu.edu/ethics-ai/agenda/webcast.html)
 - Machine Morality (MM)
@@ -48,3 +51,4 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
 - 关于AI和道德系统：
   - AI的本质是计算机算法。计算机算法本质上是量化的(quantitative)，那么是不是说AI在道德层面会更容易形成功利主义(utilitarianism)的道德观念？
   - 假如AI采纳了功利主义(或有这个倾向的道德观念)，那么当人类对其下达的指令所造成的损失比它自己计算出的某个指令所造成的损失要大，那么AI应该拒绝人类指令吗？
+- Artificial Intelligence一定要仿照人类的大脑进行思考吗？AI是否可以有自己独特的思考方式？
