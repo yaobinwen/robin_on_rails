@@ -52,3 +52,13 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
   - AI的本质是计算机算法。计算机算法本质上是量化的(quantitative)，那么是不是说AI在道德层面会更容易形成功利主义(utilitarianism)的道德观念？
   - 假如AI采纳了功利主义(或有这个倾向的道德观念)，那么当人类对其下达的指令所造成的损失比它自己计算出的某个指令所造成的损失要大，那么AI应该拒绝人类指令吗？
 - Artificial Intelligence一定要仿照人类的大脑进行思考吗？AI是否可以有自己独特的思考方式？
+
+---
+
+2018年5月12日：今天读了[Guide to Living with AI, Robots, Algorithms and Altcoins](https://medium.com/futuresin/guide-to-living-with-ai-robots-algorithms-and-altcoins-5d1561f4cf32)一文。作者在文中提问到：
+
+> Or the fact that our young people are reading less, and are less curious about the world than previous generations? Is technology continuing to divorce us from nature, or helping us know ourselves better?
+
+我个人目前觉得，未来未必那么悲观。如果人工智能和机器人真得能够极大地提高生产效率的话，那么可能很多人都不必去工作也可以获得足够支持自己生活的资源，那么那个时候，他们可以不必去上班，至少很大程度上不必去做重复性的无聊的工作，多余的时间他们可以用来做自己感兴趣的事情或者探索更广阔的世界；他们可能有更多的时间锻炼身体、学习乐器；他们可能可以有更多的时间和家人朋友在一起；他们可能可以有更多的时间去阅读自己曾经没有时间和精力去读的书，在书里和先贤做精神上的对话。
+
+不过，这也启发我去想：什么样的人工智能会导致人们的生活质量下降？Elon Musk所担心的会危害人类的人工智能具有什么特征？
