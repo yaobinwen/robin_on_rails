@@ -52,6 +52,7 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
   - AI的本质是计算机算法。计算机算法本质上是量化的(quantitative)，那么是不是说AI在道德层面会更容易形成功利主义(utilitarianism)的道德观念？
   - 假如AI采纳了功利主义(或有这个倾向的道德观念)，那么当人类对其下达的指令所造成的损失比它自己计算出的某个指令所造成的损失要大，那么AI应该拒绝人类指令吗？
 - Artificial Intelligence一定要仿照人类的大脑进行思考吗？AI是否可以有自己独特的思考方式？
+- 未来的AI因为具有比人类更强的学习能力和更大的信息储备，它们完全可以成为人类的mentor。人们会和AI谈论自己的目标，然后AI辅助他们去实现。在我的故事里，这个AI产品的名字可以叫Mel，然后他们的生产商的宣传口号是："Mel, the greatest mentor in the world!"
 
 ---
 
@@ -62,3 +63,5 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
 我个人目前觉得，未来未必那么悲观。如果人工智能和机器人真得能够极大地提高生产效率的话，那么可能很多人都不必去工作也可以获得足够支持自己生活的资源，那么那个时候，他们可以不必去上班，至少很大程度上不必去做重复性的无聊的工作，多余的时间他们可以用来做自己感兴趣的事情或者探索更广阔的世界；他们可能有更多的时间锻炼身体、学习乐器；他们可能可以有更多的时间和家人朋友在一起；他们可能可以有更多的时间去阅读自己曾经没有时间和精力去读的书，在书里和先贤做精神上的对话。
 
 不过，这也启发我去想：什么样的人工智能会导致人们的生活质量下降？Elon Musk所担心的会危害人类的人工智能具有什么特征？
+
+In contrast, in an article written by Kai-Fu Lee, [A BLUEPRINT FOR COEXISTENCE WITH ARTIFICIAL INTELLIGENCE](https://www.wired.com/story/a-blueprint-for-coexistence-with-artificial-intelligence/), he envisions an enlightening future of the artificial intelligence which helps humankind live a life of higher quality.
