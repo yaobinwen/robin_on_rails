@@ -65,3 +65,9 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
 不过，这也启发我去想：什么样的人工智能会导致人们的生活质量下降？Elon Musk所担心的会危害人类的人工智能具有什么特征？
 
 In contrast, in an article written by Kai-Fu Lee, [A BLUEPRINT FOR COEXISTENCE WITH ARTIFICIAL INTELLIGENCE](https://www.wired.com/story/a-blueprint-for-coexistence-with-artificial-intelligence/), he envisions an enlightening future of the artificial intelligence which helps humankind live a life of higher quality.
+
+---
+
+这个故事的内核是：人是否可以与人工智能建立感情联结？如果人们知道与自己交谈的是一个人工智能算法，他们很可能不会和对方建立如同朋友一般的感情联结。人们更愿意和真实的人类建立感情纽带。但是我们似乎却可以和一个完全没有见过的、网络上的人建立起感情联结，并有可能把对方视为自己的知己和挚友。可是，如果两个人从未谋面，一个人如何判断对方一定是一个人类而不是人工智能呢？
+
+这个故事可能有两个发展方向。一个方向是人类坚持只和另一个人类建立感情联结，一旦他发现对方不是真实的人类，那么TA会中断或者将这种感情的亲密度降级。在人工智能高度发达的未来社会，寻求对方真实的身份验证可能成为了每个人需要做的一件事。另一个方向是人类认可了人工智能的情感属性，并且不介意和人工智能建立情感联结。为了达到这个级别的模拟，人工智能必须具有感情，例如欢乐、痛苦、和忧伤。但是一旦人工智能拥有了人类的感情，那么要求人工智能全天24小时不停地工作是否会涉及到“奴役”的问题(因为AI可能会模拟出疲劳、乏味的感觉，而这些感觉是人类所具有的，根据前面的限定条件，AI需要能模拟人类的所有感情)？
