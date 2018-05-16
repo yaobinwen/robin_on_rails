@@ -37,3 +37,5 @@ In contrast, in an article written by Kai-Fu Lee, [A BLUEPRINT FOR COEXISTENCE W
 这个故事的内核是：人是否可以与人工智能建立感情联结？如果人们知道与自己交谈的是一个人工智能算法，他们很可能不会和对方建立如同朋友一般的感情联结。人们更愿意和真实的人类建立感情纽带。但是我们似乎却可以和一个完全没有见过的、网络上的人建立起感情联结，并有可能把对方视为自己的知己和挚友。可是，如果两个人从未谋面，一个人如何判断对方一定是一个人类而不是人工智能呢？
 
 这个故事可能有两个发展方向。一个方向是人类坚持只和另一个人类建立感情联结，一旦他发现对方不是真实的人类，那么TA会中断或者将这种感情的亲密度降级。在人工智能高度发达的未来社会，寻求对方真实的身份验证可能成为了每个人需要做的一件事。另一个方向是人类认可了人工智能的情感属性，并且不介意和人工智能建立情感联结。为了达到这个级别的模拟，人工智能必须具有感情，例如欢乐、痛苦、和忧伤。但是一旦人工智能拥有了人类的感情，那么要求人工智能全天24小时不停地工作是否会涉及到“奴役”的问题(因为AI可能会模拟出疲劳、乏味的感觉，而这些感觉是人类所具有的，根据前面的限定条件，AI需要能模拟人类的所有感情)？
+
+2018-05-16 update: Well, I think at least some people are willing to create an intimate bond with virtual characters. Think about the fans of the virtual idols. The question might be: If they are willing to make friends with one or two virtual characters, are they willing to make only virtual friends (no real human friends)? By the way, a "virtual character" may not be fictional, although it usually is, but if we transplant a real person's memory into the machine, this virtual version of this person is not a fictional one. It exists (or existed) as a real at some time.
