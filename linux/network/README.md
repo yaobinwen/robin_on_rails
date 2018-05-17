@@ -4,6 +4,10 @@
 
 This folder is all about the network on Linux operating systems.
 
+## Misc
+
+- `avahi-browse`: Browse for mDNS/DNS-SD services using the Avahi daemon.
+
 ## References
 
 - [1] [Unix and Linux Administration Handbook (4th Edition)](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0131480057): In 2017 they released the 5th edition.
