@@ -1,5 +1,12 @@
 # JavaScript
 
+## References
+
+I found some very good JavaScript references:
+
+- [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
+- [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
+
 ## Anonymous Function
 
 An example of anonymous function is [here](https://gist.github.com/iam-peekay/e29fa76b94ff56163446#file-anonymousclosurewithglobal-js), which is used in the article [Mod-001]:
@@ -9,20 +16,20 @@ var global = 'Hello, I am a global variable :)';
 
 (function () {
   // We keep these variables private inside this closure scope
-  
+
   var myGrades = [93, 95, 88, 0, 55, 91];
-  
+
   var average = function() {
     var total = myGrades.reduce(function(accumulator, item) {
       return accumulator + item}, 0);
-    
+
     return 'Your average grade is ' + total / myGrades.length + '.';
   }
 
   var failing = function(){
     var failingGrades = myGrades.filter(function(item) {
       return item < 70;});
-      
+
     return 'You failed ' + failingGrades.length + ' times.';
   }
 
