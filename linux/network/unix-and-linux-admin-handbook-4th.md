@@ -74,3 +74,7 @@
     - 01hhhhhh(64)
     - 10hhhhhh(128)
     - 11hhhhhh(192)
+
+---
+
+TODO: Summarize `Private addresses and network address translation (NAT)`
