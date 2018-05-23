@@ -51,6 +51,10 @@ As [Mod-001] says:
 
 - [Bind-001] [Understanding JavaScript Bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
 
+## Code Style
+
+Look at [JavaScript Standard Style](https://standardjs.com/), a "JavaScript style guide, linter, and formatter".
+
 ## Module
 
 - [Mod-001] [JavaScript Modules: A Beginner’s Guide](https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc)
