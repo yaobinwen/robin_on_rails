@@ -38,6 +38,7 @@ Thus start our front-end development journey along with Node.js and npm.
 
 ## Misc.
 
+- [Fun stuff: The Super Tiny Compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
 - [Polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming))
 
 ## References
