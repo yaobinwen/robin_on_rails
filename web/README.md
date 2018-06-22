@@ -36,6 +36,10 @@ Thus start our front-end development journey along with Node.js and npm.
 
 (Note that Chrome V8 is surely not the only JavaScript engine but [one of many](https://en.wikipedia.org/wiki/JavaScript_engine#JavaScript_engines); Node.js is surely not the only JavaScript runtime for web development either. However, because I am currently working with technologies so I'll focus on them for now, but I don't mean any offense to those who use other technologies.)
 
+## Misc.
+
+- [Polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming))
+
 ## References
 
 - [frontend-dev-bookmarks](https://github.com/dypsilon/frontend-dev-bookmarks): "Manually curated collection of resources for frontend web developers."
