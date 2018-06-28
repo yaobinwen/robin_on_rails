@@ -69,11 +69,11 @@ Look at [JavaScript Standard Style](https://standardjs.com/), a "JavaScript styl
 
 ## Types
 
-This method is the right way to test an object's type in Javascript:
+This method is the right way to test an object's type in Javascript (from `JavaScript Garden`):
 
 ```javascript
-function objectIsType(obj, type) {
-    var class = Object.prototype.toString.call(obj).slice(8, -1);
-    return obj !== undefined && obj !== null && class === type;
+function is(type, obj) {
+    var clas = Object.prototype.toString.call(obj).slice(8, -1);
+    return obj !== undefined && obj !== null && clas === type;
 }
 ```
