@@ -7,7 +7,7 @@ I found some very good JavaScript references:
 - [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
 - [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 - [Node.js ECMAScript compatibility tables](https://node.green/)
-- [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden)
+- [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden): A Guide to JavaScript's Quirks and Flaws
 
 ## Anonymous Function
 
