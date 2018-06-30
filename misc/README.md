@@ -12,3 +12,4 @@
 - [80+ Films with Artificial Intelligence](https://medium.com/@founderstime/80-films-with-artificial-intelligence-1d71676def13)
 - [GitHut: A SMALL PLACE TO DISCOVER LANGUAGES IN GITHUB](http://githut.info/)
   - [GitHut 2.0](https://madnight.github.io/githut/#/pull_requests/2018/1)
+- [Issac Asimov's work](https://www.zhihu.com/question/19916542/answer/16235601)
