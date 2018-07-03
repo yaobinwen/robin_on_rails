@@ -4,6 +4,7 @@
 
 I found some very good JavaScript references:
 
+- [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Modern JS Cheatsheet](https://mbeaudru.github.io/modern-js-cheatsheet/)
 - [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 - [Node.js ECMAScript compatibility tables](https://node.green/)
@@ -56,6 +57,12 @@ As [Mod-001] says:
 ## Code Style
 
 Look at [JavaScript Standard Style](https://standardjs.com/), a "JavaScript style guide, linter, and formatter".
+
+## Concurrency
+
+- [Concurrency model and Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+- [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
+- [The JavaScript Event Loop: Explained](https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/)
 
 ## Module
 
