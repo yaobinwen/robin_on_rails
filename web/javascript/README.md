@@ -67,6 +67,7 @@ Look at [JavaScript Standard Style](https://standardjs.com/), a "JavaScript styl
 - [The JavaScript Event Loop: Explained](https://blog.carbonfive.com/2013/10/27/the-javascript-event-loop-explained/)
 - [Handling IO — NodeJS Event Loop Part 4](https://jsblog.insiderattack.net/handling-io-nodejs-event-loop-part-4-418062f917d1)
 - [Why setImmediate() execute before fs.readFile() in Nodejs Event Loop's works?](https://stackoverflow.com/a/47727402/630364): This is an awesome answer but may have mistakes. See Rueian Oneecom's comments.
+- [Philip Roberts: Help, I’m stuck in an event-loop.](https://vimeo.com/96425312)
 
 ## Module
 
