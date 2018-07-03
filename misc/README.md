@@ -13,3 +13,11 @@
 - [GitHut: A SMALL PLACE TO DISCOVER LANGUAGES IN GITHUB](http://githut.info/)
   - [GitHut 2.0](https://madnight.github.io/githut/#/pull_requests/2018/1)
 - [Issac Asimov's work](https://www.zhihu.com/question/19916542/answer/16235601)
+- 音乐
+  - 打算跟着金属音乐发展的历史听一遍
+    - [A Brief History of Metal](https://metal.mit.edu/brief-history-metal): Alrighty.. This seems to be a web page of MIT. I thought it would talk about the real metal but, hell yeah, it talks about the music!
+    - [能不能像一部史诗一样给出一下摇滚金属朋克等此类音乐的发展史？](https://www.zhihu.com/question/23919160/answer/26449222)
+    - Some bands:
+      - [Nightwish](https://www.youtube.com/playlist?list=PL9ENCuCLKeMrpsq6rdQkpIldPiccZ_4Au)
+      - [Venom](https://www.youtube.com/watch?v=MInJxNyjfqs)
+      - [In Flames](https://www.youtube.com/watch?v=EmCA7EwE3rY&list=RDEMpaOYO7q-LYB9Wi_RZGOxXA&start_radio=1)
