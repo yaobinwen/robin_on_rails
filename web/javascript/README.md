@@ -77,3 +77,13 @@ function is(type, obj) {
     return obj !== undefined && obj !== null && clas === type;
 }
 ```
+
+## Versioning
+
+As a novice JavaScript developer, I myself am constantly confused by the JavaScript (or ECMAScript) versioning. Fortunately, some good articles can help clarify:
+
+- [JavaScript Versions](https://www.w3schools.com/js/js_versions.asp)
+- [ES6 (ES2015) And Beyond: Understanding JavaScript Versioning](https://www.sitepoint.com/javascript-versioning-es6-es2015/)
+- [JavaScript — WTF is ES6, ES8, ES 2017, ECMAScript… ?](https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c)
+- [ES6 vs ES2015 - What to call a JavaScript version?](https://bytearcher.com/articles/es6-vs-es2015-name/)
+- [ES5, ES6, ES2016, ES.Next: What's going on with JavaScript versioning?](https://benmccormick.org/2015/09/14/es5-es6-es2016-es-next-whats-going-on-with-javascript-versioning/?utm_medium=email)
