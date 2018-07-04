@@ -9,6 +9,7 @@ I found some very good JavaScript references:
 - [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 - [Node.js ECMAScript compatibility tables](https://node.green/)
 - [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden): A Guide to JavaScript's Quirks and Flaws
+- [node 源码粗读系列](https://github.com/xtx1130/blog)
 
 ## Anonymous Function
 
