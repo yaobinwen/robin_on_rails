@@ -76,6 +76,10 @@ Look at [JavaScript Standard Style](https://standardjs.com/), a "JavaScript styl
   - This article introduces how to implement the **"module pattern"** in JavaScript and it provides very good examples.
 - [Mod-002] [JavaScript Modules Part 2: Module Bundling](https://medium.freecodecamp.org/javascript-modules-part-2-module-bundling-5020383cf306)
 
+## Object Model
+
+- [Details of the object model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model)
+
 ## Testing
 
 - [An Overview of JavaScript Testing in 2018](https://medium.com/welldone-software/an-overview-of-javascript-testing-in-2018-f68950900bc3)
