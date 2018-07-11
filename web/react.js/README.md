@@ -14,3 +14,5 @@ This folder has the notes taken from learning React.js.
 - [Testing Strategies for React and Redux](https://hacks.mozilla.org/2018/04/testing-strategies-for-react-and-redux/)
 - [Under the hood: React](https://bogdan-lyashenko.github.io/Under-the-hood-ReactJS/)
 - [React Patterns](https://reactpatterns.com/)
+- [The Right Way to Test React Components](https://medium.freecodecamp.org/the-right-way-to-test-react-components-548a4736ab22)
+- [The 100% correct way to structure a React app (or why there’s no such thing)](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
