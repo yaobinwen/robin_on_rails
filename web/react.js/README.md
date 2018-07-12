@@ -16,3 +16,4 @@ This folder has the notes taken from learning React.js.
 - [React Patterns](https://reactpatterns.com/)
 - [The Right Way to Test React Components](https://medium.freecodecamp.org/the-right-way-to-test-react-components-548a4736ab22)
 - [The 100% correct way to structure a React app (or why there’s no such thing)](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
+- [React HOWTO: Your guide to the (sometimes overwhelming!) React ecosystem.](https://github.com/petehunt/react-howto)
