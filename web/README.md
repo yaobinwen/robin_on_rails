@@ -50,6 +50,7 @@ I suggest the following perspectives to look at and understand the entire web de
 
 ## Terms & Concepts
 
+- [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 - [MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 - [Polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming))
 - [Ponyfill](https://github.com/sindresorhus/ponyfill)
