@@ -43,6 +43,11 @@ I suggest the following perspectives to look at and understand the entire web de
 - **Technical:** Include the programming languages, libraries and modules, specifications, etc..
 - **Software Engineering:** Include the engineering tools for the best practices such as the linters and CI tools.
 
+## Tools & Libraries
+
+- [Express](http://expressjs.com/): Fast, unopinionated, minimalist web framework for Node.js.
+- [Grunt](https://gruntjs.com/): The JavaScript task runner for automation.
+
 ## Misc.
 
 - [How to Become a Great Front-End Engineer](https://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/)
