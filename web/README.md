@@ -48,13 +48,17 @@ I suggest the following perspectives to look at and understand the entire web de
 - [Express](http://expressjs.com/): Fast, unopinionated, minimalist web framework for Node.js.
 - [Grunt](https://gruntjs.com/): The JavaScript task runner for automation.
 
+## Terms & Concepts
+
+- [Polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming))
+- [Ponyfill](https://github.com/sindresorhus/ponyfill)
+  - [Polyfill, Ponyfill & Prollyfill](https://kikobeats.com/polyfill-ponyfill-and-prollyfill/)
+- [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer)
+
 ## Misc.
 
 - [How to Become a Great Front-End Engineer](https://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/)
 - [Fun stuff: The Super Tiny Compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
-- [Polyfill](https://en.wikipedia.org/wiki/Polyfill_(programming))
-- [Ponyfill](https://github.com/sindresorhus/ponyfill)
-  - [Polyfill, Ponyfill & Prollyfill](https://kikobeats.com/polyfill-ponyfill-and-prollyfill/)
 
 ## References
 
