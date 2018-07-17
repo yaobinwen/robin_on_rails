@@ -36,6 +36,13 @@ Thus start our front-end development journey along with Node.js and npm.
 
 (Note that Chrome V8 is surely not the only JavaScript engine but [one of many](https://en.wikipedia.org/wiki/JavaScript_engine#JavaScript_engines); Node.js is surely not the only JavaScript runtime for web development either. However, because I am currently working with technologies so I'll focus on them for now, but I don't mean any offense to those who use other technologies.)
 
+### Perspectives
+
+I suggest the following perspectives to look at and understand the entire web development ecosystem:
+
+- **Technical:** Include the programming languages, libraries and modules, specifications, etc..
+- **Software Engineering:** Include the engineering tools for the best practices such as the linters and CI tools.
+
 ## Misc.
 
 - [How to Become a Great Front-End Engineer](https://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/)
