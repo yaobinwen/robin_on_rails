@@ -61,6 +61,7 @@ I suggest the following perspectives to look at and understand the entire web de
 
 - [How to Become a Great Front-End Engineer](https://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/)
 - [Fun stuff: The Super Tiny Compiler](https://github.com/jamiebuilds/the-super-tiny-compiler)
+- [Brython](https://brython.info/): A Python 3 implementation for client-side web programming, designed to replace Javascript as the scripting language for the Web.
 
 ## References
 
