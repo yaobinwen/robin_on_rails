@@ -61,13 +61,22 @@ I suggest the following perspectives to look at and understand the entire web de
 
 When working on a web application, one must take care of the following aspects to develop an application of high quality:
 
+- Availability
+- Backward compatibility: What if a client of newer version is communicatinng to an older version of server? Is this allowed? Consider versioning.
+- Operation
 - Performance
   - Caching
   - Load balancing
+- Scalability
 - Security
-- Backward compatibility: What if a client of newer version is communicatinng to an older version of server? Is this allowed? Consider versioning.
+- User experience
 
 (More to be added)
+
+Here are some links for this topic:
+- [ ] [5 Challenges need to be overcome in Web Application Development](https://medium.theuxblog.com/5-challenges-need-to-be-overcome-in-web-application-development-c03a67726ff1)
+- [ ] [Considerations for Designing Distributed Systems](https://msdn.microsoft.com/en-us/library/dd129908.aspx)
+- [ ] [A Thorough Introduction to Distributed Systems](https://hackernoon.com/a-thorough-introduction-to-distributed-systems-3b91562c9b3c)
 
 ## Misc.
 
