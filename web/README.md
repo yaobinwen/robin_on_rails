@@ -65,6 +65,7 @@ When working on a web application, one must take care of the following aspects t
   - Caching
   - Load balancing
 - Security
+- Backward compatibility: What if a client of newer version is communicatinng to an older version of server? Is this allowed? Consider versioning.
 
 (More to be added)
 
