@@ -57,6 +57,17 @@ I suggest the following perspectives to look at and understand the entire web de
   - [Polyfill, Ponyfill & Prollyfill](https://kikobeats.com/polyfill-ponyfill-and-prollyfill/)
 - [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer)
 
+## Aspects to Take Care
+
+When working on a web application, one must take care of the following aspects to develop an application of high quality:
+
+- Performance
+  - Caching
+  - Load balancing
+- Security
+
+(More to be added)
+
 ## Misc.
 
 - [How to Become a Great Front-End Engineer](https://philipwalton.com/articles/how-to-become-a-great-front-end-engineer/)
