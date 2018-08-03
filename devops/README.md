@@ -1,5 +1,9 @@
 # DevOps
 
+## Jenkins
+
+- [How to Upgrade Jenkins to New Version and Update Plugins](https://www.thegeekstuff.com/2016/06/upgrade-jenkins-and-plugins)
+
 ## References
 
 - [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
