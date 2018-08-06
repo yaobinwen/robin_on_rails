@@ -14,3 +14,4 @@
 - [How To Use Blue-Green Deployments to Release Software Safely](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
 - [CI/CD Tools Comparison: Jenkins, GitLab CI, Buildbot, Drone, and Concourse](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse)
 - [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
+- [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
