@@ -2,9 +2,17 @@
 
 ## Bird's-eye View
 
+### Periodic Table of DevOps Tools (v3)
+
+[Periodic Table of DevOps Tools (v3)](https://xebialabs.com/periodic-table-of-devops-tools/)
+
+### DevOps Roadmap in 2018
+
 [DevOps Roadmap in 2018](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap):
 
 ![DevOps Roadmap in 2018](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/devops.png)
+
+### DevOps-Student-Roadmap
 
 [DevOps-Student-Roadmap](https://github.com/lucassha/DevOps-Student-Roadmap):
 
