@@ -1,5 +1,15 @@
 # DevOps
 
+## Bird's-eye View
+
+[DevOps Roadmap in 2018](https://github.com/kamranahmedse/developer-roadmap#-devops-roadmap):
+
+![DevOps Roadmap in 2018](https://github.com/kamranahmedse/developer-roadmap/blob/master/images/devops.png)
+
+[DevOps-Student-Roadmap](https://github.com/lucassha/DevOps-Student-Roadmap):
+
+![DevOps-Student-Roadmap](https://camo.githubusercontent.com/84c2faf3a081a531485909d25119723d7672f6c5/68747470733a2f2f692e696d6775722e636f6d2f707967396d48312e706e67)
+
 ## Jenkins
 
 - [How to Upgrade Jenkins to New Version and Update Plugins](https://www.thegeekstuff.com/2016/06/upgrade-jenkins-and-plugins)
