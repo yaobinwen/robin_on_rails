@@ -18,6 +18,14 @@
 
 ![DevOps-Student-Roadmap](https://camo.githubusercontent.com/84c2faf3a081a531485909d25119723d7672f6c5/68747470733a2f2f692e696d6775722e636f6d2f707967396d48312e706e67)
 
+## Testinfra
+
+Its official introduction says:
+
+> With [Testinfra](https://testinfra.readthedocs.io/en/latest/index.html) you can write unit tests in Python to test actual state of your servers configured by management tools like [Salt](https://saltstack.com/), [Ansible](https://www.ansible.com/), [Puppet](https://puppet.com/), [Chef](https://www.chef.io/) and so on.
+>
+>Testinfra aims to be a [Serverspec](https://serverspec.org/) equivalent in python and is written as a plugin to the powerful [Pytest](https://docs.pytest.org/en/latest/) test engine
+
 ## Jenkins
 
 - [How to Upgrade Jenkins to New Version and Update Plugins](https://www.thegeekstuff.com/2016/06/upgrade-jenkins-and-plugins)
