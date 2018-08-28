@@ -9,3 +9,5 @@
 - [Flying Dragon Robot Transforms Itself to Squeeze Through Gaps](https://spectrum.ieee.org/automaton/robotics/drones/flying-dragon-robot-transforms-itself-to-squeeze-through-gaps)
 - [Rockstar: The Programming Language](https://github.com/dylanbeattie/rockstar)
 - [TrumpScript](https://github.com/samshadwell/TrumpScript)
+- [美国什么专业好就业？](https://www.zhihu.com/question/20996538/answer/17577708)：这个答案里面提供了一些有用的数据链接。
+  - 比如：[OFFICE OF FOREIGN LABOR CERTIFICATION](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Selected_Statistics_FY2017.pdf)
