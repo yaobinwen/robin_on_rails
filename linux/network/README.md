@@ -4,6 +4,19 @@
 
 This folder is all about the network on Linux operating systems.
 
+## HOWTOs
+
+### How to test if a port on a remote system is reachable
+
+- Use `nc`:
+  - `nc -zv 127.0.0.1 80`
+  - `nc -zv 127.0.0.1 22 80 8080`
+  - `nc -zv 127.0.0.1 20-30`
+- Use `netstat`:
+  - `sudo netstat -ntlp | grep LISTEN`
+- Use the good old `telnet`:
+  - `telnet host 22`
+
 ## Misc
 
 - `avahi-browse`: Browse for mDNS/DNS-SD services using the Avahi daemon.
