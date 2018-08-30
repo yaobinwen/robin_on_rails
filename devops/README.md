@@ -37,6 +37,16 @@ Its official introduction says:
   - Use [`readFile`](https://stackoverflow.com/a/44101004/630364)
   - Use [`sh` in `environment` section](https://stackoverflow.com/a/43881731/630364). Note that you must have an agent to run the script (`agent` can't be `none`).
 
+## System Administration
+
+**NOTE:** The following information assumes a Linux operating system unless specified otherwise.
+
+- How to check the hardware specification:
+  - Use `dmidecode`. For example:
+    - `dmidecode -t17` to show each RAM slot information.
+    - `dmidecode -t16` to show the entire memory array information, including its maximum capacity.
+  - Use [crucial.com](http://www.crucial.com/) to check the information.
+
 ## References
 
 - [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
