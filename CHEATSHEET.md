@@ -14,3 +14,11 @@ See [this Stack Overflow answer](https://stackoverflow.com/a/1549155/630364). Us
 $ git merge-base branch2 branch3
 050dc022f3a65bdc78d97e2b1ac9b595a924c3f2
 ```
+
+## Linux
+
+### Create `.tar.gz` from a folder
+
+Create: `tar -zcvf tar-archive-name.tar.gz source-folder-name`
+
+Extract: `tar -zxvf tar-archive-name.tar.gz`
