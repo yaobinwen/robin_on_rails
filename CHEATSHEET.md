@@ -22,3 +22,7 @@ $ git merge-base branch2 branch3
 Create: `tar -zcvf tar-archive-name.tar.gz source-folder-name`
 
 Extract: `tar -zxvf tar-archive-name.tar.gz`
+
+### How to know what program is listening on a given port
+
+`sudo lsof -i :8000`
