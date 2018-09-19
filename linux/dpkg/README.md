@@ -1,5 +1,19 @@
 # dpkg
 
+## Overview
+
+This folder has the information about Debian/Ubuntu packaging tool set.
+
+## The `debhelper` Tool Suite
+
+The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stretch/debhelper/debhelper.7.en.html). Note that this is the manpage of Debian _stretch_ which is the latest version as of 2018/08/30. Here is its _Description_ section:
+
+> Debhelper is used to help you build a Debian package. The philosophy behind debhelper is to provide a collection of small, simple, and easily understood tools that are used in debian/rules to automate various common aspects of building a package. This means less work for you, the packager. It also, to some degree means that these tools can be changed if Debian policy changes, and packages that use them will require only a rebuild to comply with the new policy.
+>
+> A typical debian/rules file that uses debhelper will call several debhelper commands in sequence, or use [dh(1)](https://manpages.debian.org/stretch/debhelper/dh.1.en.html) to automate this process. Examples of rules files that use debhelper are in /usr/share/doc/debhelper/examples/
+>
+> To create a new Debian package using debhelper, you can just copy one of the sample rules files and edit it by hand. Or you can try the dh-make package, which contains a dh_make command that partially automates the process. For a more gentle introduction, the maint-guide Debian package contains a tutorial about making your first package using debhelper.
+
 ---
 
 References & tutorials:

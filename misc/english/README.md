@@ -15,3 +15,4 @@ See the notes in "Purdue_OWL.md".
 ## References
 
 - [The Punctuation Guide](http://www.thepunctuationguide.com/index.html): This is an indexing guide on which you can search based on each punctuation.
+- [英语怎么精听一篇短文？精听步骤是什么？](https://www.zhihu.com/question/40958730/answer/154278750)
