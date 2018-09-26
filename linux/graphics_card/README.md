@@ -29,3 +29,12 @@ Other considerations include:
 - The `Switchable Graphics` features needs to be disabled if there are multiple graphics cards installed in the computer.
 - As "[Install]" points out, if you use the `nvidia-384` Debian package to install the driver, you need to re-install it after you upgrade the Linux kernel (such as from `4.4.0-31` to `4.4.0-135`).
 - If the kernel is compiled with `retpoline` patch, you also need to use more recent `g++` compilers (`g++-7` at least) so it supports the `retpoline` compilation for the driver's kernel module. Otherwise you'll get mismatched version line error in `dmesg`.
+
+## Nvidia Optimus
+
+Refer to this article: [A guide to Nvidia Optimus on Dell PCs with an Ubuntu Operating System](https://www.dell.com/support/article/ba/en/babsdt1/sln298431/a-guide-to-nvidia-optimus-on-dell-pcs-with-an-ubuntu-operating-system?lang=en)
+
+Here are some more links about this technology (Interestingly, the GeForce link has more information but why should there be two links?):
+
+- [GeForce: Optimus](https://www.geforce.com/hardware/technology/optimus)
+- [Nvidia: Optimus Technology](https://www.nvidia.com/object/optimus_technology.html)
