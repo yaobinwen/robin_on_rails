@@ -32,9 +32,24 @@ Other considerations include:
 
 ## Nvidia Optimus
 
-Refer to this article: [A guide to Nvidia Optimus on Dell PCs with an Ubuntu Operating System](https://www.dell.com/support/article/ba/en/babsdt1/sln298431/a-guide-to-nvidia-optimus-on-dell-pcs-with-an-ubuntu-operating-system?lang=en)
+According to [2]:
 
-Here are some more links about this technology (Interestingly, the GeForce link has more information but why should there be two links?):
+> NVIDIA® Optimus™ technology intelligently optimizes your notebook PC, providing the outstanding graphics performance you need, when you need it, all the while extending battery life for longer enjoyment.
 
-- [GeForce: Optimus](https://www.geforce.com/hardware/technology/optimus)
-- [Nvidia: Optimus Technology](https://www.nvidia.com/object/optimus_technology.html)
+According to the "Executive Summary" of [3]:
+
+> As a result, a few years ago NVIDIA developed a technology dubbed **"switchable graphics"** which allowed the end-user to choose which display adaptor would be used. In essence, this technology brought the best of both worlds, as it offered the battery life of an integrated graphics solution and the performance of a discrete GPU. Unfortunately, there were limitations to the technology resulting in the end user having to execute a fairly involved procedure to harness the most from the platform, resulting in only 1% of users ever switching between the two graphics systems.
+>
+> With NVIDIA's new Optimus technology, users can now experience the full performance benefits of a discrete GPU with the battery life of an integrated graphics solution. NVIDIA Optimus automatically, instantaneously, and seamlessly optimizes the notebook to offer the best performance or best battery life depending on the application.
+
+Other things I have learned from the reading:
+
+- "Integrated graphics had previously been located on motherboards, but recent generations of Intel chips (and AMD 'APU' chips) place the integrated graphics chip on the same package as the CPU. Hence, the motherboard can support integrated graphics if the CPU has that chip but not all newer Intel chips have this feature." [5]
+
+References:
+
+- [1] [A guide to Nvidia Optimus on Dell PCs with an Ubuntu Operating System](https://www.dell.com/support/article/ba/en/babsdt1/sln298431/a-guide-to-nvidia-optimus-on-dell-pcs-with-an-ubuntu-operating-system?lang=en)
+- [2] [Nvidia: Optimus Technology](https://www.nvidia.com/object/optimus_technology.html)
+- [3] [Optimus Whitepaper: A technical description of Optimus Technology and how it works.](https://www.nvidia.com/object/LO_optimus_whitepapers.html)
+- [4] [GeForce: Optimus](https://www.geforce.com/hardware/technology/optimus)
+- [5] [CPU: integrated graphics?](http://www.tomshardware.com/answers/id-1820282/cpu-integrated-graphics.html#r11627188)
