@@ -12,7 +12,11 @@ Here is a list of commands I have used in various circumstances. Record them her
 
 - `dmidecode`
   - `sudo dmidecode -t16`: Find the information about the memory array.
-- `dpkg -c /path/to/deb/file`: Show the content of the `.deb` file.
+- `dpkg`:
+  - `dpkg -c /path/to/deb/file`: Show the content of the `.deb` file.
+  - `dpkg -i /path/to/deb/file`: Install the given `.deb` file.
+- `dpkg-query`
+  - `dpkg-query -W --showformat='${Version}' dpkg`: Query the version of the installed `dpkg` package.
 - `lsmod`: List the currently loaded kernel modules.
 - `lspci`
 - `lshw`
