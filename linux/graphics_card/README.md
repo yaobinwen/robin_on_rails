@@ -46,6 +46,8 @@ Other things I have learned from the reading:
 
 - "Integrated graphics had previously been located on motherboards, but recent generations of Intel chips (and AMD 'APU' chips) place the integrated graphics chip on the same package as the CPU. Hence, the motherboard can support integrated graphics if the CPU has that chip but not all newer Intel chips have this feature." [5]
 
+The reference [3], the Optimus whitepaper is a **great** source of information for both the background and the technological details.
+
 References:
 
 - [1] [A guide to Nvidia Optimus on Dell PCs with an Ubuntu Operating System](https://www.dell.com/support/article/ba/en/babsdt1/sln298431/a-guide-to-nvidia-optimus-on-dell-pcs-with-an-ubuntu-operating-system?lang=en)
