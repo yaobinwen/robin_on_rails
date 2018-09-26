@@ -61,3 +61,5 @@ References:
 References:
 
 - [1] [Direct Rendering Manager](https://en.wikipedia.org/wiki/Direct_Rendering_Manager)
+- [2] [Kernel Mode Setting: ArchLinux](https://wiki.archlinux.org/index.php/kernel_mode_setting)
+- [3] [Kernel Mode Setting: Debian Wiki](https://wiki.debian.org/KernelModesetting)
