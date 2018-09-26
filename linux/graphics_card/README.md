@@ -55,3 +55,9 @@ References:
 - [3] [Optimus Whitepaper: A technical description of Optimus Technology and how it works.](https://www.nvidia.com/object/LO_optimus_whitepapers.html)
 - [4] [GeForce: Optimus](https://www.geforce.com/hardware/technology/optimus)
 - [5] [CPU: integrated graphics?](http://www.tomshardware.com/answers/id-1820282/cpu-integrated-graphics.html#r11627188)
+
+## DRM(Direct Rendering Manager) and KMS(Kernel Mode Setting)
+
+References:
+
+- [1] [Direct Rendering Manager](https://en.wikipedia.org/wiki/Direct_Rendering_Manager)
