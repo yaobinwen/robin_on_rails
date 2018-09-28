@@ -4,6 +4,23 @@
 
 This folder has the information about Debian/Ubuntu packaging tool set.
 
+## How to Find A Package
+
+Try on the [official Ubuntu Package Search](https://packages.ubuntu.com/).
+
+- You can either navigate into a specific Ubuntu distribution to find the packages.
+  - Click the codename of a distribution.
+  - Choose the category of the package you want to find. If you don't know its category, scroll down to the bottom and click `All packages`.
+- Alternatively, use the `Search` tool on the page.
+
+Once you get into the page of a specific package, such as the [libboost-filesystem1.65.1](https://packages.ubuntu.com/bionic/libboost-filesystem1.65.1), there is a lot of information:
+
+- The `Other Packages Related to ...` lists the `depends`, `recommends`, `suggests`, and `enhances`.
+- The `Download ...` lists the downloadable `.deb` files and their content:
+  - Click the corresponding architecture, such as `amd64`, to enter another page that provides the download link.
+  - The `Files` is the content of that package, the same as running `dpkg -c` on this package.
+- On the right-side panel, the `Download Source Package` lists the packages that contain the **source code** and the **`debian`** files.
+
 ## The `debhelper` Tool Suite
 
 The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stretch/debhelper/debhelper.7.en.html). Note that this is the manpage of Debian _stretch_ which is the latest version as of 2018/08/30. Here is its _Description_ section:
