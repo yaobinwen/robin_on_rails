@@ -20,6 +20,7 @@ Once you get into the page of a specific package, such as the [libboost-filesyst
   - Click the corresponding architecture, such as `amd64`, to enter another page that provides the download link.
   - The `Files` is the content of that package, the same as running `dpkg -c` on this package.
 - On the right-side panel, the `Download Source Package` lists the packages that contain the **source code** and the **`debian`** files.
+  - In the [source package page](https://packages.ubuntu.com/source/bionic/boost1.65.1), scroll down to the bottom to find the download links.
 
 ## The `debhelper` Tool Suite
 
