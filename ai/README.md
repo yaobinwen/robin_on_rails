@@ -38,6 +38,8 @@ I think AI is an issue of multiple dimensions: technology, philosophy, and econo
 
 A chronology of events in Isaac Asimov's positronic robot and Foundation stories: [Johnny Pez's Insanely Complete Fiction List](http://www.asimovonline.com/oldsite/insane_list.html)
 
+- [Why Asimov's Three Laws Of Robotics Can't Protect Us](https://io9.gizmodo.com/why-asimovs-three-laws-of-robotics-cant-protect-us-1553665410)
+
 ## AI and Software Development
 
 - [How Will AI Impact Software Development?](https://www.forbes.com/sites/forbestechcouncil/2017/08/31/how-will-ai-impact-software-development/#27602b8f264d)
