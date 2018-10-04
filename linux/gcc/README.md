@@ -48,3 +48,34 @@ You can also look at the search directories of `ld` by running `ld --verbose | g
 - SEARCH_DIR("=/lib");
 - SEARCH_DIR("=/usr/lib");
 ```
+
+## Look Up Symbol Tables
+
+The tool `nm` can list symbols from object files. For example:
+
+`nm -D -Ca libboost_timer.so.1.54.0`
+
+produces something like
+
+```text
+0000000000204110 B __bss_start
+                 U __cxa_atexit
+                 U __cxa_begin_catch
+
+...
+
+0000000000002890 T boost::timer::auto_cpu_timer::report()
+0000000000001bf0 T boost::timer::auto_cpu_timer::auto_cpu_timer(std::string const&)
+0000000000002830 T boost::timer::auto_cpu_timer::auto_cpu_timer(std::ostream&, short)
+
+...
+
+0000000000002970 W std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+                 U std::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+                 U std::locale::locale()
+                 U std::locale::~locale()
+
+...
+```
+
+Look at its manpage for the meanings of the symbol type ("B", "U", "T", "W", etc.).
