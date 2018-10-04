@@ -4,6 +4,13 @@
 
 This folder has the information about Debian/Ubuntu packaging tool set.
 
+Here is the brief description of the contained folders and files:
+
+- `yaobin` is an example that shows how to create a package as well as a simple Debian package server. Note this example is not done in the best way as I have been learning more and more about the packaging tools.
+  - `yaobin` and `build.py` are the `DEBIAN` files and the build script that create the Debian package.
+  - `prep-pkg-repo.py` sets up the simple Debian package server and it uses the GPG keys in `gpgkeys` to sign the packages.
+- `dpkg-ecosystem.py` is an atempt to draw the dependency graph of all the Debian packaging tools.
+
 ## How to Find A Package
 
 Try on the [official Ubuntu Package Search](https://packages.ubuntu.com/).
