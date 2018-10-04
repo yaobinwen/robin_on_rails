@@ -17,6 +17,17 @@ Here is the brief description of the contained folders and files:
   - `prep-pkg-repo.py` sets up the simple Debian package server and it uses the GPG keys in `gpgkeys` to sign the packages.
 - `dpkg-ecosystem.py` is an atempt to draw the dependency graph of all the Debian packaging tools.
 
+## Big Picture of Packaging
+
+If you need to prepare a Debian package, the reference [1] (Debian New Maintainers' Guide) and [2] (Debian Policy Manual) are the official documents for learning all the needed knowledge. Consult them whenever you have a question of how to do a task.
+
+The manual pages of each tool are another official source of information:
+
+- [Debian Manpages](https://manpages.debian.org/)
+  - [Here](https://manpages.debian.org/contents-stretch.html) is the link for all the manpages (using `stretch` as an example). Clicking into a tool to see the versions in different languages (if they are available).
+- [Ubuntu Manpage Repository](http://manpages.ubuntu.com/)
+  - [Here](http://manpages.ubuntu.com/manpages/trusty/) is the link for all the manpages in different languages (using `trusty` as an example). The English version is contained in the folders like `man1`, `man2`, ..., `man9`.
+
 ## How to Find A Package
 
 Try on the [official Ubuntu Package Search](https://packages.ubuntu.com/).
@@ -83,18 +94,19 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 >
 > Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
 
-## References & tutorials:
+## References & Tutorials
 
-- [1] See [Manpages of dpkg in Debian stretch](https://manpages.debian.org/stretch/dpkg/index.html) for all the `dpkg`-related manuals.
-- [2] [dpkg(1) manual page](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html)
-- [3] [Debian Policy Manual](https://www.debian.org/doc/debian-policy/)
-- [4] [Maintainer script flowcharts](https://www.debian.org/doc/debian-policy/ap-flowcharts.html)
-- [5] [Chapter 2. Debian package management](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html)
-- [6] [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.en.pdf)
-- [7] [The Debian Administrator's Handbook](https://debian-handbook.info/download/stable/debian-handbook.pdf)
-- [8] [Everything you need to know about conffiles: configuration files managed by dpkg](https://raphaelhertzog.com/2010/09/21/debian-conffile-configuration-file-managed-by-dpkg/)
+- [1] [Debian New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
+- [2] [Debian Policy Manual](https://www.debian.org/doc/debian-policy/)
+- [3] See [Manpages of dpkg in Debian stretch](https://manpages.debian.org/stretch/dpkg/index.html) for all the `dpkg`-related manuals.
+- [4] [dpkg(1) manual page](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html)
+- [5] [Maintainer script flowcharts](https://www.debian.org/doc/debian-policy/ap-flowcharts.html)
+- [6] [Chapter 2. Debian package management](https://www.debian.org/doc/manuals/debian-reference/ch02.en.html)
+- [7] [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.en.pdf)
+- [8] [The Debian Administrator's Handbook](https://debian-handbook.info/download/stable/debian-handbook.pdf)
+- [9] [Everything you need to know about conffiles: configuration files managed by dpkg](https://raphaelhertzog.com/2010/09/21/debian-conffile-configuration-file-managed-by-dpkg/)
 
-According to [2], section ["Package states"](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html#Package_states), the entire installation process may consist of two steps:
+According to [4], section ["Package states"](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html#Package_states), the entire installation process may consist of two steps:
 
 - Unpack the package.
 - Configure the package by putting the [conffiles](https://www.debian.org/doc/manuals/maint-guide/dother.en.html#conffiles) to `/etc`.
