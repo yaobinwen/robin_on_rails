@@ -2,7 +2,13 @@
 
 ## Overview
 
-This folder has the information about Debian/Ubuntu packaging tool set.
+(**NOTE:** This document is still under continuous construction so what you are reading has not met the goal I set for it.)
+
+This folder has the information about Debian/Ubuntu packaging tool set. The **goal** is to make this document a tutorial for people who need to work with Debian packages but have no sense of what the "packaging" is all about.
+
+This document is **task oriented** so I am trying to figure out the common (and uncommon) tasks that people need to do and give guidance of how to do them. I am not creating any new knowledge here. I am collecting the materials that scatter over the Internet and organize them in a way that's easier to understand. All the information can be found in the official documents, but sometimes the official documents are not novice-friendly.
+
+This document is supposed to be **read from top to bottom**, with the sections on the top establishing the foundation to understand the packaging tool ecosystem: what exist there, what they are, how they relate to each other, etc.. Once you get the big picture of the "packaging", the tasks at hand would become a search for specific information.
 
 Here is the brief description of the contained folders and files:
 
