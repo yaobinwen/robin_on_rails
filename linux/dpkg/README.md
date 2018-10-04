@@ -39,9 +39,45 @@ The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stre
 >
 > To create a new Debian package using debhelper, you can just copy one of the sample rules files and edit it by hand. Or you can try the dh-make package, which contains a dh_make command that partially automates the process. For a more gentle introduction, the maint-guide Debian package contains a tutorial about making your first package using debhelper.
 
----
+## The Other Tools
 
-References & tutorials:
+This list will grow as I learn more about the Debian packaging tools.
+
+### tasksel
+
+A `task` is the functionality that the user wants the machine to have, e.g., an email server, a web server, etc.. The tool `tasksel` provides an interface to specify the functionalities that the user wants to install, and `tasksel` installs all the needed packages to accomplish that task, saving the user's effort to figure out what packages should be installed.
+
+## Setup Debian Package Server
+
+Here are some references:
+
+- [DebianRepository: Setup With Reprepro](https://wiki.debian.org/DebianRepository/SetupWithReprepro)
+- [Creating your own Signed APT Repository and Debian Packages](http://blog.jonliv.es/blog/2011/04/26/creating-your-own-signed-apt-repository-and-debian-packages/)
+- [15.3. Creating a Package Repository for APT](https://debian-handbook.info/browse/stable/sect.setup-apt-package-repository.html)
+- [DebianRepository: Setup](https://wiki.debian.org/DebianRepository/Setup): This link teaches how to set up Debian's official package repository.
+- [DebianRepository: Format](https://wiki.debian.org/DebianRepository/Format): This link "documents the structure of the official Debian repository and the format that is officially understood by clients".
+
+## Security
+
+Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
+
+## Miscellaneous
+
+### Virtual Package
+
+[Virtual Package](https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html#s-virtual) is essentially a functional interface. All the real packages that provide this "virtual package" implement this function. When we say, in the FAQ document, for example, that `exim4` and `sendmail` provide the virtual package `mail-transport-agent`, they actually implement this functionality which is compatible to each other. In fact, the FAQ document itself also says this way:
+
+> Similarly, exim4 and sendmail both **provide the functionality** of a mail transport agent.
+
+### "auto/manual install status"
+
+What is the "auto/manual install status"? See [this answer](https://askubuntu.com/a/836/514711).
+
+> If you install a package, all packages that that package depends upon are also installed. For example if you install the package `vlc`, it will automatically install `vlc-nox`. The automatically installed packages (in this case, `vlc-nox`) are set as **"automatically installed"** -- if you remove `vlc`, the package manager will suggest to remove `vlc-nox` as well (aptitude will do this automatically, if you use apt-get you can remove all automatically installed packages with apt-get autoremove).
+>
+> Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
+
+## References & tutorials:
 
 - [1] See [Manpages of dpkg in Debian stretch](https://manpages.debian.org/stretch/dpkg/index.html) for all the `dpkg`-related manuals.
 - [2] [dpkg(1) manual page](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html)
@@ -56,37 +92,3 @@ According to [2], section ["Package states"](https://manpages.debian.org/stretch
 
 - Unpack the package.
 - Configure the package by putting the [conffiles](https://www.debian.org/doc/manuals/maint-guide/dother.en.html#conffiles) to `/etc`.
-
----
-
-[Virtual Package](https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html#s-virtual) is essentially a functional interface. All the real packages that provide this "virtual package" implement this function. When we say, in the FAQ document, for example, that `exim4` and `sendmail` provide the virtual package `mail-transport-agent`, they actually implement this functionality which is compatible to each other. In fact, the FAQ document itself also says this way:
-
-> Similarly, exim4 and sendmail both **provide the functionality** of a mail transport agent.
-
----
-
-What is `tasksel`?
-
-A `task` is the functionality that the user wants the machine to have, e.g., an email server, a web server, etc.. The tool `tasksel` provides an interface to specify the functionalities that the user wants to install, and `tasksel` installs all the needed packages to accomplish that task, saving the user's effort to figure out what packages should be installed.
-
----
-
-What is the "auto/manual install status"? See [this answer](https://askubuntu.com/a/836/514711).
-
-> If you install a package, all packages that that package depends upon are also installed. For example if you install the package `vlc`, it will automatically install `vlc-nox`. The automatically installed packages (in this case, `vlc-nox`) are set as **"automatically installed"** -- if you remove `vlc`, the package manager will suggest to remove `vlc-nox` as well (aptitude will do this automatically, if you use apt-get you can remove all automatically installed packages with apt-get autoremove).
->
-> Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
-
----
-
-Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
-
----
-
-How to set up your own APT repository? Here are some references:
-
-- [DebianRepository: Setup With Reprepro](https://wiki.debian.org/DebianRepository/SetupWithReprepro)
-- [Creating your own Signed APT Repository and Debian Packages](http://blog.jonliv.es/blog/2011/04/26/creating-your-own-signed-apt-repository-and-debian-packages/)
-- [15.3. Creating a Package Repository for APT](https://debian-handbook.info/browse/stable/sect.setup-apt-package-repository.html)
-- [DebianRepository: Setup](https://wiki.debian.org/DebianRepository/Setup): This link teaches how to set up Debian's official package repository.
-- [DebianRepository: Format](https://wiki.debian.org/DebianRepository/Format): This link "documents the structure of the official Debian repository and the format that is officially understood by clients".
