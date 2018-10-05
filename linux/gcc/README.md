@@ -79,3 +79,8 @@ produces something like
 ```
 
 Look at [its manpage](http://manpages.ubuntu.com/manpages/xenial/man1/avr-nm.1.html) for the meanings of the symbol type ("B", "U", "T", "W", etc.).
+
+## make
+
+`make VERBOSE=1`: Show the commands that `make` runs to compile/link the code.
+
