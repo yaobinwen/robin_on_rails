@@ -87,7 +87,7 @@ I'm then going to explain how the transactions are recorded as a chain of blocks
 
 As I said earlier, the blockchain tracks the number of bitcoins every user has by tracking all the transactions, which is done by recording the transactions in the blockchain. The transaction recording is not done by the users manually, but by the bitcoin wallet, the software, automatically.
 
-Earlier I said "After the payment is done, they both modify their own copy of the blockchain(the ledger) to reflect their most recent financial status," which may suggest that both users make the changes directly. Conceptually, this is right; technically, this is wrong. The transaction recording is done as a collective effort of all the users in the entire bitcoin network. Let's assume that when Satoshi bought something from Alice, another two users, Bob and Caroline, had already joined the network, too. This would be what happened when the bitcoin payment happened:
+Earlier I said "After the payment is done, they both modify their own copy of the blockchain(the ledger) to reflect their most recent financial status," which may suggest that both users make the changes independently. Technically, this is precise. The transaction recording is done as a collective effort of all the users in the entire bitcoin network. Let's assume that when Satoshi bought something from Alice, another two users, Bob and Caroline, had already joined the network, too. This would be what happened when the bitcoin payment happened:
 
 - When Satoshi paid 10 bitcoins to Alice by operating his bitcoin wallet, the wallet generated the transaction and broadcasted it to the entire bitcoin network.
 - Because the transaction was broadcasted, Alice's, Bob's and Caroline's wallets all received this transaction. Satoshi's wallet of course knew the transaction, too.
@@ -107,11 +107,26 @@ Now you should also understand what a "block" contains: from the perspective of 
 - Time point #1: when the wallet started to "mine" the previous block;
 - Time point #2: when the wallet finishes incoporating the block into its own copy of the blockchain.
 
+Now we know how the blocks are created. How are they chained?
+
+We had learned earlier that every user's wallet has a full copy of the entire blockchain(the ledger). For most of the time, the blockchain is straightforward and doesn't have any fork. Therefore, when the wallet incoporates a new block into the blockchain, it simply adds the new block to the tip of the blockchain, making the blockchain one block longer than before.
+
+However, there are occasions in which the blockchain may have forks. When a fork occurs to the blockchain, the wallet will always treat the longer forked chain as the "trustable" blockchain. It doesn't matter if the longer chain records the correct transactions or not. As long as a forked chain is longer than the other, it is considered the "truth". In other words, if the attacker can somehow create a fork that contains false information and make this fork grow faster, hence longer, than the fork that contains the true information, the blockchain system will treat this false fork as "truth".
+
+Therefore, maintaining the security of the blockchain is to make sure the honest users control enough computational power so the forked chain of true truth always grows faster than the potentially malicious fork.
+
+Let's use some examples to show how the attackers may succeed or fail.
+
+Let's still consider the small bitcoin network that only had Alice, Bob, Caroline, and Satoshi, all of whom were honest users. In this case, the blockchain was always secure and trustable.
+
+Later, a new user David joined the network. Initially, he was an honest user. He sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins.
+
 (To be continued...)
 
 ## Questions
 
 - [ ] When a new user joins the bitcoin network, how does he get the copy of the previously constructed blockchain?
+- [ ] How exactly does double-spending happen? I can't seem to understand how it could happen in the real world.
 
 ## References
 
