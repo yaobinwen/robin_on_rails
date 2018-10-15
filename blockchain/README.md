@@ -132,3 +132,4 @@ Later, a new user David joined the network. Initially, he was an honest user. He
 
 - [1] [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
 - [2] [Mastering Bitcoin (2nd Edition, Print 2)](https://github.com/yaobinwen/bitcoinbook/tree/second_edition_print2)
+- [3] [Blockchain: how a 51% attack works (double spend attack)](https://hackernoon.com/what-is-a-51-attack-or-double-spend-attack-aa108db63474)
