@@ -6,6 +6,8 @@ This document has my notes of learning the blockchain-related technologies.
 
 ## Notes
 
+### The Primary Explanation
+
 Why is the technology called "blockchain"? Because it is a "chain" of "blocks" which looks like this:
 
 
@@ -23,7 +25,7 @@ Blockchain is the fundamental technology to implement cryptocurrencies, the most
 
 Why was blockchain invented? Because its inventor, Satoshi Nakamoto, wanted to remove the central trusted financial institute, i.e. the banks, to allow the buyers to pay **directly** to the sellers **without the double-spending issue**.
 
-In essense, the central trusted financial institute does two tasks:
+In essence, the central trusted financial institute does two tasks:
 
 - maintaining a central ledger that tracks the amount of money owned by each customer;
 - verifying the payment to guarantee no money is spent twice.
@@ -95,21 +97,21 @@ Earlier I said "After the payment is done, they both modify their own copy of th
   - Mining is time consuming that takes about 10 minutes to finish on average.
   - However, it's "on average", which means some "miners" may finish earlier than others.
 - The blockchain system makes the rule that only the winning "miner" has the right to record the transaction. Let's say in this example, Caroline's wallet won the "mining" competition. Upon her wallet finished the "mining" work, it recorded the transaction into a data structure called a "block" and immediately broadcasted this "block" along with the necessary information that proved she finished the "mining" successfully, aka Proof-of-Work, to the entire bitcoin network.
-- Because this "block" was broadcasted, Alice's, Bob's and Satoshi's wallets all received this "block". Their wallets independently verified the "block" and the Proof-of-Work. If the verification succeeded, they would stop their own "mining" work, acknowledged Caroline's wallet's work, and incoporated this "block" into their own copy of the blockchain.
-- Now, all the four users' copies of the blockchain were modified and all reflected the latest and correct finiancial status of everyone.
+- Because this "block" was broadcasted, Alice's, Bob's and Satoshi's wallets all received this "block". Their wallets independently verified the "block" and the Proof-of-Work. If the verification succeeded, they would stop their own "mining" work, acknowledged Caroline's wallet's work, and incorporated this "block" into their own copy of the blockchain.
+- Now, all the four users' copies of the blockchain were modified and all reflected the latest and correct financial status of everyone.
 
 The time-consuming "mining" is the key to the security of the blockchain, and I'm going to talk about it later.
 
-In the simple example above, the "block" that Caroline's wallet generated only contained one transaction between Satoshi and Alice. In reality, such a block could contain hundreds of transactions because there are a large number of users doing business frequently, thus generating many transactions all the time. For example, when the wallets of Alice, Bob, Caroline and Satoshi were "mining", another three transactions happened among them. These transactions were broadcasted to everyone else, too, in the same way as the first transaction. However, because these four wallets had already started "mining", they put the three new transactions aide temporarily in order to finish the current work first. Once Caroline's wallet broadcasted her mined block and got incoporated into everyone's copy of the blockchain, they came back, picked up the three transactions, and started to compete for the right to record them again. Once one of them won, the created block would include all the three new transactions and then be broadcasted to everybody else.
+In the simple example above, the "block" that Caroline's wallet generated only contained one transaction between Satoshi and Alice. In reality, such a block could contain hundreds of transactions because there are a large number of users doing business frequently, thus generating many transactions all the time. For example, when the wallets of Alice, Bob, Caroline and Satoshi were "mining", another three transactions happened among them. These transactions were broadcasted to everyone else, too, in the same way as the first transaction. However, because these four wallets had already started "mining", they put the three new transactions aide temporarily in order to finish the current work first. Once Caroline's wallet broadcasted her mined block and got incorporated into everyone's copy of the blockchain, they came back, picked up the three transactions, and started to compete for the right to record them again. Once one of them won, the created block would include all the three new transactions and then be broadcasted to everybody else.
 
-Now you should also understand what a "block" contains: from the perspective of an invidiual bitcoin wallet, it contains the transactions between two time points:
+Now you should also understand what a "block" contains: from the perspective of an individual bitcoin wallet, it contains the transactions between two time points:
 
 - Time point #1: when the wallet started to "mine" the previous block;
-- Time point #2: when the wallet finishes incoporating the block into its own copy of the blockchain.
+- Time point #2: when the wallet finishes incorporating the block into its own copy of the blockchain.
 
 Now we know how the blocks are created. How are they chained?
 
-We had learned earlier that every user's wallet has a full copy of the entire blockchain(the ledger). For most of the time, the blockchain is straightforward and doesn't have any fork. Therefore, when the wallet incoporates a new block into the blockchain, it simply adds the new block to the tip of the blockchain, making the blockchain one block longer than before.
+We had learned earlier that every user's wallet has a full copy of the entire blockchain(the ledger). For most of the time, the blockchain is straightforward and doesn't have any fork. Therefore, when the wallet incorporates a new block into the blockchain, it simply adds the new block to the tip of the blockchain, making the blockchain one block longer than before.
 
 However, there are occasions in which the blockchain may have forks. When a fork occurs to the blockchain, the wallet will always treat the longer forked chain as the "trustable" blockchain. It doesn't matter if the longer chain records the correct transactions or not. As long as a forked chain is longer than the other, it is considered the "truth". In other words, if the attacker can somehow create a fork that contains false information and make this fork grow faster, hence longer, than the fork that contains the true information, the blockchain system will treat this false fork as "truth".
 
@@ -119,12 +121,36 @@ Let's use some examples to show how the attackers may succeed or fail.
 
 Let's still consider the small bitcoin network that only had Alice, Bob, Caroline, and Satoshi, all of whom were honest users. In this case, the blockchain was always secure and trustable.
 
-Later, a new user David joined the network. Initially, he was an honest user. He sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins.
+Later, a new user Sutler joined the network. He was an honest user at the beginning and sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins. Once he realized how convenient bitcoin is, however, he started to plot to crack the blockchain system to obtain more bitcoins illegally.
+
+### Sutler's Attempts
 
 (To be continued...)
 
+### Additional Details
+
+#### Peer-to-peer (P2P) Network
+
+A client-server network has a central server that all the clients connect to. In such networks, the clients don't communicate with each other directly. Instead, they communicate with the server; the server may forward messages from one client to another, making it possible for the two clients communicate indirectly. The client-server model can be depicted using the following diagram.
+
+![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
+
+In contrast, a peer-to-peer (P2P) network is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
+
+![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
+
+To join a client-server network, a client needs to connect to the central server. To join a peer-to-peer network, a participant connects to another participant.
+
+#### How The Genesis Block Was Created
+
+According to the ["Genesis block" page on Bitcoin Wikipedia](https://en.bitcoin.it/wiki/Genesis_block), the genesis block is "almost always hard-coded into the software of the applications that utilize its block chain."
+
+- [1] [Why can’t the genesis block coinbase be spent?](https://bitcoin.stackexchange.com/a/10019/60763)
+- [2] [The first 50BTC block reward can't be spent. Why?](https://www.reddit.com/r/Bitcoin/comments/1nc13r/the_first_50btc_block_reward_cant_be_spend_why/)
+
 ## Questions
 
+- [ ] If the 50 BTC in the genesis block can't be spent, how did the initial batch of users get the usable bitcoins?
 - [ ] When a new user joins the bitcoin network, how does he get the copy of the previously constructed blockchain?
 - [ ] How exactly does double-spending happen? I can't seem to understand how it could happen in the real world.
 
