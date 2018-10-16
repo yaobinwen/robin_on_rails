@@ -129,6 +129,12 @@ Charlie Lee said on [this tweet](https://twitter.com/satoshilite/status/99973865
 
 > If they 51% attack and mine empty blocks and orphan all other blocks. Rest of miners will leave. People can't move coins, so no one buys and price drops. This makes it even less profitable to mine. It likely won't recover until community hard forks to another PoW.
 
+[This answer](https://bitcoin.stackexchange.com/a/49038/60763) says:
+
+> Also, keep in mind that it's not just miners that would have to be fooled into accepting a block with insufficient work. Full nodes also verify blocks as they receive them, and will reject blocks that do not have nonces that meet their own calculated difficulty requirement.
+
+It suggests that when a block is received by a node, the node does not simply uses the target recorded in the received block to validate it. Rather, the node uses its own target to validate the block because, if the block is an honest one, they both should have the same target.
+
 ### Additional Details
 
 #### Peer-to-peer (P2P) Network
