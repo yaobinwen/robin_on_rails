@@ -123,9 +123,11 @@ Let's still consider the small bitcoin network that only had Alice, Bob, Carolin
 
 Later, a new user Sutler joined the network. He was an honest user at the beginning and sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins. Once he realized how convenient bitcoin is, however, he started to plot to crack the blockchain system to obtain more bitcoins illegally.
 
-### Sutler's Attempts
+### 51% Attack
 
-(To be continued...)
+Charlie Lee said on [this tweet](https://twitter.com/satoshilite/status/999738656414814208?lang=en):
+
+> If they 51% attack and mine empty blocks and orphan all other blocks. Rest of miners will leave. People can't move coins, so no one buys and price drops. This makes it even less profitable to mine. It likely won't recover until community hard forks to another PoW.
 
 ### Additional Details
 
