@@ -48,6 +48,14 @@ Once you get into the page of a specific package, such as the [libboost-filesyst
 
 **NOTE:** Remember to check the `-updates` repository, such as `trusty-updates` or `bionic-updates`, and see if there is an updated version of the same package. For example, the `libboost1.54_1.54.0-4ubuntu3` is available in `trusty`, but there is an updated version `libboost1.54_1.54.0-4ubuntu3.1` in `trusty-updates`, and usually both `trusty` and `trusty-updates` are configured in the APT source list. Therefore, if you only look at the `trusty` repository, you may overlook the updated package and end up using the wrong version.
 
+## Figure Out Package Dependencies
+
+The tools `debtree` and `apt-rdepends` can help figure out the dependencies of the packages.
+
+`debtree` is briefly introduced [here](https://askubuntu.com/a/261808), and its manpage is [here](http://manpages.ubuntu.com/manpages/bionic/man1/debtree.1.html).
+
+`apt-rdepends`'s manpage is [here](http://manpages.ubuntu.com/manpages/bionic/man1/apt-rdepends.1.html).
+
 ## The `debhelper` Tool Suite
 
 The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stretch/debhelper/debhelper.7.en.html). Note that this is the manpage of Debian _stretch_ which is the latest version as of 2018/08/30. Here is its _Description_ section:
