@@ -125,6 +125,13 @@ Later, a new user Sutler joined the network. He was an honest user at the beginn
 
 ### 51% Attack
 
+There seems to be many forms (or names) of attacks:
+
+- [Finney attack](https://bitcoin.stackexchange.com/a/4963/60763)
+- [Race attack](https://bitcoin.stackexchange.com/a/74283/60763)
+- [Double-spend attack](https://bitcoin.stackexchange.com/a/74283/60763)
+- [Eclipse attack vs. Sybil attack](https://bitcoin.stackexchange.com/q/61151/60763)
+
 Charlie Lee said on [this tweet](https://twitter.com/satoshilite/status/999738656414814208?lang=en):
 
 > If they 51% attack and mine empty blocks and orphan all other blocks. Rest of miners will leave. People can't move coins, so no one buys and price drops. This makes it even less profitable to mine. It likely won't recover until community hard forks to another PoW.
@@ -134,6 +141,26 @@ Charlie Lee said on [this tweet](https://twitter.com/satoshilite/status/99973865
 > Also, keep in mind that it's not just miners that would have to be fooled into accepting a block with insufficient work. Full nodes also verify blocks as they receive them, and will reject blocks that do not have nonces that meet their own calculated difficulty requirement.
 
 It suggests that when a block is received by a node, the node does not simply uses the target recorded in the received block to validate it. Rather, the node uses its own target to validate the block because, if the block is an honest one, they both should have the same target.
+
+[This answer](https://bitcoin.stackexchange.com/a/43823/60763) says:
+
+> ... and the target stored inside the block header **has to** match the value determined by history.
+
+This can be proven by [these two lines of code](https://github.com/bitcoin/bitcoin/blob/v0.17.0/src/validation.cpp#L3235-L3236):
+
+```cpp
+static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& state, const CChainParams& params, const CBlockIndex* pindexPrev, int64_t nAdjustedTime)
+{
+    // ...
+    // Check proof of work
+    const Consensus::Params& consensusParams = params.GetConsensus();
+    if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
+        return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, "incorrect proof of work");
+    // ...
+}
+```
+
+Because of this check, the malicious miner can't use an arbitrary target to gain advantage.
 
 ### Additional Details
 
