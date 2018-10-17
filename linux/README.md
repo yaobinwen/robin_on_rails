@@ -10,6 +10,10 @@ Although this folder is called "Linux", most of the information is actually for 
 
 Here is a list of commands I have used in various circumstances. Record them here for future reference.
 
+- Cut text using multi-char delimiter
+  - The default `cut` program only accepts one-char delimiter. To use multi-char delimiter, use the following `awk` command:
+    `grep pattern file | awk -F "delimiter" '{$0=$1}1'`
+  - Reference: [This answer](https://stackoverflow.com/a/25448669/630364).
 - `dmidecode`
   - `sudo dmidecode -t16`: Find the information about the memory array.
 - `dpkg`:
