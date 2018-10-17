@@ -123,7 +123,47 @@ Let's still consider the small bitcoin network that only had Alice, Bob, Carolin
 
 Later, a new user Sutler joined the network. He was an honest user at the beginning and sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins. Once he realized how convenient bitcoin is, however, he started to plot to crack the blockchain system to obtain more bitcoins illegally.
 
+### Additional Details
+
+#### Peer-to-peer (P2P) Network
+
+A client-server network has a central server that all the clients connect to. In such networks, the clients don't communicate with each other directly. Instead, they communicate with the server; the server may forward messages from one client to another, making it possible for the two clients communicate indirectly. The client-server model can be depicted using the following diagram.
+
+![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
+
+In contrast, a peer-to-peer (P2P) network is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
+
+![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
+
+To join a client-server network, a client needs to connect to the central server. To join a peer-to-peer network, a participant connects to another participant.
+
+#### How The Genesis Block Was Created
+
+According to the ["Genesis block" page on Bitcoin Wikipedia](https://en.bitcoin.it/wiki/Genesis_block), the genesis block is "almost always hard-coded into the software of the applications that utilize its block chain."
+
+- [1] [Why can’t the genesis block coinbase be spent?](https://bitcoin.stackexchange.com/a/10019/60763)
+- [2] [The first 50BTC block reward can't be spent. Why?](https://www.reddit.com/r/Bitcoin/comments/1nc13r/the_first_50btc_block_reward_cant_be_spend_why/)
+
+## Attacks on Blockchain
+
+### Sybil Attack
+
+According to the [Wikipedia page](https://en.wikipedia.org/wiki/Sybil_attack):
+
+> The Sybil attack in computer security is an attack wherein a reputation system is subverted by forging identities in peer-to-peer networks. ... In a Sybil attack, the attacker subverts the reputation system of a peer-to-peer network by creating a large number of pseudonymous identities, using them to gain a disproportionately large influence.
+
+The [Bitcoin Wikipedia page](https://en.bitcoin.it/wiki/Weaknesses#Sybil_attack) explains the potential issues the Sybil attack can cause. For example:
+
+> - The attacker can refuse to relay blocks and transactions from everyone, effectively disconnecting you from the network
+> - The attacker can relay only blocks that they create, effectively putting you on a separate network and then also leaving you open to double-spending attacks
+
 ### 51% Attack
+
+The white paper [1] says:
+
+> The incentive may help encourage nodes to stay honest. If a greedy attacker is able to assemble more CPU power than all the honest nodes, he would have to choose between using it to defraud people by stealing back his payments, or using it to generate new coins. He ought to find it more profitable to play by the rules, such rules that favour him with more new coins than everyone else combined, than to undermine the system and the validity of his own wealth.
+
+### Others
 
 There seems to be many forms (or names) of attacks:
 
@@ -162,26 +202,6 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
 
 Because of this check, the malicious miner can't use an arbitrary target to gain advantage.
 
-### Additional Details
-
-#### Peer-to-peer (P2P) Network
-
-A client-server network has a central server that all the clients connect to. In such networks, the clients don't communicate with each other directly. Instead, they communicate with the server; the server may forward messages from one client to another, making it possible for the two clients communicate indirectly. The client-server model can be depicted using the following diagram.
-
-![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
-
-In contrast, a peer-to-peer (P2P) network is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
-
-![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
-
-To join a client-server network, a client needs to connect to the central server. To join a peer-to-peer network, a participant connects to another participant.
-
-#### How The Genesis Block Was Created
-
-According to the ["Genesis block" page on Bitcoin Wikipedia](https://en.bitcoin.it/wiki/Genesis_block), the genesis block is "almost always hard-coded into the software of the applications that utilize its block chain."
-
-- [1] [Why can’t the genesis block coinbase be spent?](https://bitcoin.stackexchange.com/a/10019/60763)
-- [2] [The first 50BTC block reward can't be spent. Why?](https://www.reddit.com/r/Bitcoin/comments/1nc13r/the_first_50btc_block_reward_cant_be_spend_why/)
 
 ## Questions
 
