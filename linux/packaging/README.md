@@ -66,6 +66,8 @@ The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stre
 >
 > To create a new Debian package using debhelper, you can just copy one of the sample rules files and edit it by hand. Or you can try the dh-make package, which contains a dh_make command that partially automates the process. For a more gentle introduction, the maint-guide Debian package contains a tutorial about making your first package using debhelper.
 
+The section ["4.4.2. Default rules file"](https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#defaultrules) in the "Debian New Maintainers' Guide" explains how these tools are called.
+
 ## The Other Tools
 
 This list will grow as I learn more about the Debian packaging tools.
