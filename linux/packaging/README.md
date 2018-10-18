@@ -72,6 +72,18 @@ The section ["4.4.2. Default rules file"](https://www.debian.org/doc/manuals/mai
 
 This list will grow as I learn more about the Debian packaging tools.
 
+### apt-file
+
+As [its manpage](http://manpages.ubuntu.com/manpages/bionic/man1/apt-file.1.html) says:
+
+> apt-file is a command line tool for searching files in packages for the APT package management system.
+
+I came across this tool when I encountered the exactly same problem in [this question](https://stackoverflow.com/q/46958365/630364). It is about a missing file, and the accepted answer uses `apt-file` to locate the package that provides this file.
+
+The simple usage is `apt-file search Sequence/autoreconf.pm`, and it shows the package that contains the file:
+
+> dh-autoreconf: /usr/share/perl5/Debian/Debhelper/Sequence/autoreconf.pm
+
 ### tasksel
 
 A `task` is the functionality that the user wants the machine to have, e.g., an email server, a web server, etc.. The tool `tasksel` provides an interface to specify the functionalities that the user wants to install, and `tasksel` installs all the needed packages to accomplish that task, saving the user's effort to figure out what packages should be installed.
