@@ -72,6 +72,25 @@ The section ["4.4.2. Default rules file"](https://www.debian.org/doc/manuals/mai
 
 This list will grow as I learn more about the Debian packaging tools.
 
+### apt-cache
+
+[Its manpage](http://manpages.ubuntu.com/manpages/bionic/man8/apt-cache.8.html) says:
+
+> `apt-cache` performs a variety of operations on APT's package cache.  apt-cache does not manipulate the state of the system but does provide operations to search and generate interesting output from the package metadata. The metadata is acquired and updated via the 'update' command of e.g.  apt-get, so that it can be outdated if the last update is too long ago, but in exchange apt-cache works independently of the availability of the configured sources (e.g. offline).
+
+One use of `apt-cache` is to query the version of the installation candidate. For example, running `apt-cache policy gobject-introspection` produces the following output:
+
+```
+gobject-introspection:
+  Installed: (none)
+  Candidate: 1.40.0-1
+  Version table:
+     1.40.0-1 0
+        500 http://archive.ubuntu.com/ubuntu/ trusty/main amd64 Packages
+```
+
+There you could see the version of the package if you install it.
+
 ### apt-file
 
 As [its manpage](http://manpages.ubuntu.com/manpages/bionic/man1/apt-file.1.html) says:
