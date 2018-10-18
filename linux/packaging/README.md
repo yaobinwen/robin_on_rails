@@ -121,6 +121,22 @@ Here are some references:
 
 Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
 
+## Backporting
+
+**Warning:** I myself am a novice package backporter so what I am describing below may not be the best practices, or even not completelyl correct.
+
+When you need to backport a package from a newer version of the system (such as Ubuntu 18.04) back to an earlier version (such as Ubuntu 14.04), in general, you need to do the following things.
+
+First of all, find the package's debian files. Refer to the earlier section "How to Find A Package".
+
+Secondly, modify the debian files, especially the `control` file, to use the tools of the version that's available on the target system. For example, the packages on Ubuntu 18.04 usually uses `debhelper (>= 11)` which is not available on Ubuntu 14.04. You may want to lower its version to `(>= 9)`. You may also need to lower the version of the `Standards-Version`. In general, check the entire file for the possible version changes.
+
+However, if its `Build-Depends` specifies another package of the version that's not available on the target system, you may need to consider to backport that package, too, because the current package may call the new APIs in the dependent packages. If you simply lower the version of the dependent package, you may end up with compile errors due to the missing APIs. Even if the package only calls the old APIs, backporting the dependent packages may still be a better idea because the binary compatibility may not be guaranteed.
+
+If the `Build-Depends` only specifies the build tools, it might be fine to simply lower the version of them. However, if the package compilation relies on the new language features of the build tools, especially the compiler, you will have to figure out a workaround.
+
+Use patches to change the code if it doesn't compile.
+
 ## Miscellaneous
 
 ### Virtual Package
