@@ -4,6 +4,36 @@
 
 This document has my notes of learning the blockchain-related technologies.
 
+## Prerequisite Knowledge
+
+In order to understand the blockchain technology better, it is highly recommended to learn about the knowledge below before you proceed.
+
+### Systems, and Distributed Systems
+
+Whenever we are talking about a "system", we are referring to a group of units that collaborate for a common goal. We see many systems in our everyday life, such as the home security system, the central air-conditioning system, the immune system in our bodies. In the realm of information technology, we might have seen a student information management system in schools.
+
+The units that form the system may perform different functions, but they work together to serve the same purpose. In other words, a group of units that don't share the common goal don't form a system.
+
+The units of a system may reside at the same geographical location. For example, a simple student information management system may consist of the units such as user input, data validation, database, and so on, and they may run in the same physical computer. In this case, these units form a "local" system.
+
+When the units of a system reside at geographically different locations, they form a "distributed" system. For example, the immune system spread out in our entire body instead of a single location. A more complex student information management system may have the user input unit running on the user's terminal (such as inside the user's browser), the data validation running on another computer, and the database running in a third computer and is securely locked in a dedicated room.
+
+A distributed system may be complicated as a whole, but its units may not be complicated at all. In fact, many such systems have each unit perform simple and clearly defined functions, and the complexity arises from their interaction. A typical example is our brain: each neuron acts in a very simple way, but as a whole they create a very complex system.
+
+In the example of the brain, it might be arguable whether it is a "local" or a "distributed" system. It kind of depends on how you define "geographically different locations". In an IT system, we usually define it as "running on different computers", even if those computers are put in the same room.
+
+A distributed system can be organized in different structures, two of which are client-server structure and peer-to-peer structure. The Bitcoin system is a peer-to-peer structure, which is what we are going to discuss immediately.
+
+### Client-server and Peer-to-peer (P2P)
+
+A distributed system that is organized in the client-server structure has a central server that all the clients connect to. In such a structure, the clients don't communicate with each other directly. Instead, they communicate with the server; the server may forward messages from one client to another, making it possible for the two clients communicate indirectly. The client-server model can be depicted using the following diagram.
+
+![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
+
+In contrast, a peer-to-peer (P2P) structure is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
+
+![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
+
 ## Notes
 
 ### The Primary Explanation
@@ -125,17 +155,7 @@ Later, a new user Sutler joined the network. He was an honest user at the beginn
 
 ### Additional Details
 
-#### Peer-to-peer (P2P) Network
 
-A client-server network has a central server that all the clients connect to. In such networks, the clients don't communicate with each other directly. Instead, they communicate with the server; the server may forward messages from one client to another, making it possible for the two clients communicate indirectly. The client-server model can be depicted using the following diagram.
-
-![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
-
-In contrast, a peer-to-peer (P2P) network is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
-
-![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
-
-To join a client-server network, a client needs to connect to the central server. To join a peer-to-peer network, a participant connects to another participant.
 
 #### How The Genesis Block Was Created
 
