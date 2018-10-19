@@ -30,9 +30,39 @@ A distributed system that is organized in the client-server structure has a cent
 
 ![Client-server model](https://upload.wikimedia.org/wikipedia/commons/f/fb/Server-based-network.svg)
 
+(**TODO:** Replace the figure.)
+
 In contrast, a peer-to-peer (P2P) structure is one in which the participants can connect to one another directly, hence communicate directly without the need of a central server. Note that a participant does not have to connect to every other participants in a P2P network. They connect on a needed base. A peer-to-peer model can be depicted as follows.
 
 ![Peer-to-peer model](https://upload.wikimedia.org/wikipedia/en/f/fa/Unstructured_peer-to-peer_network_diagram.png)
+
+(**TODO:** Replace the figure.)
+
+When a participant in a peer-to-peer network wants to broadcast a message to all its peers, it can't send the message to every other peer because it only connects to a limited set of them. Therefore, this participant simply broadcasts the message to the peers that it connects to, then its connected peers broadcast the received message to all the peers that they connect to, and this process continues on until all the participants receive the message. This kind of broadcasting process is called "flooding".
+
+In the case of flooding, when two participants broadcast their messages to the entire network at exactly the same time, the other participants may receive these two messages at different times, depending on how many intermediate levels there are between the sender and the receiver.
+
+(**TODO:** Add a figure.)
+
+### Hash Function and Computational Power
+
+Another term you definitely have heard frequently about Bitcoin is "mining". We will leave the discussion of "mining" later, but in this section, we will talk about the mathematical foundation of "mining" - the **hash function**.
+
+In mathematics, a generic function `f` can be described as `y = f(x)` where `x` is the input and `y` is the output. When we learn about functions in high schools or colleges, `x` and `y` are usually both numeric. For example, we may define a function that turns an integer into an even number: `y = 2 * x`, where `x` is an integer.
+
+In computer science, the input `x` is not necessarily numeric. It could also be a piece of text, or a combination of both. A piece of text, also called a "string of characters", or simply "string", is usually referred to by putting it in between a pair of quotation marks. For example, `"Hello, this is a string of characters."` is a string.
+
+A numeric value can be turned into a string. For example, the number `12` can be turned into the string `"12"`. But the reverse is not always true. The string `"12"` can be read and interpreted as the number `12`, but usually, you can't turn the word `"Hello"` into a numeric value.
+
+However, a hash function, in computer science, is one that is designed to turn literally anything into a numeric value. Note that when we are talking about "a hash function", we are not talking about one specific function but a family of them. There are many well-known hash functions world widely, one of which is called `SHA-256`; in fact, you can also design your own.
+
+Totally depending on the design, a hash function may take a numeric value as its input and output another numeric value; alternatively, a hash function may take a string of characters as input and output a numeric value.
+
+The hash function is a quite fundamental part of the blockchain technology, and is the key to understand the "mining" process and why blockchain is secure. But you don't have to learn how to design and implement a hash function. You only need to remember two very important characteristics of hash functions: randomness of output, and the sensitivity of input.
+
+The output of a hash function looks completely random from the observer's perspective. You won't be able to find a pattern to connect the input and the output. You might be able to do that if you know how the hash function is implemented, but the designer may introduce external sources of randomness that are out of your control, so you still won't be able to predict the output from the input even if you know every implementation detail. This also means that, when given an output by a hash function, chances are you can't figure out what input would generate this output, either.
+
+A hash function is usually input sensitive which means the alternation of even a little bit of the input may produce a completely different output. For example, a hash function may turn the input `"Hello, world!` into the number `22331814027392488307105736075480205742348666473969333634173732071459215699411`, but if you replace the ending exclamation point with a period, `"Hello, world."`, the output may become `112519442519776671206630282554703694312805327356566406491744467208085897409263`.
 
 ## Notes
 
@@ -154,8 +184,6 @@ Let's still consider the small bitcoin network that only had Alice, Bob, Carolin
 Later, a new user Sutler joined the network. He was an honest user at the beginning and sold some personal stuff to Alice and Bob in two transactions and obtained totally 15 bitcoins. Once he realized how convenient bitcoin is, however, he started to plot to crack the blockchain system to obtain more bitcoins illegally.
 
 ### Additional Details
-
-
 
 #### How The Genesis Block Was Created
 
