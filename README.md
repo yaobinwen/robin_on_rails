@@ -30,3 +30,7 @@ This section lists the other sources of kownledge and data.
 - The Global Goals and Goalkeepers Reports:
   - "In 2015, world leaders agreed to 17 goals for a better world by 2030. These goals have the power to end poverty, fight inequality and     stop climate change." See the [Global Goals](https://www.globalgoals.org/) website for more information.
   - The [Goalkeepers Report 2018](https://www.gatesfoundation.org/goalkeepers/report).
+- The [World Economic Forum](https://www.weforum.org/) publishes [reports](https://www.weforum.org/reports) and [white papers](https://www.weforum.org/whitepapers). Some interesting ones of them include:
+  - [The Global Competitiveness Report 2018](https://www.weforum.org/reports/the-global-competitveness-report-2018)
+  - [The Future of Jobs Report 2018](https://www.weforum.org/reports/the-future-of-jobs-report-2018)
+  - [Building Block(chain)s for a Better Planet](https://www.weforum.org/reports/building-block-chain-for-a-better-planet)
