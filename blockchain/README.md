@@ -68,9 +68,9 @@ Note that a hash function should produce a stable output when given the same inp
 
 A hash function is usually input sensitive which means the alternation of even a little bit of the input may produce a completely different output. For example, the earlier mentioned well-known hash function `SHA-256`, turns the input `"Hello, world!` into the number `22331814027392488307105736075480205742348666473969333634173732071459215699411`, but if you replace the ending exclamation point with a period, making it `"Hello, world."`, the output will become `112519442519776671206630282554703694312805327356566406491744467208085897409263`. Later you will see that the input sensitivity is also how the blockchain secure the integrity of the data.
 
-## Notes
+## Blockchain Technology Explained
 
-### The Primary Explanation
+### Blockchain and Bitcoin
 
 Why is the technology called "blockchain"? Because it is a "chain" of "blocks" which looks like this:
 
@@ -85,9 +85,25 @@ Why is the technology called "blockchain"? Because it is a "chain" of "blocks" w
 
 Later, I will explain what every "block" contains and how they are "chained" together.
 
-Blockchain is the fundamental technology to implement cryptocurrencies, the most well known one of which is bitcoin. Bitcoin is similar to the fiat currency like the US dollars we use every day, and the blockchain is the mechanism and rules that everybody follows to prevent this currency from being misused. Throughout this article, I'll use bitcoin to explain how the blockchain works.
+Blockchain is the fundamental technology to implement cryptocurrencies, the most well known one of which is Bitcoin. Bitcoin is similar to the fiat currency like the US dollars that we use every day, and the blockchain is the mechanism and rules that everybody follows to prevent this currency from being misused. Throughout this article, I'll use Bitcoin to explain how the blockchain works.
 
-Why was blockchain invented? Because its inventor, Satoshi Nakamoto, wanted to remove the central trusted financial institute, i.e. the banks, to allow the buyers to pay **directly** to the sellers **without the double-spending issue**.
+### The Motive of Blockchain
+
+Why was the blockchain technology invented? Because its inventor, [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto), wanted to remove the central trusted financial institute, i.e. the banks, to allow the buyers to pay **directly** to the sellers **without the double-spending issue**.
+
+If we use cash in our everyday life, the double-spending issue is usually avoided because once we give a bill to somebody else, we don't own that bill anymore and can't spend the same bill again. However, a person may use counterfeits to do the double-spending. If this person has only one $100 dollar bill, he can only buy goods that's worth $100. However, he may use a counterfeit of a $100 bill to buy more goods. Now he owns goods that's worth $200 in total. Alternatively, when he buys goods from the seller, he may pay the seller with paper instead of the real bills by playing malicious tricks. He could then use the real bills again.
+
+When it comes to the online banking, the double-spending issue is usually avoided because the trusted central authority, the banks, tracks the amount of money each party owns. A central authority may suffer from two problems:
+
+- The central authority is the single failure point. When it fails to function properly, its clients won't be able to do business.
+- The central authority increases the cost because it needs to hire a lot of people to keep it functioning properly.
+
+The blockchain technology aims to solve these two problems:
+
+- The distributed nature of the blockchain technology eliminates the single-point failure issue.
+- The blockchain is structured in the peer-to-peer structure which allows two users exchange money directly.
+
+### How Blockchain Works
 
 In essence, the central trusted financial institute does two tasks:
 
