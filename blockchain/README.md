@@ -281,4 +281,5 @@ Because of this check, the malicious miner can't use an arbitrary target to gain
 
 - [1] [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
 - [2] [Mastering Bitcoin (2nd Edition, Print 2)](https://github.com/yaobinwen/bitcoinbook/tree/second_edition_print2)
-- [3] [Blockchain: how a 51% attack works (double spend attack)](https://hackernoon.com/what-is-a-51-attack-or-double-spend-attack-aa108db63474)
+- [3] [Bitcoin Developer Guide](https://bitcoin.org/en/developer-guide)
+- [4] [Blockchain: how a 51% attack works (double spend attack)](https://hackernoon.com/what-is-a-51-attack-or-double-spend-attack-aa108db63474)
