@@ -68,6 +68,8 @@ The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stre
 
 The section ["4.4.2. Default rules file"](https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#defaultrules) in the "Debian New Maintainers' Guide" explains how these tools are called.
 
+The installed `dh` program is a Perl script which calls other Perl modules. The supporting Perl modules are usually installed into the path `/usr/share/perl5/Debian/Debhelper`.
+
 ## The Other Tools
 
 This list will grow as I learn more about the Debian packaging tools.
