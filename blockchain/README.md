@@ -4,12 +4,6 @@
 
 This article introduces the blockchain technology for non-technical audience. I don't assume a technical background of the readers so I will provide explanations about needed technical details, such as the topics covered in the section "Prerequisite Knowledge". However, the readers must understand that blockchain is a technological invention so there is no real way to understanding it without technical knowledge.
 
-## TODO
-
-- [ ] Gender neutrality disclaim.
-- [ ] Warning of possible inaccuracy.
-- [ ] Language revision.
-
 ## Prerequisite Knowledge
 
 In order to understand the blockchain technology better, it is highly recommended to learn about the knowledge below before you proceed.
@@ -296,11 +290,13 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
 Because of this check, the malicious miner can't use an arbitrary target to gain advantage.
 
 
-## Questions
+## TODO
 
-- [ ] If the 50 BTC in the genesis block can't be spent, how did the initial batch of users get the usable Bitcoins?
+- [ ] Gender neutrality disclaim.
+- [ ] Warning of possible inaccuracy.
+- [ ] Language revision.
 - [ ] When a new user joins the Bitcoin network, how does he get the copy of the previously constructed blockchain?
-- [ ] How exactly does double-spending happen? I can't seem to understand how it could happen in the real world.
+
 
 ## References
 
