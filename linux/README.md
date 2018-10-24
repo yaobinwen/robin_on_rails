@@ -28,3 +28,5 @@ Here is a list of commands I have used in various circumstances. Record them her
 - `modinfo`
   - `modinfo /lib/modules/4.4.0-134-generic/updates/dkms/nvidia_384.ko`: Show the information about `nvidia-384` kernel module.
   - `/lib/modules/<kernel-version>` is where all the kernel files (`.ko`) are placed.
+- `uname -a`: Print all the system information.
+- `uname -r`: Print the kernel release information.
