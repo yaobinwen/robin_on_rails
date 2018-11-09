@@ -6,6 +6,10 @@
 
 Although this folder is called "Linux", most of the information is actually for Debian-based systems, unless specified otherwise.
 
+## Books and References
+
+- [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/): The book is centered around three conceptual pieces that are fundamental to operating systems: virtualization, concurrency, and persistence.
+
 ## Commands
 
 Here is a list of commands I have used in various circumstances. Record them here for future reference.
