@@ -1,5 +1,7 @@
 # Vocabulary
 
+- comfort
+  - console: To comfort (someone) in a time of grief, disappointment, etc.
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - repeatedly
