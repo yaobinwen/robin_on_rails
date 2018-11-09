@@ -4,6 +4,48 @@
 
 This article introduces the blockchain technology for non-technical audience. I don't assume a technical background of the readers so I will provide explanations about needed technical details, such as the topics covered in the section "Prerequisite Knowledge". However, the readers must understand that blockchain is a technological invention so there is no real way to understanding it without technical knowledge.
 
+## Understanding Bitcoin and Blockchain: First Try
+
+### Background of Bitcoin Invention
+
+Our current financial system is a centralized, trust-based one: the commerce participants don't exchange money directly but through the 3rd-party financial institute which is assumed to be trustable. The centralized financial institute does two fundamental tasks:
+
+- It maintains a central ledger that tracks the amount of money owned by each client.
+- It verifies each payment to guarantee no money is spent twice.
+
+The centralized, trust-based model works well for most transactions, but it has some drawbacks, too. The Bitcoin white paper [1] has stated several "inherent weaknesses", which are summarized briefly as follows:
+
+- Running a financial institute is costly which indirectly increases the cost of the transactions.
+- The transactions may be reversible, making it possible to maliciously reverse a payment for a non-reversible service.
+- Small casual transactions are less possible.
+
+Bitcoin was invented to solve these drawbacks.
+
+### The Invention of Bitcoin
+
+Bitcoin was invented by [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) who claimed himself to be Japanese but whose real identity still remains unknown. "Satoshi" could be a male or female, or a group of people. Only "Satoshi" knows.
+
+According to Bitcoin Wikipedia, Bitcoin is "a decentralized digital currency that enables instant payments to anyone, anywhere in the world." Bitcoin "uses peer-to-peer technology to operate with no central authority: transaction management and money issuance are carried out collectively by the network." We can see Bitcoin's characteristics from this definition:
+
+- It is a digitial currency.
+- It does not rely on any centralized party, hence "decentralized."
+- Payments can be made between users directly.
+- Money tracking and issurance is not controlled by a centralized party but done by the whole Bitcoin network.
+
+Many other forms of digital currencies had existed before Bitcoin but they were all based on the centralized trust model. The key challenge of not using a centralized trusted party is how to prevent the **double-spending issue**. Smartly, Bitcoin solves it with a process called **Proof-of-Work(PoW)** which we will discuss in depth later.
+
+If we use cash in our everyday life, the double-spending issue is usually avoided because once we give a bill to somebody else, we don't own that bill anymore and can't spend the same bill again. However, a person may use counterfeits to do the double-spending. If this person has only one $100 dollar bill, he can only buy goods that's worth $100. However, he may use a counterfeit of a $100 bill to buy more goods. Now he owns goods that's worth $200 in total. Alternatively, when he buys goods from the seller, he may pay the seller with paper instead of the real bills by playing malicious tricks. He could then use the real bills again.
+
+When it comes to the online banking, the double-spending issue is usually avoided because the trusted central authority, the banks, tracks the amount of money each party owns.
+
+### Bitcoin and Blockchain
+
+Bitcoin and Blockchain are not the same thing. Blockchain is the infrastructural technology that Bitcoin is built upon. In fact, many other digital currencies after Bitcoin are all built on the same Blockchain technology. Blockchain to Bitcoin is like Internet to e-mail.
+
+### Read On
+
+What you have read so far may not make much sense yet. That's OK. Read on, and you will learn more about them.
+
 ## Prerequisite Knowledge
 
 In order to understand the blockchain technology better, it is highly recommended to learn about the knowledge below before you proceed.
@@ -85,22 +127,6 @@ Why is the technology called "blockchain"? Because it is a "chain" of "blocks" w
 Later, I will explain what every "block" contains and how they are "chained" together.
 
 Blockchain is the fundamental technology to implement cryptocurrencies, the most well known one of which is Bitcoin. Bitcoin is similar to the fiat currency like the US dollars that we use every day, and the blockchain is the mechanism and rules that everybody follows to prevent this currency from being misused. Throughout this article, I'll use Bitcoin to explain how the blockchain works.
-
-### The Motive of Blockchain
-
-Why was the blockchain technology invented? Because its inventor, [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto), wanted to remove the central trusted financial institute, i.e. the banks, to allow the buyers to pay **directly** to the sellers **without the double-spending issue**.
-
-If we use cash in our everyday life, the double-spending issue is usually avoided because once we give a bill to somebody else, we don't own that bill anymore and can't spend the same bill again. However, a person may use counterfeits to do the double-spending. If this person has only one $100 dollar bill, he can only buy goods that's worth $100. However, he may use a counterfeit of a $100 bill to buy more goods. Now he owns goods that's worth $200 in total. Alternatively, when he buys goods from the seller, he may pay the seller with paper instead of the real bills by playing malicious tricks. He could then use the real bills again.
-
-When it comes to the online banking, the double-spending issue is usually avoided because the trusted central authority, the banks, tracks the amount of money each party owns. A central authority may suffer from two problems:
-
-- The central authority is the single failure point. When it fails to function properly, its clients won't be able to do business.
-- The central authority increases the cost because it needs to hire a lot of people to keep it functioning properly.
-
-The blockchain technology aims to solve these two problems:
-
-- The distributed nature of the blockchain technology eliminates the single-point failure issue.
-- The blockchain is structured in the peer-to-peer structure which allows two users exchange money directly.
 
 ### Blockchain Is The Ledger
 
