@@ -1,5 +1,7 @@
 # Vocabulary
 
+- argue
+  - lock horns (with someone): To get into an argument with someone.
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - for ever
