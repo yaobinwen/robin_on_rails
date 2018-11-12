@@ -2,12 +2,20 @@
 
 - argue
   - lock horns (with someone): To get into an argument with someone.
+- ask
+  - interrogate: 审问，盘问
+    - _Thousands of dissidents have been interrogated or imprisoned in recent weeks._
 - at the same time
   - in tandem
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
+- form
+  - incarnation: 这个单词的基本意是"a particular life, in religions that believe that we have many lives"，所以在句子"This film is the latest incarnation of a fairy tale that dates back to the Middle Ages."里面，incarnation解释为“演绎”的意思，可以看成了导演给这个故事的一次新的生命。
+- promising
+  - auspicious: _adj_, FORMAL: suggesting a positive and successful future
+    - _Our first meeting was not auspicious - we had a huge argument._
 - ready
   - poised: ready to do a particular thing at any moment
     - _The company is poised to launch its new advertising campaign._
@@ -16,3 +24,5 @@
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
     - _eg_ It rained intermittently all day.
+- worry
+  - apprehension: _It's normal to feel a little apprehension before starting a new job._
