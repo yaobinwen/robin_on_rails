@@ -23,14 +23,7 @@
 #include <stddef.h>
 #include <stdio.h>
 
-#ifdef _LIBC
-# define __MALLOC_HOOK_VOLATILE
-# define __MALLOC_DEPRECATED
-#else
-# define __MALLOC_HOOK_VOLATILE volatile
-# define __MALLOC_DEPRECATED __attribute_deprecated__
-#endif
-
+#include "macros.h"
 
 /* Allocate SIZE bytes of memory.  */
 extern void *malloc (size_t __size) __THROW __attribute_malloc__ __wur;
@@ -118,6 +111,8 @@ extern struct mallinfo mallinfo (void) __THROW;
 /* General SVID/XPG interface to tunable parameters. */
 extern int mallopt (int __param, int __val) __THROW;
 
+extern int __libc_mallopt (int param_number, int value);
+
 /* Release all but __pad bytes of freed top-most memory back to the
    system. Return 1 if successful, else 0. */
 extern int malloc_trim (size_t __pad) __THROW;
@@ -139,39 +134,7 @@ extern void *malloc_get_state (void) __THROW;
    malloc_get_state(). */
 extern int malloc_set_state (void *__ptr) __THROW;
 
-/* Called once when malloc is initialized; redefining this variable in
-   the application provides the preferred way to set up the hook
-   pointers. */
-extern void (*__MALLOC_HOOK_VOLATILE __malloc_initialize_hook) (void)
-__MALLOC_DEPRECATED;
-/* Hooks for debugging and user-defined versions. */
-extern void (*__MALLOC_HOOK_VOLATILE __free_hook) (void *__ptr,
-                                                   const void *)
-__MALLOC_DEPRECATED;
-extern void *(*__MALLOC_HOOK_VOLATILE __malloc_hook)(size_t __size,
-                                                     const void *)
-__MALLOC_DEPRECATED;
-extern void *(*__MALLOC_HOOK_VOLATILE __realloc_hook)(void *__ptr,
-                                                      size_t __size,
-                                                      const void *)
-__MALLOC_DEPRECATED;
-extern void *(*__MALLOC_HOOK_VOLATILE __memalign_hook)(size_t __alignment,
-                                                       size_t __size,
-                                                       const void *)
-__MALLOC_DEPRECATED;
-extern void (*__MALLOC_HOOK_VOLATILE __after_morecore_hook) (void);
-
 /* Activate a standard set of debugging hooks. */
 extern void __malloc_check_init (void) __THROW __MALLOC_DEPRECATED;
-
-
-/* In the GNU libc we rename the global variable
-   `__malloc_initialized' to `__libc_malloc_initialized'.  */
-#define __malloc_initialized __libc_malloc_initialized
-/* Nonzero if the malloc is already initialized.  */
-extern int __malloc_initialized;
-
-struct malloc_state;
-typedef struct malloc_state *mstate;
 
 #endif /* malloc.h */
