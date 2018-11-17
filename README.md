@@ -34,3 +34,4 @@ This section lists the other sources of kownledge and data.
   - [The Global Competitiveness Report 2018](https://www.weforum.org/reports/the-global-competitveness-report-2018)
   - [The Future of Jobs Report 2018](https://www.weforum.org/reports/the-future-of-jobs-report-2018)
   - [Building Block(chain)s for a Better Planet](https://www.weforum.org/reports/building-block-chain-for-a-better-planet)
+- [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar)
