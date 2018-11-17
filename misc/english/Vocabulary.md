@@ -18,6 +18,11 @@
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
   - incarnation: 这个单词的基本意是"a particular life, in religions that believe that we have many lives"，所以在句子"This film is the latest incarnation of a fairy tale that dates back to the Middle Ages."里面，incarnation解释为“演绎”的意思，可以看成了导演给这个故事的一次新的生命。
+- happy
+  - blissful: extremely or completely happy
+    - _We spent a blissful year together before things started to go wrong._
+  - in blissful ignorance: not knowing any of the unpleasant facts about something
+    - _All the time his business was failing, he kept his wife and family in blissful ignorance._
 - promising
   - auspicious: _adj_, FORMAL: suggesting a positive and successful future
     - _Our first meeting was not auspicious - we had a huge argument._
