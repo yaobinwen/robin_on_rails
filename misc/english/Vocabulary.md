@@ -1,5 +1,8 @@
 # Vocabulary
 
+- approve
+  - ratify: (especially of governments or organizations) to make an agreement official
+    - _The decision will have to be ratified (= approved) by the executive board._
 - argue
   - lock horns (with someone): To get into an argument with someone.
 - ask
@@ -9,6 +12,8 @@
   - in tandem
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
+- confuse
+  - perplex
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
@@ -24,5 +29,12 @@
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
     - _eg_ It rained intermittently all day.
+- shy
+  - bashful
+  - diffident
+- together
+  - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
+- unsuccessful
+  - abortive: _He made two abortive attempts on the French throne._
 - worry
   - apprehension: _It's normal to feel a little apprehension before starting a new job._
