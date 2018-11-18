@@ -41,5 +41,8 @@
   - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
 - unsuccessful
   - abortive: _He made two abortive attempts on the French throne._
+- urgent
+  - imperative: extremely important or urgent
+    - _It's imperative to act now before the problem gets really serious._
 - worry
   - apprehension: _It's normal to feel a little apprehension before starting a new job._
