@@ -39,6 +39,9 @@
   - diffident
 - together
   - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
+- true
+  - faithful: true to the facts or the original
+    - _This meant that languages which required accented characters couldn’t be faithfully represented in ASCII._ See [this page](https://docs.python.org/2/howto/unicode.html).
 - unsuccessful
   - abortive: _He made two abortive attempts on the French throne._
 - urgent
