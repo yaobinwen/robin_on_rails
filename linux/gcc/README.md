@@ -84,3 +84,6 @@ Look at [its manpage](http://manpages.ubuntu.com/manpages/xenial/man1/avr-nm.1.h
 
 `make VERBOSE=1`: Show the commands that `make` runs to compile/link the code.
 
+## std::string vs std::__cxx11::string
+
+See the page [Dual ABI](https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html). `std::_cxx11::basic_string` wasn't introduced into `libstdc++.so` until GCC 5.1. If you are still building the code using GCC earlier than 5.1, you won't be able to use the 3rd-party libraries that are built using GCC 5.1+ with `_GLIBCXX_USE_CXX11_ABI` defined.
