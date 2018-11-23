@@ -17,6 +17,11 @@
 - damage
   - vandalize: to intentionally damage property belonging to other people
     - _Bored teenagers went around vandalizing phoneboxes._
+- driver/drive
+  - chauffeur /ʃoʊˈfɝː/ (stress at the second syllable)
+    - noun[C] someone whose job is to drive a car for a rich or important person
+    - verb[T] to drive someone somewhere
+      - _His mother spoils him terribly and chauffeurs him (around/about) everywhere._
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
