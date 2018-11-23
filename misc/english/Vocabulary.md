@@ -14,6 +14,9 @@
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - confuse
   - perplex
+- damage
+  - vandalize: to intentionally damage property belonging to other people
+    - _Bored teenagers went around vandalizing phoneboxes._
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
