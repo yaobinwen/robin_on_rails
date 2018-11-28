@@ -141,6 +141,10 @@ Use patches to change the code if it doesn't compile.
 
 ## Miscellaneous
 
+## Upstream vs Downstream
+
+See this question: [What is the difference between upstream and downstream when referring to who to go to as a developer?](https://askubuntu.com/questions/4868/what-is-the-difference-between-upstream-and-downstream-when-referring-to-who-to)
+
 ### Virtual Package
 
 [Virtual Package](https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html#s-virtual) is essentially a functional interface. All the real packages that provide this "virtual package" implement this function. When we say, in the FAQ document, for example, that `exim4` and `sendmail` provide the virtual package `mail-transport-agent`, they actually implement this functionality which is compatible to each other. In fact, the FAQ document itself also says this way:
