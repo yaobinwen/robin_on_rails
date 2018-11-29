@@ -48,6 +48,8 @@ Also look at here: [Comparison of X Window System desktop environments](https://
 
 [`gsettings`](https://wiki.gnome.org/HowDoI/GSettings) is the tool to configure application settings on GNOME. `GSettings` can be seen as a database so it has the concept of `schemas`, `keys` and `values`.
 
+The settings don't seem to have good documentation. The best I can find is the [actual schema definitions (which have the summary for each entry)](https://github.com/GNOME/gsettings-desktop-schemas/tree/gnome-3-28/schemas). Note this link is **NOT** the `master` branch.
+
 Here is basic information about [`gconf`](https://en.wikipedia.org/wiki/GConf):
 
 > GConf was a system used by the GNOME desktop environment for storing configuration settings for the desktop and applications. It is similar to the Windows Registry.
