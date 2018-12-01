@@ -45,6 +45,8 @@
 - shy
   - bashful
   - diffident
+- successful
+  - blockbuster: a book or film that is very successful: _a blockbuster movie/novel_
 - together
   - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
 - true
