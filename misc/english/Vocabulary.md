@@ -58,4 +58,6 @@
   - imperative: extremely important or urgent
     - _It's imperative to act now before the problem gets really serious._
 - worry
+  - agitate: /ˈædʒ.ə.teɪt/ to make someone feel worried or angry
+    - _What is the purpose of education? This question agitates scholars, teachers, statesmen, every group, in fact, of thoughtful men and women._
   - apprehension: _It's normal to feel a little apprehension before starting a new job._
