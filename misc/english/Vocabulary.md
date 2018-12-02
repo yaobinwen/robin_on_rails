@@ -17,11 +17,17 @@
 - damage
   - vandalize: to intentionally damage property belonging to other people
     - _Bored teenagers went around vandalizing phoneboxes._
+- done:
+  - wrought: /rɑːt/ made or done in a careful or decorative way
+    - _The new album contains some carefully-wrought new songs and a number of familiar hits._
 - driver/drive
   - chauffeur /ʃoʊˈfɝː/ (stress at the second syllable)
     - noun[C] someone whose job is to drive a car for a rich or important person
     - verb[T] to drive someone somewhere
       - _His mother spoils him terribly and chauffeurs him (around/about) everywhere._
+- effort:
+  - exert: exert yourself: to make a mental or physical effort
+    - _He was saying that, no matter what conditions existed, the blame lay no more heavily on the politician and his machine controlling city, State, or nation, than on the shoulders of the average citizen who concerned himself so little with his government that he allowed men to stay in power in spite of his dissatisfaction because he was too indifferent to exert himself to get better men in office._
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
@@ -31,6 +37,12 @@
     - _We spent a blissful year together before things started to go wrong._
   - in blissful ignorance: not knowing any of the unpleasant facts about something
     - _All the time his business was failing, he kept his wife and family in blissful ignorance._
+- interested
+  - indifferent: not thinking about or interested in someone or something
+    - _Why don't you vote - how can you be so indifferent (to what is going on)?_
+- prevent
+  - avert: /əˈvɝːt/ to prevent something bad from happening
+    - _At that time Theodore Roosevelt's example was for the first time awakening in many young men of America the feeling that their citizenship meant a little more than the privilege of living under the Stars and Stripes, criticizing the conditions of government and the men responsible for its policies and activities, enjoying such advantages as there might be under it, and, if necessary, dying for it in a war which they had had no share in bringing on or in trying to avert._
 - promising
   - auspicious: _adj_, FORMAL: suggesting a positive and successful future
     - _Our first meeting was not auspicious - we had a huge argument._
@@ -42,6 +54,9 @@
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
     - _eg_ It rained intermittently all day.
+- rule
+  - precept: /ˈpriː.sept/ a rule for action or behaviour, especially obtained from moral thought
+    - _Theodore Roosevelt was teaching by precept and example that men owed something at all times, whether in peace or in war, for the privilege of citizenship and that the burden rested equally on rich and poor._
 - shy
   - bashful
   - diffident
