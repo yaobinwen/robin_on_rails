@@ -16,9 +16,10 @@ See the notes in "Purdue_OWL.md".
 
 [Freakonomics](http://freakonomics.com/) is good because it offers a wide range of topics about the society which help you accumulate relevant vocabulary. It also provides transcripts for most of the podcasts so it is good for listening practice. Thirdly, the transcripts have the links to external resources that you can learn about.
 
-| Episode | Title | Summary | Release Date | Studied? | Notes |
-|:--------|:------|:--------|:-------------|:---------|:------|
-| 359 | [Should America Be Run by … Trader Joe’s?](http://freakonomics.com/podcast/trader-joes/) | The quirky little grocery chain with California roots and German ownership has a lot to teach all of us about choice architecture, efficiency, frugality, collaboration, and team spirit. | 11/28/18 | No | |
+| Episode | Title | Summary | Studied? | Notes |
+|:--------|:------|:--------|:---------|:------|
+| 359 | [Should America Be Run by … Trader Joe’s?](http://freakonomics.com/podcast/trader-joes/) | The quirky little grocery chain with California roots and German ownership has a lot to teach all of us about choice architecture, efficiency, frugality, collaboration, and team spirit. | No | |
+| 285 | [There’s a War on Sugar. Is It Justified? (Rebroadcast)](http://freakonomics.com/podcast/sugar-rebroadcast/) | Some people argue that sugar should be regulated, like alcohol and tobacco, on the grounds that it’s addictive and toxic. How much sense does that make? We hear from a regulatory advocate, an evidence-based skeptic, a former F.D.A. commissioner — and the organizers of Milktoberfest. | No | |
 
 ## References
 
