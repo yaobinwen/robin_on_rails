@@ -12,6 +12,14 @@ In contrast, improving your language can help you live a better life. It allows 
 
 See the notes in "Purdue_OWL.md".
 
+## Freakonomics Radio
+
+[Freakonomics](http://freakonomics.com/) is good because it offers a wide range of topics about the society which help you accumulate relevant vocabulary. It also provides transcripts for most of the podcasts so it is good for listening practice. Thirdly, the transcripts have the links to external resources that you can learn about.
+
+| Episode | Title | Summary | Release Date | Studied? | Notes |
+|:--------|:------|:--------|:-------------|:---------|:------|
+| 359 | [Should America Be Run by … Trader Joe’s?](http://freakonomics.com/podcast/trader-joes/) | The quirky little grocery chain with California roots and German ownership has a lot to teach all of us about choice architecture, efficiency, frugality, collaboration, and team spirit. | 11/28/18 | No | |
+
 ## References
 
 - [The Punctuation Guide](http://www.thepunctuationguide.com/index.html): This is an indexing guide on which you can search based on each punctuation.
