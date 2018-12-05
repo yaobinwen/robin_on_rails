@@ -67,6 +67,9 @@
 - true
   - faithful: true to the facts or the original
     - _This meant that languages which required accented characters couldn’t be faithfully represented in ASCII._ See [this page](https://docs.python.org/2/howto/unicode.html).
+- unpleasant
+  - horrendous: extremely unpleasant or bad
+    - _I speak as an education professional who predicted all the failings of the testing movement which have come to pass including the horrendous drop-out rate and the bored minds of our students!_
 - unsuccessful
   - abortive: _He made two abortive attempts on the French throne._
 - urgent
