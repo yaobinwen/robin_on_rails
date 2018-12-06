@@ -1,5 +1,9 @@
 # Vocabulary
 
+- alone
+  - solitary
+    - _On the hill, a solitary figure was busy chopping down trees._
+    - _fishing and other solitary pastimes_
 - approve
   - ratify: (especially of governments or organizations) to make an agreement official
     - _The decision will have to be ratified (= approved) by the executive board._
