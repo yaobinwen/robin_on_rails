@@ -37,3 +37,11 @@ This section lists the other sources of kownledge and data.
 - [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar)
 - [Circular Economy](https://www.ellenmacarthurfoundation.org/circular-economy/concept)
   - This is an idea Ellen talked about in her TED talk: [The surprising thing I learned sailing solo around the world](https://www.ted.com/talks/dame_ellen_macarthur_the_surprising_thing_i_learned_sailing_solo_around_the_world)
+
+## Miscellaneous
+
+This section has the things I haven't categorized yet.
+
+- [XeTeX](https://en.wikipedia.org/wiki/XeTeX): A TeX typesetting engine using Unicode and supporting modern font technologies.
+- [Matplotlib](https://matplotlib.org/): A Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+- [Jinja2](http://jinja.pocoo.org/): Jinja2 is a full featured template engine for Python.
