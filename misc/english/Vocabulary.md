@@ -21,6 +21,9 @@
 - damage
   - vandalize: to intentionally damage property belonging to other people
     - _Bored teenagers went around vandalizing phoneboxes._
+- danger
+  - peril: [ C/U ] danger, or something that is dangerous
+    - _[ U ] The president said that we are entering a time of great peril._
 - done:
   - wrought: /rɑːt/ made or done in a careful or decorative way
     - _The new album contains some carefully-wrought new songs and a number of familiar hits._
@@ -32,6 +35,9 @@
 - effort:
   - exert: exert yourself: to make a mental or physical effort
     - _He was saying that, no matter what conditions existed, the blame lay no more heavily on the politician and his machine controlling city, State, or nation, than on the shoulders of the average citizen who concerned himself so little with his government that he allowed men to stay in power in spite of his dissatisfaction because he was too indifferent to exert himself to get better men in office._
+- full
+  - fraught (with): full of (unpleasant things such as problems or dangers)
+    - _I would **not** #define out `virtual`, that is fraught with peril. Just leave the functions always virtual._
 - for ever
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
