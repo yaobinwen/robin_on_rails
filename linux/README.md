@@ -9,6 +9,7 @@ Although this folder is called "Linux", most of the information is actually for 
 ## Books and References
 
 - [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/): The book is centered around three conceptual pieces that are fundamental to operating systems: virtualization, concurrency, and persistence.
+- [Advanced Programming in the UNIX® Environment](http://www.apuebook.com/)
 
 ## Commands
 
