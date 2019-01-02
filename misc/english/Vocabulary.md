@@ -18,12 +18,19 @@
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - confuse
   - perplex
+- conflicting
+  - ambivalent: _adj_ having two opposing feelings at the same time, or being uncertain about how you feel (（心情）矛盾的)
+    - _My wife loves the opera, but I have ambivalent feelings about it._
 - damage
   - vandalize: to intentionally damage property belonging to other people
     - _Bored teenagers went around vandalizing phoneboxes._
 - danger
   - peril: [ C/U ] danger, or something that is dangerous
     - _[ U ] The president said that we are entering a time of great peril._
+- difficulty
+  - predicament: _FORMAL_ an unpleasant or confusing situation that is difficult to get out of or solve
+    - _With no money and no job, he found himself in a real predicament._
+    - _I am not a systems guy, I am a Software Engineer that has a habit of getting into predicaments that are outside of his job description._ (See [source](https://serverfault.com/q/318104/125167).)
 - done:
   - wrought: /rɑːt/ made or done in a careful or decorative way
     - _The new album contains some carefully-wrought new songs and a number of familiar hits._
@@ -76,6 +83,10 @@
   - diffident
 - successful
   - blockbuster: a book or film that is very successful: _a blockbuster movie/novel_
+- support
+  - second: vt, to make a formal statement of support for a suggestion made by someone else during a meeting in order to allow a discussion or vote
+    - _I second the motion to adjourn._
+    - _I'd second the idea of a non-writable root filesystem._ (See [source](https://serverfault.com/a/318140/125167).)
 - together
   - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
 - true
