@@ -45,3 +45,4 @@ This section has the things I haven't categorized yet.
 - [XeTeX](https://en.wikipedia.org/wiki/XeTeX): A TeX typesetting engine using Unicode and supporting modern font technologies.
 - [Matplotlib](https://matplotlib.org/): A Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
 - [Jinja2](http://jinja.pocoo.org/): Jinja2 is a full featured template engine for Python.
+- [GEXF File Format](https://gephi.org/gexf/format/index.html): "GEXF (Graph Exchange XML Format) is a language for describing complex networks structures, their associated data and dynamics."
