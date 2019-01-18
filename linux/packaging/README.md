@@ -141,7 +141,7 @@ Use patches to change the code if it doesn't compile.
 
 ## Miscellaneous
 
-## Upstream vs Downstream
+### Upstream vs Downstream
 
 See this question: [What is the difference between upstream and downstream when referring to who to go to as a developer?](https://askubuntu.com/questions/4868/what-is-the-difference-between-upstream-and-downstream-when-referring-to-who-to)
 
