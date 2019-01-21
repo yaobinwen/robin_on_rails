@@ -92,6 +92,9 @@
 - true
   - faithful: true to the facts or the original
     - _This meant that languages which required accented characters couldn’t be faithfully represented in ASCII._ See [this page](https://docs.python.org/2/howto/unicode.html).
+- unique
+  - unparalleled: having no equal; better or greater than any other
+    - _Capitalism as an economic system has led to unparalleled innovation and improvement in the human condition._ ([Human-Centered Capitalism](https://www.yang2020.com/policies/human-capitalism/))
 - unpleasant
   - horrendous: extremely unpleasant or bad
     - _I speak as an education professional who predicted all the failings of the testing movement which have come to pass including the horrendous drop-out rate and the bored minds of our students!_
