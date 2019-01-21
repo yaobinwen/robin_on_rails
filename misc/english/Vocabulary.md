@@ -61,6 +61,11 @@
   - salient _[ not gradable ]_ most noticeable or important (已经有“最重要”之意所以不可比较)
     - _She began to summarize the salient features/points of the proposal._
     - _The article presented the salient facts of the dispute clearly and concisely._
+- obey
+  - observe: _FORMAL_ to obey a law, rule, or custom
+    - [_Buses will observe the bus stops on the diversion at Crown Street_](https://english.stackexchange.com/q/471077/7342)
+    - [_President Ronald Reagan signed the holiday into law in 1983, and it was first observed three years later._](https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day)
+    - observe在这里表示“遵守”的意思，其对应的名词是"observance"。如果表示“观察”的话，其对应的名词是"observation"。
 - prevent
   - avert: /əˈvɝːt/ to prevent something bad from happening
     - _At that time Theodore Roosevelt's example was for the first time awakening in many young men of America the feeling that their citizenship meant a little more than the privilege of living under the Stars and Stripes, criticizing the conditions of government and the men responsible for its policies and activities, enjoying such advantages as there might be under it, and, if necessary, dying for it in a war which they had had no share in bringing on or in trying to avert._
