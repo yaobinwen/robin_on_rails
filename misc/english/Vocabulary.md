@@ -53,6 +53,14 @@
   - in perpetuity (/ˌpɝː.pəˈtuː.ə.t̬i/) (FORMAL)
 - form
   - incarnation: 这个单词的基本意是"a particular life, in religions that believe that we have many lives"，所以在句子"This film is the latest incarnation of a fairy tale that dates back to the Middle Ages."里面，incarnation解释为“演绎”的意思，可以看成了导演给这个故事的一次新的生命。
+- hate
+  - loathe: /ləʊð/ to hate someone or something (Don't confuse with 'loath'.)
+    - _From an early age the brothers have loathed each other._
+    - _"Do you like fish?" "No, I loathe it."_
+  - revulsion: a strong, often sudden, feeling that something is extremely unpleasant
+    - _I turned away in revulsion when they showed a close-up of the operation._
+    - _She looked at him with revulsion._
+    - _He expressed his revulsion at/against/towards the whale hunting._
 - happy
   - blissful: extremely or completely happy
     - _We spent a blissful year together before things started to go wrong._
@@ -87,6 +95,10 @@
 - rule
   - precept: /ˈpriː.sept/ a rule for action or behaviour, especially obtained from moral thought
     - _Theodore Roosevelt was teaching by precept and example that men owed something at all times, whether in peace or in war, for the privilege of citizenship and that the burden rested equally on rich and poor._
+- shake
+  - quiver: to shake slightly, often because of strong emotion.
+    - _Lennie's bottom lip quivered and tears started in his eyes._
+    - _The professor devotes a special paragraph to the vile expression 'the fact that', a phrase that causes him to quiver with revulsion._ (The Elements of Style, Introduction)
 - shy
   - bashful
   - diffident
@@ -107,6 +119,10 @@
 - unpleasant
   - horrendous: extremely unpleasant or bad
     - _I speak as an education professional who predicted all the failings of the testing movement which have come to pass including the horrendous drop-out rate and the bored minds of our students!_
+  - vile: unpleasant, immoral, and unacceptable
+    - _This vile policy of ethnic cleansing must be stopped._
+    - _This cheese smells vile._
+    - _He responded with the vilest language imaginable._
 - unsuccessful
   - abortive: _He made two abortive attempts on the French throne._
 - urgent
