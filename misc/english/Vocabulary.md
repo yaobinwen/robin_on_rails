@@ -78,6 +78,13 @@
     - [_Buses will observe the bus stops on the diversion at Crown Street_](https://english.stackexchange.com/q/471077/7342)
     - [_President Ronald Reagan signed the holiday into law in 1983, and it was first observed three years later._](https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day)
     - observe在这里表示“遵守”的意思，其对应的名词是"observance"。如果表示“观察”的话，其对应的名词是"observation"。
+- opinion
+  - vantage point: _FORMAL_ a particular personal way of thinking or set of opinions
+    - _I asked him how, from his vantage point, the media have changed over the years._
+    - _The documentary contains a first-hand description of political life in Havana from the vantage point of a senior bureaucrat._
+- place
+  - vantage point: a place that provides a good view
+    - _From our vantage point atop the mountain, we could see the whole city below._
 - prevent
   - avert: /əˈvɝːt/ to prevent something bad from happening
     - _At that time Theodore Roosevelt's example was for the first time awakening in many young men of America the feeling that their citizenship meant a little more than the privilege of living under the Stars and Stripes, criticizing the conditions of government and the men responsible for its policies and activities, enjoying such advantages as there might be under it, and, if necessary, dying for it in a war which they had had no share in bringing on or in trying to avert._
