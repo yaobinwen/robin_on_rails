@@ -12,6 +12,12 @@ In contrast, improving your language can help you live a better life. It allows 
 
 See the notes in "Purdue_OWL.md".
 
+## Grammar
+
+### Articles
+
+The article [_Articles_](https://www.grammarly.com/blog/articles/) provides a good overview on this topic. Pay more attention to the section _Omission of Articles_. The article [_Geographical Use of the Definite Article, The_](https://www.grammarly.com/blog/geographical-use-the/) talks specifically about the definite article "the".
+
 ## Freakonomics Radio
 
 [Freakonomics](http://freakonomics.com/) is good because it offers a wide range of topics about the society which help you accumulate relevant vocabulary. It also provides transcripts for most of the podcasts so it is good for listening practice. Thirdly, the transcripts have the links to external resources that you can learn about.
