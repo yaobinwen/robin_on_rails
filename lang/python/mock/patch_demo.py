@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 
 '''This file contains examples of using `mock.patch`. For its documentation,
