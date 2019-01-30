@@ -163,5 +163,86 @@ class TestMockSpecSet(_TestMockBase):
         self.assertEqual(m.world, 456)
 
 
+class TestMockSideEffect(_TestMockBase):
+    '''Demo the use of side_effect.
+    '''
+
+    def test_same_func_args_as_mock(self):
+        '''side_effect is called with the same arguments as the mock.
+        '''
+        def grow_one_year(person, *args, **kwargs):
+            self.assertIs(person, p)
+            self.assertTupleEqual(args, (1, 2, 3,))
+            self.assertDictEqual(kwargs, {'msg1': 'hello', 'msg2': 'world'})
+            person._age += 1
+            return mock.DEFAULT
+
+        p = _Person(name='John Doe', age=23)
+        m = mock.Mock(side_effect=grow_one_year)
+        m(p, 1, 2, 3, msg1='hello', msg2='world')
+
+        self.assertEqual(p.age(), 24)
+
+    def test_return_value(self):
+        '''If not returning DEFAULT, side_effect return value is used as the
+        mock's return value.
+        '''
+        def ret_1():
+            return 1
+
+        def ret_None():
+            return None
+
+        def ret_DEFAULT():
+            return mock.DEFAULT
+
+        m = mock.Mock(side_effect=ret_1)
+        self.assertEqual(m(), 1)
+
+        m = mock.Mock(side_effect=ret_None)
+        self.assertIsNone(m())
+
+        m = mock.Mock(side_effect=ret_DEFAULT)
+        # The return value is not mock.DEFAULT but a new mock. See
+        # 'Mock.return_value' attribute.
+        self.assertIsInstance(m(), mock.Mock)
+
+    def test_exception(self):
+        '''If an exception class or object, it raises that exception.
+        '''
+        class MyExcept(Exception):
+            pass
+
+        m = mock.Mock(side_effect=MyExcept)
+        try:
+            m()
+            self.fail('An exception of MyExcept is expected.')
+        except MyExcept:
+            pass
+
+        m = mock.Mock(side_effect=MyExcept('error 123'))
+        try:
+            m()
+            self.fail('An exception of MyExcept is expected.')
+        except MyExcept as ex:
+            self.assertIn('error 123', str(ex))
+
+    def test_iterable(self):
+        '''If an iterable object, side_effect returns the next value in each
+        call.
+        '''
+        m = mock.Mock(side_effect=[1, 2, 3])
+        self.assertEqual(m(), 1)
+        self.assertEqual(m(), 2)
+        self.assertEqual(m(), 3)
+        self.assertRaises(StopIteration, m)
+
+        m = mock.Mock(side_effect={'k1':1, 'k2':2})
+        # NOTE(ywen): dict is iterable but the order is not intuitive. Use with
+        # caution.
+        self.assertEqual(m(), 'k2')
+        self.assertEqual(m(), 'k1')
+
+
 if __name__ == '__main__':
     unittest.main()
