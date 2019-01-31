@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+'''This file contains examples of using `rsync`. For its documentation,
+see: http://manpages.ubuntu.com/manpages/trusty/man1/rsync.1.html
+This document is referred to as `DOC` in the code.
+'''
 
 import argparse
 import contextlib
@@ -67,16 +71,14 @@ def _make_dir(p, spec):
         # Hard links and non-text files are not supported yet.
         ftype = name[:1]
         fname = name[2:]
+        fpath = os.path.join(p, fname)
         if ftype == 'L':
-            fpath = os.path.join(p, fname)
             os.symlink(src=content, dst=fpath)
         elif ftype == 'F':
-            fpath = os.path.join(p, fname)
             with open(fpath, 'w') as fd:
                 if content is not None:
                     fd.write(str(content))
         elif ftype == 'D':
-            fpath = os.path.join(p, fname)
             os.mkdir(fpath)
             _make_dir(fpath, content)
             pass
@@ -86,32 +88,22 @@ def _make_dir(p, spec):
             )
 
 
-# _DEFAULT_DIR_SPEC creates the tree as follows:
-# src
-# ├── d1
-# │   ├── d11
-# │   │   └── l111 -> ../f11
-# │   └── f11
-# ├── d2
-# │   ├── d21
-# │   ├── f21
-# │   └── l21 -> ../d1
-# ├── f1
-# ├── f2
-# ├── l1 -> ./d1
-# ├── l2 -> ./f1
-# └── l3 -> ./l1
 _DEFAULT_DIR_SPEC = {
     'D_d1': {
         'D_d11': {
-            'L_l111': '../f11',
+            'L_l111': '../../f1',   # Point outside of d1
+        },
+        'D_d12': {
+            'L_l121': '../f11',     # Point inside of d1
         },
         'F_f11': 'f11',
+        'F_f12': 'f12',
+        'L_l11': './f11',
+        'L_l12': './f12',
     },
     'D_d2': {
-        'D_d21': {},
+        'D_d21': {},    # Empty directory
         'F_f21': 'f21',
-        'L_l21': '../d1',
     },
     'F_f1': 'f1',
     'F_f2': 'f2',
@@ -150,13 +142,48 @@ class _RsyncTestBase(unittest.TestCase):
         cmd = ['rsync'] + options + default_options + [src, dst]
         subprocess.check_call(cmd, cwd=self._method_dir)
 
+    def _verify_dst(self, spec, dst=None):
+        if dst is None:
+            dst = os.path.join(self._method_dir, 'dst')
+
+        def _verify_dir(p, spec):
+            for name, content in spec.items():
+                ftype = name[:1]
+                fname = name[2:]
+                fpath = os.path.join(p, fname)
+                if ftype == 'L':
+                    self.assertTrue(os.path.islink(fpath))
+                    self.assertEqual(os.readlink(fpath), content)
+                elif ftype == 'F':
+                    self.assertTrue(
+                        os.path.isfile(fpath) and not os.path.islink(fpath)
+                    )
+                    with open(fpath, 'r') as fd:
+                        actual = fd.read()
+                    expected = content if content is not None else ''
+                    self.assertEqual(actual, expected)
+                elif ftype == 'D':
+                    self.assertTrue(
+                        os.path.isdir(fpath) and not os.path.islink(fpath)
+                    )
+                    _verify_dir(fpath, content)
+                else:
+                    raise ValueError(
+                        'Unrecognized type "{ftype}"'.format(ftype=ftype)
+                    )
+
+        _verify_dir(dst, spec)
+
+
 class Test_r_recursive(_RsyncTestBase):
 
     def test_r(self):
         self._call_rsync(options=[])
+        # TODO(ywen): Add asserts.
 
     def test_no_r(self):
         self._call_rsync(options=[], default_options=[])
+        # TODO(ywen): Add asserts.
 
 
 class Test_l_links(_RsyncTestBase):
@@ -165,9 +192,7 @@ class Test_l_links(_RsyncTestBase):
 
     def test_l(self):
         self._call_rsync(options=['-l'])
-
-    def test_no_l(self):
-        self._call_rsync(options=[])
+        # TODO(ywen): Add asserts.
 
 
 class Test_L_copy_links(_RsyncTestBase):
@@ -176,9 +201,32 @@ class Test_L_copy_links(_RsyncTestBase):
 
     def test_L(self):
         self._call_rsync(options=['-L'])
+        # TODO(ywen): Add asserts.
 
-    def test_no_L(self):
-        self._call_rsync(options=[])
+
+class Test_copy_unsafe_links(_RsyncTestBase):
+    ''' --copy-un-safe-links
+    See 'DOC:SYMBOLIC LINKS' section for more.
+    '''
+
+    def test_copy_unsafe_links(self):
+        self._call_rsync(
+            options=['--links', '--copy-unsafe-links'],
+            src='src/d1/'
+        )
+        self._verify_dst(spec={
+            'D_d11': {
+                # 'l111' is turned from a link to a file because it is unsafe.
+                'F_l111': 'f1'
+            },
+            'D_d12': {
+                'L_l121': '../f11'
+            },
+            # Do not have to verify the entire tree. Just verify the concerned
+            # part.
+            'L_l11': './f11',
+            'L_l12': './f12',
+        })
 
 
 def main(tmpdir, save_tmpdir):
