@@ -10,15 +10,19 @@ This document is referred to as `DOC` in the code.
 import argparse
 import contextlib
 import datetime
+import collections
 import os
+import pathlib
+import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 
 
-# Initially, it's None.
+# The temporary directory that stores all the test files.
 _RSYNC_TMPDIR = None
 
 
@@ -91,6 +95,19 @@ def _make_dir(p, spec):
 
 
 def _verify_dir_non_strict(p, spec, tc):
+    '''Verify the directory tree against the spec in a non-strict way.
+
+    Args:
+        p: The path of the directory to be verified. It must exist.
+        spec: The spec the directory tree must conform.
+        tc: A 'unittest.TestCase' instance.
+
+    Notes:
+        Being "non-strict" means the directory tree may have more files than
+        what the spec requires. For example, the spec may say "file f1 must
+        exist", then it is perfectly OK if the directory have other files
+        besides "f1".
+    '''
     for name, content in spec.items():
         ftype = name[:1]
         fname = name[2:]
@@ -118,6 +135,20 @@ def _verify_dir_non_strict(p, spec, tc):
 
 
 def _verify_dir_strict(p, spec, tc):
+    '''Verify the directory tree against the spec ina strict way.
+
+    Args:
+        p: The path of the directory to be verified. It must exist.
+        spec: The spec the directory tree must conform.
+        tc: A 'unittest.TestCase' instance.
+
+    Notes:
+        Being "strict" means the directory tree must have exactly what the spec
+        specifies, no more, no less. For example, if the spec says "file f1
+        must exist", the directory must only have file "f1" without anything
+        else. If the directory has another file called "f2", the verification
+        fails.
+    '''
     # Non-strict verification is part of the strict verification. It does the
     # from-spec-to-dir direction.
     _verify_dir_non_strict(p, spec, tc)
@@ -179,9 +210,63 @@ _DEFAULT_DIR_SPEC = {
 
 
 _DEFAULT_RSYNC_OPTIOINS = [
-    '-recursive',   # recurse into directories
-    '-quiet',   # suppress non-error messages
+    '--recursive',   # recurse into directories
+    '--stats',  # give some file-transfer stats
 ]
+
+
+class _RsyncOutput(object):
+
+    def __init__(self, output):
+        self._output = output
+        lines = output.split(b'\n')
+
+        FileStats = collections.namedtuple(
+            'FileStats', ['total', 'reg', 'dir']
+        )
+        p = rb'^.+ (?P<total>\d+)(?: .+ (?P<reg>\d+),.+ (?P<dir>\d+)\))?$'
+        for l in lines:
+            if l.startswith(b'Number of files'):
+                # Number of files: 34 (reg: 22, dir: 12)
+                m = re.match(p, l)
+                t = int(m.group('total'))
+                r = int(m.group('reg')) if t > 0 else 0
+                d = int(m.group('dir')) if t > 0 else 0
+                self._total_files = FileStats(total=t, reg=r, dir=d)
+            elif l.startswith(b'Number of created files'):
+                # Number of created files: 34 (reg: 22, dir: 12)
+                m = re.match(p, l)
+                t = int(m.group('total'))
+                r = int(m.group('reg')) if t > 0 else 0
+                d = int(m.group('dir')) if t > 0 else 0
+                self._created_files = FileStats(total=t, reg=r, dir=d)
+            elif l.startswith(b'Number of deleted files'):
+                # Number of deleted files: 0
+                pre = b'Number of deleted files: '
+                self._deleted = int(l[len(pre):])
+            elif l.startswith(b'Number of regular files transferred'):
+                # Number of regular files transferred: 22
+                pre = b'Number of regular files transferred: '
+                self._reg_trans = int(l[len(pre):])
+            else:
+                # We don't care about other lines for now.
+                pass
+
+    @property
+    def total_files(self):
+        return self._total_files
+
+    @property
+    def created_files(self):
+        return self._created_files
+
+    @property
+    def deleted_files(self):
+        return self._deleted
+
+    @property
+    def transferred_reg_files(self):
+        return self._reg_trans
 
 
 class _RsyncTestBase(unittest.TestCase):
@@ -205,7 +290,8 @@ class _RsyncTestBase(unittest.TestCase):
         src='src/', dst='dst'
     ):
         cmd = ['rsync'] + options + default_options + [src, dst]
-        subprocess.check_call(cmd, cwd=self._method_dir)
+        output = subprocess.check_output(cmd, cwd=self._method_dir)
+        return _RsyncOutput(output)
 
     def _verify_dst(self, spec, dst=None, strict=False):
         if dst is None:
@@ -215,11 +301,68 @@ class _RsyncTestBase(unittest.TestCase):
         _verify_dir(dst, spec, self)
 
 
+class Test_c_checksum(_RsyncTestBase):
+    ''' -c, --checksum
+    '''
+
+    def test_c(self):
+        # With '-c', `rsync` uses the file checksum to decide if it should be
+        # copied or not, even if the modified time changes.
+
+        # Let's copy it once. Actually, it doesn't matter if we preserve the
+        # links or not. But let's preserve them.
+        self._call_rsync(options=['--links', '-c'])
+
+        # If we copy it again, there should be nothing copied.
+        output = self._call_rsync(options=['--links', '-c'])
+        self.assertEqual(output.transferred_reg_files, 0)
+
+        f1path = os.path.join(self._method_dir, 'dst', 'f1')
+
+        # Next, just touch a file. We need to sleep for at least one second
+        # to make the touch sensible. This makes the tests go slow, sadly.
+        time.sleep(1)
+        pathlib.Path(f1path).touch()
+        # If we copy it again, there should still be nothing copied because
+        # the file checksum doesn't change.
+        output = self._call_rsync(options=['--links', '-c'])
+        self.assertEqual(output.transferred_reg_files, 0)
+
+        # Now let's modify the file content so its checksum changes, too.
+        with open(f1path, 'a') as fh:
+            fh.write('f1_new')
+        # Now the file will be copied.
+        output = self._call_rsync(options=['--links', '-c'])
+        self.assertEqual(output.transferred_reg_files, 1)
+
+    def test_no_c(self):
+        # Without '-c', `rsync` uses the file size or modified time to decide
+        # if the file should be copied or not, even if its content remains the
+        # same.
+
+        # Let's copy it once. Actually, it doesn't matter if we preserve the
+        # links or not. But let's preserve them.
+        self._call_rsync(options=['--links'])
+
+        # If we copy it again, there should be nothing copied.
+        output = self._call_rsync(options=['--links'])
+        self.assertEqual(output.transferred_reg_files, 0)
+
+        # Next, just touch a file. We need to sleep for at least one second
+        # to make the touch sensible. This makes the tests go slow, sadly.
+        time.sleep(1)
+        pathlib.Path(os.path.join(self._method_dir, 'dst', 'f1')).touch()
+
+        # If we copy it again, the touched file should be copied.
+        output = self._call_rsync(options=['--links'])
+        self.assertEqual(output.transferred_reg_files, 1)
+
+
 class Test_r_recursive(_RsyncTestBase):
 
     def test_r(self):
         # Because '-r' is included by default, we don't need to include it.
-        self._call_rsync(options=[])
+        stats = self._call_rsync(options=[])
         self._verify_dst(spec={
             'D_d1': {
                 'D_d11': {},
