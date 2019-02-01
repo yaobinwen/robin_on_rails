@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+
 '''This file contains examples of using `rsync`. For its documentation,
 see: http://manpages.ubuntu.com/manpages/trusty/man1/rsync.1.html
 This document is referred to as `DOC` in the code.
 '''
+
 
 import argparse
 import contextlib
@@ -88,6 +90,69 @@ def _make_dir(p, spec):
             )
 
 
+def _verify_dir_non_strict(p, spec, tc):
+    for name, content in spec.items():
+        ftype = name[:1]
+        fname = name[2:]
+        fpath = os.path.join(p, fname)
+        if ftype == 'L':
+            tc.assertTrue(os.path.islink(fpath))
+            tc.assertEqual(os.readlink(fpath), content)
+        elif ftype == 'F':
+            tc.assertTrue(
+                os.path.isfile(fpath) and not os.path.islink(fpath)
+            )
+            with open(fpath, 'r') as fd:
+                actual = fd.read()
+            expected = content if content is not None else ''
+            tc.assertEqual(actual, expected)
+        elif ftype == 'D':
+            tc.assertTrue(
+                os.path.isdir(fpath) and not os.path.islink(fpath)
+            )
+            _verify_dir_non_strict(fpath, content, tc)
+        else:
+            raise ValueError(
+                'Unrecognized type "{ftype}"'.format(ftype=ftype)
+            )
+
+
+def _verify_dir_strict(p, spec, tc):
+    # Non-strict verification is part of the strict verification. It does the
+    # from-spec-to-dir direction.
+    _verify_dir_non_strict(p, spec, tc)
+
+    # __verify_strict does the from-dir-to-spec direction.
+    def __verify_strict(p, spec, tc):
+        for root, dirs, files in os.walk(p):
+            if root != p:
+                # We only do it one level.
+                continue
+
+            for d in dirs:
+                dname = 'D_' + d
+                tc.assertTrue(dname in spec)    # It exists.
+                tc.assertIsInstance(spec[dname], dict)  # It is a directory.
+                dpath = os.path.join(p, d)
+                __verify_strict(dpath, spec[dname], tc)
+            for f in files:
+                fpath = os.path.join(root, f)
+                islink = os.path.islink(p)
+                prefix = 'L_' if islink else 'F_'
+                fname = prefix + f
+                tc.assertTrue(fname in spec)
+                content = spec[fname]
+                if islink:
+                    tc.assertEqual(os.readlink(fpath), content)
+                else:
+                    with open(fpath, 'r') as fd:
+                        actual = fd.read()
+                    expected = content if content is not None else ''
+                    tc.assertEqual(actual, expected)
+
+    __verify_strict(p, spec, tc)
+
+
 _DEFAULT_DIR_SPEC = {
     'D_d1': {
         'D_d11': {
@@ -142,48 +207,37 @@ class _RsyncTestBase(unittest.TestCase):
         cmd = ['rsync'] + options + default_options + [src, dst]
         subprocess.check_call(cmd, cwd=self._method_dir)
 
-    def _verify_dst(self, spec, dst=None):
+    def _verify_dst(self, spec, dst=None, strict=False):
         if dst is None:
             dst = os.path.join(self._method_dir, 'dst')
 
-        def _verify_dir(p, spec):
-            for name, content in spec.items():
-                ftype = name[:1]
-                fname = name[2:]
-                fpath = os.path.join(p, fname)
-                if ftype == 'L':
-                    self.assertTrue(os.path.islink(fpath))
-                    self.assertEqual(os.readlink(fpath), content)
-                elif ftype == 'F':
-                    self.assertTrue(
-                        os.path.isfile(fpath) and not os.path.islink(fpath)
-                    )
-                    with open(fpath, 'r') as fd:
-                        actual = fd.read()
-                    expected = content if content is not None else ''
-                    self.assertEqual(actual, expected)
-                elif ftype == 'D':
-                    self.assertTrue(
-                        os.path.isdir(fpath) and not os.path.islink(fpath)
-                    )
-                    _verify_dir(fpath, content)
-                else:
-                    raise ValueError(
-                        'Unrecognized type "{ftype}"'.format(ftype=ftype)
-                    )
-
-        _verify_dir(dst, spec)
+        _verify_dir = _verify_dir_strict if strict else _verify_dir_non_strict
+        _verify_dir(dst, spec, self)
 
 
 class Test_r_recursive(_RsyncTestBase):
 
     def test_r(self):
+        # Because '-r' is included by default, we don't need to include it.
         self._call_rsync(options=[])
-        # TODO(ywen): Add asserts.
+        self._verify_dst(spec={
+            'D_d1': {
+                'D_d11': {},
+                'D_d12': {},
+                'F_f11': 'f11',
+                'F_f12': 'f12',
+            },
+            'D_d2': {
+                'D_d21': {},    # Empty directory
+                'F_f21': 'f21',
+            },
+            'F_f1': 'f1',
+            'F_f2': 'f2',
+        }, strict=True)
 
     def test_no_r(self):
         self._call_rsync(options=[], default_options=[])
-        # TODO(ywen): Add asserts.
+        self.assertFalse(os.path.exists(os.path.join(self._method_dir, 'dst')))
 
 
 class Test_l_links(_RsyncTestBase):
