@@ -78,3 +78,11 @@
 ---
 
 TODO: Summarize `Private addresses and network address translation (NAT)`
+
+### 14.5 ROUTING
+
+---
+
+> To route a packet to a particular address, the kernel picks the most specific of the matching routes - that is, the one with the longest mask. If the kernel finds no relevant route and no default route, then it returns a "network unreachable" ICMP error to the sender.
+
+**QUESTION**: I don't think I fully understand the procedure this paragraph says. Maybe it's still too early to understand it.
