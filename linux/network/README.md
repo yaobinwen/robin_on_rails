@@ -31,3 +31,6 @@ This folder is all about the network on Linux operating systems.
 - [5] [Issue #28: Read about DNS](https://github.com/yaobinwen/robin_on_rails/issues/28)
 - [6] [Issue #29: Read about network basics](https://github.com/yaobinwen/robin_on_rails/issues/29)
 - [7] `Bradley Mitchell` wrote [a lot of articles on Lifewire about networking](https://www.lifewire.com/bradley-mitchell-816228).
+- [8] **Recommended** [Computer Networking: A Top-Down Approach (7th Edition)](https://www.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
+- [9] **Recommended** [Computer Networks (5th Edition)](https://www.amazon.com/Computer-Networks-5th-Andrew-Tanenbaum/dp/0132126958)
+- [10] [An Introduction to Computer Networks by Peter L Dordal](https://intronetworks.cs.luc.edu/)
