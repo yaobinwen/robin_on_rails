@@ -34,3 +34,21 @@ This folder is all about the network on Linux operating systems.
 - [8] **Recommended** [Computer Networking: A Top-Down Approach (7th Edition)](https://www.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
 - [9] **Recommended** [Computer Networks (5th Edition)](https://www.amazon.com/Computer-Networks-5th-Andrew-Tanenbaum/dp/0132126958)
 - [10] [An Introduction to Computer Networks by Peter L Dordal](https://intronetworks.cs.luc.edu/)
+
+## Notes
+
+### Gateway
+
+[gateway](https://internetofthingsagenda.techtarget.com/definition/gateway):
+
+> A gateway is a network node that connects two networks using different protocols together. While a bridge is used to join two similar types of networks, a gateway is used to join two dissimilar networks.
+
+### Genmask
+
+[This answer](https://serverfault.com/a/696992/125167) quotes:
+
+> **Genmask**: The netmask for the destination net; 255.255.255.255 for a host destination and 0.0.0.0 for the default route.
+
+Someone else in the same answer also mentioned that:
+
+> It's just odd that the output of route seems to be the only place the actual term "genmask" is used. Everywhere else it's "netmask." E.g. in my system's man files, "netmask" shows up 207 times, but "genmask" is only mentioned in the route man page.
