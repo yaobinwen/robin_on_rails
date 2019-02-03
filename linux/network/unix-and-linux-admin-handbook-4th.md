@@ -86,3 +86,21 @@ TODO: Summarize `Private addresses and network address translation (NAT)`
 > To route a packet to a particular address, the kernel picks the most specific of the matching routes - that is, the one with the longest mask. If the kernel finds no relevant route and no default route, then it returns a "network unreachable" ICMP error to the sender.
 
 **QUESTION**: I don't think I fully understand the procedure this paragraph says. Maybe it's still too early to understand it.
+
+---
+
+The section **ICMP redirects** says:
+
+> When a router forwards a packet to a machine on the same network from which the packet was originally received, something is clearly wrong. Since the sender, the router, and the next-hop router are all on the same network, the packet could have been forwarded in one hop rather than two. The router can conclude that the sender’s routing tables are inaccurate or incomplete.
+>
+> In this situation, the router can notify the sender of its problem by sending an ICMP redirect packet. In effect, a redirect says, "You should not be sending packets for host xxx to me; you should send them to host yyy instead."
+
+The "from which the packet" in the first sentence "...on the same network from which the packet..." modifies "network". The whole sentence means:
+
+- 1). A router forwards a packet to the receiver.
+- 2). The router and the receiver are on the same network.
+- 3). The packet was received from this network, too.
+- 4). We can deduce using 2) and 3) that the sender of the packet is also on this network.
+- 5). Therefore, the sender, the router, and the receiver are on the same network.
+- 6). Because they are all on the same network, the sender doesn't need to go through the router as the mediator. Instead, the sender can send the packet to the receiver directly.
+- 7). Therefore, the router notifies the sender with the "ICMP redirect packet".
