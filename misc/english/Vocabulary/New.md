@@ -1,5 +1,7 @@
 # Just New Words
 
+- [colloquialism](https://dictionary.cambridge.org/dictionary/english/colloquialism): _noun [ C ]_ 口语词汇(注意是可数名词)
+  - _If you use a colloquialism or a slang word or phrase, simply use it; do not draw attention to it by enclosing it in quotation marks._
 - [consonant](https://dictionary.cambridge.org/us/dictionary/english/consonant): **辅音**，或称**子音**。
   - [Wikipedia: consonant](https://en.wikipedia.org/wiki/Consonant)
 - [specificity](https://www.grammarly.com/blog/articles/)
