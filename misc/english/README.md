@@ -12,6 +12,16 @@ In contrast, improving your language can help you live a better life. It allows 
 
 See the notes in "Purdue_OWL.md".
 
+## Vocabulary Building
+
+- To read English books, use Kindle because it offers word-wise feature.
+- Guiding books provide description of precise operations which I can learn and use. The guiding books include:
+  - Cooking recipes
+  - Repairing guides
+  - Appliance user manuals
+  - Travel guides
+- Read articles or essays about the subjects I'm interested in to build relevant vocabulary.
+
 ## Grammar
 
 ### Articles
