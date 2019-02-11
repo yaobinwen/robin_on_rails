@@ -44,3 +44,7 @@ A chronology of events in Isaac Asimov's positronic robot and Foundation stories
 
 - [How Will AI Impact Software Development?](https://www.forbes.com/sites/forbestechcouncil/2017/08/31/how-will-ai-impact-software-development/#27602b8f264d)
 - [AI Is Not the End of Software Developers](https://builttoadapt.io/ai-is-not-the-end-of-software-developers-28d80df3c331)
+- [AI-Programmer](https://github.com/primaryobjects/AI-Programmer): Using artificial intelligence and genetic algorithms to automatically write programs.
+  - [Using Artificial Intelligence to Write Self-Modifying/Improving Programs](http://www.primaryobjects.com/2013/01/27/using-artificial-intelligence-to-write-self-modifying-improving-programs/)
+  - Research paper: [AI Programmer: Autonomously Creating Software Programs Using Genetic Algorithms](https://arxiv.org/pdf/1709.05703.pdf) (This paper may help me find more papers.)
+- [Some `Automatic Programming` related resources](https://aitopics.org/class/Technology/Information%20Technology/Artificial%20Intelligence/Representation%20&%20Reasoning/Automatic%20Programming)
