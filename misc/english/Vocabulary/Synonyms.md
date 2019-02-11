@@ -73,6 +73,10 @@
   - salient _[ not gradable ]_ most noticeable or important (已经有“最重要”之意所以不可比较)
     - _She began to summarize the salient features/points of the proposal._
     - _The article presented the salient facts of the dispute clearly and concisely._
+- move
+  - churn: verb [ I/T ]: to move violently
+    - _The water was churning and the boat was rocking._
+    - _If this release exposed a case where your application was using an anti-pattern and didn’t work properly after the fix, we’re sorry for the churn._ (See [source](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html). 'churn' is used as a noun in this example.)
 - obey
   - observe: _FORMAL_ to obey a law, rule, or custom
     - [_Buses will observe the bus stops on the diversion at Crown Street_](https://english.stackexchange.com/q/471077/7342)
