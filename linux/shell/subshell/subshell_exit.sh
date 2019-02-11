@@ -24,5 +24,15 @@ echo "> Main: Starts"
     echo ">> Subshell: Ends"
 ) || exit
 
+# The if statement can check a subshell
+if (
+    echo ">> Subshell 2: Starts"
+    false || exit
+); then
+    echo "> Main: Subshell 2 succeeded."
+else
+    echo "> Main: Subshell 2 failed."
+fi
+
 # Print final message
 echo "> Main: Ends"
