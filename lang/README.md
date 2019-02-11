@@ -9,6 +9,7 @@ This document is about all kinds of programming languages.
 - [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
 - [Using C++11’s Smart Pointers](http://umich.edu/~eecs381/handouts/C++11_smart_ptrs.pdf)
 - How `switch` is implemented: [From Switch Statement Down to Machine Code](http://lazarenko.me/switch/)
+- [C++ Compiler Explorer](https://godbolt.org/) shows you how the C++ source code is generated to machine code.
 
 ## Python
 
