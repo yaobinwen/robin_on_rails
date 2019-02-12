@@ -14,6 +14,15 @@
     - _Thousands of dissidents have been interrogated or imprisoned in recent weeks._
 - at the same time
   - in tandem
+- carry
+  - lug verb [ T usually + adv/prep ] to carry or pull something with effort or difficulty because it is heavy
+    - _I'm exhausted after lugging these suitcases all the way across the city._
+    - _I don't want to lug these shopping bags around with me all day._
+    - _But one spring morning, I was lugging wash water up from the river when a cowhand name of Billie came trotting up._
+- character
+  - streak: noun [ C ] an often unpleasant characteristic that is very different from other characteristics
+    - _Her stubborn streak makes her very difficult to work with sometimes._
+    - _You need to have a competitive streak when you're working in marketing._
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - common
@@ -31,6 +40,10 @@
 - danger
   - peril: [ C/U ] danger, or something that is dangerous
     - _[ U ] The president said that we are entering a time of great peril._
+- determined
+  - feisty: adj. active, forceful, and full of determination
+    - _He launched a feisty attack on the government._
+    - _She’s a feisty kid who is not afraid to challenge authority._
 - difficulty
   - predicament: _FORMAL_ an unpleasant or confusing situation that is difficult to get out of or solve
     - _With no money and no job, he found himself in a real predicament._
@@ -73,6 +86,10 @@
   - salient _[ not gradable ]_ most noticeable or important (已经有“最重要”之意所以不可比较)
     - _She began to summarize the salient features/points of the proposal._
     - _The article presented the salient facts of the dispute clearly and concisely._
+- liking
+  - fondness: noun [ U ] a liking (喜爱)
+    - _George's fondness **for** fishing was well known._
+    - _Ruth has a real fondness **for** old houses._
 - move
   - churn: verb [ I/T ]: to move violently
     - _The water was churning and the boat was rocking._
@@ -106,6 +123,15 @@
 - rule
   - precept: /ˈpriː.sept/ a rule for action or behaviour, especially obtained from moral thought
     - _Theodore Roosevelt was teaching by precept and example that men owed something at all times, whether in peace or in war, for the privilege of citizenship and that the burden rested equally on rich and poor._
+- run
+  - canter: verb [ I ] If a horse canters, it moves at quite a fast but easy and comfortable speed
+    - _The riders cantered round the field a few times._
+  - gallop: verb [ I or T ] (of a horse) to run fast so that all four feet come off the ground together in each act of forward movement, or (of a person) to ride a horse that is running in this way
+    - _We galloped through the woods._
+    - _Day after day, the hunters galloped into the heart of the herd._
+  - trot: verb [ I usually + adv/prep ] If a horse or similar animal with four legs trots, it runs at its slowest speed, using short steps in which a front leg and the back leg on the opposite side move together
+    - _She was trotting along on her pony._
+    - _The dog trotted down the path to greet me._
 - shake
   - quiver: to shake slightly, often because of strong emotion.
     - _Lennie's bottom lip quivered and tears started in his eyes._
@@ -139,6 +165,10 @@
 - urgent
   - imperative: extremely important or urgent
     - _It's imperative to act now before the problem gets really serious._
+- wander
+  - roam verb [ I + adv/prep, T ] to move about or travel, especially without a clear idea of what you are going to do
+    - _After the bars close, gangs of youths roam the city streets._
+    - _Once, long, long ago, buffalo roamed the West, filling the plains and canyons with the music of their thundering hooves and huffing breath._
 - worry
   - agitate: /ˈædʒ.ə.teɪt/ to make someone feel worried or angry
     - _What is the purpose of education? This question agitates scholars, teachers, statesmen, every group, in fact, of thoughtful men and women._
