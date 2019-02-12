@@ -104,3 +104,7 @@ The "from which the packet" in the first sentence "...on the same network from w
 - 5). Therefore, the sender, the router, and the receiver are on the same network.
 - 6). Because they are all on the same network, the sender doesn't need to go through the router as the mediator. Instead, the sender can send the packet to the receiver directly.
 - 7). Therefore, the router notifies the sender with the "ICMP redirect packet".
+
+### 14.6 ARP: THE ADDRESS RESOLUTION PROTOCOL
+
+> Although IP addresses are hardware-independent, hardware addresses must still be used to actually transport data across a network’s link layer. ARP, the Address Resolution Protocol, **discovers the hardware address associated with a particular IP address.**
