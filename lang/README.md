@@ -11,6 +11,7 @@ This document is about all kinds of programming languages.
 - How `switch` is implemented: [From Switch Statement Down to Machine Code](http://lazarenko.me/switch/)
 - [C++ Compiler Explorer](https://godbolt.org/) shows you how the C++ source code is generated to machine code.
 - [Duff's device](https://en.wikipedia.org/wiki/Duff%27s_device) is "a way of manually implementing [loop unrolling](https://en.wikipedia.org/wiki/Loop_unrolling) by interleaving two syntactic constructs of C: the do-while loop and a switch statement."
+- [再再论指针](https://blog.csdn.net/megaboy/article/details/482783): This is a series of articles I read to learn the C pointers. They are old.
 
 ## Python
 
