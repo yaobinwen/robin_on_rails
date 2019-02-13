@@ -15,3 +15,7 @@ The article [_SSL and SSL Certificates Explained For Beginners_](http://www.stev
 - > Now when someone wants your public keys, you send them the certificate, they verify the signature on the certificate, and if it verifies, then they can trust your keys.
 
 The article [_Survival guides - TLS/SSL and SSL (X.509) Certificates_](http://www.zytrax.com/tech/survival/ssl.html) explains the topic with greater details.
+
+## Tools
+
+- [Keycloak](https://www.keycloak.org/index.html): "Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code."
