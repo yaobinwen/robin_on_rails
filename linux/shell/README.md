@@ -1,5 +1,9 @@
 # shell
 
+## Cheatsheets
+
+- [Bash scripting cheatsheet](https://devhints.io/bash) (Note this cheatsheet may contain Bashism.)
+
 ## References
 
 - [1] The ["IEEE Std 1003.1™-2008, 2016 Edition"](http://pubs.opengroup.org/onlinepubs/9699919799/nframe.html) is the latest POSIX standard (as of 2018). The "Shell & Utilities" section talks about shell features.
