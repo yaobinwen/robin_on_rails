@@ -139,6 +139,14 @@
 - shy
   - bashful
   - diffident
+- sleep
+  - snooze: verb [ I ] to sleep lightly for a short while, especially somewhere other than in your bed
+    - _The dog's snoozing in front of the fire._
+    - _"I found them snoozing under a juniper."_
+- small
+  - puny: adj. /ˈpjuː.ni/
+    - _My car only has a puny little engine._
+    - _The party's share of the vote rose from a puny 13 percent in the last election to 21 percent this time._
 - successful
   - blockbuster: a book or film that is very successful: _a blockbuster movie/novel_
 - support
