@@ -59,6 +59,11 @@
 - effort:
   - exert: exert yourself: to make a mental or physical effort
     - _He was saying that, no matter what conditions existed, the blame lay no more heavily on the politician and his machine controlling city, State, or nation, than on the shoulders of the average citizen who concerned himself so little with his government that he allowed men to stay in power in spite of his dissatisfaction because he was too indifferent to exert himself to get better men in office._
+- fashion
+  - vogue: noun [ S or U ] /voʊɡ/ a fashion or general liking, especially one that is temporary
+    - _In the 1920s, short hair for women became the vogue._
+    - _The postwar vogue for tearing down buildings virtually destroyed the city's architecture._
+    - _"Community" is one of the vogue words of the new government._
 - full
   - fraught (with): full of (unpleasant things such as problems or dangers)
     - _I would **not** #define out `virtual`, that is fraught with peril. Just leave the functions always virtual._
@@ -90,6 +95,7 @@
   - fondness: noun [ U ] a liking (喜爱)
     - _George's fondness **for** fishing was well known._
     - _Ruth has a real fondness **for** old houses._
+  - See "vogue".
 - move
   - churn: verb [ I/T ]: to move violently
     - _The water was churning and the boat was rocking._
@@ -116,6 +122,10 @@
   - poised: ready to do a particular thing at any moment
     - _The company is poised to launch its new advertising campaign._
     - _The military forces are poised for attack._
+- redundant
+  - superfluous: adj, /suːˈpɝː.flu.əs/ **The second syllable has the stress.**
+    - _The report was marred by a mass of superfluous detail._
+    - _Our new mayor plans to eliminate superfluous programs._
 - repeatedly
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
@@ -153,6 +163,9 @@
   - second: vt, to make a formal statement of support for a suggestion made by someone else during a meeting in order to allow a discussion or vote
     - _I second the motion to adjourn._
     - _I'd second the idea of a non-writable root filesystem._ (See [source](https://serverfault.com/a/318140/125167).)
+- thin
+  - threadbare: adj. Threadbare material or clothes have become thin or damaged because they have been used a lot. "worn out"
+    - _Her clothes were faded and threadbare._
 - together
   - in concert: _Although hello is a very simple program, every major part of the system must work in concert in order for it to run to completion._
 - true
@@ -177,6 +190,14 @@
   - roam verb [ I + adv/prep, T ] to move about or travel, especially without a clear idea of what you are going to do
     - _After the bars close, gangs of youths roam the city streets._
     - _Once, long, long ago, buffalo roamed the West, filling the plains and canyons with the music of their thundering hooves and huffing breath._
+- weak
+  - feeble: adj. weak and without energy, strength, or power
+    - _He was a feeble, helpless old man._
+    - _The little lamp gave only a feeble light._
+    - _Opposition to the plan was rather feeble._
+    - _a feeble joke/excuse_
+  - threadbare: adj. A threadbare excuse, argument, or idea is not strong and no longer persuades people because it is old or has been used too much
+    - _a threadbare excuse_
 - worry
   - agitate: /ˈædʒ.ə.teɪt/ to make someone feel worried or angry
     - _What is the purpose of education? This question agitates scholars, teachers, statesmen, every group, in fact, of thoughtful men and women._
