@@ -1,5 +1,18 @@
 # Parts
 
+## Body & Illness
+
+- trachea /ˈtreɪ.kiə/ 气管
+  - 也可以是windpipe
+- bronchus: /ˈbrɑːŋ.kəs/ 支气管
+  - 复数是bronchi
+  - adj: bronchial /ˈbrɑːŋ.ki.əl/
+  - bronchitis /brɑːŋˈkaɪ.t̬əs/ 支气管炎
+- saliva: /səˈlaɪ.və/ 唾液
+  - 也可以是spit
+- sputum: /ˈspjuː.t̬əm/ 痰
+  - phlegm /flem/ 痰
+
 ## Horse-like Animals
 
 - canter: See 'canter' in 'Synonyms.md'.
