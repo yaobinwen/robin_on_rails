@@ -5,7 +5,7 @@
 - trachea /ˈtreɪ.kiə/ 气管
   - 也可以是windpipe
 - bronchus: /ˈbrɑːŋ.kəs/ 支气管
-  - 复数是bronchi
+  - 复数是bronchi /ˈbrɑːŋ.kai/
   - adj: bronchial /ˈbrɑːŋ.ki.əl/
   - bronchitis /brɑːŋˈkaɪ.t̬əs/ 支气管炎
 - saliva: /səˈlaɪ.və/ 唾液
