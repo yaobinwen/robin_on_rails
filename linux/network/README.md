@@ -24,6 +24,7 @@ Use `tcpdump`: `sudo tcpdump -i eth0`
 ## Misc
 
 - `avahi-browse`: Browse for mDNS/DNS-SD services using the Avahi daemon.
+- `curl`: [Everything curl](https://ec.haxx.se/)
 - [`pyroute2`](https://pypi.org/project/pyroute2/): A pure Python netlink library
 
 ## References
