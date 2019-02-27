@@ -1,5 +1,7 @@
 # README
 
+[SIGNAL(7)](http://man7.org/linux/man-pages/man7/signal.7.html) is an important manpage for Linux signals.
+
 [Termination Signals (from the most to the least polite)](https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html):
 
 - SIGTERM
