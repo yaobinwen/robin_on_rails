@@ -17,6 +17,10 @@ This folder is all about the network on Linux operating systems.
 - Use the good old `telnet`:
   - `telnet host 22`
 
+### How to view the TCP traffic
+
+Use `tcpdump`: `sudo tcpdump -i eth0`
+
 ## Misc
 
 - `avahi-browse`: Browse for mDNS/DNS-SD services using the Avahi daemon.
