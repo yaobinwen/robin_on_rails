@@ -16,6 +16,10 @@ The article [_SSL and SSL Certificates Explained For Beginners_](http://www.stev
 
 The article [_Survival guides - TLS/SSL and SSL (X.509) Certificates_](http://www.zytrax.com/tech/survival/ssl.html) explains the topic with greater details.
 
+## OAuth 2.0
+
+[What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth)
+
 ## Tools
 
 - [Keycloak](https://www.keycloak.org/index.html): "Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code."
