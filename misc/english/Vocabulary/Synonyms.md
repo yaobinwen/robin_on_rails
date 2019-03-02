@@ -91,6 +91,10 @@
   - salient _[ not gradable ]_ most noticeable or important (已经有“最重要”之意所以不可比较)
     - _She began to summarize the salient features/points of the proposal._
     - _The article presented the salient facts of the dispute clearly and concisely._
+- likely
+  - apt: adj, likely (be apt to do/be sth)
+    - _This old roof is apt to leak when it rains._
+    - _She's in her eighties now and apt to be a little forgetful._
 - liking
   - fondness: noun [ U ] a liking (喜爱)
     - _George's fondness **for** fishing was well known._
@@ -159,6 +163,10 @@
     - _The party's share of the vote rose from a puny 13 percent in the last election to 21 percent this time._
 - successful
   - blockbuster: a book or film that is very successful: _a blockbuster movie/novel_
+- suitable
+  - apt: adj, suitable or right for a particular situation
+    - _In today's online world, the oft-repeated saying 'it's not what you know, it's who you know' is very apt._ ([LIBERTY ALLIANCE PROJECT WHITE PAPER](http://www.projectliberty.org/liberty/content/download/387/2720/file/Liberty_Federated_Social_Identity.pdf))
+    - _an apt comment/description_
 - support
   - second: vt, to make a formal statement of support for a suggestion made by someone else during a meeting in order to allow a discussion or vote
     - _I second the motion to adjourn._
