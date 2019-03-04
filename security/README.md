@@ -4,6 +4,8 @@
 
 This folder has notes about security. See [1] for glossary.
 
+[13] provides a series of cheat sheets about security.
+
 ## Cookies
 
 See [11].
@@ -125,3 +127,4 @@ See [7]:
 - [10] [Token Based Authentication for Single Page Apps (SPAs)](https://stormpath.com/blog/token-auth-spa)
 - [11] [What Are Cookies? Computer Cookies Explained](http://www.whatarecookies.com/)
 - [12] [RFC 7519: JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
+- [13] [OWASP Cheat Sheet Series](https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series)
