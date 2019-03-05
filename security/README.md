@@ -128,3 +128,6 @@ See [7]:
 - [11] [What Are Cookies? Computer Cookies Explained](http://www.whatarecookies.com/)
 - [12] [RFC 7519: JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
 - [13] [OWASP Cheat Sheet Series](https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series)
+- [13] [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
+- [14] [OAuth for Dummies](https://marktrapp.com/blog/2009/09/17/oauth-dummies/)
+- [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
