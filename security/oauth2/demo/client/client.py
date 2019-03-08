@@ -17,7 +17,7 @@ class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
 
 def main():
     server_address = ('127.0.0.1', 8001)
-    handler_cls = OAuthRequestHandler
+    handler_cls = ClientRequestHandler
     server = http.server.HTTPServer(server_address, handler_cls)
     server.serve_forever()
 
