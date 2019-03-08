@@ -131,3 +131,4 @@ See [7]:
 - [13] [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
 - [14] [OAuth for Dummies](https://marktrapp.com/blog/2009/09/17/oauth-dummies/)
 - [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
+- [16] [OAuth 2.0 Servers](https://www.oauth.com/)
