@@ -5,7 +5,20 @@
 
 
 import http.server
+import jinja2
 import re
+
+
+# The global Jinja2 Template ENVironment.
+T_ENV = jinja2.Environment(
+    loader=jinja2.PackageLoader('client', 'templates'),
+    autoescape=jinja2.select_autoescape(['html'])
+)
+
+# OAuth 2.0 arguments' default values
+SERVER_RESPONSE_TYPE = 'code'
+CLIENT_ID = 'client_1'
+CLIENT_STATE = 'ABCDEFG'    # TODO(ywen): Generate random string
 
 
 class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
@@ -44,7 +57,13 @@ class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
         self.send_header('Content-type','text/html')
         self.end_headers()
         if path == '/':
-            self.wfile.write(bytes('<h1>Hello, client!</h1>', 'utf8'))
+            html = T_ENV.get_template('index.html').render(
+                server_url_port='127.0.0.1:8000',
+                response_type=SERVER_RESPONSE_TYPE,
+                client_id=CLIENT_ID,
+                state=CLIENT_STATE,
+            )
+            self.wfile.write(bytes(html, 'utf8'))
 
 
 def main():
