@@ -9,6 +9,13 @@
     - _The decision will have to be ratified (= approved) by the executive board._
 - argue
   - lock horns (with someone): To get into an argument with someone.
+- artificial
+  - contrived: _adj, disapproving_ 牵強的 artificial and difficult to believe
+    - _I enjoyed the film, but felt the ending was a bit contrived._
+    - _His excuse sounded a bit contrived._
+  - stilted: _adj, disapproving_ 生硬的 (of a person's behaviour or way of speaking or writing) too formal and not smooth or natural
+    - _He writes in a formal and somewhat stilted style._
+    - _The dialogue sounded stilted and unnatural, perhaps because of the translation from the original Russian._
 - ask
   - interrogate: 审问，盘问
     - _Thousands of dissidents have been interrogated or imprisoned in recent weeks._
@@ -134,6 +141,9 @@
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
     - _eg_ It rained intermittently all day.
+- result
+  - ramification: noun [ C usually pl ] the possible result of a decision or action
+    - _Have you considered all the ramifications of changing careers at this stage of your life?_
 - rule
   - precept: /ˈpriː.sept/ a rule for action or behaviour, especially obtained from moral thought
     - _Theodore Roosevelt was teaching by precept and example that men owed something at all times, whether in peace or in war, for the privilege of citizenship and that the burden rested equally on rich and poor._
@@ -161,6 +171,15 @@
   - puny: adj. /ˈpjuː.ni/
     - _My car only has a puny little engine._
     - _The party's share of the vote rose from a puny 13 percent in the last election to 21 percent this time._
+- sound
+  - chime: (of bells) to make a clear ringing sound
+    - _The bell in the tower began to chime._
+  - whine: to make a high, complaining sound, or to complain continually
+    - _If you don't stop whining, we won't go at all!_
+    - _Leon's dog was sitting by the door whining, so I thought I'd better take it for a walk._
+- speak
+  - chime in: to speak in a conversation, esp. by interrupting
+    - _Everyone at the table began to chime in with their opinions._
 - successful
   - blockbuster: a book or film that is very successful: _a blockbuster movie/novel_
 - suitable
