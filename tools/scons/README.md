@@ -17,7 +17,8 @@ SCon's build configuration files are actually **Python scripts**.
 - [`Object`](https://scons.org/doc/2.3.0/HTML/scons-user/a8588.html#b-Object)[DOC-2.2]: Build an object file.
 - [`Library`](https://scons.org/doc/2.3.0/HTML/scons-user/a8588.html#b-Library)[DOC-4.1]: Build a **static** library.
   - [`StaticLibrary`](https://scons.org/doc/2.3.0/HTML/scons-user/a8588.html#b-StaticLibrary): Synonym of `Library`, build a **static** library, too.
-- [`SharedLibrary`](https://scons.org/doc/2.3.0/HTML/scons-user/a8588.html#b-SharedLibrary): Build a **shared** library.
+- [`SharedLibrary`](https://scons.org/doc/2.3.0/HTML/scons-user/a8588.html#b-SharedLibrary)[DOC-4.1]: Build a **shared** library.
+- `Install`[DOC-11]: "...installing a file is still considered a type of file 'build'."
 
 `scons -c` (short for `--clean`) removes the appropriate built files.
 
@@ -69,6 +70,19 @@ The types:
 - `external environment`[DOC-7.1]: The same as Python's `os.environ`.
 - `construction environment`[DOC-7.2]: Contains values that affect SCons' behaviors (not the external compiler's or linker's).
 - `execution environment`[DOC-7.3]: Contains values that SCons sets when executing an external command (such as a compiler or linker) to build one or more targets.
+
+### Installing Files
+
+- `Install`[DOC-11]
+  - Installing a file is still considered a type of file "build." This is important when you remember that the default behavior of SCons is to build files in or below the current directory.
+  - Examples:
+    - Install one: `env.Install('/usr/bin', hello)`
+    - Install multiple: `env.Install('/usr/bin', [hello, goodbye])`
+- `InstallAs`[DOC-11.2]: Install a file under a different name.
+  - Examples:
+    - Install one: `env.InstallAs('/usr/bin/hello-new', hello)`.
+    - Install multiple using lists of the same length: `env.InstallAs(['/usr/bin/hello-new', '/usr/bin/goodbye-new'], [hello, goodbye])`.
+- `Alias`[DOC-11]: Define a pseudo-target of a real target. Example: `env.Alias('install', '/usr/bin')`.
 
 ## TODO
 
