@@ -1,5 +1,9 @@
 # README
 
+## Why GPG Subkeys
+
+The article [Subkeys](https://wiki.debian.org/Subkeys) explains the rationale and benefits of using GPG subkeys.
+
 ## HOWTOs
 
 ### How to list available keys
