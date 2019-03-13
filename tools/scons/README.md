@@ -84,6 +84,37 @@ The types:
     - Install multiple using lists of the same length: `env.InstallAs(['/usr/bin/hello-new', '/usr/bin/goodbye-new'], [hello, goodbye])`.
 - `Alias`[DOC-11]: Define a pseudo-target of a real target. Example: `env.Alias('install', '/usr/bin')`.
 
+### Hierarchical Builds
+
+In `SConstruct`, use the `SConscript`[DOC-14.1] function to include subsidary build scripts:
+
+```
+SConscript(['drivers/display/SConscript',
+            'drivers/mouse/SConscript',
+            'parser/SConscript',
+            'utilities/SConscript'])
+```
+
+You can either list all the subsidary SConscripts in the top-level SConstruct, or arrange the SConscripts recurssively.
+
+In the `SConscript` file, path names are relative to the SConscript directory.
+
+When building, SCons stays in the top-level directory where the `SConstruct` file lives and issues commands that use the path names from the top-level directory to the target and source files within the hierarchy.
+
+Use `#`[DOC-14.3] to specify the top-level `SConstruct` folder. Or simply start a path with `/`[DOC-14.4] to specify an absolute path.
+
+Use `Export`[DOC-14.5.1] to export a _variable_ from a parent SConscript file to its subsidiary SConscript files.
+- The _variable_ is in the sense of Python. For example, a construction environment is an _environment_ in the sense of SCons, but when it is defined in a SCons script, it is defined as a Python variable: `env = Environment()`. "Export a variable" means making this vairable visible to the subsidary SCons script.
+- The variables can be exported in several ways:
+  - `Export('env', 'debug')`: Export multiple variables.
+  - `SConscript('src/SConscript', 'env')`: Specify the variable to export as the second argument of `SConscript` function.
+    - `SConscript('src/SConscript', exports='env')`
+    - `SConscript(['src1/SConscript', 'src2/SConscript'], exports='env')`
+
+Use `Import`[DOC-14.5.2] to import the variable that are exported by other SConscript files.
+
+Use `Return`[DOC-14.5.3] to return variables to the calling SConscript files.
+
 ## TODO
 
 - What is a `construction variable`? It is mentioned the first time in DOC-4.2. The `Appendix A: Construction Variables` has all the construction variables.
