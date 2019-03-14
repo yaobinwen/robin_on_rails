@@ -8,18 +8,7 @@ I tried to build my site on some other platforms. Eventually, I came back to a r
 
 ## Folders
 
-I put every topic I'm interested in into a folder, and I put a `README.md` file under every of them. I'll briefly describe what each folder is all about. You can click that folder and GitHub will nicely and automatically show the details in its README file.
-
-- `ai`: Notes taken from learning Artificial Intelligence.
-- `blockchain`: Notes about learning the block chain technology.
-- `devops`: Knowledge about devops.
-- `git`: Knowledge about Git.
-- `lang`: Notes about various programming languages.
-- `linux`: Knowledge about Linux.
-- `misc`: All the other miscellaneous stuff.
-  - `english`: Notes taken when learning English.
-  - `mining`: Knowledge about the mining industry ([2018/03/31] My current employer serves the mining industry so I want to learn about this domain.)
-- `web`: This folder has been moved into an independent repository [`web-dev-bird-eye`](https://github.com/yaobinwen/web-dev-bird-eye). It is all about the web development.
+I put every topic I'm interested in into a folder, and I put a `README.md` file under every of them. You can click that folder and GitHub will nicely and automatically show the details in its `README` file.
 
 ## Knowledge & Data Sources
 
