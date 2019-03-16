@@ -7,6 +7,7 @@
 import http.server
 import jinja2
 import re
+import uuid
 
 
 # The global Jinja2 Template ENVironment.
@@ -18,13 +19,34 @@ T_ENV = jinja2.Environment(
 # OAuth 2.0 arguments' default values
 SERVER_RESPONSE_TYPE = 'code'
 CLIENT_ID = 'client_1'
-CLIENT_STATE = 'ABCDEFG'    # TODO(ywen): Generate random string
+
+# NOTE(ywen): We want a random string for the state. This thread has discussed
+# how to implement it in depth: https://stackoverflow.com/q/2257441/630364
+# After reading all the responses, I think a UUID fits the need here well
+# because, first, I don't need cryptographical security, and, second, I don't
+# have the limit of using only upper case letter and digits. The hyphens in a
+# UUID string still works for me.
+CLIENT_STATE = uuid.uuid4().hex.upper()
 
 
 class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
 
     def _parse_path(self):
         m = re.match(
+            # NOTE(ywen): This pattern considers the following cases:
+            # /
+            # /path.ico
+            # /path
+            # /path/to/file
+            # /path/to/file
+            # /path/to1/
+            #
+            # /p/t?a=1
+            # /p/t?a=1&b=2&c=3
+            #
+            # /p/t#frag
+            # /p/t?a=1#frag
+            # /p/t?a=1&b=2#frag
             pattern=r'^(\/(?:[\w\.]+\/)*(?:[\w\.]+)?)(\?(?:(?:\w+)=(?:\w+)&?)+)?(#\w+)?$',
             string=self.path,
         )
@@ -61,7 +83,7 @@ class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
                 server_url_port='127.0.0.1:8000',
                 response_type=SERVER_RESPONSE_TYPE,
                 client_id=CLIENT_ID,
-                state=CLIENT_STATE,
+                client_state=CLIENT_STATE,
             )
             self.wfile.write(bytes(html, 'utf8'))
 
