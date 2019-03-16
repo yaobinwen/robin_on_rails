@@ -15,12 +15,9 @@ class OAuthRequestHandler(http.server.BaseHTTPRequestHandler):
         self.end_headers()
 
 
-def main():
-    server_address = ('127.0.0.1', 8000)
-    handler_cls = OAuthRequestHandler
-    server = http.server.HTTPServer(server_address, handler_cls)
-    server.serve_forever()
+def get_publish_address():
+    return ('127.0.0.1', 8000)
 
 
-if __name__ == '__main__':
-    main()
+def get_request_handler_class():
+    return OAuthRequestHandler

@@ -88,12 +88,9 @@ class ClientRequestHandler(http.server.BaseHTTPRequestHandler):
             self.wfile.write(bytes(html, 'utf8'))
 
 
-def main():
-    server_address = ('127.0.0.1', 8001)
-    handler_cls = ClientRequestHandler
-    server = http.server.HTTPServer(server_address, handler_cls)
-    server.serve_forever()
+def get_publish_address():
+    return ('127.0.0.1', 8001)
 
 
-if __name__ == '__main__':
-    main()
+def get_request_handler_class():
+    return ClientRequestHandler
