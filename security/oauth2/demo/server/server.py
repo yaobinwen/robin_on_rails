@@ -20,7 +20,7 @@ class OAuthRequestHandler(HTTPRequestHandlerHelper):
     def do_GET(self):
         r = urllib.parse.urlparse(self.path)
         self.send_response(code=200)
-        self.send_header('Content-type','text/html')
+        self.send_header('Content-type', 'text/html')
         self.end_headers()
         if r.path == '/oauth/authorize':
             html = T_ENV.get_template('authorize.html').render()

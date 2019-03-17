@@ -60,10 +60,12 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
                     client_id=CLIENT_ID,
                     client_state=CLIENT_STATE,
                     # TODO(ywen): Encode the URI.
-                    # NOTE(ywen): "In order to be secure, the redirect URL must be
-                    # an https endpoint to prevent the code from being intercepted
-                    # during the authorization process."
-                    redirect_uri=urllib.parse.quote('http://127.0.0.1:8001/reply'),
+                    # NOTE(ywen): "In order to be secure, the redirect URL must
+                    # be an https endpoint to prevent the code from being
+                    # intercepted during the authorization process."
+                    redirect_uri=urllib.parse.quote(
+                        'http://127.0.0.1:8001/reply'
+                    ),
                 )
             )
             headers['Location'] = server_auth_url
