@@ -3,6 +3,7 @@
 
 
 import jinja2
+import urllib.parse
 import uuid
 
 from shared.http_request_handler_helper import HTTPRequestHandlerHelper
@@ -30,16 +31,22 @@ CLIENT_STATE = uuid.uuid4().hex.upper()
 class ClientRequestHandler(HTTPRequestHandlerHelper):
 
     def do_GET(self):
-        path, queries, fragment = self._parse_path()
+        r = urllib.parse.urlparse(self.path)
         self.send_response(code=200)
         self.send_header('Content-type','text/html')
         self.end_headers()
-        if path == '/':
+        if r.path == '/':
             html = T_ENV.get_template('index.html').render(
+                # FIXME(ywen): Should allow to specify scheme.
                 server_url_port='127.0.0.1:8000',
                 response_type=SERVER_RESPONSE_TYPE,
                 client_id=CLIENT_ID,
                 client_state=CLIENT_STATE,
+                # TODO(ywen): Encode the URI.
+                # NOTE(ywen): "In order to be secure, the redirect URL must be
+                # an https endpoint to prevent the code from being intercepted
+                # during the authorization process."
+                redirect_uri=urllib.parse.quote('http://127.0.0.1:8001/reply'),
             )
             self.wfile.write(bytes(html, 'utf8'))
 

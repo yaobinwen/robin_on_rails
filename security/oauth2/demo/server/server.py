@@ -3,6 +3,7 @@
 
 
 import jinja2
+import urllib.parse
 
 from shared.http_request_handler_helper import HTTPRequestHandlerHelper
 
@@ -17,11 +18,11 @@ T_ENV = jinja2.Environment(
 class OAuthRequestHandler(HTTPRequestHandlerHelper):
 
     def do_GET(self):
-        path, queries, fragment = self._parse_path()
+        r = urllib.parse.urlparse(self.path)
         self.send_response(code=200)
         self.send_header('Content-type','text/html')
         self.end_headers()
-        if path == '/oauth/authorize':
+        if r.path == '/oauth/authorize':
             html = T_ENV.get_template('authorize.html').render()
             self.wfile.write(bytes(html, 'utf8'))
 
