@@ -27,29 +27,54 @@ CLIENT_ID = 'client_1'
 # UUID string still works for me.
 CLIENT_STATE = uuid.uuid4().hex.upper()
 
+# Session data.
+SESSION = {}
+
 
 class ClientRequestHandler(HTTPRequestHandlerHelper):
 
     def do_GET(self):
         r = urllib.parse.urlparse(self.path)
-        self.send_response(code=200)
-        self.send_header('Content-type','text/html')
 
+        status_code = 200
+        headers = {
+            'Content-type': 'text/html',
+        }
         html = ''
-        if r.path == '/':
+        if r.path == '/' or r.path == '/index.html':
+            logged_in = 'access_token' in SESSION
             html = T_ENV.get_template('index.html').render(
-                # FIXME(ywen): Should allow to specify scheme.
-                server_url_port='127.0.0.1:8000',
-                response_type=SERVER_RESPONSE_TYPE,
-                client_id=CLIENT_ID,
-                client_state=CLIENT_STATE,
-                # TODO(ywen): Encode the URI.
-                # NOTE(ywen): "In order to be secure, the redirect URL must be
-                # an https endpoint to prevent the code from being intercepted
-                # during the authorization process."
-                redirect_uri=urllib.parse.quote('http://127.0.0.1:8001/reply'),
+                login_status=logged_in
             )
+        elif r.path == '/login':
+            status_code = 302
+            server_auth_url = (
+                '{scheme}://{server_url_port}/oauth/authorize?'
+                'response_type={response_type}&'
+                'client_id={client_id}&'
+                'state={client_state}&'
+                'redirect_uri={redirect_uri}'.format(
+                    scheme='http',
+                    server_url_port='127.0.0.1:8000',
+                    response_type=SERVER_RESPONSE_TYPE,
+                    client_id=CLIENT_ID,
+                    client_state=CLIENT_STATE,
+                    # TODO(ywen): Encode the URI.
+                    # NOTE(ywen): "In order to be secure, the redirect URL must be
+                    # an https endpoint to prevent the code from being intercepted
+                    # during the authorization process."
+                    redirect_uri=urllib.parse.quote('http://127.0.0.1:8001/reply'),
+                )
+            )
+            headers['Location'] = server_auth_url
 
+        # NOTE(ywen): The response must be written in the following order:
+        # 1). Status code.
+        # 2). Headers.
+        # 3). Body.
+        self.send_response(code=status_code)
+        for k, v in headers.items():
+            self.send_header(k, v)
         self.end_headers()
         self.wfile.write(bytes(html, 'utf8'))
 
