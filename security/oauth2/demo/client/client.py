@@ -64,11 +64,13 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
                     # be an https endpoint to prevent the code from being
                     # intercepted during the authorization process."
                     redirect_uri=urllib.parse.quote(
-                        'http://127.0.0.1:8001/reply'
+                        'http://127.0.0.1:8001'
                     ),
                 )
             )
             headers['Location'] = server_auth_url
+        else:
+            html = self.return_404(T_ENV)
 
         # NOTE(ywen): The response must be written in the following order:
         # 1). Status code.
