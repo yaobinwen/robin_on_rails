@@ -1,13 +1,11 @@
-#!/usr/bin/env python3
-
 # The `http.server` documentation is referred to as `DOC` in the code.
 # https://docs.python.org/3/library/http.server.html
 
 
-import http.server
+from shared.http_request_handler_helper import HTTPRequestHandlerHelper
 
 
-class OAuthRequestHandler(http.server.BaseHTTPRequestHandler):
+class OAuthRequestHandler(HTTPRequestHandlerHelper):
 
     def do_GET(self):
         self.send_response(code=200)
