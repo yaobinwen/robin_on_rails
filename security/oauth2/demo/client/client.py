@@ -34,7 +34,8 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
         r = urllib.parse.urlparse(self.path)
         self.send_response(code=200)
         self.send_header('Content-type','text/html')
-        self.end_headers()
+
+        html = ''
         if r.path == '/':
             html = T_ENV.get_template('index.html').render(
                 # FIXME(ywen): Should allow to specify scheme.
@@ -48,7 +49,9 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
                 # during the authorization process."
                 redirect_uri=urllib.parse.quote('http://127.0.0.1:8001/reply'),
             )
-            self.wfile.write(bytes(html, 'utf8'))
+
+        self.end_headers()
+        self.wfile.write(bytes(html, 'utf8'))
 
 
 def get_publish_address():
