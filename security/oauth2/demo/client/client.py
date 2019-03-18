@@ -35,6 +35,7 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
 
     def do_GET(self):
         r = urllib.parse.urlparse(self.path)
+        q = urllib.parse.parse_qs(r.query)
 
         status_code = 200
         headers = {
@@ -42,9 +43,25 @@ class ClientRequestHandler(HTTPRequestHandlerHelper):
         }
         html = ''
         if r.path == '/' or r.path == '/index.html':
-            logged_in = 'access_token' in SESSION
+            logged_in = None
+            auth_request_denied = None
+            if 'auth_request' in q:
+                # This is the reply of the authorization request.
+                req_result = q['auth_request'][0]
+                if req_result == 'granted':
+                    # TODO(ywen): Request the access token.
+                    pass
+                elif req_result == 'denied':
+                    auth_request_denied = True
+                else:
+                    # TODO(ywen): The error case.
+                    pass
+            else:
+                logged_in = 'access_token' in SESSION
+
             html = T_ENV.get_template('index.html').render(
-                login_status=logged_in
+                logged_in=logged_in,
+                auth_request_denied=auth_request_denied
             )
         elif r.path == '/login':
             status_code = 302
