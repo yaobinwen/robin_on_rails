@@ -47,6 +47,8 @@ The port 6000 is mentioned in [3], Appendix B, section "Connection Setup" (Page 
 
 > For TCP connections, displays on a given host are numbered starting from 0, and the server for display N listens and accepts connections on port 6000 + N.
 
+The port 6000 is also mentioned in [4]. See the registration table at the bottom.
+
 **[2]**
 
 The `D` in `/tmp/.X11-unix/XD` is a number. On my current work computer, it is `/tmp/.X11-unix/X0=` where `DISPLAY` is `:0`.
@@ -57,3 +59,4 @@ The `D` in `/tmp/.X11-unix/XD` is a number. On my current work computer, it is `
 - [2] [X(7) man page](https://linux.die.net/man/7/x)
   - Or run `man x 7` in a terminal to view the man page.
 - [3] [X Window System Protocol, X Version 11, Release 6.7](https://www.x.org/docs/XProtocol/proto.pdf)
+- [4] [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=x11)
