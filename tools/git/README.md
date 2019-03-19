@@ -22,6 +22,31 @@ First, if you know which branch you want to delete, run `git branch -r -d origin
 
 Alternatively, if you want to prune all the non-existing branches, run `git remote prune origin` or `git fetch origin --prune`.
 
+---
+
+**Convert a normal Git repository to a bare one**
+
+[How to convert a normal Git repository to a bare one?](https://stackoverflow.com/q/2199897/630364) has two top answers.
+
+The first one does this:
+
+```
+cd repo
+mv .git ../repo.git # renaming just for clarity
+cd ..
+rm -fr repo
+cd repo.git
+git config --bool core.bare true
+```
+
+The second one does this:
+
+```
+git clone --bare /path/to/repo
+```
+
+But they are not equivalent. The comment says the `git clone --bare` way doesn't preserve config options which "can be critical to proper operation such as if you use git-p4". Read the comments to see more discussions on them.
+
 ## References
 
 - [Pro Git: The official Git book](https://git-scm.com/book/en/v2)
