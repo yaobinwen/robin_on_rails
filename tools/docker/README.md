@@ -11,3 +11,25 @@
 Refer to [Running GUI apps with Docker](http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/) which uses this command: `docker run -d -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix <image_name:tag>`.
 
 Also refer to [Running GUI Applications inside Docker Containers](https://medium.com/@SaravSun/running-gui-applications-inside-docker-containers-83d65c0db110) which uses this command: `docker run --network='host' --env="DISPLAY" --volume="$HOME/.Xauthority:/root/.Xauthority:rw" <image_name:tag>`.
+
+## How to generate core dump inside a container?
+
+Simply setting `ulimit -c unlimited` inside the docker probably won't work. This issue [1] talks about this a lot. For example, the issue description says:
+
+> On ubuntu the default setting - core files get piped to apport program. This is no good in containers. It must be overridden to something else if apport is not installed inside the container.
+>
+> It would also be a help if linux kernel could have a different value of /proc/sys/kern/pattern inside the container than outside it.
+
+The words above explain why the core dump is not generated inside the container, and how it might be fixed.
+
+I used the article [2] as a primary source which also refers to [1]. Eventually, here is how I generated core dumps inside the container:
+
+- Change the `/proc/sys/kernel/core_pattern` file on the **host** machine: `echo '/tmp/core.%t.%e.%p' | sudo tee /proc/sys/kernel/core_pattern`. [2] says "Docker containers share the same `/proc` as the host." If so, I may be able to modify this file from within the container as long as I have the superuser privilege.
+- Run the container with `--ulimit core=-1`: `docker run -d --name "my_container" --ulimit core=-1 image_name:tag`. [2] passes `--security-opt seccomp=unconfined` to `docker run`, but I ran the container without them and still succeeded.
+
+I also tried the article [3], but didn't succeed. However, that may not be the article's fault. The key point was still the `/proc/sys/kernel/core_pattern` configuration. [3] requires the container be started with the superuser privilege so the `core_pattern` file can be modified inside the container, not outside as how [2] did it. Therefore, I guess (not verified) [3] wouldn't work for the containers that can't be started with superuser privilege.
+
+References:
+- [1] [Documentation: Make clear instructions for getting a core file, when container crashes](https://github.com/moby/moby/issues/11740)
+- [2] [Core Dump File inside Docker](https://le.qun.ch/en/blog/core-dump-file-in-docker/)
+- [3] [How to get core file of segmentation fault process in Docker](https://dev.to/mizutani/how-to-get-core-file-of-segmentation-fault-process-in-docker-22ii)
