@@ -13,6 +13,7 @@ Therefore, the `core_pattern` file pipes the core dump to `/usr/share/apport/app
 See [2] for what `Apport` is all about. Basically:
 
 > Apport is a system which:
+>
 > - intercepts crashes right when they happen the first time,
 > - gathers potentially useful information about the crash and the OS environment,
 > - can be automatically invoked for unhandled exceptions in other programming languages (e. g. in Ubuntu this is done for Python),
@@ -21,6 +22,7 @@ See [2] for what `Apport` is all about. Basically:
 > - and is able to file non-crash bug reports about software, so that developers still get information about package versions, OS version etc.
 
 References:
+>
 - [1] [CORE(5) man page](https://manpages.ubuntu.com/manpages/bionic/en/man5/core.5.html)
   - Alternatively, run `man core 5` in a terminal.
 - [2] [Ubuntu Wiki: Apport](https://wiki.ubuntu.com/Apport)
