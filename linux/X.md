@@ -60,3 +60,4 @@ The `D` in `/tmp/.X11-unix/XD` is a number. On my current work computer, it is `
   - Or run `man x 7` in a terminal to view the man page.
 - [3] [X Window System Protocol, X Version 11, Release 6.7](https://www.x.org/docs/XProtocol/proto.pdf)
 - [4] [Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=x11)
+- [5] [X Window System Architecture Overview HOWTO](https://www.tldp.org/HOWTO/XWindow-Overview-HOWTO/index.html)
