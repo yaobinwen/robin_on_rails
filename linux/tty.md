@@ -61,6 +61,10 @@ As [5.1] explains:
 
 > A _pseudo-terminal_ is a special interprocess communication channel that acts like a terminal. One end of the channel is called the master side or master pseudo-terminal device, the other side is called the slave side. Data written to the master side is received by the slave side as if it was the result of a user typing at an ordinary terminal, and data written to the slave side is sent to the master side as if it was written on an ordinary terminal.
 
+## TTY Driver
+
+The TTY driver structure is defined in [`include/linux/tty_driver.h`](https://github.com/torvalds/linux/blob/master/include/linux/tty_driver.h#L302). Another major structure used is [`tty_struct`](https://github.com/torvalds/linux/blob/master/include/linux/tty.h#L283). For more details, see [6].
+
 ## References
 
 - [1] [The TTY demystified](http://www.linusakesson.net/programming/tty/)
@@ -71,3 +75,5 @@ As [5.1] explains:
   - [5.1] [17.9 Pseudo-Terminals](https://www.gnu.org/software/libc/manual/html_node/Pseudo_002dTerminals.html)
   - [5.2] [pty(7) - Linux man page](https://linux.die.net/man/7/pty)
   - [5.3] [pts(4) - Linux man page](https://linux.die.net/man/4/pts)
+- [6] ["Chapter 18. TTY Drivers" of "Linux Device Drivers, 3rd Edition"](https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch18.html)
+  - [Linux Device Drivers, 3rd Edition](https://www.amazon.com/Linux-Device-Drivers-Jonathan-Corbet/dp/0596005903)
