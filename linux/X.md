@@ -32,9 +32,7 @@ Example of values:
 
 `:0.0` means that we are talking about the first screen attached to your first display in your local host.
 
-### Notes
-
-**[1]**
+Note [1]:
 
 According to [2], "X servers generally support the following types of connections:"
 - `local`: The hostname part of the display name should be the empty string.
@@ -49,11 +47,26 @@ The port 6000 is mentioned in [3], Appendix B, section "Connection Setup" (Page 
 
 The port 6000 is also mentioned in [4]. See the registration table at the bottom.
 
-**[2]**
+Note [2]:
 
 The `D` in `/tmp/.X11-unix/XD` is a number. On my current work computer, it is `/tmp/.X11-unix/X0=` where `DISPLAY` is `:0`.
 
-### References
+## X Window System Architecture
+
+X Window system is a `client-server` architecture.
+
+![Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/X_client_server_example.svg/440px-X_client_server_example.svg.png)
+
+In a more widely seen model, the user who sits in front of a keyboard, a mouse, and a display device is usually on the "client" side, and he/she uses the keyboard and the mouse to provide input which is sent over the network to the "server" side which computes and sends the result back to the client side to be displayed on the display device.
+
+However, in X, this is reversed: The machine that the user uses is the `server`, and the applications that produce graphical output, regardless running locally or remotely, are the `clients`, hence the architectural view as shown above.
+
+The `server` has two responsibilities:
+
+- Take the input from the keyboard and the mouse and send it to the clients.
+- Take the output from the clients and render it to the display device.
+
+## References
 
 - [1] [What is the $DISPLAY environment variable?](https://askubuntu.com/a/432257/514711)
 - [2] [X(7) man page](https://linux.die.net/man/7/x)
