@@ -53,7 +53,7 @@ The `D` in `/tmp/.X11-unix/XD` is a number. On my current work computer, it is `
 
 ## X Window System Architecture
 
-X Window system is a `client-server` architecture.
+X Window system is a `client-server` architecture. See [5].
 
 ![Architecture](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/X_client_server_example.svg/440px-X_client_server_example.svg.png)
 
@@ -65,6 +65,14 @@ The `server` has two responsibilities:
 
 - Take the input from the keyboard and the mouse and send it to the clients.
 - Take the output from the clients and render it to the display device.
+
+[5] also mentions these terms:
+
+- `window manager`
+- `widget library` or `toolkit`
+- `GTK` and `QT`
+- `desktop environment`
+- `KDE` and `GNOME`
 
 ## References
 
