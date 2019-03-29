@@ -27,3 +27,7 @@ References:
   - Alternatively, run `man core 5` in a terminal.
 - [2] [Ubuntu Wiki: Apport](https://wiki.ubuntu.com/Apport)
 - [3] [`apport` source code for Ubuntu 18.04](https://git.launchpad.net/ubuntu/+source/apport/tree/data/apport?h=ubuntu/bionic)
+
+## Cache
+
+The system cache is at `/var/cache`.
