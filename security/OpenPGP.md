@@ -23,27 +23,56 @@ Most cryptanalysis experts **attack the algorithm** instead of the key because t
 
 Therefore, choosing a stronger algorithm is more important than choosing a longer key.
 
+## Certificates and Certificate Authority  (CA)
+
+Certificates are good for **organizations**. CA is **centralized**.
+
+[**X.509**](https://tools.ietf.org/html/rfc5280) is a standard defining the format of public key certificates. X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS.
+
 ## Web of Trust (WOT)
 
-`Trust` means the certainty of one's identity, not the trustworthiness of the person.
+This section assumes the use of GnuPG (GPG) as the implementation of OpenPGP.
 
-WOT is implemented in two forms:
+`Trust` means the **certainty of one's identity**, not the trustworthiness of the person.
 
-| Name | Suited for | Structure| Notes |
-|-----:|:-----------|:--------:|:------|
-| Certificates | Organizations | Centralized | Described in the X.509 standard (see below). |
-| Trust relationnships among users | Individuals | Distributed | Described in OpenPGP. |
+WOT is based on **individual relationships** among the users. It is **distributed**. When using the certificates issued by the CA, you rely on the CA's effort to verify the other one's identity; when using WOT, you rely on another individual's effort to verify the other one's identity.
 
-X.509:
-- https://en.wikipedia.org/wiki/X.509
-- https://tools.ietf.org/html/rfc5280
+As [1] says,
 
-X.509 is a standard defining the format of public key certificates. X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS.
+> By signing another person's key, you are affirming that you have verified that person's identity.
 
-[PGP Web of Trust: Core Concepts Behind Trusted Communication](https://www.linux.com/learn/pgp-web-trust-core-concepts-behind-trusted-communication)
+Therefore, the more signatures you obtain, the more likely other people will believe that the key actually belongs to you.
 
-[PGP Web of Trust: Delegated Trust and Keyservers](https://www.linuxfoundation.org/blog/2014/02/pgp-web-of-trust-delegated-trust-and-keyservers/)
+Not every signer is the same. If your key is signed by a trustworthy person, other people will more likely trust the key; in contrast, if your key is signed by a well-known scum, other people will more likely choose to ignore this signature.
 
-**QUESTION**: How does revocation certificate works?
+Therefore, the point is:
 
-[The GNU Privacy Handbook](https://www.gnupg.org/gph/en/manual/book1.html)
+- Get more people to sign your key.
+- Get more trustworthy people to sign your key.
+
+Because the private key is always kept secret to its owner, when you sign somebody's key, it is the **public key** you are signing. Your signature is then attached to this **public key**.
+
+GPG stores the public keys in the keyring on the local computer. Therefore, when you want to get somebody's signature, you follow these steps:
+
+- Export your public key from the local keyring to a file.
+- Send this file to the signer.
+- The signer verifies the key and your identity to make sure you are the authentic owner of the key.
+- The signer signs the public key so a new signature is attached to the key.
+- Because the new signature exists in the copy of your public key that the signer has, the signer needs to send the public key with his/her signature back to you.
+- Upon receipt, you import the public key along with the new signature into your keyring.
+- Later when somebody asks for your public key, you can send the public key with this new signature to that person.
+
+The inconvenience is: you must send the public key to everyone that asks for it; if later you need to revoke the key, you need to send everyone who already has your key a message saying your previous key is revoked.
+
+Of course, you can publish your key on your own website so you don't have to send the key every time but the users of your key must come to get your key. When this becomes a more common practice, the idea of `key server` becomes feasible.
+
+A key server is essentially no different than a personal website. It just helps people by letting them not have to remember every person's personal website. When you want to find somebody's public key, you go and search for it on the key server. When you sign somebody's key, you can simply push the key with your signature back to the server (instead of to its owner directly). When you need to revoke your key, you just publish the revocation certificate to the key server, and the key server will match the revocation certificate with your public key, and tag the key as "REVOKED". When you need to refresh the public keys of others, you don't have to send them messages one by one to ask if there is any update. You simply ask the server for the updates, and the server will send all the available updates back to you.
+
+## References
+
+- [1] [PGP & GPG: Email for the Practical Paranoid](https://www.amazon.com/PGP-GPG-Email-Practical-Paranoid/dp/1593270712)
+- [2] [PGP Web of Trust: Core Concepts Behind Trusted Communication](https://www.linux.com/learn/pgp-web-trust-core-concepts-behind-trusted-communication)
+- [3] [PGP Web of Trust: Delegated Trust and Keyservers](https://www.linuxfoundation.org/blog/2014/02/pgp-web-of-trust-delegated-trust-and-keyservers/)
+- [4] [The GNU Privacy Handbook](https://www.gnupg.org/gph/en/manual/book1.html)
+- [5] `PGP pathfinder`: https://pgp.cs.uu.nl/
+- [6] [Wotsap: Web of trust statistics and pathfinder](https://www.lysator.liu.se/~jc/wotsap/)
