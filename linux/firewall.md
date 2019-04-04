@@ -107,3 +107,42 @@ As [1] says, you can first save all the rules into a local file; edit them in a 
 - [1] [iptables(8)](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables.8.html)
 - [2] [An In-Depth Guide to iptables, the Linux Firewall](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/)
 - [3] [iptables-extensions(8)](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables-extensions.8.html)
+
+## Uncomplicated Firewall (UFW)
+
+### Configuration Files
+
+The default policy configuration file is `/etc/default/ufw`.
+
+The other configuration files are in the folder `/etc/ufw`.
+
+The `6` version is for IPv6. For example, `user.rules` is for IPv4 and `user6.rules` is for IPv6.
+
+### Check, Enable, Disable, Reset
+
+- Check status: `sudo ufw status verbose`
+- Enable: `sudo ufw enable`
+- Disable: `sudo ufw disable`
+- Reset: `sudo ufw reset` (This does **not** change default policies if they were modified earlier.)
+
+### Set Up Default Policies
+
+Examples:
+
+```
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+```
+
+### Allow Other Connections
+
+- SSH:
+  - `sudo ufw allow ssh`, or
+  - `sudo ufw allow 22` (This also works when SSH uses a different port.)
+- HTTP: `sudo ufw allow http`
+- HTTPS: `sudo ufw allow https`
+- FTP: `sudo ufw allow ftp`
+
+### References
+
+- [1] [How To Set Up a Firewall with UFW on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
