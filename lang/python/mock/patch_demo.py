@@ -4,6 +4,25 @@
 '''This file contains examples of using `mock.patch`. For its documentation,
 see: https://docs.python.org/3/library/unittest.mock.html#the-patchers
 This document is referred to as `DOC` in the code.
+
+unittest.mock.patch(
+    target, new=DEFAULT, spec=None, create=False, spec_set=None, autospec=None,
+    new_callable=None, **kwargs
+)
+
+`target`: A string of format "package.module.class_name.method_name". Note you
+    need to patch in the right namespace.
+
+`new`: The object that replaces _target_. `DEFAULT` is a MagicMock object.
+`new_callable`: The class that is called to create the _new_ object. By default
+    it is MagicMock.
+
+`spec` and `spec_set`: Passed in the MagicMock.
+`autospec`:
+    - If `True`: Create _new_ with a spec from _target_.
+    - If an object: Create _new_ with a spec from the passed in object.
+
+`create`: If an attribute doesn't exist in _target_, create it in _new_.
 '''
 
 import mock
