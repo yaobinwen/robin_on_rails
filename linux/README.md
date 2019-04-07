@@ -10,6 +10,7 @@ Although this folder is called "Linux", most of the information is actually for 
 
 - [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/): The book is centered around three conceptual pieces that are fundamental to operating systems: virtualization, concurrency, and persistence.
 - [Advanced Programming in the UNIX® Environment](http://www.apuebook.com/)
+- [Linux From Scratch: Build your custom Linux from source code](http://www.linuxfromscratch.org/)
 
 ## Commands
 
