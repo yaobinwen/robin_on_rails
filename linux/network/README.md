@@ -39,6 +39,7 @@ Use `tcpdump`: `sudo tcpdump -i eth0`
 - [8] **Recommended** [Computer Networking: A Top-Down Approach (7th Edition)](https://www.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149)
 - [9] **Recommended** [Computer Networks (5th Edition)](https://www.amazon.com/Computer-Networks-5th-Andrew-Tanenbaum/dp/0132126958)
 - [10] [An Introduction to Computer Networks by Peter L Dordal](https://intronetworks.cs.luc.edu/)
+- [11] [Network Address Translation (NAT)](https://www.practicalnetworking.net/series/nat/nat/)
 
 ## Notes
 
