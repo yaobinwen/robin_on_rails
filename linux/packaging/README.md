@@ -105,6 +105,16 @@ The simple usage is `apt-file search Sequence/autoreconf.pm`, and it shows the p
 
 > dh-autoreconf: /usr/share/perl5/Debian/Debhelper/Sequence/autoreconf.pm
 
+### dpkg
+
+See [4] for more details. Here is a list of frequently used commands.
+
+- `dpkg`:
+  - `dpkg -c /path/to/deb/file`: Show the content of the `.deb` file.
+  - `dpkg -i /path/to/deb/file`: Install the given `.deb` file.
+- `dpkg-query`
+  - `dpkg-query -W --showformat='${Version}' pkg_name`: Query the version of the installed `pkg_name` package.
+
 ### tasksel
 
 A `task` is the functionality that the user wants the machine to have, e.g., an email server, a web server, etc.. The tool `tasksel` provides an interface to specify the functionalities that the user wants to install, and `tasksel` installs all the needed packages to accomplish that task, saving the user's effort to figure out what packages should be installed.
