@@ -21,6 +21,9 @@
     - _Thousands of dissidents have been interrogated or imprisoned in recent weeks._
 - at the same time
   - in tandem
+- attention
+  - mesmerize: to have someone's attention completely so that they cannot think of anything else
+    - _I was completely mesmerized by the performance._
 - carry
   - lug verb [ T usually + adv/prep ] to carry or pull something with effort or difficulty because it is heavy
     - _I'm exhausted after lugging these suitcases all the way across the city._
