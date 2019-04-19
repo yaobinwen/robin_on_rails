@@ -3,6 +3,7 @@
 ## Cheatsheets
 
 - [Bash scripting cheatsheet](https://devhints.io/bash) (Note this cheatsheet may contain Bashism.)
+- [Explain Shell](https://explainshell.com/) is a helpful online utility to analyze the command line and provide links to the corresponding manual.
 
 ## Notes
 
