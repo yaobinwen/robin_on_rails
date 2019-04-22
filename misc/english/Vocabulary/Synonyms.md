@@ -29,6 +29,10 @@
     - _I'm exhausted after lugging these suitcases all the way across the city._
     - _I don't want to lug these shopping bags around with me all day._
     - _But one spring morning, I was lugging wash water up from the river when a cowhand name of Billie came trotting up._
+- cause
+  - instigate: verb [ T ] to cause an event or situation to happen by your actions
+    - _The approach where actions are instigated based on the contents of the POST message is good in that way because you don't need a new endpoint or handler._
+    - _Changes in the orientation program were instigated by the new director._
 - character
   - streak: noun [ C ] an often unpleasant characteristic that is very different from other characteristics
     - _Her stubborn streak makes her very difficult to work with sometimes._
