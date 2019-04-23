@@ -36,3 +36,12 @@ The first PRNG to avoid major problems and still run fairly quickly was the [Mer
 >
 > The goal is to compute P(A), the probability that at least two people in the room have the same birthday. However, it is simpler to calculate P(A'), the probability that no two people in the room have the same birthday. Then, because A and A' are the only two possibilities and are also mutually exclusive, P(A) = 1 − P(A').
 
+## Fast Multiplication
+
+There are many different multiplication methods, and the ["grade school" algorithm](https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication) is just one of them. See the Wikipedia article [Multiplication algorithm](https://en.wikipedia.org/wiki/Multiplication_algorithm).
+
+The [Karatsuba algorithm](https://en.wikipedia.org/wiki/Karatsuba_algorithm) is a fast and popular one published in 1962. The [Toom–Cook multiplication](https://en.wikipedia.org/wiki/Toom%E2%80%93Cook_multiplication) is a faster generalization of Karatsuba's method, and the [Schönhage–Strassen algorithm](https://en.wikipedia.org/wiki/Sch%C3%B6nhage%E2%80%93Strassen_algorithm) (1971) is even faster for sufficiently large n.
+
+The article [Mathematicians Discover the Perfect Way to Multiply](https://www.quantamagazine.org/mathematicians-discover-the-perfect-way-to-multiply-20190411) introduces the potentially (see Note [1]) fastest multiplication algorithm that was discovered in March, 2019, in the paper [Integer multiplication in time O(n log n)](https://hal.archives-ouvertes.fr/hal-02070778/document).
+
+Note [1]: "At the end of February, a team of computer scientists at Aarhus University [posted a paper](https://arxiv.org/abs/1902.10935) arguing that if another unproven conjecture is also true, this is indeed the fastest way multiplication can be done."
