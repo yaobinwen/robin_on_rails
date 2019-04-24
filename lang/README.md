@@ -13,6 +13,10 @@ This document is about all kinds of programming languages.
 - [Duff's device](https://en.wikipedia.org/wiki/Duff%27s_device) is "a way of manually implementing [loop unrolling](https://en.wikipedia.org/wiki/Loop_unrolling) by interleaving two syntactic constructs of C: the do-while loop and a switch statement."
 - [再再论指针](https://blog.csdn.net/megaboy/article/details/482783): This is a series of articles I read to learn the C pointers. They are old.
 
+## JavaScript
+
+- [Understanding delete](http://perfectionkills.com/understanding-delete/)
+
 ## Python
 
 - [Idioms and Anti-Idioms in Python](https://docs.python.org/3.1/howto/doanddont.html)
