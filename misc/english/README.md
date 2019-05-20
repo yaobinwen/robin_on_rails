@@ -14,6 +14,8 @@ See the notes in "Purdue_OWL.md".
 
 ## Vocabulary Building
 
+- Learn about [Lexile Measure](https://lexile.com/) and use its feature ["Find a Book"](https://fab.lexile.com/).
+  - I'm currently trying the book [_A People's History of the United States_](https://fab.lexile.com/book/details/9780061989834/) which has the measure of `1240L`.
 - To read English books, use Kindle because it offers word-wise feature.
 - Guiding books provide description of precise operations which I can learn and use. The guiding books include:
   - Cooking recipes
