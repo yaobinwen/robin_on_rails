@@ -36,6 +36,23 @@ The following paragraph of [1] explains how the _extended_ partition helps creat
 
 > The EXT4 filesystem primarily improves performance, reliability, and capacity.
 
+## Shared Subtrees
+
+This is related with the [`bind propagation` of docker](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation).
+
+The section "Features" of [7] provides good examples of how each mount mode works. Remember that the **prerequisite** of using `slave` mode is that the master mount point is a `shared` one. I found this today (2019-06-03) when I was investigating an issue in our product's docker containers which kept reporting `starting container failed: linux mounts: path /path/to/some/local/folder is mounted on / but it is not a shared or slave mount`. The related part of the docker compose file was like the following:
+
+```yaml
+- type: bind
+       source: '/path/to/some/local/folder'
+       target: '/path/to/some/local/folder'
+       read_only: true
+       bind:
+         propagation: slave
+```
+
+The `/path/to/some/local/folder` of `source` was mounted when the system started, but was only mounted as the default mode `private`. Therefore, it couldn't be used to propagate events to the slaves, hence the error. What I did to fix it was run `sudo mount --make-shared /` to make it shared, then the error was gone.
+
 ## References
 
 - [1] [Beginner Geek: Hard Disk Partitions Explained](https://www.howtogeek.com/184659/beginner-geek-hard-disk-partitions-explained/)
@@ -44,3 +61,4 @@ The following paragraph of [1] explains how the _extended_ partition helps creat
 - [4] [A MINIMUM COMPLETE TUTORIAL OF LINUX EXT4 FILE SYSTEM](https://metebalci.com/blog/a-minimum-complete-tutorial-of-linux-ext4-file-system/)
 - [5] ["safe" ext4 configuration for systems running unattended](https://serverfault.com/q/356507/125167)
 - [6] [Is ext4 filesystem safe?](https://unix.stackexchange.com/q/474496/162971)
+- [7] [Shared Subtrees](https://www.kernel.org/doc/Documentation/filesystems/sharedsubtree.txt)
