@@ -13,6 +13,11 @@
 - sputum: /ˈspjuː.t̬əm/ 痰
   - phlegm /flem/ 痰
 
+## Cooking
+
+- simmer /ˈsɪm.ɚ/ to cook something liquid, or something with liquid in it, at a temperature slightly below boiling (炖，煨)
+  - _Leave the vegetables to simmer for a few minutes._
+
 ## Horse-like Animals
 
 - canter: See 'canter' in 'Synonyms.md'.
