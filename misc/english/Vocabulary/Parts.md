@@ -1,7 +1,13 @@
 # Parts
 
-## Body & Illness
+## Body Gestures
 
+- slouch: to stand, sit, or walk with the shoulders and head bent forward
+
+## Body Parts & Illness
+
+- ligament /ˈlɪɡ·ə·mənt/ noun [C] any of the strong fibres (= strips of tissue) in the body that connect bones together, limiting movements in joints (= places where two bones are connected) and supporting muscles and other tissue (韧带)
+- tendon: /ˈten·dən/ noun [C] a strong piece of tissue in the body connecting a muscle to a bone (肌腱)
 - trachea /ˈtreɪ.kiə/ 气管
   - 也可以是windpipe
 - bronchus: /ˈbrɑːŋ.kəs/ 支气管
