@@ -205,6 +205,12 @@
 - true
   - faithful: true to the facts or the original
     - _This meant that languages which required accented characters couldn’t be faithfully represented in ASCII._ See [this page](https://docs.python.org/2/howto/unicode.html).
+- twist
+  - contort: /kənˈtɔːrt/ to (cause something to) twist or bend violently and unnaturally into a different shape or form
+    - _His face contorted with bitterness and rage._
+    - [_They say smartphones and other handheld devices are contorting the human form, requiring users to bend their heads forward to make sense of what’s happening on the miniature screens._](https://www.washingtonpost.com/nation/2019/06/20/horns-are-growing-young-peoples-skulls-phone-use-is-blame-research-suggests)
+  - intertwine: to twist or be twisted together, or to be connected so as to be difficult to separate
+  - twine: to (cause to) wrap round an object several times
 - unique
   - unparalleled: having no equal; better or greater than any other
     - _Capitalism as an economic system has led to unparalleled innovation and improvement in the human condition._ ([Human-Centered Capitalism](https://www.yang2020.com/policies/human-capitalism/))
