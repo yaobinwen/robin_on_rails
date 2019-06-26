@@ -4,6 +4,11 @@
   - solitary
     - _On the hill, a solitary figure was busy chopping down trees._
     - _fishing and other solitary pastimes_
+- although
+  - albeit /ɑːlˈbiː.ɪt/ formal
+    - _The evening was very pleasant, albeit a little quiet._
+    - _He tried, albeit without success._
+    - _In this post I will be looking at git subtree and show why it is an improvement – albeit not perfect – over git submodule._ ([source](https://www.atlassian.com/blog/git/alternatives-to-git-submodule-git-subtree))
 - approve
   - ratify: (especially of governments or organizations) to make an agreement official
     - _The decision will have to be ratified (= approved) by the executive board._
