@@ -51,6 +51,10 @@
   - populace: "the populace" (_FORMAL_) means "the ordinary people who live in a particular country or place."
     - [_Some studies show that workers in the nuclear industry are more likely than the general populace to get cancer._](https://dictionary.cambridge.org/dictionary/english/populace)
     - [_Their proponents saw them as transforming the United States from a country that was (in Abraham Lincoln's words) "half slave and half free" to one in which the constitutionally guaranteed "blessings of liberty" would be extended to the entire populace, including the former slaves and their descendants._](https://en.wikipedia.org/wiki/Reconstruction_Amendments)
+- complaint
+  - gripe noun [ C ] INFORMAL /ɡrɑɪp/ a strong complaint
+    - _My biggest gripe about living here is the hot weather._
+    - _Yang’s policies nod to everything from long-standing political movements (promoting gun safety, ending mass incarceration, paid family leave) to resolving minor gripes (a government hotline to report robocalls)._ ([source](https://www.newyorker.com/news/news-desk/how-andrew-yangs-robot-apocalypse-can-heal-a-divided-nation))
 - confuse
   - perplex
 - conflicting
