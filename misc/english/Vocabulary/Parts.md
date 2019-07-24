@@ -36,4 +36,4 @@
 
 ## Houses
 
-- [bay window](https://www.andersenwindows.com/windows-and-doors/windows/bay-windows-bow-windows/)
+- [bay window](https://www.andersenwindows.com/windows-and-doors/windows/bay-windows-bow-windows/): "Bay and bow windows are created by combining three or more windows together so that they angle out beyond the house wall."
