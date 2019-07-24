@@ -30,6 +30,9 @@
   - mesmerize: to have someone's attention completely so that they cannot think of anything else
     - _I was completely mesmerized by the performance._
 - carry
+  - laden **adjective** carrying or holding a lot of something
+    - _a table laden with food_
+    - _Yang is a natural public speaker who delivers his stump speech like it’s a ted talk, laden with references to statistics and social research and with an emphasis on the counterintuitive._ ([source](https://www.newyorker.com/news/news-desk/how-andrew-yangs-robot-apocalypse-can-heal-a-divided-nation))
   - lug verb [ T usually + adv/prep ] to carry or pull something with effort or difficulty because it is heavy
     - _I'm exhausted after lugging these suitcases all the way across the city._
     - _I don't want to lug these shopping bags around with me all day._
