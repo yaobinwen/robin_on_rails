@@ -33,3 +33,7 @@
   - Compare: paw
 - gallop: See 'gallop' in 'Synonyms.md'.
 - trot: See 'trot' in 'Synonyms.md'.
+
+## Houses
+
+- [bay window](https://www.andersenwindows.com/windows-and-doors/windows/bay-windows-bow-windows/)
