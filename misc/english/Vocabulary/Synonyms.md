@@ -130,6 +130,11 @@
   - churn: verb [ I/T ]: to move violently
     - _The water was churning and the boat was rocking._
     - _If this release exposed a case where your application was using an anti-pattern and didn’t work properly after the fix, we’re sorry for the churn._ (See [source](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html). 'churn' is used as a noun in this example.)
+- negative
+  - pejorative adjective formal /pɪˈdʒɔːr.ə.t̬ɪv/: expressing disapproval, or suggesting that something is not good or is of no importance
+    - _Is "Yankee" a pejorative term?_
+    - _Make sure students realize that "fat" is a pejorative word._
+    - _It comes as quite a shock to still hear a judge describing a child as "illegitimate", with all the pejorative overtones of that word._
 - obey
   - observe: _FORMAL_ to obey a law, rule, or custom
     - [_Buses will observe the bus stops on the diversion at Crown Street_](https://english.stackexchange.com/q/471077/7342)
