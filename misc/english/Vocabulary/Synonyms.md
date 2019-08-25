@@ -44,6 +44,8 @@
   - instigate: verb [ T ] to cause an event or situation to happen by your actions
     - _The approach where actions are instigated based on the contents of the POST message is good in that way because you don't need a new endpoint or handler._
     - _Changes in the orientation program were instigated by the new director._
+  - pose: (除了"姿势"的意思之外还有"造成"的意思)
+    - _A 2050 scenario is outlined in which accelerating climate-change impacts pose large negative consequences to humanity which might not be undone for centuries._
 - character
   - streak: noun [ C ] an often unpleasant characteristic that is very different from other characteristics
     - _Her stubborn streak makes her very difficult to work with sometimes._
@@ -69,6 +71,10 @@
 - danger
   - peril: [ C/U ] danger, or something that is dangerous
     - _[ U ] The president said that we are entering a time of great peril._
+- dangerous:
+  - treacherous: If the ground or sea is treacherous, it is extremely dangerous, especially because of bad weather conditions
+    - _Snow and ice have left many roads treacherous, and drivers are warned to use caution._
+    - _The true worst-case scenario might be one where we don't venture out from our safe harbors of knowledge to explore the more treacherous shores of uncertainty._
 - determined
   - feisty: adj. active, forceful, and full of determination
     - _He launched a feisty attack on the government._
@@ -185,6 +191,9 @@
 - shy
   - bashful
   - diffident
+- similar
+  - akin
+    - _This requires the global mobilisation of resources on an emergency basis, akin to a wartime level of response._
 - sleep
   - snooze: verb [ I ] to sleep lightly for a short while, especially somewhere other than in your bed
     - _The dog's snoozing in front of the fire._
@@ -238,6 +247,10 @@
     - _He responded with the vilest language imaginable._
 - unsuccessful
   - abortive: _He made two abortive attempts on the French throne._
+- unwilling
+  - reticent: unwilling to speak about your thoughts or feelings
+    - _He is very reticent about his past._
+    - _Most of the students were reticent about answering questions._
 - urgent
   - imperative: extremely important or urgent
     - _It's imperative to act now before the problem gets really serious._
