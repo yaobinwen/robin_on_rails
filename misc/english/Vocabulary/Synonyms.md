@@ -29,6 +29,9 @@
 - attention
   - mesmerize: to have someone's attention completely so that they cannot think of anything else
     - _I was completely mesmerized by the performance._
+- bad
+  - abysmal: adj. /əˈbɪz.məl/ very bad
+    - _Many Americans are disgusted and concerned about the dysfunction and abysmal results from Washington, D.C., and so are we._
 - carry
   - laden **adjective** carrying or holding a lot of something
     - _a table laden with food_
