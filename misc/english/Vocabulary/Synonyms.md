@@ -50,6 +50,10 @@
   - streak: noun [ C ] an often unpleasant characteristic that is very different from other characteristics
     - _Her stubborn streak makes her very difficult to work with sometimes._
     - _You need to have a competitive streak when you're working in marketing._
+- combine
+  - coalesce: verb [ I/T ] US /ˌkoʊ·əˈles/ to combine into a single group or thing
+    - _[ I ] The theory is that galaxies coalesced from smaller groupings of stars._
+    - _Like other aerosols, smoke particles can act as cloud seeds; water vapor can coalesce around them to form cloud water droplets._ ([source](https://climate.nasa.gov/news/2892/through-smoke-and-fire-nasa-searches-for-answers/))
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - common
