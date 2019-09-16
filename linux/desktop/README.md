@@ -63,3 +63,5 @@ Here is basic information about [`dconf`](https://en.wikipedia.org/wiki/Dconf):
 **`GIO` (Gnome Input/Output)** is "a library, designed to present programmers with a modern and usable interface to a virtual file system." (see [here](https://en.wikipedia.org/wiki/GIO_(software))) It's reference manual is found [here](https://developer.gnome.org/gio/stable/).
 
 [`gio`](http://manpages.ubuntu.com/manpages/bionic/en/man1/gio.1.html) is the GIO command line too.
+
+**GVfs (abbreviation for GNOME Virtual file system)** is "GNOME's userspace virtual filesystem designed to work with the I/O abstraction of GIO." (see [here](https://en.wikipedia.org/wiki/GVfs)) `gvfsd-metadata` "is a daemon acting as a write serialiser to the internal gvfs metadata storage. It is autostarted by GIO clients when they make metadata changes." (see [here](https://en.wikipedia.org/wiki/GVfs))
