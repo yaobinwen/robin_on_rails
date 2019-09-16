@@ -59,3 +59,7 @@ Here is basic information about [`gconf`](https://en.wikipedia.org/wiki/GConf):
 Here is basic information about [`dconf`](https://en.wikipedia.org/wiki/Dconf):
 
 > dconf is a low-level configuration system and settings management. Its main purpose is to provide a back end to GSettings on platforms that don't already have configuration storage systems. It depends on GLib. It is part of GNOME 3 and is a replacement for GConf.
+
+**`GIO` (Gnome Input/Output)** is "a library, designed to present programmers with a modern and usable interface to a virtual file system." (see [here](https://en.wikipedia.org/wiki/GIO_(software))) It's reference manual is found [here](https://developer.gnome.org/gio/stable/).
+
+[`gio`](http://manpages.ubuntu.com/manpages/bionic/en/man1/gio.1.html) is the GIO command line too.
