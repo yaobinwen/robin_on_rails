@@ -14,6 +14,9 @@ This document is about all kinds of programming languages.
 - [再再论指针](https://blog.csdn.net/megaboy/article/details/482783): This is a series of articles I read to learn the C pointers. They are old.
 - [Coliru](https://coliru.stacked-crooked.com/): An online tool to write C++ code for quick verification of something.
 - [How to read in a file in C++](http://insanecoding.blogspot.com/2011/11/how-to-read-in-file-in-c.html)
+- Rvalue references:
+  - [A Brief Introduction to Rvalue References](https://www.artima.com/cppsource/rvalue.html)
+  - [C++ Rvalue References Explained](http://thbecker.net/articles/rvalue_references/section_01.html)
 
 ## JavaScript
 
