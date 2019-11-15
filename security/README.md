@@ -113,6 +113,29 @@ See [7]:
 
 - [Keycloak](https://www.keycloak.org/index.html): "Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code."
 
+## As a Career
+
+The article [_4 Cybersecurity Career Paths (And the Training to Get You There)_](https://www.newhorizons.com/article/4-cybersecurity-career-paths-and-the-training-to-get-you-there) talks about four roles:
+- Security Architect
+- Security Consultant
+- Penetration Tester/Ethical Hacker
+- Chief Information Security Officer (CISO)
+
+It also mentions the industry certificates:
+- Beginner level:
+  - CompTIA Security+
+- Intermediate level:
+  - Certified Ethical Hacker (CEH)
+  - Cybersecurity Analyst (CySA+)
+- Advanced level:
+  - EC-Council Certified Security Analyst (ECSA)
+  - Certified Information Systems Auditor (CISA)
+  - Certified Information Security Manager (CISM)
+  - CompTIA Advanced Security Practitioner (CASP)
+
+- Expert level:
+  - Certified Information Systems Security Professional (CISSP)
+
 ## References
 
 - [1] [Internet Security Glossary, Version 2](https://tools.ietf.org/html/rfc4949)
