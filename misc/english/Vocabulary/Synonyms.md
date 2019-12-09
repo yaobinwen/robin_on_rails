@@ -1,5 +1,8 @@
 # Vocabulary
 
+- agreement
+  - covenant: noun [ C ] UK  /ˈkʌv.ən.ənt/ US  /ˈkʌv.ən.ənt/ a formal agreement or promise between two or more people
+    - _The contract contained a restrictive covenant against building on the land._
 - alone
   - solitary
     - _On the hill, a solitary figure was busy chopping down trees._
@@ -75,6 +78,9 @@
   - treacherous: If the ground or sea is treacherous, it is extremely dangerous, especially because of bad weather conditions
     - _Snow and ice have left many roads treacherous, and drivers are warned to use caution._
     - _The true worst-case scenario might be one where we don't venture out from our safe harbors of knowledge to explore the more treacherous shores of uncertainty._
+- destroy
+  - annihilate: /əˈnaɪ.ə.leɪt/ vt; to destroy something completely so that nothing is left
+    - _a city annihilated by an atomic bomb_
 - determined
   - feisty: adj. active, forceful, and full of determination
     - _He launched a feisty attack on the government._
@@ -94,6 +100,10 @@
 - effort:
   - exert: exert yourself: to make a mental or physical effort
     - _He was saying that, no matter what conditions existed, the blame lay no more heavily on the politician and his machine controlling city, State, or nation, than on the shoulders of the average citizen who concerned himself so little with his government that he allowed men to stay in power in spite of his dissatisfaction because he was too indifferent to exert himself to get better men in office._
+- enjoy:
+  - relish: verb [ T ] formal UK ​ /ˈrel.ɪʃ/ US ​ /ˈrel.ɪʃ/ to like or enjoy something:
+    - _I always relish a challenge._
+    - _I don't relish telling her that her son has been arrested._
 - fashion
   - vogue: noun [ S or U ] /voʊɡ/ a fashion or general liking, especially one that is temporary
     - _In the 1920s, short hair for women became the vogue._
@@ -157,6 +167,10 @@
 - promising
   - auspicious: _adj_, FORMAL: suggesting a positive and successful future
     - _Our first meeting was not auspicious - we had a huge argument._
+- punish
+  - chastise: verb [ T ] formal /tʃæsˈtaɪz/ to punish someone, especially by hitting them
+    - _Some family campaigners believe in the right to physically chastise children._
+    - _Fearful that he will be chastised by gangs, the boy has agreed to speak providing his identity is hidden._
 - ready
   - poised: ready to do a particular thing at any moment
     - _The company is poised to launch its new advertising campaign._
@@ -165,11 +179,18 @@
   - superfluous: adj, /suːˈpɝː.flu.əs/ **The second syllable has the stress.**
     - _The report was marred by a mass of superfluous detail._
     - _Our new mayor plans to eliminate superfluous programs._
+- replace
+  - supplant: verb [ T ] formal UK ​ /səˈplɑːnt/ US ​ /səˈplænt/
+    - _Printed books will soon be supplanted by e-books._
+    - _Small children can often feel supplanted in their parents' affections (= that their parents no longer like them as much) when a new brother or sister is born._
 - repeatedly
   - [intermittent](https://dictionary.cambridge.org/us/dictionary/english/intermittent)
     - _adj_ /ˌɪn·tərˈmɪt·ənt/ not happening regularly or continuously; stopping and starting repeatedly or with long periods in between
     - _eg_ It rained intermittently all day.
 - result
+  - corollary: noun [ C ] formal /ˈkɔːr.ə.ler.i/ something that results from something else
+    - _Unfortunately, violence is the inevitable corollary of such a revolutionary change in society._
+    _McCandelss's apparent sexual innocence, however, is a corollary of a personality type that our culture purports to admire, at least in the case of its more famous adherents._
   - ramification: noun [ C usually pl ] the possible result of a decision or action
     - _Have you considered all the ramifications of changing careers at this stage of your life?_
 - rule
@@ -270,3 +291,5 @@
   - agitate: /ˈædʒ.ə.teɪt/ to make someone feel worried or angry
     - _What is the purpose of education? This question agitates scholars, teachers, statesmen, every group, in fact, of thoughtful men and women._
   - apprehension: _It's normal to feel a little apprehension before starting a new job._
+  - perturb: verb [ T ] formal /pəˈtɜːb/ to worry someone
+    - _News of the arrest perturbed her greatly._
