@@ -53,6 +53,10 @@
   - streak: noun [ C ] an often unpleasant characteristic that is very different from other characteristics
     - _Her stubborn streak makes her very difficult to work with sometimes._
     - _You need to have a competitive streak when you're working in marketing._
+- combine
+  - coalesce: verb [ I/T ] US /ˌkoʊ·əˈles/ to combine into a single group or thing
+    - _[ I ] The theory is that galaxies coalesced from smaller groupings of stars._
+    - _Like other aerosols, smoke particles can act as cloud seeds; water vapor can coalesce around them to form cloud water droplets._ ([source](https://climate.nasa.gov/news/2892/through-smoke-and-fire-nasa-searches-for-answers/))
 - comfort
   - console: To comfort (someone) in a time of grief, disappointment, etc.
 - common
@@ -149,6 +153,11 @@
   - churn: verb [ I/T ]: to move violently
     - _The water was churning and the boat was rocking._
     - _If this release exposed a case where your application was using an anti-pattern and didn’t work properly after the fix, we’re sorry for the churn._ (See [source](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html). 'churn' is used as a noun in this example.)
+- negative
+  - pejorative adjective formal /pɪˈdʒɔːr.ə.t̬ɪv/: expressing disapproval, or suggesting that something is not good or is of no importance
+    - _Is "Yankee" a pejorative term?_
+    - _Make sure students realize that "fat" is a pejorative word._
+    - _It comes as quite a shock to still hear a judge describing a child as "illegitimate", with all the pejorative overtones of that word._
 - obey
   - observe: _FORMAL_ to obey a law, rule, or custom
     - [_Buses will observe the bus stops on the diversion at Crown Street_](https://english.stackexchange.com/q/471077/7342)

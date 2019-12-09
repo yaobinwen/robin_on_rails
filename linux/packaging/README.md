@@ -147,7 +147,7 @@ However, if its `Build-Depends` specifies another package of the version that's 
 
 If the `Build-Depends` only specifies the build tools, it might be fine to simply lower the version of them. However, if the package compilation relies on the new language features of the build tools, especially the compiler, you will have to figure out a workaround.
 
-Use patches to change the code if it doesn't compile.
+Use patches to change the code if it doesn't compile. You will need to use `quilt` to create the patch. Refer to [1] for [how to set up `quilt` and create the patches](https://www.debian.org/doc/manuals/maint-guide/modify.en.html).
 
 ## Miscellaneous
 
