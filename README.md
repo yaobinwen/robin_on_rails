@@ -43,3 +43,4 @@ This section has the things I haven't categorized yet.
   - [Gephi: The Open Graph Viz Platform](https://gephi.org/)
   - [Sigma](http://sigmajs.org/): A JavaScript library dedicated to graph drawing.
 - [DevDocs](https://devdocs.io/) "combines multiple API documentations in a fast, organized, and searchable interface."
+- [yUML](https://yuml.me/): Define UML diagrams in text and generate them.
