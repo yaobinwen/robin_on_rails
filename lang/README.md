@@ -17,6 +17,7 @@ This document is about all kinds of programming languages.
 - Rvalue references:
   - [A Brief Introduction to Rvalue References](https://www.artima.com/cppsource/rvalue.html)
   - [C++ Rvalue References Explained](http://thbecker.net/articles/rvalue_references/section_01.html)
+- Default initialization of POD types: See [this answer](https://stackoverflow.com/a/15212447/630364). Note it uses C++ 03 standard.
 
 ## JavaScript
 
