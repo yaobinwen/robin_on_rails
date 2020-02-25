@@ -13,6 +13,17 @@ class BoostFileSystemVerifier : public ::testing::Test
 {
 };
 
+TEST_F(BoostFileSystemVerifier, test_path)
+{
+    // What paths are considered empty?
+    // 1). A default constructed path is empty.
+    EXPECT_TRUE(bfs::path().empty());
+    // 2). A path initialized with an empty string is empty.
+    EXPECT_TRUE(bfs::path("").empty());
+    // 3). A path initialized with a non-empty string is not empty.
+    EXPECT_FALSE(bfs::path(".").empty());
+}
+
 TEST_F(BoostFileSystemVerifier, test_symlink_functions)
 {
     using ywen::file::create_file;
