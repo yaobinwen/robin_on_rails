@@ -13,6 +13,8 @@ add_library(
     "./tmpdir/tmpdir.cpp"
 )
 
+# ##################################################
+
 # Set the project name.
 project(bfs DESCRIPTION "Verify boost::filesystem behaviors")
 
@@ -31,3 +33,21 @@ target_link_libraries(
 
 # Specify the dependencies.
 add_dependencies(bfs ywen_cpp)
+
+# ##################################################
+
+# Set the project name.
+project(json DESCRIPTION "Verify nlohmann/json behaviors")
+
+# Add the executable.
+add_executable(
+    json
+    "./programs/json.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(json SYSTEM PUBLIC)
+target_link_libraries(
+    json
+    gtest gtest_main
+)
