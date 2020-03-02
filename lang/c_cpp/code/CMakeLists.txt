@@ -37,6 +37,20 @@ add_dependencies(bfs ywen_cpp)
 # ##################################################
 
 # Set the project name.
+project(double_delete DESCRIPTION "Verify C++ double delete behaviors")
+
+# Add the executable.
+add_executable(
+    double_delete
+    "./programs/double_delete.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(double_delete SYSTEM PUBLIC)
+
+# ##################################################
+
+# Set the project name.
 project(json DESCRIPTION "Verify nlohmann/json behaviors")
 
 # Add the executable.
