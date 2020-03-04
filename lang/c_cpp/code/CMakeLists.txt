@@ -10,6 +10,7 @@ add_library(
     STATIC
     "./boost_ext/filesystem.cpp"
     "./file/file.cpp"
+    "./gtest_ext/predicates.cpp"
     "./tmpdir/tmpdir.cpp"
 )
 
@@ -21,7 +22,8 @@ project(bfs DESCRIPTION "Verify boost::filesystem behaviors")
 # Add the executable.
 add_executable(
     bfs
-    "./programs/bfs.cpp"
+    "./programs/bfs/bfs.cpp"
+    "./programs/bfs/rename.cpp"
 )
 
 # Add the include and library directories.

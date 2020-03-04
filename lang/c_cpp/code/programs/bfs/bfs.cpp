@@ -3,17 +3,13 @@
 #include <boost/format.hpp>
 #include <gtest/gtest.h>
 
-#include "../boost_ext/filesystem.hpp"
-#include "../file/file.hpp"
-#include "../tmpdir/tmpdir.hpp"
+#include "../../boost_ext/filesystem.hpp"
+#include "../../file/file.hpp"
+#include "../../tmpdir/tmpdir.hpp"
 
 namespace bfs = boost::filesystem;
 
-class BoostFileSystemVerifier : public ::testing::Test
-{
-};
-
-TEST_F(BoostFileSystemVerifier, test_path)
+TEST(BoostFileSystemVerifier, test_path)
 {
     // What paths are considered empty?
     // 1). A default constructed path is empty.
@@ -34,7 +30,7 @@ TEST_F(BoostFileSystemVerifier, test_path)
         boost::str(boost::format("%1%") % bfs::path("/tmp").string()), "/tmp");
 }
 
-TEST_F(BoostFileSystemVerifier, test_symlink_functions)
+TEST(BoostFileSystemVerifier, test_symlink_functions)
 {
     using ywen::file::create_file;
     using ywen::tmpdir::dtemp_guard;
