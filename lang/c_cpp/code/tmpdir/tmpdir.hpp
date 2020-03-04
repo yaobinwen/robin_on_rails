@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+#include <ostream>
 #include <string>
 #include <boost/filesystem.hpp>
 
@@ -22,13 +24,8 @@ public:
     /// "auto_clean" being false is usually for debugging purpose.
     explicit dtemp_guard(
         boost::filesystem::path const &path,
-        bool auto_clean = true);
-
-    /// Create a temporary directory and manage it. The path of the created
-    /// directory can be obtained via `path()`.
-    explicit dtemp_guard(
-        std::string const &prefix = DEFAULT_TMP_DIR_PREFIX,
-        bool auto_clean = true);
+        bool auto_clean = true,
+        std::ostream & os = std::cerr);
 
     /// Return the path of the managed temporary directory.
     boost::filesystem::path
@@ -39,6 +36,7 @@ public:
 protected:
     boost::filesystem::path m_tmp_path;
     bool m_auto_clean;
+    std::ostream & m_os;
 };
 
 } // namespace tmpdir

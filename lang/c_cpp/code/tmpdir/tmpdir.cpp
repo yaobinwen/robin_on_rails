@@ -25,15 +25,12 @@ mkdtemp(std::string const &prefix)
     return dpath;
 }
 
-dtemp_guard::dtemp_guard(bfs::path const &path, bool auto_clean)
-  : m_tmp_path(path), m_auto_clean(auto_clean)
+dtemp_guard::dtemp_guard(
+    bfs::path const &path,
+    bool auto_clean,
+    std::ostream &os)
+  : m_tmp_path(path), m_auto_clean(auto_clean), m_os(os)
 {
-}
-
-dtemp_guard::dtemp_guard(std::string const &prefix, bool auto_clean)
-  : m_auto_clean(auto_clean)
-{
-    m_tmp_path = mkdtemp(prefix);
 }
 
 bfs::path
@@ -42,7 +39,20 @@ dtemp_guard::path() const
     return m_tmp_path;
 }
 
-dtemp_guard::~dtemp_guard() {}
+dtemp_guard::~dtemp_guard()
+{
+    try
+    {
+        if (m_auto_clean)
+        {
+            bfs::remove_all(m_tmp_path);
+        }
+    }
+    catch (boost::filesystem::filesystem_error const &e)
+    {
+        m_os << "dtemp_guard fails to remove " << m_tmp_path << std::endl;
+    }
+}
 
 } // namespace tmpdir
 } // namespace ywen
