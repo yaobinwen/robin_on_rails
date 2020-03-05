@@ -39,6 +39,27 @@ add_dependencies(bfs ywen_cpp)
 # ##################################################
 
 # Set the project name.
+project(linux_api DESCRIPTION "Verify Linux APIs behaviors")
+
+# Add the executable.
+add_executable(
+    linux_api
+    "./programs/linux_api/open.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(linux_api SYSTEM PUBLIC)
+target_link_libraries(
+    linux_api
+    gtest gtest_main ywen_cpp boost_filesystem boost_system
+)
+
+# Specify the dependencies.
+add_dependencies(linux_api ywen_cpp)
+
+# ##################################################
+
+# Set the project name.
 project(double_delete DESCRIPTION "Verify C++ double delete behaviors")
 
 # Add the executable.
