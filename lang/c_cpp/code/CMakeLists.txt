@@ -61,6 +61,24 @@ add_dependencies(linux_api ywen_cpp)
 # ##################################################
 
 # Set the project name.
+project(regex DESCRIPTION "Verify C++ regex behaviors")
+
+# Add the executable.
+add_executable(
+    regex
+    "./programs/regex/replace.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(regex SYSTEM PUBLIC)
+target_link_libraries(
+    regex
+    gtest gtest_main
+)
+
+# ##################################################
+
+# Set the project name.
 project(double_delete DESCRIPTION "Verify C++ double delete behaviors")
 
 # Add the executable.
