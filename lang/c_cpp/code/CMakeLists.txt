@@ -23,6 +23,7 @@ project(bfs DESCRIPTION "Verify boost::filesystem behaviors")
 add_executable(
     bfs
     "./programs/bfs/bfs.cpp"
+    "./programs/bfs/create_directory.cpp"
     "./programs/bfs/rename.cpp"
 )
 
