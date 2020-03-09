@@ -79,6 +79,24 @@ target_link_libraries(
 # ##################################################
 
 # Set the project name.
+project(bfs_path_gtest_crash DESCRIPTION "Reproduce bfs::path segmentation fault on gtest")
+
+# Add the executable.
+add_executable(
+    bfs_path_gtest_crash
+    "./programs/bfs_path_gtest_crash.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(bfs_path_gtest_crash SYSTEM PUBLIC)
+target_link_libraries(
+    bfs_path_gtest_crash
+    gtest gtest_main boost_filesystem boost_system
+)
+
+# ##################################################
+
+# Set the project name.
 project(double_delete DESCRIPTION "Verify C++ double delete behaviors")
 
 # Add the executable.
