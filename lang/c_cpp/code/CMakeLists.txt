@@ -25,6 +25,7 @@ add_executable(
     "./programs/bfs/bfs.cpp"
     "./programs/bfs/create_directory.cpp"
     "./programs/bfs/file_size.cpp"
+    "./programs/bfs/is_type.cpp"
     "./programs/bfs/path.cpp"
     "./programs/bfs/rename.cpp"
 )
