@@ -9,27 +9,6 @@
 
 namespace bfs = boost::filesystem;
 
-TEST(BoostFileSystemVerifier, test_path)
-{
-    // What paths are considered empty?
-    // 1). A default constructed path is empty.
-    EXPECT_TRUE(bfs::path().empty());
-    // 2). A path initialized with an empty string is empty.
-    EXPECT_TRUE(bfs::path("").empty());
-    // 3). A path initialized with a non-empty string is not empty.
-    EXPECT_FALSE(bfs::path(".").empty());
-
-    // Can paths be inserted into an output stream directly?
-    std::ostringstream oss;
-    oss << bfs::path("/tmp");
-    // Note the additional double-quotation marks.
-    EXPECT_EQ(oss.str(), "\"/tmp\"");
-    // It also works for boost::format. With string() called, the output does
-    // not have the additional double-quotation marks.
-    EXPECT_EQ(
-        boost::str(boost::format("%1%") % bfs::path("/tmp").string()), "/tmp");
-}
-
 TEST(BoostFileSystemVerifier, test_symlink_functions)
 {
     using ywen::file::create_file;
