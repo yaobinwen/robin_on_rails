@@ -114,6 +114,24 @@ target_include_directories(double_delete SYSTEM PUBLIC)
 # ##################################################
 
 # Set the project name.
+project(file_demo DESCRIPTION "Demonstrate how to manipulate a file")
+
+# Add the executable.
+add_executable(
+    file_demo
+    "./programs/file_demo/read.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(file_demo SYSTEM PUBLIC)
+target_link_libraries(
+    file_demo
+    gtest gtest_main boost_filesystem boost_system ywen_cpp
+)
+
+# ##################################################
+
+# Set the project name.
 project(json DESCRIPTION "Verify nlohmann/json behaviors")
 
 # Add the executable.
