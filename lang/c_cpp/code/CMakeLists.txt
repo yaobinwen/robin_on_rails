@@ -50,13 +50,14 @@ add_executable(
     cpp_demo
     "./programs/cpp_demo/array.cpp"
     "./programs/cpp_demo/override.cpp"
+    "./programs/cpp_demo/thread.cpp"
 )
 
 # Add the include and library directories.
 target_include_directories(cpp_demo SYSTEM PUBLIC)
 target_link_libraries(
     cpp_demo
-    gtest gtest_main
+    gtest gtest_main pthread
 )
 
 # ##################################################
