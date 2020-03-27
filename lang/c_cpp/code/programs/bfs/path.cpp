@@ -40,6 +40,10 @@ TEST(path, test_appends)
     bfs::path p3(p);
     p3.append("file");
     EXPECT_EQ(p3.string(), "path/to/dir/file");
+
+    bfs::path p4(p / "///");
+    EXPECT_EQ(p4.string(), "path/to/dir///");
+    EXPECT_EQ(bfs::weakly_canonical(p4).string(), "path/to/dir/.");
 }
 
 TEST(path, test_concatenation)
@@ -53,4 +57,50 @@ TEST(path, test_concatenation)
     bfs::path p3(p);
     p3.concat("name");
     EXPECT_EQ(p3.string(), "path/to/dirname");
+}
+
+TEST(path, weak_canonical)
+{
+    bfs::path p;
+
+    p = bfs::weakly_canonical("");
+    EXPECT_EQ(p.string(), "");
+    EXPECT_EQ(p.filename().string(), "");
+
+    p = bfs::weakly_canonical("relative/path/to/dir");
+    EXPECT_EQ(p.string(), "relative/path/to/dir");
+    EXPECT_EQ(p.filename().string(), "dir");
+
+    p = bfs::weakly_canonical("relative///path/../path/././to/dir");
+    EXPECT_EQ(p.string(), "relative/path/to/dir");
+    EXPECT_EQ(p.filename().string(), "dir");
+
+    // NOTE: A path that ends with '/' does NOT have the ending '/' removed.
+    // Instead, it appends a dot ('.') to indicate that current level of
+    // directory.
+    p = bfs::weakly_canonical("relative/path/to/dir///");
+    EXPECT_EQ(p.string(), "relative/path/to/dir/.");
+    EXPECT_EQ(p.filename().string(), ".");
+
+    p = bfs::weakly_canonical("/absolute/path/to/dir");
+    EXPECT_EQ(p.string(), "/absolute/path/to/dir");
+    EXPECT_EQ(p.filename().string(), "dir");
+
+    p = bfs::weakly_canonical("/absolute///path/../path/././to/dir");
+    EXPECT_EQ(p.string(), "/absolute/path/to/dir");
+    EXPECT_EQ(p.filename().string(), "dir");
+
+    // NOTE: A path that ends with '/' does NOT have the ending '/' removed.
+    // Instead, it appends a dot ('.') to indicate that current level of
+    // directory.
+    p = bfs::weakly_canonical("/absolute/path/to/dir///");
+    EXPECT_EQ(p.string(), "/absolute/path/to/dir/.");
+    EXPECT_EQ(p.filename().string(), ".");
+}
+
+TEST(path, remove_ending_slashes)
+{
+    bfs::path p = bfs::weakly_canonical("relative/path/to/dir///");
+    EXPECT_TRUE(p.filename_is_dot());
+    EXPECT_EQ(p.parent_path().string(), "relative/path/to/dir");
 }
