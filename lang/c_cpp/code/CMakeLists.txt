@@ -43,6 +43,25 @@ add_dependencies(bfs ywen_cpp)
 # ##################################################
 
 # Set the project name.
+project(cpp_demo DESCRIPTION "Demonstrate C++ language and standard library features")
+
+# Add the executable.
+add_executable(
+    cpp_demo
+    "./programs/cpp_demo/array.cpp"
+    "./programs/cpp_demo/override.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(cpp_demo SYSTEM PUBLIC)
+target_link_libraries(
+    cpp_demo
+    gtest gtest_main
+)
+
+# ##################################################
+
+# Set the project name.
 project(linux_api DESCRIPTION "Verify Linux APIs behaviors")
 
 # Add the executable.
