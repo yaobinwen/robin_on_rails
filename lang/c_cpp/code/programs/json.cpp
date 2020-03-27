@@ -1,14 +1,17 @@
+// Reference: https://nlohmann.github.io/json/
+
 #include <map>
+#include <sstream>
 #include <string>
 
 #include <gtest/gtest.h>
 
 #include "../external/json.hpp"
 
+using ::nlohmann::json;
+
 TEST(nlohmann_json, test_initialization_with_different_types)
 {
-    using ::nlohmann::json;
-
     EXPECT_EQ(json(10).dump(), "10");
     EXPECT_EQ(json("10").dump(), "\"10\"");
     EXPECT_EQ(json(10.01).dump(), "10.01");
@@ -44,4 +47,15 @@ TEST(nlohmann_json, test_iterator)
     {
         EXPECT_EQ(items.at(key), value);
     }
+}
+
+TEST(nlohmann_json, stream_operators)
+{
+    std::stringstream ss;
+    ss << nlohmann::json("2.0");
+
+    nlohmann::json j;
+    ss >> j;
+    EXPECT_EQ(std::string(j.type_name()), "string");
+    EXPECT_EQ(j.dump(), nlohmann::json("2.0").dump());
 }
