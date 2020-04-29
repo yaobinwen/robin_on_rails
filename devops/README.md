@@ -55,3 +55,4 @@ Its official introduction says:
 - [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
 - [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
 - [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
+- [A Comprehensive Guide to DevOps & It’s Tools Ecosystem](https://medium.com/@BangBitTech/a-comprehensive-guide-to-devops-its-tools-ecosystem-83d739cdf543)
