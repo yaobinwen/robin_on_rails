@@ -34,7 +34,7 @@ add_executable(
 target_include_directories(bfs SYSTEM PUBLIC)
 target_link_libraries(
     bfs
-    gtest gtest_main boost_filesystem boost_system ywen_cpp
+    gtest gtest_main boost_filesystem boost_system pthread ywen_cpp
 )
 
 # Specify the dependencies.
@@ -75,7 +75,7 @@ add_executable(
 target_include_directories(linux_api SYSTEM PUBLIC)
 target_link_libraries(
     linux_api
-    gtest gtest_main ywen_cpp boost_filesystem boost_system
+    gtest gtest_main ywen_cpp boost_filesystem boost_system pthread
 )
 
 # Specify the dependencies.
@@ -96,7 +96,7 @@ add_executable(
 target_include_directories(regex SYSTEM PUBLIC)
 target_link_libraries(
     regex
-    gtest gtest_main
+    gtest gtest_main pthread
 )
 
 # ##################################################
@@ -114,7 +114,7 @@ add_executable(
 target_include_directories(bfs_path_gtest_crash SYSTEM PUBLIC)
 target_link_libraries(
     bfs_path_gtest_crash
-    gtest gtest_main boost_filesystem boost_system
+    gtest gtest_main boost_filesystem boost_system pthread
 )
 
 # ##################################################
@@ -146,7 +146,7 @@ add_executable(
 target_include_directories(file_demo SYSTEM PUBLIC)
 target_link_libraries(
     file_demo
-    gtest gtest_main boost_filesystem boost_system ywen_cpp
+    gtest gtest_main boost_filesystem boost_system pthread ywen_cpp
 )
 
 # ##################################################
@@ -164,5 +164,5 @@ add_executable(
 target_include_directories(json SYSTEM PUBLIC)
 target_link_libraries(
     json
-    gtest gtest_main
+    gtest gtest_main pthread
 )

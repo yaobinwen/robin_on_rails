@@ -59,3 +59,13 @@ TEST(nlohmann_json, stream_operators)
     EXPECT_EQ(std::string(j.type_name()), "string");
     EXPECT_EQ(j.dump(), nlohmann::json("2.0").dump());
 }
+
+TEST(nlohmann_json, type_conversion)
+{
+    using ::nlohmann::json;
+    json j;
+    j += json::object_t::value_type("a", 10);
+    j += json::object_t::value_type("b", 20);
+
+    std::map<std::string, int> items = j;
+}
