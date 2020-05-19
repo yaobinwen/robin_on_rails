@@ -50,6 +50,7 @@ add_executable(
     cpp_demo
     "./programs/cpp_demo/array.cpp"
     "./programs/cpp_demo/override.cpp"
+    "./programs/cpp_demo/shared_ptr.cpp"
     "./programs/cpp_demo/thread.cpp"
 )
 
