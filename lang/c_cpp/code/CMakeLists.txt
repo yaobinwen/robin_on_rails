@@ -141,6 +141,7 @@ project(file_demo DESCRIPTION "Demonstrate how to manipulate a file")
 # Add the executable.
 add_executable(
     file_demo
+    "./programs/file_demo/flagbits.cpp"
     "./programs/file_demo/read.cpp"
 )
 
