@@ -16,6 +16,7 @@ cleanup() {
 
 trap cleanup EXIT INT TERM
 
+O=$(pwd)
 DSRC="src"
 NAME="$(./$DSRC/demo --name)"
 VER="$(./$DSRC/demo --version)"
@@ -41,11 +42,13 @@ tree "$T" || exit
 # See: https://www.debian.org/doc/manuals/maint-guide/dother.en.html
 (
     cd debian
+    "$O/rules.py" --enable-verbose ./rules || exit
+    cat ./rules
     mv manpage.1.ex "$NAME.1" || exit
-    mv postinst.ex postinst
-    mv postrm.ex postrm
-    mv preinst.ex preinst
-    mv prerm.ex prerm
+    mv postinst.ex postinst || exit
+    mv postrm.ex postrm || exit
+    mv preinst.ex preinst || exit
+    mv prerm.ex prerm || exit
     # NOTE(ywen): The ".install" file must use the package name as the main
     # file name. It should not use the target file ("demo" in this case) as
     # the file name.
