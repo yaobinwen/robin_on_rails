@@ -149,6 +149,22 @@ If the `Build-Depends` only specifies the build tools, it might be fine to simpl
 
 Use patches to change the code if it doesn't compile. You will need to use `quilt` to create the patch. Refer to [1] for [how to set up `quilt` and create the patches](https://www.debian.org/doc/manuals/maint-guide/modify.en.html).
 
+## Installation
+
+### Deal with Interaction
+
+Sometimes, a package prompts the user with questions that the user must answer manually in order to proceed with the installation. This is implemented using `debconf` which is "is the preferred mechanism used in Ubuntu to interact with the user when configuring packages and also forms the heart of debian-installer" [10]. [10] has a section that talks about "preseeding" which is the way that installs a package automatically.
+
+Generally speaking, `debconf` works this way:
+
+- Figure out the interactions that the package requires. This can be done in several ways:
+  - Look for the `template` file in the `.deb` file which has all the interactions.
+  - Manually install the package and view the `template` content in `/var/lib/dpkg/info/<package-name>.list`.
+- Work out a `preseed.cfg` file that contains the pre-selected answers to the interactions. See [10] for how to make this file.
+- Before the package installation starts, use `debconf-set-selections` to set the answers.
+- `debconf` stores all the answers in the file `/var/cache/debconf/config.dat`. You can directly view its content, or use `debconf-show` to query its content. The actual path of `config.dat` can be found in `/var/lib/dpkg/info/debconf.list`.
+- Run `apt` to install the package. If everything works correctly, you wouldn't see any interaction.
+
 ## Miscellaneous
 
 ### Upstream vs Downstream
@@ -180,6 +196,7 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 - [7] [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.en.pdf)
 - [8] [The Debian Administrator's Handbook](https://debian-handbook.info/download/stable/debian-handbook.pdf)
 - [9] [Everything you need to know about conffiles: configuration files managed by dpkg](https://raphaelhertzog.com/2010/09/21/debian-conffile-configuration-file-managed-by-dpkg/)
+- [10] [Ubuntu Installation Guide: B. Automating the installation using preseeding](https://help.ubuntu.com/lts/installation-guide/armhf/apb.html)
 
 According to [4], section ["Package states"](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html#Package_states), the entire installation process may consist of two steps:
 

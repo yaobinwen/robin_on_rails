@@ -10,6 +10,27 @@ I've cloned the repositories for a learning purpose:
 
 - [`dpkg`](https://github.com/yaobinwen/dpkg)
 
+## debconf
+
+[`debconf`](https://packages.ubuntu.com/bionic/debconf)
+
+- /usr/bin/debconf
+- /usr/bin/debconf-apt-progress
+- /usr/bin/debconf-communicate
+- /usr/bin/debconf-copydb
+- /usr/bin/debconf-escape
+- /usr/bin/debconf-set-selections
+- /usr/bin/debconf-show
+
+## debconf-utils
+
+[`debconf-utils`](https://packages.ubuntu.com/bionic/debconf-utils)
+
+- /usr/bin/debconf-get-selections
+- /usr/bin/debconf-getlang
+- /usr/bin/debconf-loadtemplate
+- /usr/bin/debconf-mergetemplate
+
 ## debhelper
 
 [`debhelper`](https://packages.ubuntu.com/bionic/debhelper) is the set of "helper programs for debian/rules". It installs the following programs:
