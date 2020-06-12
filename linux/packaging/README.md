@@ -165,6 +165,23 @@ Generally speaking, `debconf` works this way:
 - `debconf` stores all the answers in the file `/var/cache/debconf/config.dat`. You can directly view its content, or use `debconf-show` to query its content. The actual path of `config.dat` can be found in `/var/lib/dpkg/info/debconf.list`.
 - Run `apt` to install the package. If everything works correctly, you wouldn't see any interaction.
 
+## Packaging Python Modules
+
+Python and its modules seem to be important enough that the Debian community has a _"Debian Python Policy"_(see [11]) and a _"Python Library Style Guide"_(see [12]). [11] talks about Python distribution in general and [12] is more specific about packaging and distributing a Python module.
+
+A less common but occurring issue is: A module may provide an executable script `foo.py` which is Python 2 and 3 compatible that wants to be installed to the same location (say, `/usr/bin`). Although we can still work out the `python-foo` and `python3-foo` packages, they can't be installed at the same time because, if you have installed `python-foo`, the installation of `python3-foo` would fail because of an error like this:
+
+```
+dpkg: error processing archive /var/cache/apt/archives/python3-foo_1.2.3-1_all.deb (--unpack):
+ trying to overwrite '/usr/bin/foo.py', which is also in package python-foo_1.2.3-1
+```
+
+The section "Executables and library packages" in [12] talks about a similar issue. Go take a look.
+
+A similar solution is: keep the name `foo.py` for Python 2, and rename the script to `foo3.py` for Python 3. Both can be installed at the same location `/usr/bin`.
+
+The article [Debian packaging for python2 and python3 at the same time](https://www.v13.gr/blog/?p=412) provides another solution. It uses the trick of `export PYBUILD_INSTALL_ARGS_python2 = --install-scripts=/dev/null` to avoid installing the Python 2 version and only installs the Python 3 version.
+
 ## Miscellaneous
 
 ### Upstream vs Downstream
@@ -197,6 +214,8 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 - [8] [The Debian Administrator's Handbook](https://debian-handbook.info/download/stable/debian-handbook.pdf)
 - [9] [Everything you need to know about conffiles: configuration files managed by dpkg](https://raphaelhertzog.com/2010/09/21/debian-conffile-configuration-file-managed-by-dpkg/)
 - [10] [Ubuntu Installation Guide: B. Automating the installation using preseeding](https://help.ubuntu.com/lts/installation-guide/armhf/apb.html)
+- [11] [Debian Python Policy](https://www.debian.org/doc/packaging-manuals/python-policy/index.html)
+- [12] [Python Library Style Guide](https://wiki.debian.org/Python/LibraryStyleGuide)
 
 According to [4], section ["Package states"](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html#Package_states), the entire installation process may consist of two steps:
 
