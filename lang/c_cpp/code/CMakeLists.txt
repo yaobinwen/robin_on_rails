@@ -71,6 +71,7 @@ project(linux_api DESCRIPTION "Verify Linux APIs behaviors")
 add_executable(
     linux_api
     "./programs/linux_api/open.cpp"
+    "./programs/linux_api/rename.cpp"
 )
 
 # Add the include and library directories.
