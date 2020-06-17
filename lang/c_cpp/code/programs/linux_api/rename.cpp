@@ -343,7 +343,7 @@ TEST_F(Test_rename, case_4a_vs_4b)
 }
 
 // old path: regular file
-// new path: existing directory (empty)
+// new path: existing directory (not empty)
 // Renaming fails with errno `EISDIR`; nothing is changed.
 TEST_F(Test_rename, case_4a_vs_4c)
 {
