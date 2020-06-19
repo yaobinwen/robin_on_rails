@@ -22,6 +22,7 @@ project(bfs DESCRIPTION "Verify boost::filesystem behaviors")
 # Add the executable.
 add_executable(
     bfs
+    "./programs/bfs/absolute.cpp"
     "./programs/bfs/bfs.cpp"
     "./programs/bfs/create_directory.cpp"
     "./programs/bfs/file_size.cpp"
