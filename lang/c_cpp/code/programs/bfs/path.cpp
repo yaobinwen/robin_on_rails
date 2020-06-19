@@ -104,3 +104,50 @@ TEST(path, remove_ending_slashes)
     EXPECT_TRUE(p.filename_is_dot());
     EXPECT_EQ(p.parent_path().string(), "relative/path/to/dir");
 }
+
+TEST(path_decomposition, root_name)
+{
+    bfs::path p;
+
+    p = "relative/path";
+    // According to the documentation, if the path doesn't have `root-name`,
+    // `path()` is returned. Technically, we don't know what value `path()`
+    // is constructed to, so instead of comparing an empty string directly,
+    // we compare against `path().string()`.
+    EXPECT_EQ(p.root_name().string(), bfs::path().string());
+
+    p = "/absolute/path/to/somewhere";
+    EXPECT_EQ(p.root_name().string(), bfs::path().string());
+}
+
+TEST(path_decomposition, root_directory)
+{
+    bfs::path p;
+
+    p = "relative/path";
+    // According to the documentation, if the path doesn't have
+    // `root-directory`, `path()` is returned. Technically, we don't know what
+    // value `path()` is constructed to, so instead of comparing an empty string
+    // directly, we compare against `path().string()`.
+    EXPECT_EQ(p.root_directory().string(), bfs::path().string());
+
+    p = "/absolute/path/to/somewhere";
+    EXPECT_EQ(p.root_directory().string(), "/");
+
+    p = "////absolute/path/to/somewhere";
+    EXPECT_EQ(p.root_directory().string(), "/");
+}
+
+TEST(path_decomposition, root_path)
+{
+    bfs::path p;
+
+    p = "relative/path";
+    EXPECT_EQ(p.root_path().string(), bfs::path().string());
+
+    p = "/absolute/path/to/somewhere";
+    EXPECT_EQ(p.root_path().string(), "/");
+
+    p = "////absolute/path/to/somewhere";
+    EXPECT_EQ(p.root_path().string(), "/");
+}
