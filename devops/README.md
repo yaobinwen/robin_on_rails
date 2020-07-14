@@ -37,6 +37,14 @@ Its official introduction says:
   - Use [`readFile`](https://stackoverflow.com/a/44101004/630364)
   - Use [`sh` in `environment` section](https://stackoverflow.com/a/43881731/630364). Note that you must have an agent to run the script (`agent` can't be `none`).
 
+## Other CI/CD Tools
+
+See [3]:
+
+- [Buildbot](https://buildbot.net/)
+- [Drone](https://drone.io/)
+- [Concourse](https://concourse-ci.org/)
+
 ## System Administration
 
 **NOTE:** The following information assumes a Linux operating system unless specified otherwise.
@@ -49,10 +57,11 @@ Its official introduction says:
 
 ## References
 
-- [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
-- [How To Use Blue-Green Deployments to Release Software Safely](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
-- [CI/CD Tools Comparison: Jenkins, GitLab CI, Buildbot, Drone, and Concourse](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse)
-- [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
-- [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
-- [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
-- [A Comprehensive Guide to DevOps & It’s Tools Ecosystem](https://medium.com/@BangBitTech/a-comprehensive-guide-to-devops-its-tools-ecosystem-83d739cdf543)
+- [1] [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
+- [2] [How To Use Blue-Green Deployments to Release Software Safely](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
+- [3] [CI/CD Tools Comparison: Jenkins, GitLab CI, Buildbot, Drone, and Concourse](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse)
+- [4] [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
+- [5] [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
+- [6] [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
+- [7] [A Comprehensive Guide to DevOps & It’s Tools Ecosystem](https://medium.com/@BangBitTech/a-comprehensive-guide-to-devops-its-tools-ecosystem-83d739cdf543)
+- [8] [https://opensource.com/article/20/2/devops-beginners](https://opensource.com/article/20/2/devops-beginners)
