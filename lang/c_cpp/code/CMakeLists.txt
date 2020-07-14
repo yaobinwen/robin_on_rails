@@ -30,6 +30,7 @@ add_executable(
     "./programs/bfs/file_size.cpp"
     "./programs/bfs/is_type.cpp"
     "./programs/bfs/path.cpp"
+    "./programs/bfs/relative.cpp"
     "./programs/bfs/rename.cpp"
 )
 
