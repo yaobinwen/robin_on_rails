@@ -50,6 +50,12 @@ protected:
     int *m_data;
 };
 
+Intvec
+getIntvec(std::string const &name, size_t num)
+{
+    return Intvec(name, num);
+}
+
 class MoveableIntvec : public Intvec
 {
 public:
@@ -64,6 +70,14 @@ public:
         return *this;
     }
 };
+
+MoveableIntvec &&
+getMoveableIntvec(std::string const &name, size_t num)
+{
+    // Causes "stack smashing".
+    MoveableIntvec tmp(name, num);
+    return std::move(tmp);
+}
 
 int
 main(int argc, char *argv[])
@@ -90,10 +104,30 @@ main(int argc, char *argv[])
     std::cout << std::string(30, '-') << std::endl;
 
     {
+        Intvec v3("v3");
+
+        std::cout << "assigning rvalue ..." << std::endl;
+        v3 = getIntvec("rvalue_obj", 30);
+        std::cout << "ended assigning rvalue." << std::endl;
+    }
+
+    std::cout << std::string(30, '-') << std::endl;
+
+    {
         MoveableIntvec v2("v2");
 
         std::cout << "assigning rvalue ..." << std::endl;
         v2 = MoveableIntvec("rvalue_obj", 20);
+        std::cout << "ended assigning rvalue." << std::endl;
+    }
+
+    std::cout << std::string(30, '-') << std::endl;
+
+    {
+        MoveableIntvec v5("v5");
+
+        std::cout << "assigning rvalue ..." << std::endl;
+        v5 = getMoveableIntvec("rvalue_obj", 50);
         std::cout << "ended assigning rvalue." << std::endl;
     }
 
