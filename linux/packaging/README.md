@@ -129,6 +129,18 @@ Here are some references:
 - [DebianRepository: Setup](https://wiki.debian.org/DebianRepository/Setup): This link teaches how to set up Debian's official package repository.
 - [DebianRepository: Format](https://wiki.debian.org/DebianRepository/Format): This link "documents the structure of the official Debian repository and the format that is officially understood by clients".
 
+Specifically, to set up a package server that's in a local directory, use the following repository file format: `deb [trusted=yes] file:///path/to/archive/root ./`
+
+Here we are using the [Flat Repository Format](https://wiki.debian.org/DebianRepository/Format#Flat_Repository_Format) which has a general form: `deb uri directory/` and you must provide the `Packages` and `Sources` file.
+
+A `Packages` file can be generated using `dpkg-scanpackages`:
+
+```shell
+cd /path/to/archive/root
+dpkg-scanpackages . >Packages
+cp -pv Packages Sources
+```
+
 ## Security
 
 Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
