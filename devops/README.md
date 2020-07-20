@@ -55,6 +55,19 @@ See [3]:
     - `dmidecode -t16` to show the entire memory array information, including its maximum capacity.
   - Use [crucial.com](http://www.crucial.com/) to check the information.
 
+## Immutable Infrastructure
+
+The article [9] explains the advantages of immutable infrastructure well.
+
+In the "mutable infrastructure" paradigm, a server is "upgraded" from version 1 to version 2 by running a set of instructions. Because any instruction may fail, this introduces additional states between version 1 and version 2. However:
+
+- Usually, only the version 1 and version 2 are well tested. The development team has no knowledge of whether a transient state works well or not. This may impact the user's experience of the service and bring risk to the system.
+- Secondly, the additional in-between states introduced by mutating a server introduces unnecessary complexity because instead of managing only two well-defined states, the development team must handle much more states of the servers.
+- Think about the case when the team must manage 1000 servers, with each server possibly landing in any of the in-between states.
+- Even if the probability of success is high on one server, when there are many servers, the probability of success of all the servers is still low enough to be cautious.
+
+In the "immutable infrastructure" paradigm, the team only need to deal with two well-defined states. The deployment can be done in the "blue-green" deployment model, which can guarantee a smooth transition of the user traffic from the earlier version of the service to the newer version.
+
 ## References
 
 - [1] [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
@@ -65,3 +78,4 @@ See [3]:
 - [6] [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
 - [7] [A Comprehensive Guide to DevOps & It’s Tools Ecosystem](https://medium.com/@BangBitTech/a-comprehensive-guide-to-devops-its-tools-ecosystem-83d739cdf543)
 - [8] [https://opensource.com/article/20/2/devops-beginners](https://opensource.com/article/20/2/devops-beginners)
+- [9] [What is Mutable vs. Immutable Infrastructure?](https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure/)
