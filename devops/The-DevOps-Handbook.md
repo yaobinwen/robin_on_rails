@@ -15,8 +15,20 @@ The **blue-green deployment pattern** (page _xii_):
   - 4). "deploy the new version of the application".
   - 5). "when the upgrade has bedded down remove the database support for the old version".
 
+---
+
+On page _xv_, it mentions _ITIL(IT Infrastructure Library)_, or _ITSM(IT Service Management)_. See [4] for a book about this area.
+
+---
+
+Self-service Infrastructure
+
+Think of "self-service infrastructure" as "vending machines".
+
 ## References
 
 - [1] [Blue Green Deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html)
-- [2] [Using Blue-Green Deployment to Reduce Downtime and Risk](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html#implementations)
+- [2] [Using Blue-Green Deployment to Reduce Downtime and Risk](https://docs.cloudfoundry.org/devguide/deploy-apps/blue-green.html)
 - [3] [Teaching an elephant to dance](https://www.redhat.com/en/engage/teaching-an-elephant-to-dance-20180321): This looks like a good book to read.
+- [4] [ITIL Service Design: 2011](https://www.amazon.com/ITIL-Service-Design-Lou-Hunnebeck/dp/0113313055)
+- [5] [Google: Site Reliability Engineering](https://landing.google.com/sre/)
