@@ -37,6 +37,11 @@ To implement the First Way, we need to:
   - When idling, figure out what causes the delay of work from upstream work centers. See [Quote_P18-02].
 - Reduce batch sizes.
   - This practice requires continuous integration/deployment. In other words, as long as the team is doing CI/CD, the batch sizes are usually small.
+- Reduce the number of handoffs (by minimizing the team's dependencies on external resources).
+  - The "Wait Time" (%Busy / %Idle) makes sense in the context of handoffs: the more handoffs, the more wait time.
+  - Even within the team, we may want to minimize the handoffs among team members in order to deploy the work to production as soon as possible. That means we want to make every team member be capable of doing every thing on the value stream so each team member can work independently. In reality, I don't think this is always possbile because we want to introduce review to some stages of the work.
+- Continually identify and elevate our constraints.
+- Eliminate hardships and waste in the value stream.
 
 > Quote_P15-01: The First Way requires the fast and smooth flow of work from Development to Operations, to deliver value to customers quickly. **We optimize for this global goal instead of local goals**, such as Development feature completion rates, test find/fix ratios, or Ops availablility measures.
 
