@@ -6,6 +6,8 @@ This folder has notes about security. See [1] for glossary.
 
 [13] provides a series of cheat sheets about security.
 
+A roadmap: see [17].
+
 ## Cookies
 
 See [11].
@@ -155,3 +157,4 @@ It also mentions the industry certificates:
 - [14] [OAuth for Dummies](https://marktrapp.com/blog/2009/09/17/oauth-dummies/)
 - [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
 - [16] [OAuth 2.0 Servers](https://www.oauth.com/)
+- [17] [Learning Computer Security](https://gist.github.com/nfarrar/b7fc7ded1858be854251)

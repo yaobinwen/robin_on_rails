@@ -214,6 +214,19 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 >
 > Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
 
+## FAQ
+
+### Q1: What does 'patch unexpectedly ends in middle of line' mean?
+
+See [this answer](https://unix.stackexchange.com/a/1403/162971) which refers to other links:
+
+- [Subject: patch file problem](http://web.archive.org/web/20091030150511/http://support.github.com/discussions/repos/1784-patch-file-problem)
+- [Configuring Git to handle line endings](https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings)
+
+"It is about patch unexpectedly ends in middle of line messages because of CRLF (carriage-return, linefeed)."
+
+Although the discussion focuses on git, the issue is also applicable to `debian/patches`: I once created a patch using `dpkg-source --commit` in a VM but then copied-and-pasted its content to the patch file on the host machine. As a result, the line endings were changed without me realizing it and resulted in the "patch unexpectedly ends in middle of line" error. I didn't get it fixed until I used the patch files themselves.
+
 ## References & Tutorials
 
 - [1] [Debian New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
