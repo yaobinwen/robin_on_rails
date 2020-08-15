@@ -49,6 +49,42 @@ To implement the First Way, we need to:
 
 > Quote_P18-02: Although it may be tempting to start new work (i.e., "It's better to be doing something than nothing"), a far better action would be to find out what is causing the delay and help fix that problem.
 
+## Chapter 03: The Second Way: The Principles of Feedback
+
+It is better to **swarm** to solve the problem when they occur. Do not bypass the problem just to keep the work going because you will lose the problem's context which is important to figure out the root cause.
+
+> **This practice of swarming seems contrary to common management practice, as we are deliberately allowing a local problem to disrupt operations globally. However, swarming enables learning.** It prevents the loss of critical information due to fading memories or changing circumstances. This is especially critical in complex systems, where many problems occur because of some unexpected, idiosyncratic interaction of people, processes, products, places, and circumstances - as time passes, it becomes impossible to reconstruct exactly what was going on when the problem occurred.
+
+We should allow "everyone in our value stream to find and fix problems in their area of control as part of our daily work". We should **NOT** let people who are remote to the actual work area to make the critical desicion because, firstly, those people don't have the first-hand context and knowledge, and secondly, the additional approval process harms the efficiency.
+
+## Chapter 04: The Third Way: The Principles of Continual Learning and Experimentation
+
+We must create a culture that "instead of looking for human error, we look for how we can redesign the system to prevent the accident from happening again."
+
+> "By removing blame, you remove fear; by removing fear, you enable honesty; and honesty enables prevention." (Bethany Macri, engineer at Etsy)
+
+We must reserve time to pay down the technical debt and learn new things:
+
+> We improve daily work by explicitly reserving time to pay down technical debt, fix defects, and refactor and improve problematic areas of our code and environments - we do this by reserving cycles in each development interval, or by scheduling _kaizen blitzes_, which are periods when engineers self-organize into teams to work on fixing any problem they want.
+
+We must share the learned knowledge out in some active way, not just writing it down in some document and hoping others would read it:
+
+> When teams or individuals have experiences that create expertise, our goal is to convert that tacit knowledge (i.e., knowledge that is difficult to transfer to another person by means of writing it down or verbalizing) into explicit, codified knowledge, which becomes someone else's expertise through practice.
+
+> The leader's role is to create the conditions so their team can discover greatness in their daily work.
+
+## Chapter 05: Selecting Which Value Stream to Start With
+
+"greenfield" vs "brownfield"
+
+"systems of record" (doing it right) vs "systems of engagement" (doing it fast)
+
+> **Our goal is to find those teams that already believe in the need for DevOps principles and practices, and who possess a desire and demonstrated ability to innovate and improve their own processes.**
+>
+> Especially in the early stages, **we will not spend much time trying to convert the more conservative groups**. Instead, we will focus our energy on creating successes with less risk-averse groups and build out our base from there (a process that is discussed further in the next section). **Even if we have the highest levels of executive sponsorship, we will avoid the big bang approach (i.e., starting everywhere all at once)**, choosing instead to focus our efforts in a few areas of the organization, ensuring that those initiatives are successful, and expanding from there.
+
+> We specifically bypass dangerous political battles that could jeopardize our initiative.
+
 ## References
 
 - [1] [Blue Green Deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html)
