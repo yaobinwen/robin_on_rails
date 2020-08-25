@@ -28,6 +28,62 @@ Therefore, finding a PRNG of good quality is important because otherwise the res
 
 The first PRNG to avoid major problems and still run fairly quickly was the [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister).
 
+## Random Numbers: Modulo Bias
+
+Modulo bias happens when we try to get a smaller set of random numbers from a larger set of random numbers (which are uniformly distributed) by applying the modulo operator.
+
+Suppose we have the following:
+
+- A (pseudo)random number generator `rand(0, MAX)`: [0, 1, 2, ..., MAX-1, MAX], evenly distributed.
+- We want to get random numbers in a smaller range `[0, N-1]` where `N-1 < MAX`.
+
+One way is to use modulo operator to get the wanted random numbers: `rand(0, MAX) % N`.
+
+Suppose `MAX = M * N + r` where `0 <= r < N`. Below is what actually happens:
+
+| result of % | 0 | 1 | 2 | 3 | ... | r | ... | N - 1 |
+|:-----------:|:-:|:-:|:-:|:-:|:---:|:-:|:---:|:-----:|
+|             | 0 | 1 | 2 | 3 | ... | r | ... | N - 1 |
+|             | N | N + 1 | N + 2 | N + 3 | ... | N + r | ... | 2N - 1 |
+|             | 2N | 2N + 1 | 2N + 2 | 2N + 3 | ... | 2N + r | ... | 3N - 1 |
+|             | 3N | 3N + 1 | 3N + 2 | 3N + 3 | ... | 3N + r | ... | 4N - 1 |
+|             | ... | ... | ... | ... | ... | ... | ... | ... |
+| (row M - 1) | (M-1)N | (M-1)N + 1 | (M-1)N + 2 | (M-1)N + 3 | ... | (M-1)N + r | ... | MN - 1 |
+| (last row)  | MN | MN + 1 | MN + 2 | MN + 3 | ... | MN + r |
+
+Because of the last row, the numbers of `0, 1, 2, 3, ..., r` have a slightly higher probability to appear in the result set than the numbers of `r + 1, r + 2, ..., N - 1`. This is caused by modulo bias.
+
+We can make two conclusions from the table:
+
+- When `MAX % N == N - 1` (in other words, the `last row` doesn't exist), it's still safe to use `%` to get the smaller set of random numbers.
+- Or, if we can somehow remove the `last row`, we will get an evenly distributed set of random numbers.
+
+To remove the `last row`, we need to get a modified version of `rand(0, MAX)`:
+
+- 1). Calculate `r`: `r = MAX % N`
+- 2). Get the new "MAX": `MAX' = MAX - (r + 1) = MAX - (MAX % N + 1)` (because the last row has `r + 1` numbers)
+  - A caveat: When `MAX % N` is already `N - 1`, namely, the last row doesn't exist in the first place, then `MAX - (MAX % N + 1)` actually removes the entire `row M - 1`. This is still correct but unnecessary, so the modified version of calculating the new "MAX" is `MAX'' = MAX - (MAX % N + 1) % N`.
+
+Then we can define the modified version of `rand` as follows:
+
+```python
+# `rand` returns a number in [0, MAX].
+def rand_(MAX_, rand):
+  x = rand()
+  while x > MAX_:
+    x = rand()
+  return x
+```
+
+Because we only remove the last row (`r + 1` numbers) from `MAX` numbers, if `MAX` is significantly larger than `r + 1`, then `rand_` is very likely to only run one iteration in the `while` loop to get the desired result.
+
+Finally, we calculate `n = x % N` to get the number `n` that falls between `[0, N - 1]`.
+
+References:
+- [1] [Why do people say there is modulo bias when using a random number generator?](https://stackoverflow.com/a/10984975/630364)
+- [2] [Generating Random Numbers without Modulo Bias](https://funloop.org/post/2013-07-12-generating-random-numbers-without-modulo-bias.html)
+- [3] [Generating Random Numbers without Modulo Bias, Redux](https://funloop.org/post/2015-02-27-removing-modulo-bias-redux.html)
+
 ## Birthday Problem
 
 [Birthday problem](https://en.wikipedia.org/wiki/Birthday_problem):

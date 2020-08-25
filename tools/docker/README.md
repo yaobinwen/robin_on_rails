@@ -1,5 +1,9 @@
 # Docker
 
+## How a docker image built? What is a "writable layer"?
+
+See [4].
+
 ## How to push a docker image?
 
 1. Tag the docker image with the appropriate registry information.
@@ -33,3 +37,6 @@ References:
 - [1] [Documentation: Make clear instructions for getting a core file, when container crashes](https://github.com/moby/moby/issues/11740)
 - [2] [Core Dump File inside Docker](https://le.qun.ch/en/blog/core-dump-file-in-docker/)
 - [3] [How to get core file of segmentation fault process in Docker](https://dev.to/mizutani/how-to-get-core-file-of-segmentation-fault-process-in-docker-22ii)
+- [4] [Images and Layers](https://docs.docker.com/storage/storagedriver/#images-and-layers)
+- [5] [Docker on Windows in Production](https://stackoverflow.com/q/45554311/630364)
+- [6] [Kubernetes vs Docker Swarm — A Comprehensive Comparison](https://hackernoon.com/kubernetes-vs-docker-swarm-a-comprehensive-comparison-73058543771e)

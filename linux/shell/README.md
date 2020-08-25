@@ -16,3 +16,6 @@ The fake signals can be used in `trap`(See [1] - _Shell & Utilities_ - _Shell Co
 - [1] The ["IEEE Std 1003.1™-2008, 2016 Edition"](http://pubs.opengroup.org/onlinepubs/9699919799/nframe.html) is the latest POSIX standard (as of 2018). The "Shell & Utilities" section talks about shell features.
 - [2] The **Bash Reference Manual** can be found [here](https://www.gnu.org/software/bash/manual/html_node/index.html). Its PDF version is [here](https://www.gnu.org/software/bash/manual/bash.pdf).
 - [3] [Learning the bash Shell](http://shop.oreilly.com/product/9780596009656.do) is a good tutorial book.
+- [4] [Greg's Wiki](http://mywiki.wooledge.org/EnglishFrontPage) has many resources about `bash`, including:
+  - [Bash Guide](http://mywiki.wooledge.org/BashGuide). Its newer version (as of 2020-07-02) is [bash.academy](https://github.com/lhunath/bash.academy).
+  - [Bash FAQ](http://mywiki.wooledge.org/BashFAQ)

@@ -129,6 +129,18 @@ Here are some references:
 - [DebianRepository: Setup](https://wiki.debian.org/DebianRepository/Setup): This link teaches how to set up Debian's official package repository.
 - [DebianRepository: Format](https://wiki.debian.org/DebianRepository/Format): This link "documents the structure of the official Debian repository and the format that is officially understood by clients".
 
+Specifically, to set up a package server that's in a local directory, use the following repository file format: `deb [trusted=yes] file:///path/to/archive/root ./`
+
+Here we are using the [Flat Repository Format](https://wiki.debian.org/DebianRepository/Format#Flat_Repository_Format) which has a general form: `deb uri directory/` and you must provide the `Packages` and `Sources` file.
+
+A `Packages` file can be generated using `dpkg-scanpackages`:
+
+```shell
+cd /path/to/archive/root
+dpkg-scanpackages . >Packages
+cp -pv Packages Sources
+```
+
 ## Security
 
 Security is always important. This page, [SecureApt](https://wiki.debian.org/SecureApt), explains in detail how secure apt works and how to use it.
@@ -148,6 +160,39 @@ However, if its `Build-Depends` specifies another package of the version that's 
 If the `Build-Depends` only specifies the build tools, it might be fine to simply lower the version of them. However, if the package compilation relies on the new language features of the build tools, especially the compiler, you will have to figure out a workaround.
 
 Use patches to change the code if it doesn't compile. You will need to use `quilt` to create the patch. Refer to [1] for [how to set up `quilt` and create the patches](https://www.debian.org/doc/manuals/maint-guide/modify.en.html).
+
+## Installation
+
+### Deal with Interaction
+
+Sometimes, a package prompts the user with questions that the user must answer manually in order to proceed with the installation. This is implemented using `debconf` which is "is the preferred mechanism used in Ubuntu to interact with the user when configuring packages and also forms the heart of debian-installer" [10]. [10] has a section that talks about "preseeding" which is the way that installs a package automatically.
+
+Generally speaking, `debconf` works this way:
+
+- Figure out the interactions that the package requires. This can be done in several ways:
+  - Look for the `template` file in the `.deb` file which has all the interactions.
+  - Manually install the package and view the `template` content in `/var/lib/dpkg/info/<package-name>.list`.
+- Work out a `preseed.cfg` file that contains the pre-selected answers to the interactions. See [10] for how to make this file.
+- Before the package installation starts, use `debconf-set-selections` to set the answers.
+- `debconf` stores all the answers in the file `/var/cache/debconf/config.dat`. You can directly view its content, or use `debconf-show` to query its content. The actual path of `config.dat` can be found in `/var/lib/dpkg/info/debconf.list`.
+- Run `apt` to install the package. If everything works correctly, you wouldn't see any interaction.
+
+## Packaging Python Modules
+
+Python and its modules seem to be important enough that the Debian community has a _"Debian Python Policy"_(see [11]) and a _"Python Library Style Guide"_(see [12]). [11] talks about Python distribution in general and [12] is more specific about packaging and distributing a Python module.
+
+A less common but occurring issue is: A module may provide an executable script `foo.py` which is Python 2 and 3 compatible that wants to be installed to the same location (say, `/usr/bin`). Although we can still work out the `python-foo` and `python3-foo` packages, they can't be installed at the same time because, if you have installed `python-foo`, the installation of `python3-foo` would fail because of an error like this:
+
+```
+dpkg: error processing archive /var/cache/apt/archives/python3-foo_1.2.3-1_all.deb (--unpack):
+ trying to overwrite '/usr/bin/foo.py', which is also in package python-foo_1.2.3-1
+```
+
+The section "Executables and library packages" in [12] talks about a similar issue. Go take a look.
+
+A similar solution is: keep the name `foo.py` for Python 2, and rename the script to `foo3.py` for Python 3. Both can be installed at the same location `/usr/bin`.
+
+The article [Debian packaging for python2 and python3 at the same time](https://www.v13.gr/blog/?p=412) provides another solution. It uses the trick of `export PYBUILD_INSTALL_ARGS_python2 = --install-scripts=/dev/null` to avoid installing the Python 2 version and only installs the Python 3 version.
 
 ## Miscellaneous
 
@@ -169,6 +214,19 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 >
 > Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
 
+## FAQ
+
+### Q1: What does 'patch unexpectedly ends in middle of line' mean?
+
+See [this answer](https://unix.stackexchange.com/a/1403/162971) which refers to other links:
+
+- [Subject: patch file problem](http://web.archive.org/web/20091030150511/http://support.github.com/discussions/repos/1784-patch-file-problem)
+- [Configuring Git to handle line endings](https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings)
+
+"It is about patch unexpectedly ends in middle of line messages because of CRLF (carriage-return, linefeed)."
+
+Although the discussion focuses on git, the issue is also applicable to `debian/patches`: I once created a patch using `dpkg-source --commit` in a VM but then copied-and-pasted its content to the patch file on the host machine. As a result, the line endings were changed without me realizing it and resulted in the "patch unexpectedly ends in middle of line" error. I didn't get it fixed until I used the patch files themselves.
+
 ## References & Tutorials
 
 - [1] [Debian New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
@@ -180,6 +238,9 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 - [7] [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tutorial/packaging-tutorial.en.pdf)
 - [8] [The Debian Administrator's Handbook](https://debian-handbook.info/download/stable/debian-handbook.pdf)
 - [9] [Everything you need to know about conffiles: configuration files managed by dpkg](https://raphaelhertzog.com/2010/09/21/debian-conffile-configuration-file-managed-by-dpkg/)
+- [10] [Ubuntu Installation Guide: B. Automating the installation using preseeding](https://help.ubuntu.com/lts/installation-guide/armhf/apb.html)
+- [11] [Debian Python Policy](https://www.debian.org/doc/packaging-manuals/python-policy/index.html)
+- [12] [Python Library Style Guide](https://wiki.debian.org/Python/LibraryStyleGuide)
 
 According to [4], section ["Package states"](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html#Package_states), the entire installation process may consist of two steps:
 

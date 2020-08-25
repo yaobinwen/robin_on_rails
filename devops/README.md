@@ -37,6 +37,14 @@ Its official introduction says:
   - Use [`readFile`](https://stackoverflow.com/a/44101004/630364)
   - Use [`sh` in `environment` section](https://stackoverflow.com/a/43881731/630364). Note that you must have an agent to run the script (`agent` can't be `none`).
 
+## Other CI/CD Tools
+
+See [3]:
+
+- [Buildbot](https://buildbot.net/)
+- [Drone](https://drone.io/)
+- [Concourse](https://concourse-ci.org/)
+
 ## System Administration
 
 **NOTE:** The following information assumes a Linux operating system unless specified otherwise.
@@ -47,11 +55,27 @@ Its official introduction says:
     - `dmidecode -t16` to show the entire memory array information, including its maximum capacity.
   - Use [crucial.com](http://www.crucial.com/) to check the information.
 
+## Immutable Infrastructure
+
+The article [9] explains the advantages of immutable infrastructure well.
+
+In the "mutable infrastructure" paradigm, a server is "upgraded" from version 1 to version 2 by running a set of instructions. Because any instruction may fail, this introduces additional states between version 1 and version 2. However:
+
+- Usually, only the version 1 and version 2 are well tested. The development team has no knowledge of whether a transient state works well or not. This may impact the user's experience of the service and bring risk to the system.
+- Secondly, the additional in-between states introduced by mutating a server introduces unnecessary complexity because instead of managing only two well-defined states, the development team must handle much more states of the servers.
+- Think about the case when the team must manage 1000 servers, with each server possibly landing in any of the in-between states.
+- Even if the probability of success is high on one server, when there are many servers, the probability of success of all the servers is still low enough to be cautious.
+
+In the "immutable infrastructure" paradigm, the team only need to deal with two well-defined states. The deployment can be done in the "blue-green" deployment model, which can guarantee a smooth transition of the user traffic from the earlier version of the service to the newer version.
+
 ## References
 
-- [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
-- [How To Use Blue-Green Deployments to Release Software Safely](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
-- [CI/CD Tools Comparison: Jenkins, GitLab CI, Buildbot, Drone, and Concourse](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse)
-- [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
-- [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
-- [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
+- [1] [What Is Immutable Infrastructure](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
+- [2] [How To Use Blue-Green Deployments to Release Software Safely](https://www.digitalocean.com/community/tutorials/what-is-immutable-infrastructure)
+- [3] [CI/CD Tools Comparison: Jenkins, GitLab CI, Buildbot, Drone, and Concourse](https://www.digitalocean.com/community/tutorials/ci-cd-tools-comparison-jenkins-gitlab-ci-buildbot-drone-and-concourse)
+- [4] [Twelve-Factor App](https://www.12factor.net/): A methodology for building software-as-a-service apps
+- [5] [DevOps术语、工具集、技能图谱最全汇总](https://mp.weixin.qq.com/s?__biz=MzIzNjUxMzk2NQ==&mid=2247489629&idx=1&sn=f1986df12783bf9f76f47077189a1544)
+- [6] [2018 State of DevOps Report](https://puppet.com/resources/whitepaper/state-of-devops-report)
+- [7] [A Comprehensive Guide to DevOps & It’s Tools Ecosystem](https://medium.com/@BangBitTech/a-comprehensive-guide-to-devops-its-tools-ecosystem-83d739cdf543)
+- [8] [https://opensource.com/article/20/2/devops-beginners](https://opensource.com/article/20/2/devops-beginners)
+- [9] [What is Mutable vs. Immutable Infrastructure?](https://www.hashicorp.com/resources/what-is-mutable-vs-immutable-infrastructure/)
