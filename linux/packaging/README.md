@@ -214,6 +214,18 @@ What is the "auto/manual install status"? See [this answer](https://askubuntu.co
 >
 > Now, if you do `apt-get install vlc-nox` you will get the message that `vlc-nox` is now set to **"manually installed"**, i.e. the package manager now thinks that you want that package specifically and not just installed it because `vlc` needed it. If you remove `vlc`, `vlc-nox` will therefore not be automatically removed.
 
+### Creating a Patch
+
+Use `quilt` to patch the source code. The [_Chapter 3. Modifying the source_](https://www.debian.org/doc/manuals/maint-guide/modify.en.html) provides the instructions of setting up `quilt` and creating the patch.
+
+An alternative way of creating the patch is:
+
+- 1). Run `apt source package-name` to download the `debian` files and the source code.
+- 2). Change into the source code directory (which also has the `debian` directory).
+- 3). Modify the source code.
+- 4). Run `dpkg-source --commit` to "store upstream changes in a new patch" (see its manual).
+  - Note: Some source format doesn't support `--commit`.
+
 ## FAQ
 
 ### Q1: What does 'patch unexpectedly ends in middle of line' mean?
