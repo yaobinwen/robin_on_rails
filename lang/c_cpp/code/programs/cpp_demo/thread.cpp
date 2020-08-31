@@ -96,15 +96,25 @@ private:
 
         while (true)
         {
-            std::unique_lock lock(m_mtx_flag_produce_or_quit);
-            if (!m_flag_produce)
             {
-                m_cv_produce_or_quit.wait(lock);
-            }
+                // We should limit the scope of lock so it's only locked when
+                // we need to access the two boolean flags which are protected
+                // by the mutex.
+                std::unique_lock lock(m_mtx_flag_produce_or_quit);
 
-            if (m_flag_quit)
-            {
-                break;
+                // Firstly, check if we want to quit. If we want to quit, we
+                // don't care if m_flag_produce is true or not. If we don't want
+                // to quit, we then further check if we want to produce data.
+                // If not ,we wait.
+                if (!m_flag_quit && !m_flag_produce)
+                {
+                    m_cv_produce_or_quit.wait(lock);
+                }
+
+                if (m_flag_quit)
+                {
+                    break;
+                }
             }
 
             // Produce data for all the callbacks.
@@ -168,7 +178,7 @@ private:
     std::vector<int> m_data;
 };
 
-TEST(ThreadTest, c)
+TEST(ThreadTest, wait_start_stop_quit)
 {
     using namespace std::chrono_literals;
 
@@ -199,7 +209,6 @@ TEST(ThreadTest, c)
     cons.getData(data);
     EXPECT_GT(data.size(), 1U);
 
-    std::cout << "data.size() = " << data.size() << std::endl;
     for (size_t i = 0; i < data.size(); ++i)
     {
         EXPECT_EQ(data[i], static_cast<int>(i));
@@ -209,4 +218,72 @@ TEST(ThreadTest, c)
     prod.quit();
 
     prod.waitUntilThreadStopped();
+}
+
+TEST(ThreadTest, wait_start_quit)
+{
+    using namespace std::chrono_literals;
+
+    DataProducer prod;
+    DataConsumer cons;
+
+    prod.addCallback(&cons, DataConsumer::cb);
+
+    // Wait until the producer's worker thread has been started.
+    prod.waitUntilThreadStarted();
+
+    // We wait for 1 second to give the producer thread enough time to run.
+    // If the producer thread is not implemented correctly, it may have produced
+    // some data that we can catch in the next EXPECT assertion.
+    std::this_thread::sleep_for(1s);
+
+    // Before we start, the consumer has received nothing.
+    EXPECT_TRUE(cons.empty());
+
+    // Now we start the producer and wait for some time. During this time, the
+    // producer should be able to produce many data.
+    prod.start();
+    std::this_thread::sleep_for(50ms);
+    prod.quit();
+
+    prod.waitUntilThreadStopped();
+
+    // After we quit, the consumer should receive some data.
+    std::vector<int> data;
+    cons.getData(data);
+    EXPECT_GT(data.size(), 1U);
+
+    for (size_t i = 0; i < data.size(); ++i)
+    {
+        EXPECT_EQ(data[i], static_cast<int>(i));
+    }
+}
+
+TEST(ThreadTest, wait_quit)
+{
+    using namespace std::chrono_literals;
+
+    DataProducer prod;
+    DataConsumer cons;
+
+    prod.addCallback(&cons, DataConsumer::cb);
+
+    // Wait until the producer's worker thread has been started.
+    prod.waitUntilThreadStarted();
+
+    // We wait for 1 second to give the producer thread enough time to run.
+    // If the producer thread is not implemented correctly, it may have produced
+    // some data that we can catch in the next EXPECT assertion.
+    std::this_thread::sleep_for(1s);
+
+    // Before we start, the consumer has received nothing.
+    EXPECT_TRUE(cons.empty());
+
+    // We don't start at all. We quit immediately.
+    prod.quit();
+
+    prod.waitUntilThreadStopped();
+
+    // After we quit, the consumer should still be empty.
+    EXPECT_TRUE(cons.empty());
 }

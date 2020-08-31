@@ -1,6 +1,7 @@
 #include <boost/format.hpp>
 #include <gtest/gtest.h>
 
+#include <memory>
 #include <stdexcept>
 #include <string>
 #include <typeinfo>
