@@ -30,6 +30,10 @@ This document is about all kinds of programming languages.
 - [Idioms and Anti-Idioms in Python](https://docs.python.org/3.1/howto/doanddont.html)
 - [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
 - [Cheat Sheet: Writing Python 2-3 compatible code](http://python-future.org/compatible_idioms.html)
+- Implicit namespace packages:
+  - This concept was introduced by [PEP 420](https://www.python.org/dev/peps/pep-0420/), but I think the PEP does a poor job to explain what an "implicit namespace package" is and what problem it tries to resolve.
+  - Instead, I found [this Stack Overflow answer](https://stackoverflow.com/a/21819733/630364) explains it really well.
+  - Also take a look at the official sample code: [Python Namespace Package Examples](https://github.com/pypa/sample-namespace-packages)
 
 ## POSIX Shell
 
