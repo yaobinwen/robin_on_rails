@@ -5,6 +5,7 @@
 | [ ] | [1166](https://tools.ietf.org/html/rfc1166) | INTERNET NUMBERS ||
 | [x] | [2119](https://tools.ietf.org/html/rfc2119) | Key words for use in RFCs to Indicate Requirement Levels ||
 | [ ] | [3339](https://tools.ietf.org/html/rfc3339) | Date and Time on the Internet: Timestamps ||
+| [ ] | [3986](https://tools.ietf.org/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax ||
 | [ ] | [4880](https://tools.ietf.org/html/rfc4880) | OpenPGP Message Format ||
 | [x] | [5234](https://tools.ietf.org/html/rfc5234) | Augmented BNF for Syntax Specifications: ABNF ||
 | [x] | [5735](https://tools.ietf.org/html/rfc5735) | Special Use IPv4 Addresses ||
