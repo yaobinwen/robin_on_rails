@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+
+  config.vm.provider "virtualbox" do |vb|  
+    # Customize the amount of memory on the VM:
+    vb.memory = "4096"
+  end
+
+  config.vm.provision "reproduce", type: "ansible", run: "never" do |ansible|
+    ansible.playbook = "./ansible/reproduce.yml"
+    ansible.verbose = "vvv"
+    ansible.extra_vars = {
+      # Assume the password is `vagrant`.
+      'ansible_sudo_pass': 'vagrant',
+      # It's 2020 so we always use Python 3.
+      'ansible_python_interpreter': '/usr/bin/python3',
+    }
+  end
+end

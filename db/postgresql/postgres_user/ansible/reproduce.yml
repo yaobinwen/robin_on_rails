@@ -1,0 +1,65 @@
+- name: "Reproduce the error`find: Unknown user postgres`"
+  hosts: all
+  vars:
+    cache_dir: /var/cache/postgres
+    dockerfile_src: Dockerfile
+    postgresql_password: my_pass
+    postgresql_root_dir: /var/lib/postgresql
+    postgresql_version: 9.6-alpine
+  tasks:
+    - include_tasks: install_docker.yml
+
+    - name: Install needed packages.
+      become: yes
+      apt:
+        name:
+          - python3-docker
+          - tree
+        state: present
+        update_cache: yes
+
+    - name: Create {{cache_dir}}.
+      become: yes
+      file:
+        path: "{{cache_dir}}"
+        state: directory
+        mode: "0o755"
+
+    - name: Copy postgres Dockerfile to the cache directory.
+      become: yes
+      copy:
+        src: "{{dockerfile_src}}"
+        dest: "{{cache_dir}}/Dockerfile"
+        mode: "0o644"
+
+    - name: Build Docker image {{postgresql_version}}-initdb.
+      docker_image:
+        build:
+          args:
+              FROM: postgres:{{postgresql_version}}
+          path: "{{cache_dir}}"
+          pull: yes
+        name: postgres
+        source: build
+        tag: "{{postgresql_version}}-initdb"
+      vars:
+        ansible_become: yes
+
+    # Ref: https://hub.docker.com/_/postgres
+    - name: Create the database.
+      docker_container:
+        image: postgres:{{postgresql_version}}-initdb
+        name: "postgresql-{{postgresql_version}}-initdb"
+        volumes:
+          - '/etc/passwd:/etc/passwd:ro'
+          - '{{postgresql_root_dir}}/data/db:/var/lib/postgresql/data'
+        env:
+          POSTGRES_PASSWORD: "{{postgresql_password}}"
+        cleanup: yes
+        detach: no
+        keep_volumes: no
+        log_driver: journald
+        log_opt:
+          tag: postgresql-initdb
+      vars:
+        ansible_become: yes
