@@ -2,7 +2,10 @@
 
 | Status | RFC Index | RFC Title | Notes |
 |:------:|:---------:|:---------:|:------|
+| [ ] | [1034](https://tools.ietf.org/html/rfc1034) | DOMAIN NAMES - CONCEPTS AND FACILITIES ||
+| [ ] | [1035](https://tools.ietf.org/html/rfc1035) | DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION ||
 | [ ] | [1166](https://tools.ietf.org/html/rfc1166) | INTERNET NUMBERS ||
+| [ ] | ~~[2052](https://tools.ietf.org/html/rfc2052)~~ | ~~A DNS RR for specifying the location of services (DNS SRV)~~ | **Obsolete** |
 | [x] | [2119](https://tools.ietf.org/html/rfc2119) | Key words for use in RFCs to Indicate Requirement Levels ||
 | [x] | [2782](https://tools.ietf.org/html/rfc2782) | A DNS RR for specifying the location of services (DNS SRV) ||
 | [ ] | [3339](https://tools.ietf.org/html/rfc3339) | Date and Time on the Internet: Timestamps ||
