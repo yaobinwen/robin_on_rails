@@ -33,7 +33,15 @@ I used the article [2] as a primary source which also refers to [1]. Eventually,
 
 I also tried the article [3], but didn't succeed. However, that may not be the article's fault. The key point was still the `/proc/sys/kernel/core_pattern` configuration. [3] requires the container be started with the superuser privilege so the `core_pattern` file can be modified inside the container, not outside as how [2] did it. Therefore, I guess (not verified) [3] wouldn't work for the containers that can't be started with superuser privilege.
 
-References:
+## How to disable auto-restart on a container?
+
+Run `docker update --restart=no my-container`.
+
+See ["Restart policies (--restart)"](https://docs.docker.com/engine/reference/run/#restart-policies---restart) and [`docker update`](https://docs.docker.com/engine/reference/commandline/update/).
+
+The container's configuration can be found at `/var/lib/docker/containers/<container-ID>/hostconfig.json`. It is in JSON format which can be pretty-print with `python3 -m json.tool < hostconfig.json`. Check for the `RestartPolicy.Name = "always"`.
+
+## References:
 - [1] [Documentation: Make clear instructions for getting a core file, when container crashes](https://github.com/moby/moby/issues/11740)
 - [2] [Core Dump File inside Docker](https://le.qun.ch/en/blog/core-dump-file-in-docker/)
 - [3] [How to get core file of segmentation fault process in Docker](https://dev.to/mizutani/how-to-get-core-file-of-segmentation-fault-process-in-docker-22ii)
