@@ -1,8 +1,8 @@
-# Network
+# Internet
 
 ## Overview
 
-This folder is all about the network on Linux operating systems.
+This folder is all about the work about the Internet.
 
 ## RFC Tracking
 
