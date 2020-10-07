@@ -1,5 +1,18 @@
 # RFC Reading Tracker
 
+## Notes
+
+- Remember [RFC 1791]:
+  - **Not all** RFCs are standards track documents.
+  - **Not all** standards track documents reach the level of Internet Standard.
+  - The relationship of STD numbers to RFC numbers is **not one to one**. STD numbers identify protocols, while RFC numbers identify documents. Therefore, sometimes more than one document is used to specify a Standard protocol.
+- `Informational` documents may not necessarily be recommended practices.
+- An Internet-Draft should never be referenced to as a "formal" document.
+- Once an RFC is adopted as a standard, it is assigned with an `STD` index.
+- Once an RFC is adopted as a best current practice, it is assigned with a `BCP` index.
+
+## Tracker
+
 | Status | RFC Index | RFC Title | Status | Notes |
 |:------:|:---------:|:----------|:------:|:------|
 | [ ] | ~~[608](https://tools.ietf.org/html/rfc608)~~ | ~~HOST NAMES ON-LINE~~ || **Obsolete** |
@@ -9,6 +22,8 @@
 | [ ] | [1035](https://tools.ietf.org/html/rfc1035) | DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION |||
 | [ ] | [1166](https://tools.ietf.org/html/rfc1166) | INTERNET NUMBERS |||
 | [ ] | [1543](https://tools.ietf.org/html/rfc1543) | Instructions to RFC Authors | INFORMATIONAL || 
+| [ ] | [1796](https://tools.ietf.org/html/rfc1796) | Not All RFCs are Standards | INFORMATIONAL ||
+| [x] | [2026](https://tools.ietf.org/html/rfc2026) | The Internet Standards Process -- Revision 3 | BEST CURRENT PRACTICE ||
 | [ ] | ~~[2052](https://tools.ietf.org/html/rfc2052)~~ | ~~A DNS RR for specifying the location of services (DNS SRV)~~ || **Obsolete** |
 | [x] | [2119](https://tools.ietf.org/html/rfc2119) | Key words for use in RFCs to Indicate Requirement Levels |||
 | [x] | [2782](https://tools.ietf.org/html/rfc2782) | A DNS RR for specifying the location of services (DNS SRV) |||
