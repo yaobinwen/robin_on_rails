@@ -63,3 +63,11 @@ Use `tcpdump`: `sudo tcpdump -i eth0`
 Someone else in the same answer also mentioned that:
 
 > It's just odd that the output of route seems to be the only place the actual term "genmask" is used. Everywhere else it's "netmask." E.g. in my system's man files, "netmask" shows up 207 times, but "genmask" is only mentioned in the route man page.
+
+### Predictable Network Interface Names
+
+See [Predictable Network Interface Names](https://systemd.io/PREDICTABLE_INTERFACE_NAMES/).
+
+> Starting with v197 systemd/udev will automatically assign predictable, stable network interface names for all local Ethernet, WLAN and WWAN interfaces.
+>
+> The classic naming scheme for network interfaces applied by the kernel is to simply assign names beginning with eth0, eth1, … to all interfaces as they are probed by the drivers. As the driver probing is generally not predictable for modern technology this means that as soon as multiple network interfaces are available the assignment of the names eth0, eth1 and so on is generally not fixed anymore and it might very well happen that eth0 on one boot ends up being eth1 on the next. This can have serious security implications, for example in firewall rules which are coded for certain naming schemes, and which are hence very sensitive to unpredictable changing names.
