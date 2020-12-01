@@ -66,3 +66,16 @@ $ service NetworkManager status
            ├─10627 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /run/dhclient-wlp3s0.pid -lf /var/lib/NetworkManager/dhclient-ee9ba2c2-bd6b-472f-a818-feeacb0cd593-wlp3s0.lease -cf /
            └─13547 /sbin/dhclient -d -q -6 -N -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /run/dhclient6-wlp3s0.pid -lf /var/lib/NetworkManager/dhclient6-ee9ba2c2-bd6b-472f-a818-feeacb0cd593-wlp3s0.lea
 ```
+
+## `/etc/gai.conf`
+
+This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html) configuration file. According to its [manual page](https://man7.org/linux/man-pages/man5/gai.conf.5.html):
+
+> A call to `getaddrinfo(3)` might return multiple answers.  According to
+> RFC 3484 these answers must be sorted so that the answer with the
+> highest success rate is first in the list.  The RFC provides an
+> algorithm for the sorting.  The static rules are not always adequate,
+> though.  For this reason, the RFC also requires that system
+> administrators should have the possibility to dynamically change the
+> sorting.  For the glibc implementation, this can be achieved with the
+> `/etc/gai.conf` file.
