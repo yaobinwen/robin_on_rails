@@ -34,6 +34,7 @@ This document is about all kinds of programming languages.
   - This concept was introduced by [PEP 420](https://www.python.org/dev/peps/pep-0420/), but I think the PEP does a poor job to explain what an "implicit namespace package" is and what problem it tries to resolve.
   - Instead, I found [this Stack Overflow answer](https://stackoverflow.com/a/21819733/630364) explains it really well.
   - Also take a look at the official sample code: [Python Namespace Package Examples](https://github.com/pypa/sample-namespace-packages)
+- Python Packaging: see [`python/packaging/README.md`](./python/packaging/README.md).
 
 ## POSIX Shell
 
