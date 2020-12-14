@@ -79,3 +79,13 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 > administrators should have the possibility to dynamically change the
 > sorting.  For the glibc implementation, this can be achieved with the
 > `/etc/gai.conf` file.
+
+## File Servers
+
+| File Server | Scenario |
+|:-----------:|:---------|
+| Network File System (NFS) | Linux-based environment |
+| Samba | Mixed environment |
+| SSHFS | Secure transfer; only need to access the remote FS occasionally [1] |
+
+[1] Because SSHFS is easy to use and doesn't need external configuration, if you just want to access a remote file server once or occasionally, with SSHFS you don't have to bother to create an configuratio file as you need for NFS and Samba.
