@@ -47,6 +47,36 @@ git clone --bare /path/to/repo
 
 But they are not equivalent. The comment says the `git clone --bare` way doesn't preserve config options which "can be critical to proper operation such as if you use git-p4". Read the comments to see more discussions on them.
 
+**How to list different commits between two branches?**
+
+[List Different Commits Between Two Branches](https://til.hashrocket.com/posts/18139f4f20-list-different-commits-between-two-branches)
+
+```
+$ git log --left-right --graph --cherry-pick --oneline feature...master
+```
+
+> This lists commits with the first line of their messages. It also includes either a `<` or `>` arrow at the front of each commit indicating whether the commit is on the left (`feature`) or right (`master`) branch, respectively.
+
+Some example output:
+
+```
+> 10d0f13 Add notes about X Window system
+> bc00096 Add notes about Docker
+>   3d894fa Merge branch 'master' of github.com:yaobinwen/robin_on_rails
+|\  
+| > e514cde gpg: Signature made Mon 18 Mar 2019 01:03:28 PM EDT
+|   gpg:                using RSA key 4AEE18F83AFDEB23
+|   gpg: Can't check signature: No public key
+|   Add a new git HOWTO: Convert a normal Git repository to a bare one
+> 1a4c784 Add notes about power management
+< 13c579b (origin/dev/oauth-2.0-demo) Show a message when authorization request is denied
+< e566926 Implement server's grant and deny operations
+< 3f0a883 Fix PEP8 errors
+< 424e665 Use Location to redirect the browser to server
+```
+
+You can replace `--online` with `--stat` to show the details (including the modified files) of each commit.
+
 ## References
 
 - [Pro Git: The official Git book](https://git-scm.com/book/en/v2)
