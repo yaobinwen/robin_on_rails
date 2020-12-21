@@ -89,3 +89,36 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 | SSHFS | Secure transfer; only need to access the remote FS occasionally [1] |
 
 [1] Because SSHFS is easy to use and doesn't need external configuration, if you just want to access a remote file server once or occasionally, with SSHFS you don't have to bother to create an configuratio file as you need for NFS and Samba.
+
+## Monitoring: load average
+
+`cat /proc/loadavg` produces output like the following:
+
+```
+0.49 0.77 0.94 1/2698 17529
+```
+
+- The first three numbers represent the system's load during a period of 1, 5, and 15 minutes respectively.
+- The load that's being referred to represents the number of processes that are waiting on, or currently utilizing, the CPU during each timeframe.
+
+> As a general rule of thumb, it's a good idea to record a baseline of your systems when they are under their normal, expected load. Each system on your network will have a designated purpose and each will have a certain load you can reasonably expect your system to face at any one time. If the systems load average dips too far below or climbs higher than the baseline, then you would want to take a look and find out what's going on. If the load reaches a level where there are more processes than you have cores to handle, that's cause for alarm. (_Mastering Linux Network Administration_)
+
+## Monitoring: `htop`, `iotop`, `ncdu`
+
+`htop` is a good alternative to `top`.
+
+`iotop` shows the "top" for I/O.
+
+`ncdu` is a good alternative to `du`.
+
+## IPv6: don't bother unless having a good reason
+
+> you might be tempted to roll-out IPv6 addresses over IPv4 within your network. However, my suggestion is unless you have a very good reason to do so, don't bother. The depletion of IPv4 addresses only affects the public Internet, not your internal network. While you can certainly roll-out IPv6 internally, there's no benefit to doing so. Given that IPv4 has over 4 billion addresses available, you would need quite a few devices in order to justify IPv6. On the other hand, IPv6 is certainly useful (and will eventually be required) for telecoms. It's also useful for those of you who are studying Cisco exams, as understanding of this topic is required. But for the purposes of this book and setting up Linux networks, IPv6 doesn't justify the administration overhead. (_Mastering Linux Network Administration_)
+
+## Static IP Addresses vs Static Leases
+
+You must configure the static IP addresses on the machines that use them. You must be able to find where those machines are.
+
+The static leases are configured on the DHCP servers so it's a central place for you to manage them.
+
+Therefore, static leases may be more convenient for administration.
