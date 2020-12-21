@@ -2,11 +2,30 @@
 
 ## Overview
 
-This folder has notes about security. See [1] for glossary.
+This folder has notes about security.
+
+Security is omnipresent: every technology deserves a review from the perspective of security. I got this impression when I came across the document [_UNICODE SECURITY CONSIDERATIONS_](http://unicode.org/reports/tr36/).
+
+See [1] for glossary.
 
 [13] provides a series of cheat sheets about security.
 
-A roadmap: see [17].
+See [17] for a roadmap.
+
+## Common Practices
+
+- Turn off the services you don't need at all.
+  - Better to uninstall the unneeded packages in case they are turned on accidentally.
+- SSH
+  - Use the protocol of version 2. Never version 1.
+  - Use a non-default port other than 22.
+  - Disable root login. "Under no circumstances should root login be allowed on any Linux server for any reason."
+  - Disable password-based authentication.
+- Use `iptables`.
+- Consider `fail2ban`.
+- Use `SELinux` (or `AppArmor` on the Ubuntu distributions).
+- Use `https`.
+- Enable security update.
 
 ## Cookies
 
@@ -157,4 +176,4 @@ It also mentions the industry certificates:
 - [14] [OAuth for Dummies](https://marktrapp.com/blog/2009/09/17/oauth-dummies/)
 - [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
 - [16] [OAuth 2.0 Servers](https://www.oauth.com/)
-- [17] [Learning Computer Security](https://gist.github.com/nfarrar/b7fc7ded1858be854251)
+- [17] [Learning Computer Security](https://gist.github.com/yaobinwen/b65bb0bfd64d083148283ceb34313efc)
