@@ -26,12 +26,14 @@
 | [x] | [2026](https://tools.ietf.org/html/rfc2026) | The Internet Standards Process -- Revision 3 | BEST CURRENT PRACTICE ||
 | [ ] | ~~[2052](https://tools.ietf.org/html/rfc2052)~~ | ~~A DNS RR for specifying the location of services (DNS SRV)~~ || **Obsolete** |
 | [x] | [2119](https://tools.ietf.org/html/rfc2119) | Key words for use in RFCs to Indicate Requirement Levels |||
+| [ ] | ~~[2234](https://tools.ietf.org/html/rfc2234)~~ | ~~Augmented BNF for Syntax Specifications: ABNF~~ || **Obsolete** |
 | [x] | [2782](https://tools.ietf.org/html/rfc2782) | A DNS RR for specifying the location of services (DNS SRV) |||
 | [ ] | ~~[3300](https://tools.ietf.org/html/rfc3300)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [ ] | [3339](https://tools.ietf.org/html/rfc3339) | Date and Time on the Internet: Timestamps |||
 | [ ] | ~~[3600](https://tools.ietf.org/html/rfc3600)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [ ] | ~~[3700](https://tools.ietf.org/html/rfc3700)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [ ] | [3986](https://tools.ietf.org/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax |||
+| [ ] | [4234](https://tools.ietf.org/html/rfc4234) | Augmented BNF for Syntax Specifications: ABNF |||
 | [ ] | [4880](https://tools.ietf.org/html/rfc4880) | OpenPGP Message Format |||
 | [ ] | ~~[5000](https://tools.ietf.org/html/rfc5000)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [x] | [5234](https://tools.ietf.org/html/rfc5234) | Augmented BNF for Syntax Specifications: ABNF |||
