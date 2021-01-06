@@ -33,10 +33,11 @@
 | [ ] | ~~[3600](https://tools.ietf.org/html/rfc3600)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [ ] | ~~[3700](https://tools.ietf.org/html/rfc3700)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [ ] | [3986](https://tools.ietf.org/html/rfc3986) | Uniform Resource Identifier (URI): Generic Syntax |||
-| [ ] | [4234](https://tools.ietf.org/html/rfc4234) | Augmented BNF for Syntax Specifications: ABNF |||
+| [ ] | ~~[4234](https://tools.ietf.org/html/rfc4234)~~ | ~~Augmented BNF for Syntax Specifications: ABNF~~ | DRAFT STANDARD | **Obsolete** |
 | [ ] | [4880](https://tools.ietf.org/html/rfc4880) | OpenPGP Message Format |||
 | [ ] | ~~[5000](https://tools.ietf.org/html/rfc5000)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
-| [x] | [5234](https://tools.ietf.org/html/rfc5234) | Augmented BNF for Syntax Specifications: ABNF |||
+| [x] | [5234](https://tools.ietf.org/html/rfc5234) | Augmented BNF for Syntax Specifications: ABNF | INTERNET STANDARD | Updated by 7405. |
 | [x] | [5735](https://tools.ietf.org/html/rfc5735) | Special Use IPv4 Addresses |||
 | [x] | [7100](https://tools.ietf.org/html/rfc7100) | Retirement of the "Internet Official Protocol Standards" Summary Document| BEST CURRENT PRACTICE ||
 | [ ] | [7230](https://tools.ietf.org/html/rfc7230) | Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing |||
+| [ ] | [7405](https://tools.ietf.org/html/rfc7405) | Case-Sensitive String Support in ABNF | PROPOSED STANDARD ||
