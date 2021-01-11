@@ -67,3 +67,32 @@ Consider the following three aspects:
 - Simplicity
 - Evolvability
 
+## Chapter 02: Data Model and Query Languages
+
+This chapter discusses two topics:
+- The three major data models:
+  - 1). relational
+  - 2). non-relational
+    - 2.1). document
+    - 2.2). graph
+- The query languages for each data model.
+
+### Relational Model vs Document Model vs Graph Model
+
+| Model | Pros | Cons | When to Use | Notes |
+|:-----:|:-----|:-----|:------------|:------|
+| Relational | 1. Good for `many-to-one/many` [1].<br>2. **Minimal duplication** when normalized.<br>3. `schema-on-write` ensures data validity early. | 1. Poor for `one-to-many`.<br>2. Schema change is expensive. | `many-to-one/many` is used to a certain extent [2]. ||
+| Document | 1. Good for `one-to-many`.<br>2. Flexible schema due to `schema-on-read`. | 1. Poor for `many-to-one` or `many-to-many`.<br>2. Some **duplicated data** that adds maintenance burden.<br>3. `schema-on-read` doesn't gurantee data validity. | 1. Data mainly uses `one-to-many` relation and doesn't need much `join`.<br>2. Large parts of document are needed mostly. [3] ||
+| Graph | 1. Good for `many-to-many`.<br>2. Good for `evolvability`. || `many-to-many` is common in the data. ||
+
+Note [1]: Querying `many-to-one/many` relations requires `join` operations which are natively supported by relational databases, hence better performance. Document-based databases usually support `join` operations poorly so a lot of `join` must be performed by the application code, hence poorer performance.
+
+Note [2]: When `many-to-many` relation is very common, consider **graph-like** data models.
+
+Note [3]: When only a small portion of the document is needed, querying a large document is a waste. The book thus recommends "keep documents fairly small and avoid writes that increase the size of a document".
+
+### Query Languages
+
+The key point is: **A _declarative_ query language is better than an _imperative_ one.**
+
+This section also covers the commonly used query languages used for different data models.
