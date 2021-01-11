@@ -96,3 +96,46 @@ Note [3]: When only a small portion of the document is needed, querying a large 
 The key point is: **A _declarative_ query language is better than an _imperative_ one.**
 
 This section also covers the commonly used query languages used for different data models.
+
+## Chapter 03: Storage and Retrieval
+
+### Overview
+
+Why should I care about how the database handles storage and retrieval internally? Because I do **need to select a storage engine** that is appropriate for the application.
+
+Two considerations when selecting a storage engine:
+- 1). Is this for **transactions**?
+- 2). Is this for **analytics**?
+
+Two families of storage engines:
+- 1). `log-structured` storage engine.
+- 2). `page-oriented` storage engine.
+
+### Log-structured
+
+A `log` is a generalized term that refers to **append-only sequence of records**. It can be text-based or binary-based.
+
+For a log-structured storage engine, one needs to consider two questions:
+- 1). A log-based storage engine usually **performs well on writes but poorly on reads**. How can we improve the read performance to have a good balance?
+- 2). Records are appended to the log file so how can we avoid running out of disk space?
+
+An `index` helps to improve the read performance, but it inevitably hurts the write performance. This is the trade-off.
+
+### Hash Index
+
+Suited situations:
+- 1). The key space is reasonably large so it can be put in memory.
+- 2). Writes are more frequent than reads. (This is because we are still discussing this topic in the context of log-structured storage engine so writes usually perform better than reads.)
+
+### Compaction and Merge
+
+One method to avoid running out of space is **compaction and merge**:
+- Break the log into segments of a certain size by closing a segment file when it reaches a certain size, and making subsequent writes to a new segment file.
+- We can then perform `compaction` on these segments. `Compaction` means throwing away duplicate keys in the log, and keeping only the most recent update for each key.
+
+More issues to consider in real implementations:
+- File format
+- Deleting records
+- Crash recovery
+- Partially written records
+- Concurrency control
