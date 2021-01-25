@@ -8,6 +8,13 @@ This folder is all about the work about the Internet.
 
 The [`RFCs.md`](./RFCs.md) tracks my study of the RFCs.
 
+## Emulators
+
+- [mininet](http://mininet.org/): Emulator for rapid prototyping of Software Defined Networks
+  - GitHub page: [mininet](https://github.com/mininet/mininet)
+- [Containernet](https://containernet.github.io/): Use Docker containers as hosts in Mininet emulations.
+  - GitHub page: [Containernet](https://github.com/containernet/containernet)
+
 ## HOWTOs
 
 ### How to test if a port on a remote system is reachable
