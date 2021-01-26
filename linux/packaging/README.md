@@ -242,6 +242,7 @@ Although the discussion focuses on git, the issue is also applicable to `debian/
 ## References & Tutorials
 
 - [1] [Debian New Maintainers' Guide](https://www.debian.org/doc/manuals/maint-guide/)
+  - As of 2021-01-25, the [Guide for Debian Maintainers](https://www.debian.org/doc/manuals/debmake-doc/) is "considered as the successor to the _Debian New Maintainers' Guide_."
 - [2] [Debian Policy Manual](https://www.debian.org/doc/debian-policy/)
 - [3] See [Manpages of dpkg in Debian stretch](https://manpages.debian.org/stretch/dpkg/index.html) for all the `dpkg`-related manuals.
 - [4] [dpkg(1) manual page](https://manpages.debian.org/stretch/dpkg/dpkg.1.en.html)
