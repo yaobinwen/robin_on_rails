@@ -2,7 +2,15 @@
 
 ## Overview
 
-This document has the notes about Python packaging. [1] is the official user guide for this topic.
+This document has the notes about Python packaging. [1] is the official user guide for this topic. As of 2021-01-06, [1] is organized with the following sections:
+
+- `Requirements for packaging and distributing`: This section lists the tools that are needed for packaging and distributing.
+- `Configuring your project`: This section talks about the minimal configuration that should be done for the project in order to be properly packaged and distributed.
+  - This section then talks about the commonly used arguments in the file `setup.py` which is the key part of the configuration.
+    - Among the commonly used arguments, `version` needs some attention, so this section talks about it further.
+- `Working in "development mode"`: This section briefly talks about the support for developers when the package is still being developed.
+- `Packaging your project`: This section talks about the two forms of distribution: `source` and `wheel`.
+- `Uploading your Project to PyPI`: This section talks about how to publish a package.
 
 ## Wheels
 
