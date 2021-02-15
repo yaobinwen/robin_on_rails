@@ -52,3 +52,5 @@ Use `tcpdump`: `sudo tcpdump -i eth0`
 - [10] [An Introduction to Computer Networks by Peter L Dordal](https://intronetworks.cs.luc.edu/)
 - [11] [Network Address Translation (NAT)](https://www.practicalnetworking.net/series/nat/nat/)
 - [12] [TCP/IP Guide (free online version)](http://tcpipguide.com/free/index.htm)
+- [13] [Beej's Guide to Network Programming](https://beej.us/guide/bgnet/html/)
+- [14] [Book: Policy Routing With Linux](http://www.policyrouting.org/PolicyRoutingBook/ONLINE/TOC.html)

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document is about all kinds of programming languages.
+This document is about all kinds of programming languages. The mentioned languages are listed in the alphabetical order.
 
 ## C++
 
@@ -24,6 +24,10 @@ This document is about all kinds of programming languages.
 
 - [Understanding delete](http://perfectionkills.com/understanding-delete/)
 - [Memory leak patterns in JavaScript](https://www.ibm.com/developerworks/web/library/wa-memleak/)
+
+## Lisp
+
+- [Practical Common Lisp](http://www.gigamonkeys.com/book/)
 
 ## Python
 

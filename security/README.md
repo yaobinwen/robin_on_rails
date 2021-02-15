@@ -177,3 +177,8 @@ It also mentions the industry certificates:
 - [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
 - [16] [OAuth 2.0 Servers](https://www.oauth.com/)
 - [17] [Learning Computer Security](https://gist.github.com/yaobinwen/b65bb0bfd64d083148283ceb34313efc)
+- [18] [regpg - safely store server secrets](http://dotat.at/prog/regpg/)
+- [19] [`ansible-vault` lookup module](https://github.com/jhaals/ansible-vault): ansible lookup plugin for secrets stored in Vault(by HashiCorp).
+- [20] [Turtles All The Way Down: Storing Secrets in the Cloud and in the Data Center](https://danielsomerfield.github.io/turtles/)
+  - Video: https://www.youtube.com/watch?v=OUSvv2maMYI
+  - Slides: http://schd.ws/hosted_files/appsecusa2015/a5/Turtles.pdf

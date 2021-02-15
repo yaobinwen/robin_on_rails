@@ -44,3 +44,17 @@ This section has the things I haven't categorized yet.
   - [Sigma](http://sigmajs.org/): A JavaScript library dedicated to graph drawing.
 - [DevDocs](https://devdocs.io/) "combines multiple API documentations in a fast, organized, and searchable interface."
 - [yUML](https://yuml.me/): Define UML diagrams in text and generate them.
+- [Glottolog](https://glottolog.org/): Comprehensive reference information for the world's languages, especially the lesser known languages.
+- [Butterick's PRACTICAL TYPOGRAPHY](https://practicaltypography.com/)
+- [beau­tiful racket](https://beautifulracket.com/), especially these two articles:
+  - [Why Racket? Why Lisp?](https://beautifulracket.com/appendix/why-racket-why-lisp.html#so-really-whats-in-it-for-me-now)
+  - [Why language-oriented programming? Why Racket?](https://beautifulracket.com/appendix/why-lop-why-racket.html)
+- [如何成为黑客](https://gist.github.com/yaobinwen/e275b024b526e53790a75d2d6b62479b)
+  - Latest version by Eric Raymond: [How to Become A Hacker](http://catb.org/~esr/faqs/hacker-howto.html)
+- Hackerspace
+- [CTF Time](https://ctftime.org/): A website that collects CTF (Capture The Flag) competitions and teams, mainly for information security.
+- [Blog: The Valuable Dev](https://thevaluable.dev/): By [Matthieu Cneude](https://github.com/Phantas0s) who maintains a [healthy daily routine](https://thevaluable.dev/page/about/).
+- [Book: The Personal MBA](https://personalmba.com/)
+- [The History of the Web](https://thehistoryoftheweb.com/): A side project by [Jay Hoffmann](https://twitter.com/jay_hoffmann).
+- [cube composer](https://david-peter.de/cube-composer/): A puzzle game which is inspired by functional programming methods, by [David Peter](https://david-peter.de/).
+- [insect.sh](https://insect.sh/): A high precision scientific calculator with full support for physical units, by [David Peter](https://david-peter.de/).
