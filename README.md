@@ -58,3 +58,5 @@ This section has the things I haven't categorized yet.
 - [The History of the Web](https://thehistoryoftheweb.com/): A side project by [Jay Hoffmann](https://twitter.com/jay_hoffmann).
 - [cube composer](https://david-peter.de/cube-composer/): A puzzle game which is inspired by functional programming methods, by [David Peter](https://david-peter.de/).
 - [insect.sh](https://insect.sh/): A high precision scientific calculator with full support for physical units, by [David Peter](https://david-peter.de/).
+- [Erasmatazz by Chris Crawford](http://www.erasmatazz.com/index.html)
+  - I started to read his blog from this article: [I Really Blew It](http://www.erasmatazz.com/personal/self/i-really-blew-it.html)
