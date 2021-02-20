@@ -1,62 +1,32 @@
-# Robin on Rails: My Knowledge Base
+# Robin on Rails: Notes from Learning
 
-## Overview
+## 1. Overview
 
-`Robin on Rails` is my knowledge base that I throw notes and thoughts in.
+`Robin on Rails` serves two-fold purposes:
 
-I tried to build my site on some other platforms. Eventually, I came back to a regular GitHub repository. After all, I am a software developer.
+- 1). It is where I jot down notes and thoughts from learning computer-related technologies.
+- 2). It helps me organize the study of new knowledge.
 
-## Folders
+Currently (as of 2021-02-20), I organize this repository this way:
 
-I put every topic I'm interested in into a folder, and I put a `README.md` file under every of them. You can click that folder and GitHub will nicely and automatically show the details in its `README` file.
+- 1). This `README` file lists what I should do to keep learning new knowledge in a systematic way.
+- 2). The individual folders are the topics I am interested in and want to learn more.
+- 3). The `misc` folder has the topics that are on my radar for now but may become stale in the future because I'm not sure how long I would keep the interest.
 
-## Knowledge & Data Sources
+## 2. Continuous Learning (CL)
 
-This section lists the other sources of kownledge and data.
+### 2.1 Tech Dashes
 
-- [Internet World Stats](https://internetworldstats.com/): "Internet World Stats is an International website that features up to date world Internet Usage, Population Statistics, Social Media Stats and Internet Market Research Data, for over 243 individual countries and world regions."
-- [RFC series](https://www.rfc-editor.org/): "contains technical and organizational documents about the Internet, including the specifications and policy documents produced by four streams: the Internet Engineering Task Force ([IETF](https://www.ietf.org/)), the Internet Research Task Force ([IRTF](https://irtf.org/)), the Internet Architecture Board ([IAB](https://www.iab.org/)), and [Independent Submissions](https://www.rfc-editor.org/about/independent/)."
-- The Global Goals and Goalkeepers Reports:
-  - "In 2015, world leaders agreed to 17 goals for a better world by 2030. These goals have the power to end poverty, fight inequality and     stop climate change." See the [Global Goals](https://www.globalgoals.org/) website for more information.
-  - The [Goalkeepers Report 2018](https://www.gatesfoundation.org/goalkeepers/report).
-- The [World Economic Forum](https://www.weforum.org/) publishes [reports](https://www.weforum.org/reports) and [white papers](https://www.weforum.org/whitepapers). Some interesting ones of them include:
-  - [The Global Competitiveness Report 2018](https://www.weforum.org/reports/the-global-competitveness-report-2018)
-  - [The Future of Jobs Report 2018](https://www.weforum.org/reports/the-future-of-jobs-report-2018)
-  - [Building Block(chain)s for a Better Planet](https://www.weforum.org/reports/building-block-chain-for-a-better-planet)
-- [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar)
-- [Circular Economy](https://www.ellenmacarthurfoundation.org/circular-economy/concept)
-  - This is an idea Ellen talked about in her TED talk: [The surprising thing I learned sailing solo around the world](https://www.ted.com/talks/dame_ellen_macarthur_the_surprising_thing_i_learned_sailing_solo_around_the_world)
+I arrange a series of study sessions that I call "tech dashes" to learn continuously. I usually do these things in a _tech dash_:
 
-## Miscellaneous
+- Re-read the articles I found interesting earlier but didn't have the time to read carefully.
+- Study a particular topic, e.g., the networking in Docker.
+- Review the links I've collected in `misc` and find the right place for each link.
 
-This section has the things I haven't categorized yet.
+### 2.2 Knowledge Sources
 
-- [The Twelve-Factor App](https://12factor.net/): A methodology for building software-as-a-service apps that enables applications to be built with portability and resilience when deployed to the web.
-- [XeTeX](https://en.wikipedia.org/wiki/XeTeX): A TeX typesetting engine using Unicode and supporting modern font technologies.
-- [Matplotlib](https://matplotlib.org/): A Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
-- [Jinja2](http://jinja.pocoo.org/): Jinja2 is a full featured template engine for Python.
-- [GEXF File Format](https://gephi.org/gexf/format/index.html): "GEXF (Graph Exchange XML Format) is a language for describing complex networks structures, their associated data and dynamics."
-- [Semantic Versioning](https://semver.org/)
-  - Also look at this: [Sentimental Versioning](http://sentimentalversioning.org/)
-- [ENIAC PROGRAMMERS PROJECT](http://eniacprogrammers.org/)
-- [RFC Graph](http://altsoph.com/pp/rfc/): A RFC dependency viewer which is implemented using:
-  - [Gephi: The Open Graph Viz Platform](https://gephi.org/)
-  - [Sigma](http://sigmajs.org/): A JavaScript library dedicated to graph drawing.
-- [DevDocs](https://devdocs.io/) "combines multiple API documentations in a fast, organized, and searchable interface."
-- [yUML](https://yuml.me/): Define UML diagrams in text and generate them.
-- [Glottolog](https://glottolog.org/): Comprehensive reference information for the world's languages, especially the lesser known languages.
-- [Butterick's PRACTICAL TYPOGRAPHY](https://practicaltypography.com/)
-- [beau­tiful racket](https://beautifulracket.com/), especially these two articles:
-  - [Why Racket? Why Lisp?](https://beautifulracket.com/appendix/why-racket-why-lisp.html#so-really-whats-in-it-for-me-now)
-  - [Why language-oriented programming? Why Racket?](https://beautifulracket.com/appendix/why-lop-why-racket.html)
-- [如何成为黑客](https://gist.github.com/yaobinwen/e275b024b526e53790a75d2d6b62479b)
-  - Latest version by Eric Raymond: [How to Become A Hacker](http://catb.org/~esr/faqs/hacker-howto.html)
-- Hackerspace
-- [CTF Time](https://ctftime.org/): A website that collects CTF (Capture The Flag) competitions and teams, mainly for information security.
-- [Blog: The Valuable Dev](https://thevaluable.dev/): By [Matthieu Cneude](https://github.com/Phantas0s) who maintains a [healthy daily routine](https://thevaluable.dev/page/about/).
-- [Book: The Personal MBA](https://personalmba.com/)
-- [The History of the Web](https://thehistoryoftheweb.com/): A side project by [Jay Hoffmann](https://twitter.com/jay_hoffmann).
-- [cube composer](https://david-peter.de/cube-composer/): A puzzle game which is inspired by functional programming methods, by [David Peter](https://david-peter.de/).
-- [insect.sh](https://insect.sh/): A high precision scientific calculator with full support for physical units, by [David Peter](https://david-peter.de/).
-- [Erasmatazz by Chris Crawford](http://www.erasmatazz.com/index.html)
-  - I started to read his blog from this article: [I Really Blew It](http://www.erasmatazz.com/personal/self/i-really-blew-it.html)
+I need good sources of knowledge to learn. See the [`Sources`](./Sources.md) that I use.
+
+### 2.3 Side Projects
+
+I build up the theoretical knowledge in the _tech dashes_, but I also build my own side projects for practice. `work-env` is one of them.
