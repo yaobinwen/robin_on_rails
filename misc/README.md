@@ -44,3 +44,5 @@
 - [Coq: proof assistant](https://github.com/coq/coq): "Coq is a formal proof management system. It provides a formal language to write mathematical definitions, executable algorithms and theorems together with an environment for semi-interactive development of machine-checked proofs."
 - [NSan: a floating-point numerical sanitizer](https://dl.acm.org/doi/abs/10.1145/3446804.3446848): A paper about `NSan`, "a new sanitizer for locating and debugging floating-point numerical issues, implemented inside the LLVM sanitizer framework".
   - The mentioned LLVM sanitizers can be found here: [Clang 12 documentation](https://clang.llvm.org/docs/index.html). Find the keyword "Sanitizer".
+- [The V language](https://vlang.io/)
+- [Nuklear: A single-header ANSI C immediate mode cross-platform GUI library](https://github.com/Immediate-Mode-UI/Nuklear)
