@@ -1,184 +1,47 @@
-# Security
+# README
 
 ## Overview
 
 This folder has notes about security.
 
-Security is omnipresent: every technology deserves a review from the perspective of security. I got this impression when I came across the document [_UNICODE SECURITY CONSIDERATIONS_](http://unicode.org/reports/tr36/).
+**Security is omnipresent**: every technology deserves an evaluation from two perspectives of security:
 
-See [1] for glossary.
+- 1). Whether the technolog can provide enough protection to the assets. In other words, does this technology have "holes" that intruders can make use of to gain unauthorized access?
+- 2). Whether the technology can be used as a vehicle by the intruders to gain unauthorized access to the protected assets?
+  - For example: [_UNICODE SECURITY CONSIDERATIONS_](http://unicode.org/reports/tr36/). Improperly used, the Unicode can be used to confuse the victims and make them think they are accessing a legitimate website but in fact not. 
 
-[13] provides a series of cheat sheets about security.
+## The First Principle
 
-See [17] for a roadmap.
+I believe the information security industry starts with a very simple idea which is **"authorized access is granted to protected data and unauthorized access is restricted"** [1]. This idea is the seed of all of the so many, simple or complex, security technologies. Unfortunately, most of the online tutorials or books fail to bridge the so simple essence and the so many complex technologies. As a result, the beginners reads the essential idea maybe once or twice, and then immediately plunged into the ocean of various security technologies and quickly get lost or have no clear mind why something should be done this way and not that way.
 
-## Common Practices
+I wrote an article [_Thinking in Security_](https://yaobinwen.github.io/2021/02/14/Thinking-in-security.html), trying to show the essence of all the complex security technologies. I summarized the variety into two models which are essentially equivalent to the statement I mentioned above.
 
-- Turn off the services you don't need at all.
-  - Better to uninstall the unneeded packages in case they are turned on accidentally.
-- SSH
-  - Use the protocol of version 2. Never version 1.
-  - Use a non-default port other than 22.
-  - Disable root login. "Under no circumstances should root login be allowed on any Linux server for any reason."
-  - Disable password-based authentication.
-- Use `iptables`.
-- Consider `fail2ban`.
-- Use `SELinux` (or `AppArmor` on the Ubuntu distributions).
-- Use `https`.
-- Enable security update.
+## The Bridge
 
-## Cookies
+What is the bridge between the simple essential idea and the various security technologies? It is the **"security requirements"**: the product/service buyers list their security requirements, and the providers implement the product/service using the appropriate security technologies to deliver the required security.
 
-See [11].
+Simple, right? Not at all, because, typically, the buyers would say "I want the product/service to be **secure enough**" and their security requirements would list everything that is needed to achieve the "sufficient security" but: how to define whether something is secure **enough**?
 
-## SSL/TLS Certificate
+Figuring out "how secure is enough" is hard, because **"being secure enough" is about not only the security but also the cost and the convenience**. It's like the triangle: "security, cost, and convenience - pick any two of them". Therefore, to define "enough", one must know:
 
-The article [2] covers this topic clearly and concisely. The takeaway is:
+- 1). The risks that may cause damage or loss to the business (i.e., a risk assessement). The damage or loss can be transformed into a monetary value and expressed in ranges. For example: "[0, 1 million)", "[1 million, 10 million)", "[10 million, unlimited)", etc..
+- 2). The cost of building the security to avoid each range of damage/loss. You don't want to spend 1 million dollars to build something that gains only 1 thousand dollars.
+- 3). The convenience loss of adding additional security measures. More security measures mean less convenience. If it's too convenient, the users may refuse to use the product or work around the measures.
 
-- > **Secure Sockets Layer (SSL)** and **Transport Layer Security (TLS)** are protocols that provide secure communications over a computer network or link.
-- > TLS is based on SSL and was developed as a replacement in response to known vulnerabilities in SSLv3.
-- > A digital certificate provides a link between a public key and an entity (business,domain name etc) that has been verified (signed) by a trusted third party ( A certificate authority).
-- > You get a digital certificate from a **recognized** Certificate Authority (CA).
-- > Now when someone wants your public keys, you send them the certificate, they verify the signature on the certificate, and if it verifies, then they can trust your keys.
+We can also figure out how each security technology affects the three above-mentioned aspects. Then we will know what specific technologies should be used for a particular product or service in a particular use context.
 
-The article [3] explains the topic with greater details.
+There is no such a thing called "universally secure". The security must be measured in a particular context.
 
-## Federated Identity
+The analysis of the three aspects of the user's collective security requirements and those of each security technology is the bridge.
 
-The Wikipedia article [4] explains this topic well.
+## How to Learn Security
 
-> A federated identity in information technology is the means of linking a person's electronic identity and attributes, stored across multiple distinct identity management systems.
+Therefore, we need to learn security from three perspectives:
 
-The article explains why federated identity is needed in the first place:
-
-> Centralized identity management solutions were created to help deal with user and data security where the user and the systems they accessed were within the same network – or at least the same "domain of control". Increasingly however, users are accessing external systems which are fundamentally outside their domain of control, and external users are accessing internal systems. The increasingly common separation of user from the systems requiring access is an inevitable by-product of the decentralization brought about by the integration of the Internet into every aspect of both personal and business life. Evolving identity management challenges, and especially the challenges associated with cross-company, cross-domain access, have given rise to a new approach to identity management, known now as "federated identity management".
-
-The referenced paper [5] also explains the problem to be solved by federated identity. See the _Introduction_ section of this white paper.
-
-> Federation is enabled through the use of open industry standards and/or openly published specifications, such that multiple parties can achieve interoperability for common use-cases. Typical use-cases involve things such as cross-domain, web-based single sign-on, cross-domain user account provisioning, cross-domain entitlement management and cross-domain user attribute exchange.
-
-The [Liberty Alliance project](http://www.projectliberty.org/liberty/about/) is such an endeavor, as it is "to enable a networked world based on open standards where consumers, citizens, businesses and governments can more easily conduct online transactions while protecting the privacy and security of identity information."
-
-## Single Sign-on (SSO)
-
-See the Wikipedia article [6].
-
-> Single sign-on (SSO) is a property of access control of multiple related, yet independent, software systems. With this property, a user logs in with a single ID and password to gain access to any of several related systems. ... it is best to refer to systems requiring authentication for each application but using the same credentials from a directory server as Directory Server Authentication and systems where a single authentication provides access to multiple applications by passing the authentication token seamlessly to configured applications as single sign-on.
->
-> As different applications and resources support different authentication mechanisms, single sign-on must internally store the credentials used for initial authentication and translate them to the credentials required for the different mechanisms.
-
-## Token Authentication
-
-Refer to [9].
-
-The process by which an application confirms user identity is called authentication. Also see [1], Page 25.
-
-> In this method, tokens are generated for your users after they present verifiable credentials. The initial authentication could be by  username/password credentials, API keys or even tokens from another service.
-
-![Authentication](https://stormpath.com/wp-content/uploads/2016/05/Cookie-v-Token-Diagram-v1-3-1024x536.png)
-
-The article provides a good example:
-
-> Let’s try an analogy: When you attend a conference or convention, you’re issued credentials specific to that event, often in the form of a lanyard. How did you score that lanyard? Well, you presented a valid, government-issued ID on the first day, they compared your ID, your face, and your registration. All matched, and the lanyard was yours. You’ve been authenticated. When you return to that convention the next day (a new session), or try to attend a gated sub-event (an authorization request), it’s your event credentials that are checked, not your actual ID.
->
-> In a session ID world, each gatekeeper would need a list of every single attendee and their registrations (permissions!), and would check your valid, government-issued ID against that list not just each day, but every time you entered a new area or session. That sounds exhausting, right?
->
-> In token land, gatekeepers authenticate your identity and authorize your access based on the custom event credential you’re wearing around your neck. No additional ID needed, no enormous list to check every individual against. The lanyard carries all the information!
-
-The article [10] explains what a token consists of. A token is a [Base64](https://en.wikipedia.org/wiki/Base64) encoded string. It looks like this (the example is from [12] [3.1.  Example JWT](https://tools.ietf.org/html/rfc7519#section-3.1))
-
-```text
-eyJ0eXAiOiJKV1QiLA0KICJhbGciOiJIUzI1NiJ9
-.
-eyJpc3MiOiJqb2UiLA0KICJleHAiOjEzMDA4MTkzODAsDQogImh0dHA6Ly9leGFt
-cGxlLmNvbS9pc19yb290Ijp0cnVlfQ
-.
-dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk
-```
-
-and can be decoded into a structured representation:
-
-```json
-{
-  "iss":"joe",
-  "exp":1300819380,
-  "http://example.com/is_root":true
-}
-```
-
-The token also contains the signature that the user signs with his/her private key. Therefore, when the server receives this token, decodes it into the structure representation, and sees the claimed user's identity, it can further uses the signature and the user's public key to verify whether this token is actually sent by the authentic user.
-
-[JSON Web Token (JWT)](https://en.wikipedia.org/wiki/JSON_Web_Token) is a JSON-based open standard (See [12]) for creating access tokens that assert some number of claims.
-
-## OAuth 2.0
-
-See [7]:
-
-- "OAuth is an open standard for authorization and anyone can implement it."
-- "OAuth is **not** an API or a service."
-- OAuth 1.0a and OAuth 2.0 are **completely different** with **no** backwards compatibility.
-- **QUESTION**: "Basic Authentication is still used as a primitive form of API authentication for server-side applications: instead of sending a username and password to the server with each request, the user sends an API key ID and secret."
-  - What are the "API key ID" and "secret"?
-- The _password anti-pattern_ (See [8]):
-  - Suppose the user is using some web service (such as Facebook), on which his/her private information is protected by the username and password.
-  - Before OAuth was invented, if a third-party (desktop/web) application wants to access the web service through its public APIs, the third-party application must ask the user to provide the username and password. This creates several problems:
-    - The user can't easily revoke the access permissions from each third-party application. Even if the third-party application says it has deleted the stored username and password, the user doesn't know if they are actually deleted or not.
-    - With the username and password, the third-party application gains the full access of the web service. There is no access scope control.
-  - "What users need is a granular authorization system that will allow them to selectively grant revokable privileges to individual applications without having to supply a global password."
-  - Before OAuth was invented, there were already such vendor-specific implementations. However, this variety required the third-party application developers implement support for all such implementations. The developers needed a widely-accepted standard, hence OAuth.
-- "To create a better system for the web, federated identity was created for single sign-on (SSO)."
-- "OAuth is a delegated authorization framework for REST/APIs. It enables apps to obtain limited access (scopes) to a user’s data without giving away a user’s password."
-- **"You can think of this like hotel key cards, but for apps. If you have a hotel key card, you can get access to your room. How do you get a hotel key card? You have to do an authentication process at the front desk to get it. After authenticating and obtaining the key card, you can access resources across the hotel."**
-
-## Tools
-
-- [Keycloak](https://www.keycloak.org/index.html): "Keycloak is an open source Identity and Access Management solution aimed at modern applications and services. It makes it easy to secure applications and services with little to no code."
-
-## As a Career
-
-The article [_4 Cybersecurity Career Paths (And the Training to Get You There)_](https://www.newhorizons.com/article/4-cybersecurity-career-paths-and-the-training-to-get-you-there) talks about four roles:
-- Security Architect
-- Security Consultant
-- Penetration Tester/Ethical Hacker
-- Chief Information Security Officer (CISO)
-
-It also mentions the industry certificates:
-- Beginner level:
-  - CompTIA Security+
-- Intermediate level:
-  - Certified Ethical Hacker (CEH)
-  - Cybersecurity Analyst (CySA+)
-- Advanced level:
-  - EC-Council Certified Security Analyst (ECSA)
-  - Certified Information Systems Auditor (CISA)
-  - Certified Information Security Manager (CISM)
-  - CompTIA Advanced Security Practitioner (CASP)
-
-- Expert level:
-  - Certified Information Systems Security Professional (CISSP)
+- 1). Learn what each security technology provides and sacrifices.
+- 2). Learn how to evaulate the "risk", "cost", and "convenience" of each security technology.
+- 3). Learn security testing: how to ensure the product correctly implements the security requirements.
 
 ## References
 
-- [1] [Internet Security Glossary, Version 2](https://tools.ietf.org/html/rfc4949)
-- [2] [_SSL and SSL Certificates Explained For Beginners_](http://www.steves-internet-guide.com/ssl-certificates-explained/)
-- [3] [_Survival guides - TLS/SSL and SSL (X.509) Certificates_](http://www.zytrax.com/tech/survival/ssl.html)
-- [4] [Wikipedia entry: Federated Identity](https://en.wikipedia.org/wiki/Federated_identity)
-- [5] [LIBERTY ALLIANCE PROJECT WHITE PAPER: Liberty ID-WSF People Service – federated social identity](http://www.projectliberty.org/liberty/content/download/387/2720/file/Liberty_Federated_Social_Identity.pdf)
-- [6] [Wikipedia entry: Single sign-on](https://en.wikipedia.org/wiki/Single_sign-on)
-- [7] [What the Heck is OAuth?](https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth)
-- [8] [OAuth and OAuth WRAP: defeating the password anti-pattern](https://arstechnica.com/information-technology/2010/01/oauth-and-oauth-wrap-defeating-the-password-anti-pattern/)
-- [9] [Token Authentication: The Secret to Scalable User Management](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)
-- [10] [Token Based Authentication for Single Page Apps (SPAs)](https://stormpath.com/blog/token-auth-spa)
-- [11] [What Are Cookies? Computer Cookies Explained](http://www.whatarecookies.com/)
-- [12] [RFC 7519: JSON Web Token (JWT)](https://tools.ietf.org/html/rfc7519)
-- [13] [OWASP Cheat Sheet Series](https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series)
-- [13] [What is OAuth? Definition and How it Works](https://www.varonis.com/blog/what-is-oauth/)
-- [14] [OAuth for Dummies](https://marktrapp.com/blog/2009/09/17/oauth-dummies/)
-- [15] [OAuth 2.0 Playground](https://developers.google.com/oauthplayground/)
-- [16] [OAuth 2.0 Servers](https://www.oauth.com/)
-- [17] [Learning Computer Security](https://gist.github.com/yaobinwen/b65bb0bfd64d083148283ceb34313efc)
-- [18] [regpg - safely store server secrets](http://dotat.at/prog/regpg/)
-- [19] [`ansible-vault` lookup module](https://github.com/jhaals/ansible-vault): ansible lookup plugin for secrets stored in Vault(by HashiCorp).
-- [20] [Turtles All The Way Down: Storing Secrets in the Cloud and in the Data Center](https://danielsomerfield.github.io/turtles/)
-  - Video: https://www.youtube.com/watch?v=OUSvv2maMYI
-  - Slides: http://schd.ws/hosted_files/appsecusa2015/a5/Turtles.pdf
+- [1] [Security Testing (A Complete Guide)](https://www.softwaretestinghelp.com/how-to-test-application-security-web-and-desktop-application-security-testing-techniques/)
