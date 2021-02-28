@@ -1,5 +1,23 @@
 # Tech Dashes
 
+## Tech Dash: Security (02/27/2021 ~ 02/28/2021)
+
+In this session, I read about two topics:
+- 1). How secure is secure enough?
+- 2). What is security testing?
+
+Both are big topics and I could only briefly learn what they are mainly about. I'll need more follow-up sessions to learn deeper.
+
+- [x] How secure is secure enough?
+  - [x] https://security.stackexchange.com/a/94830/80050 (This is about general risk assessment, not specifically to the IT industry.)
+  - [x] [How Much Security Is Enough? Practitioners Weigh In](https://www.darkreading.com/operations/how-much-security-is-enough-practitioners-weigh-in/d/d-id/1336138) (This article talks about the current security situation in the industry.)
+  - [x] [How secure is secure enough?](https://www.newelectronics.co.uk/electronics-technology/how-secure-is-secure-enough/222122/) (This article talks about embedded system security.)
+  - [x] [How Secure is Secure Enough?](https://www.computerworld.com/article/2551178/how-secure-is-secure-enough-.html) (Nonsense)
+  - [x] [How to communicate how secure your system is to your employer's clients](https://security.stackexchange.com/q/96002/80050)
+- [x] Security testing
+  - [x] [What is Security Testing? Types with Example](https://www.guru99.com/what-is-security-testing.html)
+  - [x] [Security Testing (A Complete Guide)](https://www.softwaretestinghelp.com/how-to-test-application-security-web-and-desktop-application-security-testing-techniques/)
+
 ## Tech Dash: Chinese New Year 2021 (02/13/2021 ~ 02/15/2021)
 
 - [x] First of all, something fun: [Particubes](https://docs.particubes.com/)
