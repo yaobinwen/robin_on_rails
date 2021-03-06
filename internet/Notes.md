@@ -1,5 +1,19 @@
 # Notes
 
+## Bridge (Switch)
+
+A `bridge` is a link-layer device that copies data frame by frame. Unlike a `hub` (or `repeater`) which has no knowledge of network protocols or addresses, a `bridge` understands link-layer addresses (MAC) so it "sends the frame only to the interface associated with the destination MAC address." [1]
+
+According to [2]:
+
+- A `bridge` and a `switch` are essentially the same kind of device.
+- `bridge` is mainly used in documentation; `switch` is mainly used in oral discussion.
+- A `switch` may be called a `bridge` in oral discussion when this switch has only **two** ports.
+
+References:
+- [1] _Mike Meyers: CompTIA Network+ Certification Exam Guide (7e)_, Chapter 1.
+- [2] _Understanding Linux Network Internals_, Chapter 14 "Bridging: Concepts"
+
 ## Gateway
 
 [gateway](https://internetofthingsagenda.techtarget.com/definition/gateway):
@@ -122,3 +136,16 @@ You must configure the static IP addresses on the machines that use them. You mu
 The static leases are configured on the DHCP servers so it's a central place for you to manage them.
 
 Therefore, static leases may be more convenient for administration.
+
+## TUN/TAP
+
+According to [1], `TUN` and `TAP` are kernel **virtual** network devices:
+
+| Device | Type | Purpose | Layer | Data | Used for |
+|:------:|:-----:|:-------:|:-----:|:----:|:-------:|
+| TAP | Virtual | Tunneling | Link | Ethernet frames | Bridging |
+| TUN | Virtual | Tunneling | Network | IP packets | Routing |
+
+References:
+- [1] [Wikipedia: TUN/TAP](https://en.wikipedia.org/wiki/TUN/TAP)
+- [2] [Tun/Tap interface tutorial](https://backreference.org/2010/03/26/tuntap-interface-tutorial/)
