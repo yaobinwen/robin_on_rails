@@ -1,5 +1,21 @@
 # Tech Dashes
 
+## Tech Dash: OpenVPN (03/02/2021)
+
+- [x] Fundamental knowledge
+  - [x] What is `tun` or `tap` interface?
+    - [x] [Wiki: TUN/TAP](https://en.wikipedia.org/wiki/TUN/TAP)
+  - [x] How to allow or deny a `tun` or `tap` interface in `ufw`? (`ufw` policy is defined for a specific interface, not for a type of interfaces.)
+- [x] How (Open)VPN works?
+  - [x] What is the use of the certificates and the keys?
+    - [x] [The SSL/TLS Handshake: an Overview](https://www.ssl.com/article/ssl-tls-handshake-overview/)
+  - [x] [OpenVPN and the SSL VPNRevolution](https://www.sans.org/reading-room/whitepapers/vpns/openvpn-ssl-vpn-revolution-1459)
+  - [x] [What Is OpenVPN & How Does OpenVPN Work?](https://www.cactusvpn.com/beginners-guide-to-vpn/what-is-openvpn/)
+- [x] How to revoke properly?
+  - [x] [Revoking Certificates](https://openvpn.net/community-resources/revoking-certificates/)
+- [x] OpenVPN security:
+  - [x] [Hardening OpenVPN Security](https://openvpn.net/community-resources/hardening-openvpn-security/)
+
 ## Tech Dash: Security (02/27/2021 ~ 02/28/2021)
 
 In this session, I read about two topics:
