@@ -15,7 +15,13 @@ What to take into account when setting up an OpenVPN:
 
 ## Security Consideration
 
-See [3] and [4].
+See [1], [3] and [4].
+
+Key takeaways from [1]:
+- It's not recommended to use `tcp` as the connection protocol on OpenVPN because the "double-tcp" structure may cause a lot of issues.
+- Do not use `DES` or `3DES`. `DES` is not secure anymore; `3DES` is secure but requires too much CPU computation.
+- MD5 is not secure. Use SHA-1.
+- Do not trust the so-called "clientless" VPNs. "Public clients are by definition untrusted clients. VPNs work on the foundation that both sides of the connection are trusted." [1] So a VPN client is always needed.
 
 ## References
 
