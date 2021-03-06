@@ -41,3 +41,5 @@
 | [x] | [7100](https://tools.ietf.org/html/rfc7100) | Retirement of the "Internet Official Protocol Standards" Summary Document| BEST CURRENT PRACTICE ||
 | [ ] | [7230](https://tools.ietf.org/html/rfc7230) | Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing |||
 | [ ] | [7405](https://tools.ietf.org/html/rfc7405) | Case-Sensitive String Support in ABNF | PROPOSED STANDARD ||
+| [x] | [7568](https://tools.ietf.org/html/rfc7568) | Deprecating Secure Sockets Layer Version 3.0 | PROPOSED STANDARD | **DO NOT** use SSLv3 |
+| [ ] | [8446](https://tools.ietf.org/html/rfc8446) | The Transport Layer Security (TLS) Protocol Version 1.3 | PROPOSED STANDARD ||
