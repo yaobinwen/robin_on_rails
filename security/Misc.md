@@ -43,6 +43,8 @@ The article [2] covers this topic clearly and concisely. The takeaway is:
 
 The article [3] explains the topic with greater details.
 
+[26] explains how the certificate validation is done.
+
 ## Federated Identity
 
 The Wikipedia article [4] explains this topic well.
@@ -187,4 +189,4 @@ It also mentions the industry certificates:
 - [23] [Kontra OWASP Top 10 for Web](https://application.security/free/owasp-top-10)
 - [24] [pentestlab](https://pentesterlab.com/)
 - [25] [Daniel Somerfield - Turtles All the Way Down: Storing Secrets in the Cloud and the Data Center](https://www.youtube.com/watch?v=OUSvv2maMYI)
-
+- [26] [Browsers and Certificate Validation](https://www.ssl.com/article/browsers-and-certificate-validation/)
