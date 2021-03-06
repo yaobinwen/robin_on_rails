@@ -20,3 +20,4 @@ The fake signals can be used in `trap`(See [1] - _Shell & Utilities_ - _Shell Co
   - [Bash Guide](http://mywiki.wooledge.org/BashGuide). Its newer version (as of 2020-07-02) is [bash.academy](https://github.com/lhunath/guide.bash.academy).
   - [Bash FAQ](http://mywiki.wooledge.org/BashFAQ)
   - [Bash Pitfalls](http://mywiki.wooledge.org/BashPitfalls)
+- [5] [Creating a bash completion script](https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial)

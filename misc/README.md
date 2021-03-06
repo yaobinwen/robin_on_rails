@@ -46,3 +46,4 @@
   - The mentioned LLVM sanitizers can be found here: [Clang 12 documentation](https://clang.llvm.org/docs/index.html). Find the keyword "Sanitizer".
 - [The V language](https://vlang.io/)
 - [Nuklear: A single-header ANSI C immediate mode cross-platform GUI library](https://github.com/Immediate-Mode-UI/Nuklear)
+- [iridakos](https://iridakos.com/): He wrote the [tutorial about Bash auto-completion](https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial) (which is a good tutorial but I also love [his cat](https://iridakos.com/cats/2020/01/23/goodbye-irida)).
