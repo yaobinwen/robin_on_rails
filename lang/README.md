@@ -4,6 +4,10 @@
 
 This document is about all kinds of programming languages. The mentioned languages are listed in the alphabetical order.
 
+## Go
+
+[Learn Go with tests](https://github.com/quii/learn-go-with-tests/tree/main)
+
 ## C++
 
 - [ISO C++](https://isocpp.org/)
