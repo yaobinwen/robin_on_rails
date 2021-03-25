@@ -47,6 +47,8 @@ git clone --bare /path/to/repo
 
 But they are not equivalent. The comment says the `git clone --bare` way doesn't preserve config options which "can be critical to proper operation such as if you use git-p4". Read the comments to see more discussions on them.
 
+---
+
 **How to list different commits between two branches?**
 
 [List Different Commits Between Two Branches](https://til.hashrocket.com/posts/18139f4f20-list-different-commits-between-two-branches)
@@ -76,6 +78,12 @@ Some example output:
 ```
 
 You can replace `--online` with `--stat` to show the details (including the modified files) of each commit.
+
+---
+
+**How to check if the branch contains a specific commit?**
+
+`git branch --contains <SHA-1>`
 
 ## References
 
