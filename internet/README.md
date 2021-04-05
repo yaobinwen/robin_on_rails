@@ -23,6 +23,10 @@ The [`RFCs.md`](./RFCs.md) tracks my study of the RFCs.
   - `nc -zv 127.0.0.1 80`
   - `nc -zv 127.0.0.1 22 80 8080`
   - `nc -zv 127.0.0.1 20-30`
+- Use `lsof`:
+  - `sudo lsof -nP -iTCP -sTCP:LISTEN`
+- Use `ss`:
+  - `sudo ss -tunlp | grep <port>` (`ss`: another utility to investigate sockets)
 - Use `netstat`:
   - `sudo netstat -ntlp | grep LISTEN`
 - Use the good old `telnet`:
