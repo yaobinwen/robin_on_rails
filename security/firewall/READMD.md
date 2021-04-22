@@ -102,6 +102,36 @@ Since `iptables` looks at the rules one by one, the order of the rules in the ch
 
 As [1] says, you can first save all the rules into a local file; edit them in a convenient editor; then load them back to `iptables`.
 
+### `iptables-restore` File Format
+
+`iptables-restore` takes an input file but there seems to be no documentation of the file format. Probably the reason is `iptables` doesn't want the user to manually edit the file. But [this answer](https://unix.stackexchange.com/a/400203/162971) provides some insight:
+
+> Lines starting with `#` are for comments and are not parsed.
+> Blank lines are ignored.
+> `*` marks the _table_ name.
+> `:` marks the _chain_, followed by the default _policy_ and optionally the packet and byte counters.
+> byte counters can precede a rule.
+> Rules are exactly as given on the command line less the table name.
+> Each table section must end with `COMMIT`.
+>
+> The good news is that the syntax for the actual rules is just as it says in `man iptables`.
+>
+>     # iptables-restore format
+>     *<table>
+>     :<chain> <policy> [<packets_count>:<bytes_count>]
+>     <optional_counter><rule>
+>     ... more rules ...
+>     COMMIT
+>
+> -
+>
+>     # iptables-restore example
+>     *filter
+>     :INPUT DROP [0:0]
+>     -A INPUT -s 127.0.0.1 -p tcp -m tcp --dport 9000 -J ACCEPT
+>     -A INPUT -p tcp -m tcp --dport 9000 -j REJECT --reject-with icmp-port-unreachable
+>     COMMIT
+
 ### References
 
 - [1] [iptables(8)](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables.8.html)
