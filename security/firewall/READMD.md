@@ -2,30 +2,71 @@
 
 ## Overview
 
-This document has the notes about firewall on Ubuntu.
+This document has the notes about firewalls on Ubuntu.
+
+On Linux, `netfilter` is a packet filtering system in the kernel and `iptables` is a command-line interface to manipulate `netfilter`. Therefore, to some extent, the terms `iptables` and `netfilter` can be used interchangeably.
+
+`Uncomplicated Firewall` (`ufw`) s a frontend for `iptables` and is "particularly well-suited for host-based firewalls".
+
+The main references include:
+
+- [1] [netfilter.org](https://www.netfilter.org/)
+- [2] [iptables(8) for Ubuntu 18.04](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables.8.html)
+- [3] [iptables-extensions(8) for Ubuntu 18.04](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables-extensions.8.html)
+- [4] [Uncomplicated Firewall Wiki](https://wiki.ubuntu.com/UncomplicatedFirewall)
+- [5] [Linux iptables Pocket Reference by Gregor N. Purdy](https://www.amazon.com/Linux-iptables-Pocket-Reference-Gregor/dp/0596005695)
+  - Note this book was published in 2004 so its content has fallen behind the latest `iptables` development. For example, the latest (as of 2021-04-23) `iptables` has five built-in tables (`raw`, `security`, `nat`, `filter`, `mangle`) but this book doesn't include the first two.
+- [6] [Iptables Tutorial 1.2.1: Chapter 6. Traversing of tables and chains](https://rlworkman.net/howtos/iptables/chunkyhtml/c962.html)
+- [7] [How To Set Up a Firewall with UFW on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
+
 
 ## iptables
 
-### General
+### Concepts
 
-`iptables` has three structures:
+The model of the packet flow and manipulating is very simple:
 
-- `tables`: Tables allow you to process packets in specific ways. The default is `filter` table. [2]
-- `chains`: Chains are attached to tables. "These chains allow you to inspect traffic at various points, such as when they just arrive on the network interface or just before they're handed over to a process." [2]
-- `targets`: A target "decides the fate of a packet, such as allowing or rejecting it." I think it's better to call it an "action".
+<table>
+  <tr>
+    <td>
+      <img src="./iptables-chains.png" />
+      <p>Figure 1: `iptables` chains</p>
+    </td>
+  </tr>
+</table>
 
-The workflow is as follows:
+On the highest level, this diagram has three parts:
+- 1). On the leftmost side is the network interface.
+- 2). On the rightmost side is the local process.
+- 3). The part in between is the Linux kernel, or, to be more exact, the `netfilter` subsystem. Figure 1 shows the five `hook points` which calls `chains` to manipulate packets. See below for more details.
 
-- A `table` is used to find all the chains and rules to process the packets.
-- A packet arrives, or leaves, or is at a specific point.
-- The `chain` for that specific point is selected.
-- The `rules` in the chain are matched one by one.
-- If a `rule` is matched, the workflow jumps to the `target` to perform the action.
-- If none of the rules matches, the `default policy` of the chain is used. By default, "all chains have a default policy of allowing packets."
+Now let's focus on the third part which is the `netfilter` subsystem.
+
+`netfilter` defines five **"hook points"** where processings of the packets occur. They are shown as rounded rectangles in Figure 1. These hook points are pre-defined and can't be added, removed, or customized.
+
+The processing at each hook point is done by a **"chain of rules"**. In other words, each hook point is associated with at least one **chain of rules**. By default, each hook point is associated with a built-in chain, so people call the hook points using the names of the chains they are associated with. Therefore, poeple don't say "the `PREROUTING` hook point". Instead, they directly say "the `PREROUTING` chain, but what they actually refer to is the hook point which has the built-in `PREROUTING` chain associated with.
+
+A **chain of rules** is similar to the design pattern [_Chain of Responsibility_](https://refactoring.guru/design-patterns/chain-of-responsibility). A network packet traverses through the rules inside the chain. If the packet **matches** (see `match` below) the critiera of a rule, the packet is then **handled as specified** (see `target` below); otherwise, the packet moves on to the next rule. (But this is not exactly how the rules are organized. See `tables` below for more details.)
+
+Each rule consists of a **match** and a **target**. A **match** specify the matching criteria of a network packet; a **target** specifies how the packet should be handled if it matches the criteria. "If there are no match criteria, all packets are considered to match. If there is no target specification, nothing is done to the packets (processing proceeds as if the rule did not exist - except that the packet and byte counters are updated)." [5]
+
+A chain has a **policy** which I think is essentially the "default rule" of the chain. In other words, the policy is executed when the packet matches none of the other rules in the current chain.
+
+Inside a chain, the rules are chained one after the other. When a packet enters a chain, it traverses the rules inside the chain one by one. The rules can be divided into different groups according to the types of function they perform. `netfilter` calls these function groups **"tables"**.
+
+Figure 1 shows that the rules are chained in two levels. On the first level is the **table**; on the next level, or, in other words, inside one table, the rules of that functional group are chained one after another. Therefore, using the `PREROUTING` chain as the example, all the rules in the table `raw` are processed first, followed by all the rules in `connection tracking`, followed by all the rules in `mangle`, followed by all the rules in `nat`.
+
+A note on **chains** and **tables**. As [5] says:
+
+> It is common to refer to "the PREROUTING chain of the nat table," which implies that chains belong to tables. However chains and tables are only partially correlated, and neither really "belongs" to the other. Chains represent hook points in the packet flow, and tables represent the types of processing that can occur.
+
+I also find it a bit bizarre that people seem to treat "tables" as the top level concept and "chains" the next level while most of the packet flow diagrams I've seen are chain-oriented. Figure 1 is an example: it breaks tables into different chains rather than the opposite.
+
+In contrast, the `iptables` command line does treat tables as the first-class citizen: chains of rules are broken into tables. If you don't specify the table, the table `filter` is assumed, so don't be surprised when you type `iptables -S` with the hope to see all the rules in all the tables but in fact only the rules in the `filter` table are shown.
 
 ### Tables
 
-On a modern Linux distributions, there are four tables [2]:
+On a modern Linux distributions, there are five tables [2]:
 
 | Name | Default | Function |
 |-----:|:-------:|:---------|
@@ -47,10 +88,6 @@ Every table has some chains; a kind of chain (not an instance of chain) can appe
 | FORWARD | | x | | x | For packets that are routed to another host through the current host. |
 | POSTROUTING | | x | x | | For packets when they are about to leave the network interface. |
 
-See this diagram:
-
-![iptables chains](https://www.booleanworld.com/wp-content/uploads/2017/06/Untitled-Diagram.png)
-
 ### Targets
 
 Some commonly used targets are:
@@ -62,9 +99,9 @@ Some commonly used targets are:
 | REJECT | Yes | Reject the packet. For TCP: "connection reset"; For UDP or ICMP: "destination host unreachable". |
 | LOG | No | Log the packet in kernel logs and `iptables` will keep matching it with the rest of the rules. |
 
-### Rule Specification
+### Rule Specification (Match + Target)
 
-[1] says the `rule-specification` has this syntax:
+`iptables(8)` is the core of `iptables` but `iptables-extensions(8)` offers more functionalities, especially the matching critiera and targets. [2] says the `rule-specification` has this syntax:
 
 ```
 rule-specification = [matches...] [target]
@@ -95,14 +132,12 @@ Delete in the reverse order [2]:
 
 Since `iptables` looks at the rules one by one, the order of the rules in the chain is important.
 
-### Related Tools
+### `iptables-save/restore`
 
 - `iptables-save`: Dump rules from all chains and filters into standard output.
 - `iptables-restore`: Restore rules from standard input.
 
-As [1] says, you can first save all the rules into a local file; edit them in a convenient editor; then load them back to `iptables`.
-
-### `iptables-restore` File Format
+As [2] says, you can first save all the rules into a local file; edit them in a convenient editor; then load them back to `iptables`.
 
 `iptables-restore` takes an input file but there seems to be no documentation of the file format. Probably the reason is `iptables` doesn't want the user to manually edit the file. But [this answer](https://unix.stackexchange.com/a/400203/162971) provides some insight:
 
@@ -123,21 +158,12 @@ As [1] says, you can first save all the rules into a local file; edit them in a 
 >     ... more rules ...
 >     COMMIT
 >
-> -
->
 >     # iptables-restore example
 >     *filter
 >     :INPUT DROP [0:0]
 >     -A INPUT -s 127.0.0.1 -p tcp -m tcp --dport 9000 -J ACCEPT
 >     -A INPUT -p tcp -m tcp --dport 9000 -j REJECT --reject-with icmp-port-unreachable
 >     COMMIT
-
-### References
-
-- [1] [iptables(8)](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables.8.html)
-- [2] [An In-Depth Guide to iptables, the Linux Firewall](https://www.booleanworld.com/depth-guide-iptables-linux-firewall/)
-- [3] [iptables-extensions(8)](https://manpages.ubuntu.com/manpages/bionic/en/man8/iptables-extensions.8.html)
-- [4] [Iptables Tutorial 1.2.1: Chapter 6. Traversing of tables and chains](https://rlworkman.net/howtos/iptables/chunkyhtml/c962.html)
 
 ## Uncomplicated Firewall (UFW)
 
@@ -173,7 +199,3 @@ sudo ufw default allow outgoing
 - HTTP: `sudo ufw allow http`
 - HTTPS: `sudo ufw allow https`
 - FTP: `sudo ufw allow ftp`
-
-### References
-
-- [1] [How To Set Up a Firewall with UFW on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04)
