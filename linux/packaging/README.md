@@ -194,6 +194,12 @@ A similar solution is: keep the name `foo.py` for Python 2, and rename the scrip
 
 The article [Debian packaging for python2 and python3 at the same time](https://www.v13.gr/blog/?p=412) provides another solution. It uses the trick of `export PYBUILD_INSTALL_ARGS_python2 = --install-scripts=/dev/null` to avoid installing the Python 2 version and only installs the Python 3 version.
 
+## Debian Go Packaging
+
+See [Debian Go Packaging](https://go-team.pages.debian.net/packaging.html). Some mentioned tools:
+- [dh-make-golang](https://github.com/Debian/dh-make-golang): tool that converts Go packages into Debian package source.
+- [dh-golang](https://packages.ubuntu.com/bionic/devel/dh-golang): debhelper add-on for packaging software written in Go (golang).
+
 ## Miscellaneous
 
 ### Upstream vs Downstream
