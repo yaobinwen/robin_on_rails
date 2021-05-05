@@ -23,8 +23,40 @@ acpitz        29.8°C
 x86_pkg_temp  89.0°C
 ```
 
+## Slow CPUs (`intel_powerclamp`)
+
+When the machine suddenly becomes slow and things start to take longer time to finish, watch the performance of the CPUs:
+
+```
+watch -d -n1 -x grep 'cpu MHz' /proc/cpuinfo
+```
+
+> This might have been due to an overheating event, however, it looks like I'm using `intel_powerclamp` [4], and that doesn't restore the processor speed once it decides to throttle it. Plug and unplug my power adapter fixed it.
+
+According to [4]:
+
+> Consider the situation where a system's power consumption must be
+> reduced at runtime, due to power budget, thermal constraint, or noise
+> level, and where active cooling is not preferred. Software managed
+> passive power reduction must be performed to prevent the hardware
+> actions that are designed for catastrophic scenarios.
+>
+> Currently, P-states, T-states (clock modulation), and CPU offlining
+> are used for CPU throttling.
+>
+> On Intel CPUs, C-states provide effective power reduction, but so far
+> they're only used opportunistically, based on workload. With the
+> development of `intel_powerclamp` driver, the method of synchronizing
+> idle injection across all online CPU threads was introduced. The goal
+> is to achieve forced and controllable C-state residency.
+>
+> Test/Analysis has been made in the areas of power, performance,
+> scalability, and user experience. In many cases, clear advantage is
+> shown over taking the CPU offline or modulating the CPU clock.
+
 ## References
 
 - [1] [Advanced Configuration and Power Interface (ACPI) Specification (Version 6.3, January 2019)](https://uefi.org/sites/default/files/resources/ACPI_6_3_final_Jan30.pdf)
 - [2] [Generic Thermal Sysfs driver How To](https://www.kernel.org/doc/Documentation/thermal/sysfs-api.txt)
 - [3] [ACPI Device Tree - Representation of ACPI Namespace](https://www.kernel.org/doc/Documentation/acpi/namespace.txt)
+- [4] [INTEL POWERCLAMP DRIVER](https://www.kernel.org/doc/Documentation/thermal/intel_powerclamp.txt)
