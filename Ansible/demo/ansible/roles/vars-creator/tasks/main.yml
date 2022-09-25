@@ -1,0 +1,5 @@
+- block:
+    - include_tasks: create-vars.yml
+
+  always:
+    - meta: flush_handlers

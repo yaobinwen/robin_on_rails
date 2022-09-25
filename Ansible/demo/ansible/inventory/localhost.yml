@@ -1,0 +1,8 @@
+all:
+  vars:
+    var_2: "var_2_value_inventory_file"
+
+  hosts:
+    localhost:
+      # "localhost" doesn't require an SSH connection.
+      ansible_connection: local

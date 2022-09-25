@@ -1,0 +1,13 @@
+# This playbook demonstrates whether a created variable is local or global.
+# For example, if a variable is created by one early task in the playbook, is
+# the variable accessible by the subsequent tasks.
+
+- hosts: all
+  gather_facts: no
+  roles:
+    - role: vars-creator
+      vars:
+        var_role_level: "role level var"
+
+    # See if the variables are still accessible in this consumer role.
+    - role: vars-consumer

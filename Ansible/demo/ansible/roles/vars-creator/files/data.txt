@@ -1,0 +1,3 @@
+machine my.web.site.com
+username ywen
+password just_something

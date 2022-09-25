@@ -1,0 +1,25 @@
+# Ref: https://stackoverflow.com/a/21699210
+
+- hosts: all
+  gather_facts: no
+  vars:
+    var1: "variable1"
+    var2_fallback: "variable2 fallback"
+  tasks:
+    - name: Print values.
+      debug:
+        msg:
+          - "var1: {{var1}}"
+          - "var2: {{var2|default(var2_fallback)}}"
+          - "var3: {{var3|default(var3_fallback)|default('var3_default')}}"
+
+    - name: Print values (if when conditions are met).
+      debug:
+        msg:
+          - "var1: {{var1}}"
+          - "var2: {{var2|default(var2_fallback)}}"
+      when: >-
+        var1 is defined and (
+          (var2 is defined or var2_fallback is defined) or
+          var3 is defined
+        )

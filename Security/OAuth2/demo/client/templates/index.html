@@ -1,0 +1,13 @@
+<h1>Client Demo</h1>
+
+{% if logged_in is defined and logged_in == True %}
+<h3>You are already logged in.</h3>
+<p><a href="/logout">Log out</a></p>
+{% else %}
+<h3>You are not logged in.</h3>
+<p><a href="/login">Log in</a></p>
+{% endif %}
+
+{% if auth_request_denied is defined and auth_request_denied == True %}
+<p>Sorry, your authorization request was denied by the user.</p>
+{% endif %}

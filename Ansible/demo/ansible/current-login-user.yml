@@ -1,0 +1,58 @@
+# NOTE(ywen):
+#
+# You should try to run this playbook in the terminal as two users: the non-
+# privileged user (`ywen`) and the privileged user `root`.
+#
+# When run as the non-privileged user, the output is:
+#
+# ```
+# TASK [Display the current login user (non-privileged).]
+# ok: [localhost] => 
+#   msg: |-
+#     ansible_env.USER = ywen; ansible_env.SUDO_USER = <undefined>
+# 
+# TASK [Display the current login user (privileged).]
+# ok: [localhost] => 
+#   msg: |-
+#     ansible_env.USER = ywen; ansible_env.SUDO_USER = <undefined>
+# ```
+#
+# When run as the privileged user, the output is:
+#
+# ```
+# TASK [Display the current login user (non-privileged).]
+# ok: [localhost] => 
+#   msg: |-
+#     ansible_env.USER = root; ansible_env.SUDO_USER = ywen
+# 
+# TASK [Display the current login user (privileged).]
+# ok: [localhost] => 
+#   msg: |-
+#     ansible_env.USER = root; ansible_env.SUDO_USER = ywen
+# ```
+#
+# It looks like the `become: yes` and `become_user: root` don't affect the
+# environment variables.
+
+# Make sure to check this forked gist which tests `ansible_ssh_user` and
+# `ansible_user_id` against playbook `sudo` and task `sudo`:
+# https://gist.github.com/yaobinwen/e31ca4e4bbd12a4d319793e69d657b84
+
+- name: Demo how to get the "current login user".
+  gather_facts: yes # `ansible_env` needs it.
+  hosts: all
+  tasks:
+    - name: >
+        Display the current login user (non-privileged).
+      debug:
+        msg: >
+          ansible_env.USER = {{ansible_env.USER|default("<undefined>")}};
+          ansible_env.SUDO_USER = {{ansible_env.SUDO_USER|default("<undefined>")}}
+
+    - name: Display the current login user (privileged).
+      become: yes
+      become_user: root
+      debug:
+        msg: >
+          ansible_env.USER = {{ansible_env.USER|default("<undefined>")}};
+          ansible_env.SUDO_USER = {{ansible_env.SUDO_USER|default("<undefined>")}}

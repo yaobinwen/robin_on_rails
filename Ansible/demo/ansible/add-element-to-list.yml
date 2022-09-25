@@ -1,0 +1,44 @@
+- name: Demo how to add elements to a list.
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: Define the original data.
+      set_fact:
+        config_original:
+          - iface: "enx00e07cc85b6e"
+            subnet: "192.168.16.0/24"
+            netmask: "255.255.255.0"
+            listen: "192.168.16.30"
+            range:
+            start: "192.168.16.1"
+            end: "192.168.16.28"
+            reserved:
+              - "192.168.16.29"
+          - iface: "enx241b7af8cdf1"
+            subnet: "192.168.16.0/24"
+            netmask: "255.255.255.0"
+            listen: "192.168.16.60"
+            range:
+            start: "192.168.16.31"
+            end: "192.168.16.58"
+            reserved:
+              - "192.168.16.59"
+
+    - name: Transform config_original to config_modified
+      vars:
+        config_modified: []
+        config_entry:
+          # `item` is re-evaluated in every iteration of the loop.
+          iface: "{{item.iface}}"
+          dhcp: off
+          subnet: "{{item.subnet}}"
+          netmask: "{{item.netmask}}"
+          static_ip_address: "{{item.reserved}}"
+          gateway: ~
+      set_fact:
+          config_modified: "{{config_modified + [config_entry]}}"
+      loop: "{{config_original}}"
+
+    - name: Display the final result.
+      debug:
+        var: config_modified

@@ -1,0 +1,10 @@
+- name: Print a debugging message.
+  debug:
+    msg:
+      - "{{var_1}}"
+      - "{{var_2}}"
+      - "{{var_3}}"
+      - "{{var_4}}"
+      - "{{var_5}}"
+  vars:
+    var_4: "var_4_value_role"

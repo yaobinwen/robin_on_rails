@@ -1,0 +1,11 @@
+Package: yaobin-wen
+Version: <placeholder>
+Section: base
+Priority: optional
+Architecture: all
+Depends: bash, python
+Maintainer: Yaobin Wen <yaobin.wen@minevisionsystems.com>
+Description: Install me to your system at your own risk.. Be careful..
+    Alrighty I'm kidding. Seriously, this package is used to learn how the
+    Debian package management system works. Look at the scripts for more
+    information.

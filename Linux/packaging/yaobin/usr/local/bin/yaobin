@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+
+
+import argparse
+import sys
+
+
+VERSION = "1.0.0"
+
+
+def _syntax():
+    parser = argparse.ArgumentParser(
+        description='Yaobin'
+    )
+    parser.add_argument(
+        '--version',
+        help='Show the version',
+        action='store_true',
+        required=False,
+    )
+    return parser
+
+
+def main(version):
+    if version:
+        print "yaobin {ver}".format(ver=VERSION)
+        return 0
+
+    print "Yaobin says hi!"
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(**vars(_syntax().parse_args())))

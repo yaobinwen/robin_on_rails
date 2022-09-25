@@ -1,0 +1,42 @@
+- name: Parse the data file for the variables.
+  vars:
+    var_block_level: "block level var"
+  block:
+    - name: Create a temporary directory for the test.
+      tempfile:
+        path: /tmp
+        state: directory
+      # `tmp_dir` can be used in the same playbook.
+      register: tmp_dir
+
+    - name: Copy the file to the temporary directory.
+      copy:
+        dest: "{{tmp_dir.path}}"
+        src: "data.txt"
+        mode: "0o644"
+
+    - name: Parse the data file to get the variables.
+      parse_data_file:
+        path: "{{tmp_dir.path}}/data.txt"
+      register: data_file
+
+- set_fact:
+    var_fact: "var set as a fact"
+
+- name: Print the variables that are read from the data file.
+  vars:
+    var_task_level: "task level var"
+  debug:
+    # The variable `data_file` can be used outside the defining block above.
+    # `var_task_level` is surely accessible because it's defined for this task.
+    # `var_block_level` is inaccessible because it was defined in another block.
+    msg: |
+      machine: {{data_file.machine}}
+      username: {{data_file.username}}
+      password: {{data_file.password}}
+      var_task_level: {{var_task_level}}
+      var_fact: {{var_fact|default("(n/a)")}}
+      var_block_level: {{var_block_level|default("(n/a)")}}
+      var_role_level: {{var_role_level}}
+      var2_role_level: {{var2_role_level}}
+      var3_role_level: {{var3_role_level}}

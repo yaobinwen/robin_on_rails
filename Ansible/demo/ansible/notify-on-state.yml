@@ -1,0 +1,62 @@
+# According to the documentation: "Sometimes you want a task to run only when a
+# change is made on a machine." Therefore, usually, the handler is notified
+# when a real change is made. However, sometimes we want to notify a handler
+# based on the current state of the system, e.g., the existence of a file.
+- name: >
+    Demo how to notify a handler if the task may not make any change to the
+    system.
+  gather_facts: no
+  hosts: all
+  handlers:
+    - name: print message 1
+      debug:
+        msg: "Hello, message 1!"
+
+    - name: print message 2
+      debug:
+        msg: "Hello, message 2!"
+
+    - name: print message 3
+      debug:
+        msg: "Hello, message 3!"
+
+  tasks:
+    # The first way is to register the result to a variable and then immediately
+    # use the variable to determine if the task should be seen as "changed",
+    # and notify the handler if the task is changed.
+    # The surprise to me is that the registered variable can be used in the
+    # same task. I thought it can't be used until the next task.
+    - name: Get the status of `/tmp`.
+      stat:
+        path: /tmp
+      register: tmp_stat
+      changed_when: tmp_stat.stat.exists
+      notify: print message 1
+
+    - name: Get the status of `/tmp123`.
+      stat:
+        path: /tmp123
+      register: tmp123_stat
+      changed_when: not tmp123_stat.stat.exists
+      notify: print message 2
+
+    - meta: flush_handlers
+
+    # The second way is to run the task normally but use a `debug` task to
+    # notify the handler. The good part of this method is that `stat` should
+    # probably never be in a "changed" state because it doesn't alter the
+    # state of the machine. We let `debug` change because it notifies a handler
+    # which may change the state of the machine.
+    - name: Get the status of `/tmp456`.
+      stat:
+        path: /tmp456
+      register: tmp456_stat
+
+    - name: Notify the handler if `/tmp456` does not exist.
+      when: not tmp456_stat.stat.exists
+      debug:
+        msg: "Notify the handler because /tmp456 does not exist."
+      changed_when: not tmp456_stat.stat.exists
+      notify: print message 3
+
+    - meta: flush_handlers

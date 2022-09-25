@@ -1,0 +1,1 @@
+g++ -o dummy_main dummy_main.cpp arena.cpp

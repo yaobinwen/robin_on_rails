@@ -1,0 +1,18 @@
+- name: Print the variables.
+  debug:
+    # The `data_file` and `var_role_level` are still accessible here.
+    # But `var_task_level` is not available here because it was defined for
+    # that task only.
+    # `var_block_level` is inaccessible because it was defined for another
+    # block.
+    # `var2_role_level` is defined in both the creator and the consumer, but
+    # the local one always overrides the other ones.
+    # `var3_role_level` is only defined in the creator so it is used.
+    msg: |-
+      data_file: {{data_file|default("(n/a)")}}
+      var_task_level: {{var_task_level|default("(n/a)")}}
+      var_fact: {{var_fact|default("(n/a)")}}
+      var_block_level: {{var_block_level|default("(n/a)")}}
+      var_role_level: {{var_role_level|default("(n/a)")}}
+      var2_role_level: {{var2_role_level}}
+      var3_role_level: {{var3_role_level}}

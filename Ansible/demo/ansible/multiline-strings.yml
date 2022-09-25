@@ -1,0 +1,44 @@
+# Ref: https://stackoverflow.com/a/21699210
+
+- hosts: all
+  gather_facts: no
+  vars:
+    ml_str1: >
+      line1
+      line2
+      line3
+    ml_str2: >-
+      line1
+      line2
+      line3
+    ml_str3: |
+      line1
+      line2
+      line3
+    ml_str4: |-
+      line1
+      line2
+      line3
+    ml_str5: "line1\
+      line2\
+      line3"
+  tasks:
+    - name: Print multi-line string 1.
+      debug:
+        msg: "ml_str1: {{ml_str1}}"
+
+    - name: Print multi-line string 2.
+      debug:
+        msg: "ml_str2: {{ml_str2}}"
+
+    - name: Print multi-line string 3.
+      debug:
+        msg: "ml_str3: {{ml_str3}}"
+
+    - name: Print multi-line string 4.
+      debug:
+        msg: "ml_str4: {{ml_str4}}"
+
+    - name: Print multi-line string 5.
+      debug:
+        msg: "ml_str5: {{ml_str5}}"

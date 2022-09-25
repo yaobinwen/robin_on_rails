@@ -1,0 +1,38 @@
+- hosts: all
+  gather_facts: no
+  vars:
+    var1: null
+    var2: ""
+    var3: "var3 value"
+
+  tasks:
+
+    # Output:
+    #
+    # TASK [Print var1 when it's not empty.] ****
+    # skipping: [localhost] => 
+    #
+    # TASK [Print var2 when it's not empty.] ****
+    # skipping: [localhost] => 
+    #
+    # TASK [Print var3 when it's not empty.] ****
+    # ok: [localhost] => 
+    #   msg: 'var3: var3 value'
+
+    # This task is skipped.
+    - name: Print var1 when it's not empty.
+      debug:
+        msg: "var1: {{var1}}"
+      when: var1|default('')
+
+    # This task is skipped.
+    - name: Print var2 when it's not empty.
+      debug:
+        msg: "var2: {{var2}}"
+      when: var2|default('')
+
+    # This task is executed.
+    - name: Print var3 when it's not empty.
+      debug:
+        msg: "var3: {{var3}}"
+      when: var3|default('')

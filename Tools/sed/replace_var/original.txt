@@ -1,0 +1,5 @@
+# Database access info.
+	db-uri = "postgres://auth_name:password@localhost:32778/postgres"
+
+# Name of the main schema.
+db-schema = "data"

@@ -1,0 +1,97 @@
+# Essentially, `with_subelements` calculates the Cartesian product of the two
+# input lists. The special thing is: the second list is contained as a
+# sub-element in the elements of the first list.
+
+# Modified based on the following example:
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/subelements_lookup.html
+#
+# See the following link for how to replace `with_subelements` with `loop`:
+# https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#with-subelements
+
+- name: Demo subelements lookup.
+  hosts: all
+  gather_facts: no
+  vars:
+    users:
+      - name: alice
+        authorized_keys:
+          - alice_first_authorized_key
+          - alice_second_authorized_key
+        mysql:
+            password: mysql-password
+            hosts:
+              - "%"
+              - "127.0.0.1"
+              - "::1"
+              - "localhost"
+            privs:
+              - "*.*:SELECT"
+              - "DB1.*:ALL"
+        groups:
+          - wheel
+      - name: bob
+        authorized_keys:
+          - bob_first_authorized_key
+        mysql:
+            password: other-mysql-password
+            hosts:
+              - "db1"
+            privs:
+              - "*.*:SELECT"
+              - "DB2.*:ALL"
+
+  tasks:
+    - name: Set authorized ssh key, extracting just that data from 'users'
+      debug:
+        msg: "user = {{ item.0.name }}; key = {{ item.1 }}"
+      with_subelements:
+         - "{{ users }}"
+         - authorized_keys
+
+    - name: Setup MySQL users, given the mysql hosts and privs subkey lists
+      vars:
+        mysql_user:
+          name: "{{ item.0.name }}"
+          password: "{{ item.0.mysql.password }}"
+          host: "{{ item.1 }}"
+          priv: "{{ item.0.mysql.privs | join('/') }}"
+      debug:
+        var: mysql_user
+      with_subelements:
+        - "{{ users }}"
+        - mysql.hosts
+
+    - name: list groups for users that have them, don't error if groups key is missing
+      debug:
+        var: item
+      loop: "{{ q('subelements', users, 'groups', {'skip_missing': True}) }}"
+
+# See https://stackoverflow.com/a/41908853/630364
+- name: Demo subelements lookup (with simple data).
+  hosts: all
+  gather_facts: no
+  vars:
+    families:
+      - surname: Smith
+        country: US
+        children:
+          - name: Mike
+            age: 4
+          - name: Kate
+            age: 7
+      - surname: Sanders
+        country: UK
+        children:
+          - name: Pete
+            age: 12
+          - name: Sara
+            age: 17
+  tasks:
+    - name: List children
+      debug:
+        msg: "Family={{ item.0.surname }} Child={{ item.1.name }} Age={{ item.1.age }}"
+      with_subelements:
+        - "{{ families }}"
+        - children
+        # Using `country` will result in the error "the key country should point to a list, got 'US'".
+        # - country

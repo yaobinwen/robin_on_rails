@@ -1,0 +1,7 @@
+- name: Display the message.
+  debug:
+    msg: >-
+      This Ansible role really doesn't do anything. It's used to show how to do
+      unit test to a custom Ansible module. See the
+      `demo/ansible/roles/unittest-module/library/test_my_test.py` for the
+      details.
