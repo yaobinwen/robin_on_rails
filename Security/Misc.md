@@ -1,16 +1,14 @@
-# Security
+# Miscellaneous Notes/Subjects
 
 ## Overview
 
-This folder has notes about security.
-
-Security is omnipresent: every technology deserves a review from the perspective of security. I got this impression when I came across the document [_UNICODE SECURITY CONSIDERATIONS_](http://unicode.org/reports/tr36/).
+This folder has miscellaneous notes/subjects about security.
 
 See [1] for glossary.
 
 [13] provides a series of cheat sheets about security.
 
-See [17] for a roadmap.
+See [17] for a road map.
 
 ## Common Practices
 
@@ -26,6 +24,12 @@ See [17] for a roadmap.
 - Use `SELinux` (or `AppArmor` on the Ubuntu distributions).
 - Use `https`.
 - Enable security update.
+
+## Stealthy dopant-level hardware Trojans
+
+Marcel sent me this paper during our interview: [Stealthy dopant-level hardware Trojans: Extended version](https://www.researchgate.net/publication/285417534_Stealthy_dopant-level_hardware_Trojans_Extended_version)
+
+This is an interesting paper because it shows me that Trojans are not just a software concept but can be implemented on the hardware level.
 
 ## Cookies
 
@@ -227,3 +231,5 @@ It also mentions the industry certificates:
 - [27] [Adding Salt to Hashing: A Better Way to Store Passwords](https://auth0.com/blog/adding-salt-to-hashing-a-better-way-to-store-passwords/)
 - [28] [OWASP: Password Storage Concepts: Salting](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#salting)
 - [29] [OWASP: Password Storage Concepts: Peppering](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#peppering)
+- [30] [Phrack](http://www.phrack.org/)
+- [31] [Noisebridge](https://www.noisebridge.net/wiki/Noisebridge): "Noisebridge is a fun space for sharing, creation, collaboration, research, development, mentoring, and of course, learning."
