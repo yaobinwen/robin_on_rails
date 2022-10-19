@@ -12,6 +12,7 @@
 - [Gareth Rees](https://garethrees.org/)
 - [Ivan Velichko](https://iximiuz.com/en/curated/)
 - [eklitzke.org](https://eklitzke.org/)
+- [Major Hayden](https://major.io/)
 
 ## Communities
 
