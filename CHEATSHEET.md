@@ -44,3 +44,11 @@ Also look at ( vim-unimpaired)[https://github.com/tpope/vim-unimpaired].
 ### Move to the end of file
 
 Press Shift+G.
+
+## Patch a folder
+
+`cd` into the folder you want to patch and run:
+
+```
+patch --dry-run -p1 < /path/to/patch/file
+```
