@@ -26,3 +26,21 @@ Extract: `tar -zxvf tar-archive-name.tar.gz`
 ### How to know what program is listening on a given port
 
 `sudo lsof -i :8000`
+
+## Vim
+
+### Remove unnecessary indents while keeping the relative indentation
+
+Delete the text line and then paste with `]p` with your cursor from an empty line:
+
+```
+dG]p
+```
+
+`]p` will paste the text, but will adjust the indent to the current line.
+
+Also look at ( vim-unimpaired)[https://github.com/tpope/vim-unimpaired].
+
+### Move to the end of file
+
+Press Shift+G.
