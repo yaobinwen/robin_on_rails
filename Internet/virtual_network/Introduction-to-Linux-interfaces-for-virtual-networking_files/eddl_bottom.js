@@ -1,0 +1,1 @@
+!function(a){"use strict";a.appEventData=a.appEventData||[],appEventData.push({event:"Page Load Completed"})}(window);
