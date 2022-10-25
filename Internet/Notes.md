@@ -1,30 +1,133 @@
 # Notes
 
-## Bridge (Switch)
+## >> A. Primary References
 
-A `bridge` is a link-layer device that copies data frame by frame. Unlike a `hub` (or `repeater`) which has no knowledge of network protocols or addresses, a `bridge` understands link-layer addresses (MAC) so it "sends the frame only to the interface associated with the destination MAC address." [1]
+This section lists the references that I use primarily. Usually they are books. The references in this section are referred to as `[A.n]`. The other secondary references (usually online articles that focus on various topics) are listed in each section.
 
-According to [2]:
+- [1] [CompTIA Network+ Certification All-in-One Exam Guide, Seventh Edition (Exam N10-007)](https://www.amazon.com/CompTIA-Network-Certification-Seventh-N10-007/dp/1260122387/)
+- [2] [Understanding Linux Network Internals](https://www.amazon.com/Understanding-Linux-Network-Internals-Networking/dp/0596002556)
 
-- A `bridge` and a `switch` are essentially the same kind of device.
-- `bridge` is mainly used in documentation; `switch` is mainly used in oral discussion.
-- A `switch` may be called a `bridge` in oral discussion when this switch has only **two** ports.
+---
 
-References:
-- [1] _Mike Meyers: CompTIA Network+ Certification Exam Guide (7e)_, Chapter 1.
-- [2] _Understanding Linux Network Internals_, Chapter 14 "Bridging: Concepts"
+## >> Network Models
 
-## Gateway
+There are two prevailing network models: **OSI model** (7 layers) and **TCP/IP model** (4 layers):
 
-[gateway](https://internetofthingsagenda.techtarget.com/definition/gateway):
+<table border="1px solid black" border-collapse="collapse">
+  <caption>Model Layer Comparison</caption>
+  <tbody>
+    <tr>
+      <th>Layer</th>
+      <th>OSI Model</th>
+      <th>TCP/IP Model</th>
+      <th>Protocol Data Unit (PDU)</th>
+      <th>Function</th>
+    </tr>
+    <tr style="background:#d8ec9b;">
+      <td>7</td>
+      <td>Application</td>
+      <td rowspan=3>Application</td>
+      <td rowspan=3>Data (payload)</td>
+      <td><p>High-level APIs, including resource sharing, remote file access</p></td>
+    </tr>
+    <tr style="background:#d8ec9b;">
+      <td>6</td>
+      <td>Presentation</td>
+      <td><p>Translation of data between a networking service and an application; including character encoding, data compression and encryption/decryption</p></td>
+    </tr>
+    <tr style="background:#d8ec9b;">
+      <td>5</td>
+      <td>Session</td>
+      <td><p>Managing communication sessions, i.e., continuous exchange of information in the form of multiple back-and-forth transmissions between two nodes</p></td>
+    </tr>
+    <tr style="background:#e7ed9c;">
+      <td>4</td>
+      <td>Transport</td>
+      <td>Transport</td>
+      <td>Segment, Datagram</td>
+      <td><p>Reliable transmission of data segments between points on a network, including segmentation, acknowledgement and multiplexing</p></td>
+    </tr>
+    <tr style="background:#eddc9c;">
+      <td>3</td>
+      <td>Network</td>
+      <td>Internet</td>
+      <td>Packet</td>
+      <td><p>Structuring and managing a multi-node network, including addressing, routing and traffic control</p></td>
+    </tr>
+    <tr style="background:#e9c189;">
+      <td>2</td>
+      <td>Data Link</td>
+      <td rowspan=2>Link</td>
+      <td>Frame</td>
+      <td><p>Reliable transmission of data frames between two nodes connected by a physical layer</p></td>
+    </tr>
+    <tr style="background:#e9988a;">
+      <td>1</td>
+      <td>Physical</td>
+      <td>Bit, Symbol</td>
+      <td><p>Transmission and reception of raw bit streams over a physical medium</p></td>
+    </tr>
+  </tbody>
+</table>
+
+_References_:
+- [1] [Wikipedia: Open Systems Interconnection model (OSI model)](https://en.wikipedia.org/wiki/OSI_model)
+- [2] [Wikipedia: Internet protocol suite](https://en.wikipedia.org/wiki/Internet_protocol_suite)
+
+---
+
+## >> Layer 1 & 2: Physical & Data Link
+
+### Network Interface Card (NIC)
+
+A **_network interface card (NIC)_** serves as the interface between the computer and the network.
+- On older systems, a _NIC_ truly was a separate card that snapped into an expansion slot, which is why they were called network interface _cards_.
+- They are still called NICs even though today they are built into the motherboard.
+
+### MAC Address
+
+Every NIC has a unique identifier called **_media access control address_**, or **_MAC address_**.
+- No two NICs share the same MAC address.
+- IEEE is responsible in allocating the MAC addresses to different NIC manufacturers.
+- A MAC address consists of 48 bits, or 12 hex digits:
+  - The first 6 hex digits are _Organizationally Unique Identifier (OUI)_.
+  - The last 6 hex digits are _device IDs_.
+- Also called _physical address_.
+- Also called _EUI-48_ (_Extended Unique Identifier_).
+
+### Frame
+
+Data Link layer sends and receives data in **_frames_**. A frame consists of the following fields:
+- Recipient's MAC address
+- Sender's MAC address
+- Type, or [`EtherType`](https://en.wikipedia.org/wiki/EtherType): indicates which protocol is encapsulated in the payload of the frame so the receiving end knows how to process the data. See [EtherType:Values](https://en.wikipedia.org/wiki/EtherType#Values) for possible values.
+
+### Repeater, Bridge, Hub, Switch, Router, Gateway
+
+See Page 14-15 in [A.1] and the introduction section of Chapter 14 in [A.2]:
+
+A **_repeater_** makes an except copy of the receiving frame and send a copy of the original frame out of all the connected ports except the port on which the frame originates. _Every_ frame sent on a network is received by _every_ NIC, but **only the NIC with the matching MAC address will process the frame**.
+- A repeater does not have any knowledge of protocols. It simply copies data bit by bit.
+- A repeater that has multiple ports is called a **_hub_**.
+
+A **_bridge_** understands **link layer** protocols and therefore copies data frame by frame, instead of bit by bit. It does not send all incoming frames to all network devices that are connected to it, but sends the frame **only to the interface associated with the destination MAC address**.
+
+Regarding the difference between _bridges_ and _switches_ (see [A.2], Chapter 14):
+- A _bridge_ is also called a **_switch_**.
+- The term _bridge_ is mainly used in the documentation (such as the IEEE specifications).
+- The term _switch_ is mainly used when people talk about and refer to the device. However, when a _switch_ has only **two ports**, people may also use the term _bridge_ to refer to it.
+
+A **_router_** understands L3 network protocols such as IP, and forwards ingress packets based on a routing table. The term **_gateway_**, which was introduced before router, is also commonly used to refer to a router. But they are not exactly the same:
+- They both help forward data between networks.
+- However, a router routes data between the networks based on the same protocol, while a gateway routes data between dissimilar networks so a gateway needs to **translate from one protocol to another**. As explained in [this article](https://internetofthingsagenda.techtarget.com/definition/gateway):
 
 > A gateway is a network node that connects two networks using different protocols together. While a bridge is used to join two similar types of networks, a gateway is used to join two dissimilar networks.
 
-TODO: Update the definition using the book _Understanding Linux Network Internals_.
+---
 
-## Genmask
+## >> Genmask
 
-[This answer](https://serverfault.com/a/696992/125167) quotes:
+Quoted from [this answer](https://serverfault.com/a/696992/125167):
 
 > **Genmask**: The netmask for the destination net; 255.255.255.255 for a host destination and 0.0.0.0 for the default route.
 
@@ -32,7 +135,9 @@ Someone else in the same answer also mentioned that:
 
 > It's just odd that the output of route seems to be the only place the actual term "genmask" is used. Everywhere else it's "netmask." E.g. in my system's man files, "netmask" shows up 207 times, but "genmask" is only mentioned in the route man page.
 
-## Predictable Network Interface Names
+---
+
+## >> Predictable Network Interface Names
 
 See [Predictable Network Interface Names](https://systemd.io/PREDICTABLE_INTERFACE_NAMES/).
 
@@ -40,21 +145,31 @@ See [Predictable Network Interface Names](https://systemd.io/PREDICTABLE_INTERFA
 >
 > The classic naming scheme for network interfaces applied by the kernel is to simply assign names beginning with eth0, eth1, ... to all interfaces as they are probed by the drivers. As the driver probing is generally not predictable for modern technology this means that as soon as multiple network interfaces are available the assignment of the names eth0, eth1 and so on is generally not fixed anymore and it might very well happen that eth0 on one boot ends up being eth1 on the next. This can have serious security implications, for example in firewall rules which are coded for certain naming schemes, and which are hence very sensitive to unpredictable changing names.
 
-## Debian: `/etc/nsswitch.conf`
+Also see [_systemd.net-naming-scheme - Network device naming schemes_](https://www.freedesktop.org/software/systemd/man/systemd.net-naming-scheme.html)
+
+---
+
+## >> Debian: `/etc/nsswitch.conf`
 
 See [nsswitch.conf(5)](https://man7.org/linux/man-pages/man5/nsswitch.conf.5.html):
 
 > The Name Service Switch (NSS) configuration file, `/etc/nsswitch.conf`, is used by the GNU C Library and certain other applications to determine the sources from which to obtain name-service information in a range of categories, and in what order.  Each category of information is identified by a database name.
 
-## `net-tools` & `iproute2`
+---
+
+## >> `net-tools` & `iproute2`
 
 `net-tools` suite is being abandoned because the developers haven't updated it. Use `iproute2` instead, if possible.
 
-## Debian: `/etc/network/interfaces`
+---
+
+## >> Debian: `/etc/network/interfaces`
 
 The network configuration file.
 
-## `networking.service` and `NetworkManager.service`
+---
+
+## >> `networking.service` and `NetworkManager.service`
 
 ```
 $ service networking status
@@ -81,7 +196,9 @@ $ service NetworkManager status
            └─13547 /sbin/dhclient -d -q -6 -N -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /run/dhclient6-wlp3s0.pid -lf /var/lib/NetworkManager/dhclient6-ee9ba2c2-bd6b-472f-a818-feeacb0cd593-wlp3s0.lea
 ```
 
-## `/etc/gai.conf`
+---
+
+## >> `/etc/gai.conf`
 
 This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html) configuration file. According to its [manual page](https://man7.org/linux/man-pages/man5/gai.conf.5.html):
 
@@ -94,7 +211,9 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 > sorting.  For the glibc implementation, this can be achieved with the
 > `/etc/gai.conf` file.
 
-## File Servers
+---
+
+## >> File Servers
 
 | File Server | Scenario |
 |:-----------:|:---------|
@@ -104,7 +223,9 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 
 [1] Because SSHFS is easy to use and doesn't need external configuration, if you just want to access a remote file server once or occasionally, with SSHFS you don't have to bother to create an configuratio file as you need for NFS and Samba.
 
-## Monitoring: load average
+---
+
+## >> Monitoring: load average
 
 `cat /proc/loadavg` produces output like the following:
 
@@ -117,7 +238,9 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 
 > As a general rule of thumb, it's a good idea to record a baseline of your systems when they are under their normal, expected load. Each system on your network will have a designated purpose and each will have a certain load you can reasonably expect your system to face at any one time. If the systems load average dips too far below or climbs higher than the baseline, then you would want to take a look and find out what's going on. If the load reaches a level where there are more processes than you have cores to handle, that's cause for alarm. (_Mastering Linux Network Administration_)
 
-## Monitoring: `htop`, `iotop`, `ncdu`
+---
+
+## >> Monitoring: `htop`, `iotop`, `ncdu`
 
 `htop` is a good alternative to `top`.
 
@@ -125,11 +248,15 @@ This is the [`getaddrinfo(3)`](https://man7.org/linux/man-pages/man3/getaddrinfo
 
 `ncdu` is a good alternative to `du`.
 
-## IPv6: don't bother unless having a good reason
+---
+
+## >> IPv6: don't bother unless having a good reason
 
 > you might be tempted to roll-out IPv6 addresses over IPv4 within your network. However, my suggestion is unless you have a very good reason to do so, don't bother. The depletion of IPv4 addresses only affects the public Internet, not your internal network. While you can certainly roll-out IPv6 internally, there's no benefit to doing so. Given that IPv4 has over 4 billion addresses available, you would need quite a few devices in order to justify IPv6. On the other hand, IPv6 is certainly useful (and will eventually be required) for telecoms. It's also useful for those of you who are studying Cisco exams, as understanding of this topic is required. But for the purposes of this book and setting up Linux networks, IPv6 doesn't justify the administration overhead. (_Mastering Linux Network Administration_)
 
-## Static IP Addresses vs Static Leases
+---
+
+## >> Static IP Addresses vs Static Leases
 
 You must configure the static IP addresses on the machines that use them. You must be able to find where those machines are.
 
@@ -137,7 +264,9 @@ The static leases are configured on the DHCP servers so it's a central place for
 
 Therefore, static leases may be more convenient for administration.
 
-## TUN/TAP
+---
+
+## >> TUN/TAP
 
 According to [1], `TUN` and `TAP` are kernel **virtual** network devices:
 
@@ -150,7 +279,9 @@ References:
 - [1] [Wikipedia: TUN/TAP](https://en.wikipedia.org/wiki/TUN/TAP)
 - [2] [Tun/Tap interface tutorial](https://backreference.org/2010/03/26/tuntap-interface-tutorial/)
 
-## Special IP Addresses
+---
+
+## >> Special IP Addresses
 
 | Address block | Address range | Number of addresses | Scope | Description |
 |:--------------|:--------------|:-------------------:|:------|:------------|
@@ -172,7 +303,9 @@ References:
 | 240.0.0.0/4 | 240.0.0.0–255.255.255.254 | 268435455 | Internet | Reserved for future use.[13] (Former Class E network.) |
 | 255.255.255.255/32 | 255.255.255.255 | 1 | Subnet | Reserved for the "limited broadcast" destination address.[3][14] |
 
-## `0.0.0.0/0` and `::/0`
+---
+
+## >> `0.0.0.0/0` and `::/0`
 
 In the context of routing tables, a network destination of 0.0.0.0 is used with a network mask of 0 to depict the **default route** as a destination subnet. This destination is expressed as 0.0.0.0/0 in CIDR notation. It matches all addresses in the IPv4 address space and is present on most hosts, directed towards a local router.
 

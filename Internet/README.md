@@ -2,7 +2,7 @@
 
 ## Overview
 
-This folder is all about the work about the Internet. For the latest well-organized notes, see [_"All-About-Internet.md"_](./All-About-Internet.md) in this directory.
+This folder is all about the work about the Internet. For the latest well-organized notes, see [_"Notes.md"_](./Notes.md) in this directory.
 
 ## RFC Tracking
 
