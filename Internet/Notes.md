@@ -125,6 +125,28 @@ A **_router_** understands L3 network protocols such as IP, and forwards ingress
 
 ---
 
+## >> Collision Domain and Broadcast Domain
+
+A **collision domain** is a network segment connected by a **shared medium** or through **repeaters** where simultaneous data transmissions collide with one another. A network collision occurs when more than one device attempts to send a packet on a network segment at the same time. The packets collide and both devices must send the packets again, which **reduces network efficiency**.
+
+By contrast, each port on a **bridge**, a **switch** or a **router** is in a **separate** collision domain.
+
+The following picture (quoted from [2]) illustrates 6 different collision domains:
+
+![Collision domain (see "./files/collision_domains.jpg")](https://study-ccna.com/wp-content/images/collision_domains.jpg)
+
+A **broadcast domain** is the domain in which a broadcast is forwarded. A broadcast domain contains all devices that can reach each other at the data link layer (OSI layer 2) by using broadcast. All ports on a hub or a switch are by default in the same broadcast domain. All ports on a router are in the different broadcast domains and routers don’t forward broadcasts from one broadcast domain to another.
+
+The following picture (quoted from [2]) illustrates 3 different broadcast domains:
+
+![Broadcast domain (see "./files/broadcast_domains.jpg")](https://study-ccna.com/wp-content/images/broadcast_domains.jpg)
+
+References:
+- [1] [Wikipedia: Collision domain](https://en.wikipedia.org/wiki/Collision_domain)
+- [2] [Collision & broadcast domain](https://study-ccna.com/collision-broadcast-domain/)
+
+---
+
 ## >> Genmask
 
 Quoted from [this answer](https://serverfault.com/a/696992/125167):
