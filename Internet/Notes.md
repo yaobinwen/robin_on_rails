@@ -334,3 +334,140 @@ In the context of routing tables, a network destination of 0.0.0.0 is used with 
 In routing tables, 0.0.0.0 can also appear in the gateway column. This indicates that the gateway to reach the corresponding destination subnet is **unspecified**. This generally means that **no intermediate routing hops are necessary because the system is directly connected to the destination**.
 
 `::/0` is the IPv6 version of `0.0.0.0/0` and serves the same purposes.
+
+---
+
+## >> Routable & Non-routable Protocols
+
+A routable protocol contains the network address of the target system, for example UDP and TCP/IP. The data can go through a router from one network to another network.
+
+A non-routable protocol contains only a device address (i.e., MAC) and not a network address. It does not incorporate an addressing scheme for sending data from one network to another. In other words, non-routable protocols only work in the local network.
+
+---
+
+## >> VLAN
+
+This section contains the notes I take from reading [1] [AlliedWare Plus OS: Overview of VLANs (Virtual LANs)](https://www.alliedtelesis.com/sites/default/files/documents/how-alliedware/overview_vlans.pdf).
+
+### What is a VLAN?
+
+A VLAN (Virtual LAN) consists of a set of hosts that can communicate with each other as if they were on the same LAN, even though they could be in different LANs. That hosts being in the same VLAN means:
+
+- 1). Any host in the VLAN can broadcast to other hosts in the same VLAN.
+- 2). Host in VLAN 1 cannot broadcast to hosts in VLAN 2.
+- 3). Any host in the VLAN can communicate with any other hosts in the same VLAN without a gateway.
+- 4). Hosts in the same VLAN can communicate with each other using non-routable protocols.
+
+### Purpose of VLANs
+
+The basic reason to split a network into VLANs is to **reduce congestion** on a large LAN:
+
+> Initially LANs were very flat—all the workstations were connected to a single piece of coaxial cable, or to sets of chained hubs. In a flat LAN, every packet that any device puts onto the wire gets sent to every other device on the LAN.
+>
+> As the number of workstations on the typical LAN grew, they started to become hopelessly
+congested; there were just too many collisions, because most of the time when a workstation
+tried to send a packet, it would find that the wire was already occupied by a packet sent by
+some other device.
+
+### Advantages of using VLANs
+
+- **Performance**.
+- **Formation of virtual workgroups**.
+- **Greater flexibility**. The users can move to another physical location but still stay in the same VLAN.
+- **Ease of partitioning off resources**. The administrators can group resources into VLANs and give users access selectively.
+
+### Implementation: Port-based VLANs and Frame Tagging
+
+Simply put, the ports of a switch are assigned to VLANs:
+
+| Port | VLAN ID |
+|:----:|:-------:|
+| 1    | 1       |
+| 2    | 1       |
+| 3    | 2       |
+| 4    | 2       |
+| 5    | 1       |
+
+When a packet is sent, the packet is inserted with a "tag" that identifies the VLAN ID. When a packet arrives at a port (that belongs to a VLAN), the VLAN ID of the packet is checked to see if this packet belongs to the VLAN that this port is associated with.
+
+The packets that leave a port do not have to be tagged, but those untagged packets must be assigned to the same VLAN, because otherwise there would be uncertainty about what VLAN the incoming untagged packets belong to.
+
+The administrator must configure the VLANs that the ports belong to.
+
+### Other Implementations
+
+Refer to [1] for the Protocol-based VLANs and subnet-based VLANs.
+
+### Some Old Notes
+
+(The notes in this section may be out-dated or inaccurate and need to be reviewed and updated.)
+
+First of all, think of VLAN from the **packet** point of view; do not think of it from the host view, as it says, "if a packet of such-and-such a protocol arrived at port x of the switch, which VLAN would that packet be associated with?" This is because a VLAN can be created based on different criteria:
+
+| Criterion | Description |
+|:---------:|:------------|
+| tagging-based | If a packet is tagged (hence always has the `VLAN ID`), it is assigned to the VLAN of the `VLAN ID`; otherwise, an untagged packet can be assigned to a default VLAN. |
+| port-based | A port is assigned to a VLAN. Packets that arrive at this port are considered to be for this VLAN. |
+| protocol-based | The packets of a particular protocol (e.g., IP, IPX) are assigned to a particular VLAN. |
+| subnet-based | The packets that are sent from (hence `source IP`) a particular subnet are assigned to a particular VLAN. |
+
+These critiera are configured by the network administrator on the switch and can be combined to determine how to deal with an arriving packet. See the `Some specific examples` of the overview document.
+
+The `Some specific examples` section shows how to analyze the treatment of the packets:
+- 1). To get a whole picture of the VLAN configuration, you must see the configuration from two perspectives: the **ports** and **VLANs**.
+- 2). List all the ports on the switch and the VLAN assignment rules that are applied on the ports. See Note [1].
+- 3). List all the VLANs on the switch and the associated ports. See Note [2].
+- 4). When a packet arrives at a port, first use the port list to analyze which VLAN the packet will go; then use the VLAN list to analyze which other ports on the same VLAN this packet will be broadcast to, if broadcast is needed.
+
+Note [1]: The list of ports looks like the following:
+
+```
+Rules:
+- Precedence: subnet > protocol > port
+- tagged packets must be a member of a VLAN to be accepted.
+
+port 1:
+- untagged port-based: VLAN 2
+
+port 2:
+- untagged port-based: VLAN 2
+
+port 3:
+- untagged port-based: VLAN 2
+
+port 4:
+- untagged subnet-based (192.168.1.0/24): VLAN 3
+- untagged protocol-based (IP; IPX): VLAN 4
+- untagged port-based: VLAN 2
+
+port 5:
+- tagged VLAN 2: VLAN 2
+- tagged others: discard
+- untagged subnet-based (192.168.1.0/24): VLAN 3
+
+port 6:
+- tagged VLAN 4: VLAN 4
+- tagged others: discard
+- untagged subnet-based (192.168.1.0/24): VLAN 3
+```
+
+Note [2]: The list of VLANs and associated ports looks like the following:
+
+```
+VLAN 2:
+- port 1
+- port 2
+- port 3
+- port 4
+- port 5
+
+VLAN 3:
+- port 3
+- port 4
+- port 5
+- port 6
+
+VLAN 4:
+- port 4
+- port 6
+```
