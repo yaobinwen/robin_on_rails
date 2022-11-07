@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Specify the C standard
+set(CMAKE_C_STANDARD_REQUIRED True)
+set(CMAKE_C_STANDARD 11)
+
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_STANDARD 17)
