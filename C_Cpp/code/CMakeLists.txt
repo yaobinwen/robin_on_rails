@@ -63,6 +63,7 @@ add_executable(
     "./programs/cpp_demo/shared_ptr.cpp"
     "./programs/cpp_demo/string_view.cpp"
     "./programs/cpp_demo/thread.cpp"
+    "./programs/cpp_demo/variadic.cpp"
 )
 
 # Add the include and library directories.
