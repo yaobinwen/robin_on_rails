@@ -88,7 +88,16 @@ Currently (as of 2022-01-09), the only tests that use `patch_ansible_module()` i
 
 ### 2.4 Display Messages
 
-Use the module `lib/ansible/utils/display.py`. Search the code `from ansible.utils.display import Display` or something similar to find the examples in the codebase.
+Use the module [`lib/ansible/utils/display.py`](https://github.com/yaobinwen/ansible/blob/devel/lib/ansible/utils/display.py). Search the code `from ansible.utils.display import Display` or something similar to find the examples in the codebase. Typically, it is used in the way below:
+
+```python
+from ansible.utils.display import Display
+
+display = Display()
+
+display.error("error message")
+display.vvvvv("verbose message")
+```
 
 ### 2.5 Debug Output vs `debug` Module Output
 
