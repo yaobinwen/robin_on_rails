@@ -1,4 +1,6 @@
-# Robin on Rails: Track My Study of Various Software Technologies
+# Robin on Rails: Track My Study of Various Software/Hardware Technologies
+
+(Last updated on 2022-11-20)
 
 ## 1. Overview
 
@@ -12,28 +14,34 @@ Being a programmer requires continuous learning of various technologies. However
 >
 > That's just a hard fact of how much the technology has changed and progressed.
 
-Nonetheless, I need to learn a lot of different things in order to do my work well. In the world of things keep popping up, I need a way to track my own study. Hence this repository.
+Nonetheless, I need to learn a lot of different things in order to do my work well. Hence this repository. This repository is not a new one. It was initially created in 2018 to keep my notes of learning. Since then, I have made notes on various subjects. These notes are helpful whenever I want to quickly refresh my memory on a particular subject.
 
-This repository is not a new one. It was initially created in 2018 to keep my notes of learning. Since then, I have made notes on various subjects but I have also gradually realized that I really need to focus on the ones that benefit me the most. I am a curious person, but the limited time doesn't allow me to learn everything.
+But when I work on this repository, the question _How to stay sane in today's world of tech_ keeps echoing in my mind. In the world of new things popping up and existing things changing all the time, I really need to focus on the ones that benefit me the most in the context that I am living, short term and long term.**Learning the fundamentals**, i.e., the things that change less frequently, is probably the most economical way. I just need to strike a balance between learning the things I need right now and learning the things that can solidify my foundation and benefit me in the far future. Meanwhile, I'm also asking myself these questions:
+
+1. How to make the best out of learning for the short term?
+2. What else in addition to learning the fundamentals?
 
 ## 2. How to Use This Repository
 
-As of 2022-04-06, this repository has a lot of sub-directories and [issues](652a6db61eaf4f5d9131da104673d24fac9f9299). My plan is:
+As of 2022-11-20, this repository has a lot of sub-directories and [issues](https://github.com/yaobinwen/robin_on_rails/issues652a6db61eaf4f5d9131da104673d24fac9f9299). My plan is:
 
-- I will list the subjects I want to focus on in this README file. But this README file does not track the progress.
-- I will need to keep updating this README file when I have a new subject interested in or I don't want to track an existing subject anymore.
+- I will list the subjects I want to focus on in this `README` file. But this `README` file does not track the progress.
+- I will need to keep updating this `README` file when I have a new subject interested in or I don't want to track an existing subject anymore.
 - I will gradually reorganize the issues so they can be used to track the progress of my learning.
 - I will gradually reorganize the sub-directories so subjects I care about will have a sub-directory for the notes, and the unimportant subjects will be put in a separate place, probably in the category of "miscellaneous". I don't want to delete them because sometimes I may still want to make notes of random interesting things.
 
 ## 3. How to Study
 
-In general, study in whatever time that's available in whatever forms (text, podcast, video).
+In general, study in whatever time that's available in whatever forms (e.g., text, podcast, video).
 
-Particularly, I will arrange a series of study sessions that I call "tech dashes" to learn continuously. See the tag [`tech-dash`](https://github.com/yaobinwen/robin_on_rails/issues?q=is%3Aissue+is%3Aopen+label%3Atech-dash) in "Issues".
+When I get a few days of free time, like when I'm on vacation, I may arrange a series of study sessions that I call "tech dashes" to learn continuously. See the tag [`tech-dash`](https://github.com/yaobinwen/robin_on_rails/issues?q=is%3Aissue+is%3Aopen+label%3Atech-dash) in "Issues". The [`Tech_Dashes.md`](./Tech_Dashes.md) briefly records what I do for each tech dash.
+
+The output of study is in two places:
+
+1. Some organized or unorganized notes in this repository.
+2. An article in my [tech blog](https://yaobinwen.github.io/) that discusses a particular topic.
 
 ## 4. Subjects of Interest
-
-The subjects are listed in the alphabetical order.
 
 ### 4.1 Hardware
 
@@ -48,10 +56,12 @@ The subjects are listed in the alphabetical order.
 
 ### 4.3 Mathematics & Computer Science
 
+- Calculus
 - Linear Algebra
 - [B-Tree](https://en.wikipedia.org/wiki/B-tree)
   - [10.2 B Trees and B+ Trees. How they are useful in Databases](https://youtu.be/aZjYr87r1b8)
   - [How Database B-Tree Indexing Works](https://dzone.com/articles/database-btree-indexing-in-sqlite)
+- Floating point numbers: math and tricks (in [this series of articles](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/))
 
 ### 4.4 Security
 
@@ -99,7 +109,7 @@ The subjects are listed in the alphabetical order.
 - Terraform
 - UI design:
   - [Design and code Windows apps](https://docs.microsoft.com/en-us/windows/apps/design/)
-  - [iOS Design Themes]
+  - [iOS Design Themes](https://developer.apple.com/design/human-interface-guidelines/platforms/overview)
 
 ## 5. Blogs to Read
 
