@@ -40,6 +40,7 @@ The output of study is in two places:
 
 1. Some organized or unorganized notes in this repository.
 2. An article in my [tech blog](https://yaobinwen.github.io/) that discusses a particular topic.
+3. A separate GitHub repository if the topic discussion is beyond the capacity of a single article (e.g., needing example code).
 
 ## 4. Subjects of Interest
 
