@@ -1,6 +1,8 @@
 # Miscellaneous
 
-## Blogs
+(They are listed in no particular order.)
+
+## Personal blogs
 
 - [Blog: The Valuable Dev](https://thevaluable.dev/): By [Matthieu Cneude](https://github.com/Phantas0s) who maintains a [healthy daily routine](https://thevaluable.dev/page/about/).
 - [iridakos](https://iridakos.com/): He wrote the [tutorial about Bash auto-completion](https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial) (which is a good tutorial but I also love [his cat](https://iridakos.com/cats/2020/01/23/goodbye-irida)).
@@ -13,6 +15,20 @@
 - [Ivan Velichko](https://iximiuz.com/en/curated/)
 - [eklitzke.org](https://eklitzke.org/)
 - [Major Hayden](https://major.io/)
+- [Brendan D. Gregg](http://www.brendangregg.com/): Author of the books: "Systems Performance: Enterprise and the Cloud" and "BPF Performance Tools".
+- [四火的唠叨](https://www.raychase.net/)
+- [Hillel Wayne](https://hillelwayne.com/)
+- [Patrick McKenzie](https://www.kalzumeus.com/)
+- [酷壳](https://coolshell.cn/)
+- [科技爱好者周刊](https://github.com/ruanyf/weekly): 记录每周值得分享的科技内容 (by 阮一峰)
+- [Technology Short Take](https://blog.scottlowe.org/) by Scott Lowe.
+- [unixsheikh.com](https://unixsheikh.com/index.html)
+
+## Organizational blogs or maillists
+
+- [Bits from Debian: the official Debian blog](https://bits.debian.org/)
+- [Ubuntu Blog](https://ubuntu.com/blog)
+- [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar)
 
 ## Communities
 
@@ -24,7 +40,7 @@
 - [Transistor: Your podcast's publishing platform](https://transistor.fm/)
 - [Marketing for Developers: A book and course for programmers who want to learn marketing](https://devmarketing.xyz/)
 
-## Others
+## Others (Tech)
 
 - [Cantor’s Attic](https://neugierde.github.io/cantors-attic/)
 - [Neo4j native graph data](https://neo4j.com/product/): A database that takes the relationships between data as the first-class citizen.
@@ -69,3 +85,16 @@
 - [The V language](https://vlang.io/)
 - [Nuklear: A single-header ANSI C immediate mode cross-platform GUI library](https://github.com/Immediate-Mode-UI/Nuklear)
 - [Online Hacker Simulator](https://hacker-simulator.com/)
+
+## Others (non-tech)
+
+- [Internet World Stats](https://internetworldstats.com/): "Internet World Stats is an International website that features up to date world Internet Usage, Population Statistics, Social Media Stats and Internet Market Research Data, for over 243 individual countries and world regions."
+- The Global Goals and Goalkeepers Reports:
+  - "In 2015, world leaders agreed to 17 goals for a better world by 2030. These goals have the power to end poverty, fight inequality and stop climate change." See the [Global Goals](https://www.globalgoals.org/) website for more information.
+  - The [Goalkeepers Report 2018](https://www.gatesfoundation.org/goalkeepers/report).
+- The [World Economic Forum](https://www.weforum.org/) publishes [reports](https://www.weforum.org/reports) and [white papers](https://www.weforum.org/whitepapers). Some interesting ones of them include:
+  - [The Global Competitiveness Report 2018](https://www.weforum.org/reports/the-global-competitveness-report-2018)
+  - [The Future of Jobs Report 2018](https://www.weforum.org/reports/the-future-of-jobs-report-2018)
+  - [Building Block(chain)s for a Better Planet](https://www.weforum.org/reports/building-block-chain-for-a-better-planet)
+- [Circular Economy](https://www.ellenmacarthurfoundation.org/circular-economy/concept)
+    This is an idea Ellen talked about in her TED talk: [The surprising thing I learned sailing solo around the world](https://www.ted.com/talks/dame_ellen_macarthur_the_surprising_thing_i_learned_sailing_solo_around_the_world).
