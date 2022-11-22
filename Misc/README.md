@@ -23,6 +23,10 @@
 - [科技爱好者周刊](https://github.com/ruanyf/weekly): 记录每周值得分享的科技内容 (by 阮一峰)
 - [Technology Short Take](https://blog.scottlowe.org/) by Scott Lowe.
 - [unixsheikh.com](https://unixsheikh.com/index.html)
+- [Arthur O'Dwyer](https://quuxplusone.github.io/blog/)
+- [Sutter's Mill](https://herbsutter.com/)
+- [卡瓦邦噶！](https://www.kawabangga.com/)
+- [plantegg](https://plantegg.github.io/)
 
 ## Organizational blogs or maillists
 
