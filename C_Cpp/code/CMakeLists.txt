@@ -62,6 +62,7 @@ add_executable(
     "./programs/cpp_demo/override.cpp"
     "./programs/cpp_demo/shared_ptr.cpp"
     "./programs/cpp_demo/string_view.cpp"
+    "./programs/cpp_demo/string.cpp"
     "./programs/cpp_demo/thread.cpp"
     "./programs/cpp_demo/variadic.cpp"
 )

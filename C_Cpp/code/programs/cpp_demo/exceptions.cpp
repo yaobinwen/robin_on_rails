@@ -102,3 +102,22 @@ TEST(ExceptionTest, runtime_error_subclass)
             msg.find("is not found in the path(s)") != std::string::npos);
     }
 }
+
+TEST(ExceptionTest, null_what_arg)
+{
+    try
+    {
+        throw std::out_of_range(nullptr);
+    }
+    catch (std::out_of_range const &ex)
+    {
+        // Should have caught `std::logic_error` due to using `nullptr` to
+        // initialize an std::string
+        ADD_FAILURE();
+    }
+    catch (std::logic_error const &ex)
+    {
+        std::string msg(ex.what());
+        EXPECT_TRUE(msg.find("null not valid") != std::string::npos);
+    }
+}
