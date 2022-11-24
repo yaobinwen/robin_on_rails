@@ -1,8 +1,10 @@
 # C/C++
 
 - [ISO C++](https://isocpp.org/)
+- [Working Draft, Standard for Programming Language C++](https://eel.is/c++draft/)
+- [JTC1/SC22/WG21 - The C++ Standards Committee - ISOCPP](https://www.open-std.org/jtc1/sc22/wg21/)
 - [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
-- [Using C++11’s Smart Pointers](http://umich.edu/~eecs381/handouts/C++11_smart_ptrs.pdf)
+- [Using C++11's Smart Pointers](http://umich.edu/~eecs381/handouts/C++11_smart_ptrs.pdf)
 - How `switch` is implemented: [From Switch Statement Down to Machine Code](http://lazarenko.me/switch/)
 - [C++ Compiler Explorer](https://godbolt.org/) shows you how the C++ source code is generated to machine code.
 - [Duff's device](https://en.wikipedia.org/wiki/Duff%27s_device) is "a way of manually implementing [loop unrolling](https://en.wikipedia.org/wiki/Loop_unrolling) by interleaving two syntactic constructs of C: the do-while loop and a switch statement."
