@@ -64,7 +64,9 @@ add_executable(
     "./programs/cpp_demo/string_view.cpp"
     "./programs/cpp_demo/string.cpp"
     "./programs/cpp_demo/thread.cpp"
+    "./programs/cpp_demo/type_traits.cpp"
     "./programs/cpp_demo/variadic.cpp"
+    "./programs/cpp_demo/vector.cpp"
 )
 
 # Add the include and library directories.
