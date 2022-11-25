@@ -51,6 +51,29 @@ add_dependencies(bfs ywen_cpp)
 # ##################################################
 
 # Set the project name.
+# We treat the thread demo code separately because thread code takes a bit time
+# to finish running. It becomes annoying when what I really care about is non-
+# thread demo code but have to wait for the thread code.
+project(
+  cpp_demo_thread
+  DESCRIPTION "Demonstrate C++ language and standard library features (thread specifically)")
+
+# Add the executable.
+add_executable(
+    cpp_demo_thread
+    "./programs/cpp_demo/thread.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(cpp_demo_thread SYSTEM PUBLIC)
+target_link_libraries(
+  cpp_demo_thread
+    gtest gtest_main boost_filesystem boost_system pthread
+)
+
+# ##################################################
+
+# Set the project name.
 project(cpp_demo DESCRIPTION "Demonstrate C++ language and standard library features")
 
 # Add the executable.
@@ -63,7 +86,6 @@ add_executable(
     "./programs/cpp_demo/shared_ptr.cpp"
     "./programs/cpp_demo/string_view.cpp"
     "./programs/cpp_demo/string.cpp"
-    "./programs/cpp_demo/thread.cpp"
     "./programs/cpp_demo/type_traits.cpp"
     "./programs/cpp_demo/variadic.cpp"
     "./programs/cpp_demo/vector.cpp"
