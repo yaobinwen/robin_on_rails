@@ -27,6 +27,7 @@
 - [Sutter's Mill](https://herbsutter.com/)
 - [卡瓦邦噶！](https://www.kawabangga.com/)
 - [plantegg](https://plantegg.github.io/)
+- [Björn Fahller: Playful Programming](https://playfulprogramming.blogspot.com/)
 
 ## Organizational blogs or maillists
 
@@ -46,6 +47,7 @@
 
 ## Others (Tech)
 
+- [Compiler Explorer](https://godbolt.org/)
 - [Cantor’s Attic](https://neugierde.github.io/cantors-attic/)
 - [Neo4j native graph data](https://neo4j.com/product/): A database that takes the relationships between data as the first-class citizen.
 - [Apache TinkerPop](http://tinkerpop.apache.org/): "Apache TinkerPop™ is a graph computing framework for both graph databases (OLTP) and graph analytic systems (OLAP)."
