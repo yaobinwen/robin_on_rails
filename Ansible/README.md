@@ -4,6 +4,10 @@
 
 This document has my study notes of Ansible and also serves as a quick guide for me to recall how to use Ansible for various purposes. Ansible's source code is [here](https://github.com/ansible/ansible).
 
+## 2a. CLI Options
+
+`--limit SUBSET`: Use `ansible-playbook ... -l host1,host2,host3 <playbook>` to run the playbook on `host1`, `host2`, and `host3`.
+
 ## 2. Develop and Debug Ansible
 
 The latest version (i.e., the `devel` version) of the developer guide is here: [Developer Guide](https://docs.ansible.com/ansible/devel/dev_guide/index.html). Note that Ansible may re-organize their documentation site so the links may become inaccessible. Should this happen, search the key word "Ansible Developer Guide".
