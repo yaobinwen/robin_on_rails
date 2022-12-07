@@ -144,7 +144,8 @@ The official documentation seems to be [here](https://github.com/git/git/blob/ma
 
 Run `git subtree add` to add a dependency to your code base. The general syntax is `git subtree add --prefix <path> <repository> <remote-ref>`, where:
 - `<path>` is the relative path inside your code base where you want to put the repository. Note that:
-  - This relative path should not exist in your code base.
+  - This relative path should not exist in your code base. Therefore, this path should include the leaf folder you want to put the code in.
+    - In the example below, the folder `tpope-vim-surround` should not exist.
   - This relative path should not start with `./`, otherwise you may run into the `invalid path` error. See [this answer](https://stackoverflow.com/a/27291834/630364).
 - `<repository>` is the URI of the `git` repository you want to add to your code base.
 - `<remote-ref>` is the branch of the repository you want to include in your code base.
