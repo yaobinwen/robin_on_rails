@@ -35,3 +35,7 @@ Here is a list of commands I have used in various circumstances. Record them her
 - `uname -r`: Print the kernel release information.
 - Run a command as another user: `sudo -EHsg user2 <command>`.
 - Switch to another user: `sudo -EHs -g user2_group -u user2`.
+- Mount an `.iso` file:
+  - `sudo mkdir /media/iso`
+  - `sudo mount -o loop path/to/iso/file/YOUR_ISO_FILE.ISO /media/iso`
+  - Unmount: `sudo umount /media/iso`
