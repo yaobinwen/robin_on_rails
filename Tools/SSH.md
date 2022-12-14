@@ -32,3 +32,29 @@ Run `ssh-keygen -lf /path/to/ssh/key`, where:
 
 `ssh-keygen -s <path-to-CA-private-key> -I <identity> -n <principal> -V +1w -z <serial-no> <path-to-user-public-key>`
   - Example: `ssh-keygen -s ~/my_ca/private.key -I ywen-m4800 -n root-everywhere -V +1w -z 4800 "$HOME/.ssh/id_ecdsa.pub"`.
+
+## Set up X11 forwarding
+
+References:
+- [1] [A note on X11-Forwarding in SSH](https://gist.github.com/adrianratnapala/1324845/b0d3df437ee5df5beef4bc1aed89af8c98a4246d)
+- [2] [This answer](https://unix.stackexchange.com/a/317083/162971)
+
+On the SSH server:
+- Install `xauth`.
+- In `/etc/ssh/sshd_config`, configure the following:
+
+```
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
+```
+
+- On the SSH client, in `~/.ssh/config`, configure the following:
+
+```
+Host *
+  ForwardAgent yes
+  ForwardX11 yes
+```
+
+- Run `ssh -X <target>`, then run `echo $DISPLAY` to confirm the output is not empty.
