@@ -548,3 +548,47 @@ class Base(FieldAttributeBase):
 ```
 
 What I haven't figured out is how these attributes are passed to `self._valid_attrs`. But assuming I am correct above, then `vars` is a valid keyword to be used in a playbook (and, in fact, we can use more other keywords).
+
+## 9. Check if a variable is defined/exists/empty/true
+
+Reference: [Ansible: When Variable Is – Defined | Exists | Empty | True](https://www.shellhacks.com/ansible-when-variable-is-defined-exists-empty-true/)
+
+Check if Ansible variable is defined (exists):
+
+```yaml
+- shell: echo "The variable 'foo' is defined: '{{ foo }}'"
+  when: foo is defined
+
+- fail: msg="The variable 'bar' is not defined"
+  when: bar is undefined
+```
+
+Check if Ansible variable is empty:
+
+```yaml
+- fail: msg="The variable 'bar' is empty"
+  when: bar|length == 0
+
+- shell: echo "The variable 'foo' is not empty: '{{ foo }}'"
+  when: foo|length > 0
+```
+
+Check if Ansible variable is defined and not empty:
+
+```yaml
+- shell: echo "The variable 'foo' is defined and not empty"
+  when: (foo is defined) and (foo|length > 0)
+
+- fail: msg="The variable 'bar' is not defined or empty"
+  when: (bar is not defined) or (bar|length == 0)
+```
+
+Check if Ansible variable is True or False:
+
+```yaml
+- shell: echo "The variable 'foo' is 'True'"
+  when: foo|bool == True
+
+- shell: echo "The variable 'bar' is 'False'"
+  when: bar|bool == False
+```
