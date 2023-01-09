@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<!-- Reference: https://wiki.ros.org/roslaunch/XML -->
+<launch>
+  <arg name="camera_name" default="ywen_camera" />
+
+  <!--
+    When unspecified, the driver will use the default framerate as given by
+    the camera itself. Use the parameter 'control_frame_rate' to enable manual
+    frame  rate control, and 'frame_rate' to set the frame rate value.
+  -->
+  <arg name="control_frame_rate" default="false" />
+  <arg name="frame_rate" default="30" />
+
+  <!-- Number of worker threads control. -->
+  <arg name="num_worker_threads" default="2" />
+
+  <group ns="$(arg camera_name)">
+    <!-- Nodelet manager -->
+    <node
+      pkg="nodelet"
+      type="nodelet"
+      name="camera_nodelet_manager"
+      args="manager"
+      cwd="node"
+      output="screen"
+    >
+      <param name="num_worker_threads" value="$(arg num_worker_threads)" />
+    </node>
+
+    <!-- Camera nodelet -->
+    <node
+      pkg="nodelet"
+      type="nodelet"
+      name="flir_camera_nodelet"
+      args="load ywen_flir/FlirCameraNodelet camera_nodelet_manager" >
+
+      <param name="frame_id" value="$(arg camera_name)" />
+      <param
+        name="acquisition_frame_rate_enable"
+        value="$(arg control_frame_rate)"
+      />
+      <param name="acquisition_frame_rate" value="$(arg frame_rate)" />
+    </node>
+  </group>
+</launch>

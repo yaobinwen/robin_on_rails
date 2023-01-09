@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<library path="lib/libFlirCameraNodelet">
+  <class
+    name="ywen_flir/FlirCameraNodelet"
+    type="ywen_flir::FlirCameraNodelet"
+    base_class_type="nodelet::Nodelet"
+  >
+    <description>This is the nodelet for the FLIR Camera Driver.</description>
+  </class>
+</library>
