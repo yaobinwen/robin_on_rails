@@ -6,6 +6,11 @@ After using various IDEs (e.g., Visual Studio Code) for so many years, I finally
 
 This document is my own cheatsheet of using `Vim`.
 
+## References
+
+- [1] [vim/vim](https://github.com/vim/vim): The official Vim repository.
+- [2] [vimawesome](https://vimawesome.com/): Awesome Vim plugins from across the universe.
+
 ---
 
 ## Operations
