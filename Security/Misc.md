@@ -233,3 +233,5 @@ It also mentions the industry certificates:
 - [29] [OWASP: Password Storage Concepts: Peppering](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#peppering)
 - [30] [Phrack](http://www.phrack.org/)
 - [31] [Noisebridge](https://www.noisebridge.net/wiki/Noisebridge): "Noisebridge is a fun space for sharing, creation, collaboration, research, development, mentoring, and of course, learning."
+- [32] [OWASP: Vulnerability Management Guide](https://owasp.org/www-project-vulnerability-management-guide/)
+  - The [OWASP Vulnerability Management Guide (OVMG) (PDF)](https://owasp.org/www-project-vulnerability-management-guide/OWASP-Vuln-Mgm-Guide-Jul23-2020.pdf)
