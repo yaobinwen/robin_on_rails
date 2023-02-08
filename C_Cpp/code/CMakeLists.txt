@@ -80,6 +80,7 @@ project(cpp_demo DESCRIPTION "Demonstrate C++ language and standard library feat
 add_executable(
     cpp_demo
     "./programs/cpp_demo/array.cpp"
+    "./programs/cpp_demo/chrono.cpp"
     "./programs/cpp_demo/exceptions.cpp"
     "./programs/cpp_demo/iterator.cpp"
     "./programs/cpp_demo/override.cpp"
@@ -262,5 +263,23 @@ target_include_directories(boost_process_demo SYSTEM PUBLIC)
 target_link_libraries(
     boost_process_demo
     ${Boost_LIBRARIES}
+    gtest gtest_main pthread
+)
+
+# ##################################################
+
+# Set the project name.
+project(fp_compare_demo DESCRIPTION "Demonstrate how to compare floating-point numbers")
+
+# Add the executable.
+add_executable(
+    fp_compare_demo
+    "./programs/fp_compare.cpp"
+)
+
+# Add the include and library directories.
+target_include_directories(fp_compare_demo SYSTEM PUBLIC)
+target_link_libraries(
+    fp_compare_demo
     gtest gtest_main pthread
 )
