@@ -52,3 +52,4 @@
 | [x] | [7568](https://tools.ietf.org/html/rfc7568) | Deprecating Secure Sockets Layer Version 3.0 | PROPOSED STANDARD | **DO NOT** use SSLv3 |
 | [ ] | [8190](https://datatracker.ietf.org/doc/html/rfc8190) | Updates to the Special-Purpose IP Address Registries | Best Current Practice ||
 | [ ] | [8446](https://tools.ietf.org/html/rfc8446) | The Transport Layer Security (TLS) Protocol Version 1.3 | PROPOSED STANDARD ||
+| [x] | [9111](https://www.rfc-editor.org/rfc/rfc9111) | HTTP Caching | Standards Track ||
