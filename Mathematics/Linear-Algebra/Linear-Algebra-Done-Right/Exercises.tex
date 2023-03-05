@@ -1,0 +1,96 @@
+\documentclass[12pt, letterpaper, oneside]{book}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{empheq}
+\usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
+\usepackage{csquotes}
+
+\title{Exercises in \textit{Linear Algebra Done Right}}
+\author{Yaobin Wen}
+\date{February 2023}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+% =============================================================================
+%
+% Chapter 1: Vector Spaces
+%
+% =============================================================================
+
+\chapter{Vector Spaces}
+
+\section{Question 1}
+
+Description: Suppose $a$ and $b$ are real numbers, not both 0. Find real numbers $c$ and $d$
+such that
+
+\[
+  \frac{1}{(a+bi)} = c + di
+\]
+
+Answer:
+
+$\frac{1}{(a+bi)} = c + di \Rightarrow (a+bi)(c+di) = 1 \Rightarrow (ac-bd) + (ad + bc)i = 1$
+
+$\therefore$ We have:
+
+\begin{empheq}[left=\empheqlbrace]{align}
+  &ac - bd = 1 \\
+  &ad + bc = 0
+\end{empheq}
+
+Because $a$ and $b$ are not both 0, there can be three cases.
+
+Case 1: $a = 0$, $b \neq 0$
+
+\[(1.1) \ and \ (1.2)\]
+
+$\Rightarrow$
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  &-bd = 1 \\
+  &bc = 0
+\end{empheq}
+
+$\Rightarrow$
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  &c = 0 \\
+  &d = -\frac{1}{b}
+\end{empheq}
+
+Case 2: $a \neq 0$, $b = 0$
+
+\[(1.1) \ and \ (1.2)\]
+
+$\Rightarrow$
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  &ac = 1 \\
+  &ad = 0
+\end{empheq}
+
+$\Rightarrow$
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  &c = \frac{1}{a} \\
+  &d = 0
+\end{empheq}
+
+Case 3: $a \neq 0$, $b \neq 0$
+
+\[(1.1) \ and \ (1.2)\]
+
+$\Rightarrow$
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  &c = \frac{a}{a^2+b^2} \\
+  &d = -\frac{b}{a^2+b^2}
+\end{empheq}
+
+(Done)
+
+\end{document}
