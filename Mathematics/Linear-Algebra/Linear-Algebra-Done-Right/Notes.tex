@@ -7,6 +7,13 @@
 \usepackage{amsmath}
 \usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
 \usepackage{csquotes}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=blue,
+}
 
 \title{Notes on \textit{Linear Algebra Done Right}}
 \author{Yaobin Wen}
@@ -18,7 +25,7 @@
 \tableofcontents
 
 \chapter*{Overview}
-\addcontentsline{toc}{chapter}{Preface}
+\addcontentsline{toc}{chapter}{Overview}
 
 This document contains my study notes of the textbook \textit{Linear Algebra
 Done Right}. I use it for a few purposes:
@@ -27,8 +34,18 @@ Done Right}. I use it for a few purposes:
   \item As a reference to quickly refresh my memory on the subjects.
   \item Keep the notes to help me understand the text that is not obvious for
     me to comprehend.
-  \item Keep the notes of solving the exercises.
 \end{enumerate}
+
+% =============================================================================
+%
+% Chapter: Review of Real Numbers
+%
+% =============================================================================
+
+\chapter*{Review of Real Numbers}
+\addcontentsline{toc}{chapter}{Review of Real Numbers}
+
+(TODO)
 
 % =============================================================================
 %
@@ -38,32 +55,53 @@ Done Right}. I use it for a few purposes:
 
 \chapter{Vector Spaces}
 
-\emph{Main topics of this chapter}
-\begin{itemize}
-  \item Complex numbers and properties
-  \item List; length
-  \item $\mathbf{F}^n$ and properties
-  \item Scalars; vectors
-\end{itemize}
+\section*{Overview}
 
-\section*{1.1 Definition: complex numbers}
+This chapter starts with the definition of \emph{complex numbers} because
+complex numbers are a superset of real numbers. Once we properly define complex
+numbers, we can focus on them because the properties will also hold for real
+numbers. "In linear algebra," as the textbook says, "better theorems and more
+insight emerge if complex numbers are investigated along with real numbers."
+
+A complex number is an element of a \emph{list}, and a list is used to denote a
+\emph{vector}, and vectors make up \emph{vector spaces}. Therefore, after
+complex numbers are discussed, we will move onto defining lists, vectors, and
+vector spaces.
+
+\section*{1.1 Definition: Complex numbers}
+
+We {define} a \textbf{\emph{complex number}} as follows (see
+``1.1 Definition''):
 
 \begin{itemize}
-  \item A \textbf{\emph{complex number}} is an ordered pair $(a, b)$, where $a,
-    b \in \mathbf{R}$, but we will write this as $a + bi$.
-  \begin{itemize}
-    \item When $a, b \in \mathbf{R}$ and $b = 0$, we have all the real numbers
-      $\mathbf{R}$. Thus $\mathbf{R} \subset \mathbf{C}$.
-  \end{itemize}
+  \item A complex number is an ordered pair $(a, b)$, where $a, b \in
+    \mathbf{R}$, but we will write this as $a + bi$.
+    \begin{itemize}
+      \item When $a, b \in \mathbf{R}$ and $b = 0$, we have all the real
+        numbers $\mathbf{R}$. Thus $\mathbf{R} \subset \mathbf{C}$.
+    \end{itemize}
   \item The set of all complex numbers is denoted by $\mathbf{C}$:
     \[ \mathbf{C} = \{a + bi: a, b \in \mathbf{R}\} \]
-  \item \textbf{Addition}: For $a, b, c, d \in \mathbf{R}$:
-    \[ (a + bi) + (c + di) = (a + c) + (b + d)i \]
-  \item \textbf{Multiplication}: For $a, b, c, d \in \mathbf{R}$:
-    \[ (a + bi)(c + di) = (ac - bd) + (ad + bc)i \]
+  \item \textbf{Addition}: Let $\alpha = (a + bi)$, $\beta = (c + di)$, where
+    $a, b, c, d \in \mathbf{R}$, we have:
+    \[ \alpha + \beta = (a + bi) + (c + di) = (a + c) + (b + d)i \]
+    \begin{itemize}
+      \item This also tells us that if $\alpha, \beta \in \mathbf{C}$, then
+        $\alpha + \beta \in \mathbf{C}$
+    \end{itemize}
+  \item \textbf{Multiplication}: Let $\alpha = (a + bi)$, $\beta = (c + di)$,
+    where $a, b, c, d \in \mathbf{R}$, we have:
+    \[ \alpha\beta = (a + bi)(c + di) = (ac - bd) + (ad + bc)i \]
+    \begin{itemize}
+      \item This also tells us that if $\alpha, \beta \in \mathbf{C}$, then
+        $\alpha\beta \in \mathbf{C}$
+    \end{itemize}
 \end{itemize}
 
 \section*{1.3 Properties of complex arithmetic}
+
+The following properties can be proved according to the definition of complex
+numbers and the addition and multiplication:
 
 \begin{itemize}
   \item \textbf{commutativity}:
@@ -82,15 +120,26 @@ Done Right}. I use it for a few purposes:
       \lambda + 0 = \lambda \ and \ \lambda1 = \lambda \ for \ all \ \lambda
       \in \mathbf{C}
     \]
+    \begin{itemize}
+      \item Note that here $0, 1 \in \mathbf{R}$
+    \end{itemize}
   \item \textbf{additive inverse}:
     \[
       For \ every \ \alpha \in \mathbf{C}, there \ exists \ a \ unique \ \beta
       \in \mathbf{C} \ such \ that \ \alpha + \beta = 0
     \]
-  \item \textbf{multiplicative inverse}: \newline
-     $For \ every \ \alpha \in \mathbf{C} \ with \ \alpha \neq 0, there \
-     exists \ a \ unique \ \beta \in \mathbf{C} \newline such \ that \
-     \alpha\beta = 1$
+    \begin{itemize}
+      \item Note that here $0 \in \mathbf{R}$
+    \end{itemize}
+  \item \textbf{multiplicative inverse}:
+    \[
+      For \ every \ \alpha \in \mathbf{C} \ with \ \alpha \neq 0, there \
+      exists \ a \ unique \ \beta \in \mathbf{C} \newline such \ that \
+      \alpha\beta = 1
+    \]
+    \begin{itemize}
+      \item Note that here $1 \in \mathbf{R}$
+    \end{itemize}
   \item \textbf{distributive property}:
     \[
       \lambda(\alpha + \beta) = \lambda\alpha + \lambda\beta \ for \ all \
@@ -110,16 +159,32 @@ Let $\alpha, \beta \in \mathbf{C}$:
 \begin{itemize}
   \item ``$-\alpha$'' is the additive inverse of $\alpha$ such that
     \[ \alpha + (-\alpha) = 0 \]
+    \begin{itemize}
+      \item Note that here $0 \in \mathbf{R}$
+    \end{itemize}
   \item \textbf{\textit{Subtraction}} on $\mathbf{C}$ is defined by
     \[ \beta - \alpha = \beta + (-\alpha) \]
   \item For $\alpha \neq 0$, define $1/\alpha$ as the \textbf{multiplicative
     inverse} of $\alpha$ such that
     \[ \alpha(1/\alpha) = 1 \]
+    \begin{itemize}
+      \item Note that here $1 \in \mathbf{R}$
+    \end{itemize}
   \item \textbf{\textit{Division}} on $\mathbf{C}$ is defined by
     \[ \beta/\alpha = \beta(1/\alpha) \]
+    \begin{itemize}
+      \item Note that here $1 \in \mathbf{R}$
+    \end{itemize}
 \end{itemize}
 
-\section*{Definition: $\alpha^m$}
+\section*{1.6 Notation F}
+
+$\mathbf{F}$ stands for either $\mathbf{R}$ or $\mathbf{C}$.
+
+But because $\mathbf{C}$ is a superset of $\mathbf{R}$, when we think of
+$\mathbf{F}$, we can basically think of it as $\mathbf{C}$.
+
+\section*{1.6.1 Definition: $\alpha^m$}
 
 For $\alpha \in \mathbf{F}$ and $m \in \mathbf{N}$:
 
@@ -156,7 +221,7 @@ only if:
 \section*{Lists and Sets}
 
 Table \ref{table:lists_sets_comp} compares lists and sets:
-\begin{table}[h!]
+\begin{table}[ht!]
 \centering
 \begin{tabular}{||c c c ||} 
  \hline
@@ -209,7 +274,7 @@ For $x \in \mathbf{F}^n$, we can view it as a point in the space $\mathbf{F}^n$,
 but we can also view it as an ``arrow'' in the same space. When we view it as
 an ``arrow'', we refer to it as a \textbf{\textit{vector}}.
 
-\section*{1.13 \textit{addition} in $\mathbf{F}^n$}
+\section*{1.13 Definition: \textit{addition} in $\mathbf{F}^n$}
 
 Given
 
@@ -256,14 +321,16 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
   \lambda(x_1, ..., x_n) = (\lambda x_1, ..., \lambda x_n)
 \]
 
-\section*{TODOs}
-
-\begin{itemize}
-  \item Define ``scalar''.
-\end{itemize}
-
 \section*{Progress tracker}
 
 As of 2023-02-21, I'm on page 10: Digression on Fields
+
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+
+\begin{itemize}
+  \item $[1]$ \href{http://www.overleaf.com}{Sheldon Axler: \it{Linear Algebra Done Right}}
+  \item $[2]$ \href{https://bookstore.ams.org/view?ProductCode=CHEL/79}{Edmund Landau: \it{Foundations of Analysis}}
+\end{itemize}
 
 \end{document}
