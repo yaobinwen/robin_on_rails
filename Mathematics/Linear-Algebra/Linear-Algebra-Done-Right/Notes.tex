@@ -321,6 +321,74 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
   \lambda(x_1, ..., x_n) = (\lambda x_1, ..., \lambda x_n)
 \]
 
+\section*{1.18 Definition: \it{addition}, \it{scalar multiplication}}
+
+\begin{itemize}
+  \item An \textbf{\textit{addition}} on a set $V$ is a function that assigns
+    an element $u+v \in V$ to each pair of element $u, v \in V$.
+  \item A \textbf{\textit{scalar multiplication}} on a set $V$ is a function
+    that assigns an element $\lambda v \in V$ to each $\lambda \in \mathbf{F}$
+    and each $v \in V$.
+\end{itemize}
+
+\section*{1.19 Definition: \textbf{\textit{vector space}}}
+
+A \textbf{\textit{vector space}} is a set $V$ along with an \textit{addition}
+on $V$ and a \textit{scalar multiplication} on $V$ such that the following
+properties hold:
+
+\textbf{commutativity}: $u + v = v + u$ for all $u, v \in V$. \textbf{Note}
+that it doesn't define the relationship between $uv$ and $uv$.
+
+\textbf{associativity}: For all $u, v, w \in V$ and all $a, b \in \mathbf{F}$:
+\begin{itemize}
+  \item $(u + v) + w = u + (v + w)$
+  \item $(ab)v = a(bv)$
+\end{itemize}
+
+\textbf{Note} that associativity doesn't define the relationship between
+$(uv)w$ and $u(vw)$.
+
+\textbf{additive identity}: For all $v \in V$, there exists an element $0 \in V$
+such that $v + 0 = v$. \textbf{Note} this doesn't require uniqueness of $0$.
+
+\textbf{additive inverse}: For all $v \in V$, there exists $w \in V$ such that
+$v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
+
+\textbf{multiplicative identity}: $1v = v$ for all $v \in V$. \textbf{Note}
+  that $1 \in \mathbf{F}$.
+
+\textbf{distributive properties}: For all $a, b \in \mathbf{F}$ and all $u, v
+\in V$:
+\begin{itemize}
+  \item $a(u + v) = au + av$
+  \item $(a + b)v = av + bv$
+\end{itemize}
+
+\section*{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
+
+Elements of a vector space are called \textbf{\textit{vector}} or
+\textbf{\textit{point}}.
+
+\section*{My understanding of vector space}
+
+\begin{itemize}
+  \item Essentially, ``addition'' of two vectors is to connect the tail of the
+    first vector with the head of the second vector.
+  \item Essentially, ``scalar multiplication'' of a vector is to shrink or
+    stretch the vector.
+  \item The definition of \textit{vector space} is saying: For an arbitrary set
+    $V$, we can define arbitrary operations called \textit{addition} and
+    \textit{scalar multiplication} on the elements (assuming ``scalar'' makes
+    sense in the context). However, not all the addition and scalar
+    multiplication can make $V$ meet the properties that are required by vector
+    space definition. In other occasions, $V$ may not include all the elements
+    that make the addition and scalar multiplication meet the properties that
+    are required by the vector space definition. Only those sets $V$ and the
+    corresponding addition and scalar multiplication that meet those properties
+    are called \textit{vector spaces}.
+\end{itemize}
+
 \section*{Progress tracker}
 
 As of 2023-02-21, I'm on page 10: Digression on Fields
