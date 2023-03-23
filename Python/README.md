@@ -1,5 +1,13 @@
 # Python
 
+## `__repr__()` vs `__str__()`
+
+Refer to [Real Python: When Should You Use `.__repr__()` vs `.__str__()` in Python?](https://realpython.com/python-repr-vs-str/).
+
+In short:
+
+> The `.__repr__()` method returns a detailed description for a **programmer** who needs to maintain and debug the code. The `.__str__()` method returns a simpler description with information for the **user** of the program.
+
 ## Implicit Namespace Packages
 
 This concept was introduced by [PEP 420](https://www.python.org/dev/peps/pep-0420/), but I think the PEP does a poor job to explain what an "implicit namespace package" is and what problem it tries to resolve. Instead, I found [this Stack Overflow answer](https://stackoverflow.com/a/21819733/630364) explains it really well. Also take a look at the official sample code: [Python Namespace Package Examples](https://github.com/pypa/sample-namespace-packages)
