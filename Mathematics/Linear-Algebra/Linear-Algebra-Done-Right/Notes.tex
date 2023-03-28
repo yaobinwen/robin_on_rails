@@ -68,6 +68,30 @@ A complex number is an element of a \emph{list}, and a list is used to denote a
 complex numbers are discussed, we will move onto defining lists, vectors, and
 vector spaces.
 
+\section*{Review Questions}
+
+\begin{enumerate}
+  \item What is a vector space?
+  \item What is the relationship between $\mathbf{F^n}$ and the vector space
+    $V$?
+  \item In a vector space $V$, for $u, v \in V$, what is the relationship
+    between $u \cdot v$ and $v \cdot u$?
+  \item In a vector space $V$, for $u, v, w \in V$, what is the relationship
+  between $(u \cdot v) \cdot w$ and $u \cdot (v \cdot w)$?
+  \item When talking about the vector space $V$ as the textbook defines it, why
+    is it important to specify that it depends on the set $F$? What role does
+    $\mathbf{F}$ play in the definition of $V$?
+  \item What is $\mathbf{F}^S$?
+  \item In the definition of $\mathbf{F}^S$, what does $S$ stand for? What is
+    an element in $\mathbf{F}^S$?
+  \item In section ``1.29 The number 0 times a vector'', the textbook proves
+    the property $0v = 0$ for every $v \in V$ without using the scalar
+    multiplication in $\mathbf{F}^n$ in section 1.17. Why not use that? Should
+    it have been used, the proof would have been much more simple, wouldn't it?
+\end{enumerate}
+
+See the end of this chapter for the review question answers.
+
 \section*{1.1 Definition: Complex numbers}
 
 We {define} a \textbf{\emph{complex number}} as follows (see
@@ -388,6 +412,68 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     corresponding addition and scalar multiplication that meet those properties
     are called \textit{vector spaces}.
 \end{itemize}
+
+\section*{1.23 Notation $\mathbf{F}^S$}
+
+TODO: Record the definition.
+
+\section*{My understanding of $\mathbf{F}^S$}
+
+\begin{itemize}
+  \item Note that the elements in $\mathbf{F}^S$ are \textbf{functions}.
+    According to the definition of $\mathbf{F}^S$, the only condition these
+    functions must satisfy is they map from $S$ to $\mathbf{F}$.
+  \item It's also important to note that it doesn't matter how the mapping from
+    $S$ to $\mathbf{F}$ is defined. For example, it doesn't say that every
+    element in $S$ must be mapped to a different element on $\mathbf{F}$. In
+    fact, it's possible that all the element in $S$ are just mapped to one
+    element in $\mathbf{F}$. Again, the point is the mapping itself does not
+    matter, as long as the mapping is from $S$ to $\mathbf{F}$.
+  \item The type of elements of $S$ doesn't matter either, according to the
+    definition. For example, the elements in $S$ don't have to be numbers. They
+    can be shapes like $\{ \clubsuit, \diamondsuit, \heartsuit, \spadesuit \}$.
+  \item The textbook says $\mathbf{F}^n$ and $\mathbf{F}^{\infty}$ can be
+    viewed as special cases of $\mathbf{F}^S$. This is correct but the textbook
+    doesn't explain everything about them:
+    \begin{itemize}
+      \item In these two cases, $S$ is the set $\{ 1, 2, \ldots, n \}$ and
+      $\{ 1, 2, \ldots, \}$, respectively.
+      \item An element in $\mathbf{F}^n$, i.e., $\{ x_1, x_2, \ldots, x_n \}$,
+        is written as a list but represents a \textbf{function}. Yes, we
+        usually use the symbol $f$ to denote a function, but we don't have to.
+        If we want to, we can choose any arbitrary symbols to denote functions,
+        including using a list. In the case of $\mathbf{F}^n$, the list
+        $\{ x_1, x_2, \ldots, x_n \}$ and $\{ y_1, y_2, \ldots, y_n \}$ can be
+        used to denote two different functions, just in the same way that $f$
+        and $g$ can denote different functions.
+    \end{itemize}
+\end{itemize}
+
+\section*{Review Question Answers}
+
+\begin{enumerate}
+  \item See definition 1.19 in the textbook.
+  \item $\mathbf{F}^n$ is just one concrete vector space, while $V$ can
+    represent any vector space.
+  \item The relationship is not defined. The vector space definition only
+    defines commutativity for the addition on $u$ and $v$, but not the
+    communtativity on the multiplication.
+  \item The relationship is not defined. The vector space definition only
+    defines associativity on addition and scalar multiplication, but not on
+    the general multiplication of vectors inside the vector space.
+  \item Because the definition of vector space depends on scalar multiplication
+    which then depends on the scalar set $\mathbf{F}$. The elements in
+    $\mathbf{F}$ participate the scalar multiplication which is part of vector
+    space definition.
+  \item See definition 1.23 in the textbook.
+  \item $S$ stands for the set of the variable (i.e., the input parameter). An
+    element in $\mathbf{F}^S$ is a function that maps from $S$ to $\mathbf{F}$.
+  \item Because the scalar multiplication in section 1.17 is only defined for
+    $\mathbf{F}^n$, but the property ``1.29 The number 0 times a vector'' is a
+    general property in any vector space $V$ which does not have to be
+    $\mathbf{F}^n$. When $V$ is not $\mathbf{F}^n$, the scalar multiplication
+    in section 1.17 may not make sense at all.
+ \end{enumerate}
 
 \section*{Progress tracker}
 
