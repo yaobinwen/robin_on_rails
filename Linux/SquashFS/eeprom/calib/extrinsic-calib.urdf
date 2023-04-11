@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot name="Example">
+  <link name="base_link">
+  </link>
+
+  <link name="L">
+    <visual>
+      <origin rpy="1.570796326794897 0 3.1415926" xyz="0 0 -0.0377"/>
+      <geometry>
+        <mesh filename="package://example/resource/v.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_link_T_L" type="fixed">
+    <parent link="L" />
+    <child link="base_link" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <link name="camera_case">
+    <visual>
+      <origin rpy="0 0 3.14159" xyz="0 0 0" />
+      <geometry>
+        <mesh filename="package://example/resource/f.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_link_T_camera_case" type="fixed">
+    <parent link="base_link" />
+    <child link="camera_case" />
+    <origin xyz="0.04 0.05 -0.07" rpy="-1.570796326794897 0 -1.570796326794897" />
+  </joint>
+
+  <link name="camera">
+    <!-- Sadly no CAD model for the lens
+    -->
+  </link>
+
+  <joint name="L_T_camera" type="fixed">
+    <parent link="L" />
+    <child link="camera" />
+    <origin xyz="0.11 0.05 -0.07" rpy="-1.570796326794897 0 -1.570796326794897" />
+  </joint>
+</robot>
