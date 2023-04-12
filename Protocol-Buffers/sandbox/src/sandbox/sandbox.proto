@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package sandbox;
-
-/// A sandbox request.
-message SandboxRequest {
-  /// The IDs of the requested objects.
-  repeated int32 ids = 1;
-}

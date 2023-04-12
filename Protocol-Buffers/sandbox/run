@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Run the local version of the code.
+
+PROJECT=sandbox
+
+# Compile the protobuf files.
+protoc --python_out=. ./src/sandbox/v0/*.proto || exit
+
+PYTHONPATH="$PWD/src:$PYTHONPATH" \
+    exec python3 -m "$PROJECT.$PROJECT" ${1+"$@"}
+
+# vim: set expandtab shiftwidth=4:

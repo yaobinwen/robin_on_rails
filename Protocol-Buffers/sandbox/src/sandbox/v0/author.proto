@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package sandbox;
+
+/// The author's basic info.
+message Author {
+  /// Name.
+  string name = 1;
+
+  /// Email.
+  string email = 2;
+}

@@ -1,5 +1,12 @@
 # Protocol Buffers
 
+## References
+
+- [Protocol Buffers](https://protobuf.dev/)
+- [Language Guide (proto 3)](https://protobuf.dev/programming-guides/proto3/)
+- [Protocol Buffer Basics: Python](https://protobuf.dev/getting-started/pythontutorial/)
+- [Protocol Buffers Python API Reference](https://googleapis.dev/python/protobuf/latest/)
+
 ## Fields are missing
 
 Check the question [_protobuf MessageToJson removes fields with value 0_](https://stackoverflow.com/q/42987265/630364). According to the GitHub issue [_[proto3] Zero-value Enum types are not converted to text in Stringer implementations_](https://github.com/golang/protobuf/issues/258), the missing fields are by design:
