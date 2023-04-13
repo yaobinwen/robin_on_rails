@@ -38,3 +38,9 @@ This document records down my study activities for future reflection. The notes,
 08:13 ~ 09:00 (47m)
 
 1. Review section _1.B: Definition of Vector Space_.
+
+## 2023-04-13 (Thu)
+
+08:25 ~ 09:07 (42m)
+
+1. Studied _1.C Subspaces_ and proved _1.33 Example_ as a vector space.
