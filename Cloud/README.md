@@ -4,6 +4,14 @@
 
 This folder has the notes about cloud computing.
 
+## Review Questions
+
+- What is an _application_ on the cloud?
+- What is _service mesh_?
+- What is a _data plane_?
+- What is a _control plane_?
+- How are _data plane_ and _control plane_ different from each other?
+
 ## Application
 
 A cloud-based application is no longer a single executable program. It usually consists of multiple services.
@@ -18,6 +26,10 @@ Therefore, a service mesh:
 - Knows the network topology of the services in the entire cloud-based application.
 - Is typically implemented in the _sidecar_ pattern: a scalable set of network proxies deployed _alongside_ the services. Every service is **not aware of the network** and **only knows about its local proxy**.
 
+One can understand a service mesh from two perspectives:
+- Data plane
+- Control plane
+
 ## Data plane vs. control plane
 
 [2] explains these two terms very well.
@@ -29,7 +41,7 @@ A **data plane** focuses on the **"how to handle the data"** that the services r
 
 In effect, the **sidecar proxies** make up the data plane. As [2] summarizes, the data plane is responsible for "conditionally translating, forwarding, and observing every network packet that flows to and from a service instance."
 
-A control plane focuses on **"teaching sidecar proxies how to handle the data"**. In other words, initially, the proxies are "pieces of blank paper" that know nothing about how to handle the data that flow through the services in the cloud-based application. The control plane "teaches" the proxies to know how to do that. In reality, this can be done in two ways:
+A **control plane** focuses on **"teaching sidecar proxies how to handle the data"**. In other words, initially, the proxies are "pieces of blank paper" that know nothing about how to handle the data that flow through the services in the cloud-based application. The control plane "teaches" the proxies to know how to do that. In reality, this can be done in two ways:
 - Via manual configuration by human beings.
 - Via automatic configuration through some control plane software.
 
@@ -60,4 +72,3 @@ Envoy proxy is a data plane.
 
 - [1] [What's a service mesh?](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh)
 - [2] [Service mesh data plane vs. control plane](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc)
-

@@ -1,5 +1,14 @@
 # Envoy
 
+## Review Questions
+
+- [README.md](./README.md) says Envoy is a data plane. What are the responsibilities of a data plane and what are the Envoy features that implement the data plane's responsibilities?
+- What is a _host_? What is a _downstream host_ and an _upstream host_?
+- What is a _listener_?
+- What is a _cluster_?
+- What is a _mesh_?
+- What is Envoy's threading model?
+
 ## Terminology
 
 A **host**:
@@ -52,3 +61,7 @@ Envoy uses a **single process with multiple threads**:
 Envoy configuration supports any number of listeners within a single process.
 
 Generally we recommend running **a single Envoy per machine** regardless of the number of configured listeners.
+
+Envoy supports two types of listeners:
+- TCP
+- UDP
