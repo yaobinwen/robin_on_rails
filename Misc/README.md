@@ -104,3 +104,7 @@
   - [Building Block(chain)s for a Better Planet](https://www.weforum.org/reports/building-block-chain-for-a-better-planet)
 - [Circular Economy](https://www.ellenmacarthurfoundation.org/circular-economy/concept)
     This is an idea Ellen talked about in her TED talk: [The surprising thing I learned sailing solo around the world](https://www.ted.com/talks/dame_ellen_macarthur_the_surprising_thing_i_learned_sailing_solo_around_the_world).
+
+## Others (useless?)
+
+- [The useless web](https://theuselessweb.com/): Behind the uselessness, I feel there is some creativity and sensitivity that I don't have.
