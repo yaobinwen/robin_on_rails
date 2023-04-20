@@ -44,3 +44,9 @@ This document records down my study activities for future reflection. The notes,
 08:25 ~ 09:07 (42m)
 
 1. Studied _1.C Subspaces_ and proved _1.33 Example_ as a vector space.
+
+## 2023-04-20 (Thu)
+
+08:00 ~ 08:30 (30m)
+
+1. Studied _1.C Subspaces_.

@@ -69,6 +69,8 @@ vector spaces.
 
 \section*{Review Questions}
 
+(See the end of this chapter for the review question answers.)
+
 \begin{enumerate}
   \item What is a vector space?
   \item What is the relationship between $\mathbf{F^n}$ and the vector space
@@ -87,9 +89,12 @@ vector spaces.
     the property $0v = 0$ for every $v \in V$ without using the scalar
     multiplication in $\mathbf{F}^n$ in section 1.17. Why not use that? Should
     it have been used, the proof would have been much more simple, wouldn't it?
+  \item What is a subspace?
+  \item What are the conditions for the subset $U$ to satisfy in order to make
+    it a subspace of $V$?
+  \item Among all the conditions that $U$ must satisfy, what about the
+    multiplicative identity $1$?
 \end{enumerate}
-
-See the end of this chapter for the review question answers.
 
 \section*{1.1 Definition: Complex numbers}
 
@@ -385,6 +390,25 @@ $v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
   \item $(a + b)v = av + bv$
 \end{itemize}
 
+\section*{Properties 1.25 - 1.31}
+
+\begin{itemize}
+  \item 1.25: Unique additive identity: A vector space has a unique additive
+    identity.
+  \item 1.26 Unique additive inverse: Every element in a vector space has a
+    unique additive inverse.
+  \item 1.27 Notation $-v$, $w - v$: Let $v, w \in V$, then:
+    \begin{itemize}
+      \item[$\bullet$] $-v$ denotes the additive inverse of $v$.
+      \item[$\bullet$] $w - v$ is defined to be $w + (-v)$.
+    \end{itemize}
+  \item 1.28 Notation $V$: For the rest of the book, $V$ denotes a vector space
+    over $\mathbf{F}$.
+  \item 1.29 The number 0 times a vector: $0v = 0$ for every $v \in V$.
+  \item 1.30 A number times the vector 0: $a0 = 0$ for every $a \in \mathbf{F}$.
+  \item 1.31 The number $-1$ times a vector: $(-1)v = -v$ for every $v \in V$.
+\end{itemize}
+
 \section*{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
 
 Elements of a vector space are called \textbf{\textit{vector}} or
@@ -411,7 +435,18 @@ Elements of a vector space are called \textbf{\textit{vector}} or
 
 \section*{1.23 Notation $\mathbf{F}^S$}
 
-TODO: Record the definition.
+\begin{itemize}
+  \item If $S$ is a set, then $\mathbf{F}^S$ denotes the set of
+    \textbf{functions} from $S$ to $\mathbf{F}$.
+  \item For $f,g \in \mathbf{F}^S$, the \textbf{sum} $f + g \in \mathbf{F}^S$
+    is the function defined by
+      \[ (f + g)(x) = f(x) + g(x) \]
+    for all $x \in S$.
+  \item For $\lambda \in \mathbf{F}$ and $f \in \mathbf{F}^S$, the
+    \textbf{product} $\lambda f \in \mathbf{F}^S$ is the function defined by
+      \[ (\lambda f)(x) = \lambda f(x) \]
+    for all $x \in S$.
+\end{itemize}
 
 \section*{My understanding of $\mathbf{F}^S$}
 
@@ -469,6 +504,13 @@ TODO: Record the definition.
     general property in any vector space $V$ which does not have to be
     $\mathbf{F}^n$. When $V$ is not $\mathbf{F}^n$, the scalar multiplication
     in section 1.17 may not make sense at all.
+  \item See definition 1.32 in the textbook.
+  \item See section 1.34 in the textbook.
+  \item The three conditions for the subset $U$ are all about the elements and
+    arithmetic operations on it. The multiplicative identity $1$ belongs to the
+    set $\mathbf{F}$ (which is implied in the textbook due to notation 1.28),
+    so the multiplicative identity has nothing to do with $U$, so it is not
+    mentioned in the three conditions.
  \end{enumerate}
 
 \section*{Progress tracker}
