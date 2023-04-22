@@ -42,6 +42,7 @@
 | [ ] | [4880](https://tools.ietf.org/html/rfc4880) | OpenPGP Message Format |||
 | [ ] | ~~[5000](https://tools.ietf.org/html/rfc5000)~~ | ~~Internet Official Protocol Standards~~ | HISTORIC | **Obsolete** |
 | [x] | [5234](https://tools.ietf.org/html/rfc5234) | Augmented BNF for Syntax Specifications: ABNF | INTERNET STANDARD | Updated by 7405. |
+| [ ] | [5280](https://datatracker.ietf.org/doc/html/rfc5280) |Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile| PROPOSED STANDARD ||
 | [x] | [5735](https://tools.ietf.org/html/rfc5735) | Special Use IPv4 Addresses | Best Current Practice ||
 | [x] | [5737](https://datatracker.ietf.org/doc/html/rfc5737) | IPv4 Address Blocks Reserved for Documentation | Informational ||
 | [ ] | [6598](https://datatracker.ietf.org/doc/html/rfc6598) | IANA-Reserved IPv4 Prefix for Shared Address Space | Best Current Practice ||
