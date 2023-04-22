@@ -1,0 +1,29 @@
+- name: Set up the environment that can reproduce the DNS bug.
+  hosts: all
+  roles:
+    - name: Install Docker.
+      role: geerlingguy.docker
+      vars:
+        ansible_become: yes
+        docker_users:
+          - "{{ansible_user}}"
+
+    - name: Install Docker Python libraries.
+      role: docker-pylib
+      vars:
+        ansible_become: yes
+
+    - name: Set up Consul.
+      role: consul
+      vars:
+        ansible_become: yes
+
+    - name: Set up Registrator.
+      role: registrator
+      vars:
+        ansible_become: yes
+
+    - name: Start a Redis service.
+      role: redis
+      vars:
+        ansible_become: yes

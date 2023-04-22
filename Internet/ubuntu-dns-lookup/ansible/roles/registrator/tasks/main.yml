@@ -1,0 +1,22 @@
+# https://hub.docker.com/r/gliderlabs/registrator
+
+- name: Create the Registrator container.
+  docker_container:
+    command: consul://127.0.0.1:8500
+    comparisons:
+      log_opt: strict
+    dns_servers: "127.0.0.1"
+    env:
+      CONSUL_HTTP_ADDR: http://127.0.0.1:8500
+    image: gliderlabs/registrator:latest
+    log_driver: journald
+    name: registrator
+    network_mode: host
+    pull: yes
+    restart: no
+    restart_policy: always
+    state: started
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /var/run/docker.sock:/tmp/docker.sock

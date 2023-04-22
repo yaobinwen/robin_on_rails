@@ -1,0 +1,20 @@
+- name: Create the Redis Docker container.
+  docker_container:
+    comparisons:
+      log_opt: strict
+    dns_servers: "127.0.0.1"
+    env:
+      # https://github.com/antirez/redis/issues/3895
+      MALLOC_CONF: thp:never
+      SERVICE_NAME: redis
+      SERVICE_TAGS: database,redis
+    image: 'redis:6'
+    log_driver: journald
+    name: redis
+    published_ports: all
+    pull: yes
+    restart: no
+    restart_policy: always
+    state: started
+    # sysctls:
+    #   net.core.somaxconn: 511

@@ -1,0 +1,83 @@
+- name: Configure multiple DNS servers.
+  hosts: all
+  vars:
+    ansible_become: yes
+    dummynet: "192.0.2.1"
+    dummynet_ifname: dummynet
+  tasks:
+    - name: 'Configure systemd(1) to bring up {{dummynet_ifname}}.'
+      ini_file:
+        path: '/etc/systemd/network/{{dummynet_ifname}}.{{item.file}}'
+        section: '{{item.section}}'
+        option: '{{item.option}}'
+        value: '{{item.value}}'
+        no_extra_spaces: yes
+        mode: '0o644'
+      loop:
+        - { file: 'netdev', section: 'NetDev', option: 'Name', value: '{{dummynet_ifname}}' }
+        - { file: 'netdev', section: 'NetDev', option: 'Kind', value: 'dummy' }
+        - { file: 'network', section: 'Match', option: 'Name', value: '{{dummynet_ifname}}' }
+        - { file: 'network', section: 'Network', option: 'Address', value: '{{dummynet}}' }
+
+    - name: Restart systemd-networkd
+      systemd:
+        name: systemd-networkd.service
+        state: restarted
+
+    - name: Run apt-get update.
+      apt:
+        cache_valid_time: 900
+      changed_when: false
+
+    - name: Install dnsmasq(8).
+      apt:
+        name: dnsmasq
+        state: latest
+        install_recommends: no
+
+    - name: >-
+        Configure dnsmasq(8) to bind only the interfaces it is listening on, to
+        avoid a conflict with systemd-resolved(8).
+      lineinfile:
+        path: /etc/dnsmasq.conf
+        line: bind-interfaces
+        insertafter: '^#bind-interfaces'
+        validate: dnsmasq --test -C %s
+
+    - name: Configure dnsmasq(8) to pull in configuration files from /etc/dnsmasq.d.
+      lineinfile:
+        path: /etc/dnsmasq.conf
+        line: conf-dir=/etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new
+        validate: dnsmasq --test -C %s
+
+    - name: 'Write the dnsmasq(8) network configuration file ({{consul_conf}}).'
+      copy:
+        content: |
+          server=/consul/127.0.0.1#8600
+          listen-address=127.0.0.1
+        dest: '/etc/dnsmasq.d/consul.conf'
+        mode: '0o644'
+        owner: '0'
+        group: '0'
+        validate: dnsmasq --test -C %s
+
+    - name: Restart dnsmasq.
+      systemd:
+        name: dnsmasq.service
+        state: restarted
+
+    - name: 'Configure systemd(1) to query {{dummynet_ifname}} for the .consul domain (only).'
+      ini_file:
+        path: '/etc/systemd/network/{{dummynet_ifname}}.network'
+        section: Network
+        option: '{{item.option}}'
+        value: '{{item.value}}'
+        no_extra_spaces: yes
+      loop:
+        - { option: 'DNS', value: '{{dummynet}}' }
+        - { option: 'Domains', value: '~consul' }
+
+    - name: Restart systemd-networkd
+      systemd:
+        name: systemd-networkd.service
+        state: restarted
