@@ -1,0 +1,70 @@
+- name: Update APT cache.
+  apt:
+    update-cache: yes
+    cache_valid_time: 900
+
+- name: Install needed packages.
+  apt:
+    name:
+      - openssh-client
+    state: latest
+
+- name: Create the user that manages the CA private keys.
+  user:
+    name: "{{ca_user_name}}"
+    comment: CA manager
+    home: "{{ca_user_home_dir}}"
+    create_home: no
+    system: yes
+  register: ca_user_info
+
+- name: Create the CA user's home directory.
+  file:
+    path: "{{ca_user_home_dir}}"
+    state: directory
+    owner: "{{ca_user_info.uid}}"
+    group: "{{ca_user_info.group}}"
+    mode: "0o700" # We don't want anyone else to access this directory.
+
+- name: Create the CA PKI directory.
+  file:
+    path: "{{ca_pki_dir}}"
+    state: directory
+    owner: "{{ca_user_info.uid}}"
+    group: "{{ca_user_info.group}}"
+    # The PKI directory is really important that we don't want anyone else to
+    # look into it.
+    mode: "0o700"
+
+- name: Get the status of the existing CA private key.
+  stat:
+    path: "{{ca_pki_dir}}/{{ca_file_name}}"
+  register: ca_stat
+
+- name: Make sure the CA key is a file if it exists.
+  when: ca_stat.stat.exists
+  assert:
+    that:
+      - ca_stat.isreg
+    fail_msg: CA key "{{ca_stat.stat.path}}" is not a regular file.
+
+- name: Generate the CA if no CA exists.
+  when: not ca_stat.stat.exists
+  block:
+  - name: Generate the CA key pairs.
+    community.crypto.openssh_keypair:
+      path: "{{ca_pki_dir}}/{{ca_file_name}}"
+      comment: "{{ca_key.comment}}"
+      size: "{{ca_key.size}}"
+      type: "{{ca_key.type}}"
+      owner: "{{ca_user_info.uid}}"
+      group: "{{ca_user_info.group}}"
+      mode: "0o600"
+
+  - name: Generate the initial empty revocation list.
+    command:
+      argv:
+        - ssh-keygen
+        - -k
+        - -f
+        - "{{ca_pki_dir}}/{{revoked_keys_file_name}}"

@@ -1,0 +1,51 @@
+- name: Build the Docker image.
+  block:
+  - name: Create a temporary directory for use.
+    tempfile:
+      prefix: "ssh-cert-auth-"
+      suffix: ".tmp"
+      state: directory
+    register: tmpdir
+
+  - name: Copy files that are needed to build the image.
+    copy:
+      src: "{{item.src}}"
+      dest: "{{tmpdir.path}}/{{item.dest_fname}}"
+      owner: "{{ansible_env.USER}}"
+      group: "{{ansible_env.USER}}"
+      mode: "{{item.mode}}"
+    loop:
+      - src: Dockerfile
+        dest_fname: Dockerfile.bastion
+        mode: "0o755"
+
+  - name: Build the Docker image.
+    docker_image:
+      name: "{{image_name}}:{{image_tag}}"
+      build:
+        args:
+          UBUNTU_VERSION: "{{image_ubuntu_version}}"
+          # NOTE(ywen): `ansible_facts.date_time.tz` could be `EDT` that is
+          # not in `/usr/share/zoneinfo` because it only has `EST5EDT`.
+          # Therefore, we use the value in `/etc/timezone` directly.
+          TZ: "{{lookup('file', '/etc/timezone')}}"
+        dockerfile: Dockerfile.bastion
+        path: "{{tmpdir.path}}"
+        pull: no
+      state: present
+      source: build
+      force_source: yes
+
+  always:
+  - name: Remove the temporary directory.
+    file:
+      path: "{{tmpdir.path}}"
+      state: absent
+
+- name: Create the Docker container as the SSH server.
+  docker_container:
+    name: "{{container_name}}"
+    image: "{{image_name}}:{{image_tag}}"
+    detach: true
+    restart_policy: always
+    tty: yes

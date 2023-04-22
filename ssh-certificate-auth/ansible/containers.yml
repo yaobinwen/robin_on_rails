@@ -1,0 +1,23 @@
+- name: Start all the Docker containers.
+  hosts: ywen-7510
+  roles:
+    - role: app-server
+      become: yes
+
+    - role: bastion
+      become: yes
+
+    - role: laptop
+      become: yes
+
+- name: Configure all the Docker containers.
+  hosts: ssh_cert_auth_containers
+  tasks:
+    - name: Print a message.
+      debug:
+        msg: "Hello, container!"
+
+    - name: Install vim.
+      become: yes
+      apt:
+        update_cache: yes

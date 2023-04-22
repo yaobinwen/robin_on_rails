@@ -1,0 +1,5 @@
+- name: Set up the SSH servers.
+  hosts: ssh_servers
+  roles:
+    - role: ssh-server
+      become: yes

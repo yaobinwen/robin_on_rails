@@ -1,0 +1,6 @@
+image_ubuntu_version: "22.04"
+
+image_name: "ssh-cert-auth_ssh-server"
+image_tag: "ubuntu-{{image_ubuntu_version}}"
+
+container_name: "{{image_name}}"

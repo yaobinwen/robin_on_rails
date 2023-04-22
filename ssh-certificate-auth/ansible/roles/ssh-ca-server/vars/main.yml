@@ -1,0 +1,10 @@
+ca_user_name: ssh_cert_auth_ca
+ca_user_home_dir: /var/lib/ssh_cert_auth_ca
+ca_pki_dir: "{{ca_user_home_dir}}/pki"
+ca_file_name: "ca"
+ca_key:
+  comment: "CA demo"
+  size: 4096
+  type: "rsa"
+
+revoked_keys_file_name: "revoked_keys"

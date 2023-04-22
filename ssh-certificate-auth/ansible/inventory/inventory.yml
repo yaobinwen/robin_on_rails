@@ -1,0 +1,25 @@
+all:
+  vars:
+    ansible_python_interpreter: auto
+    ansible_port: 22
+
+  hosts:
+    ywen-7510:
+      ansible_host: ywen-Precision-7510.local
+      ansible_user: ywen
+    ssh-cert-auth_app-server:
+      ansible_connection: docker
+      ansible_user: root
+    ssh-cert-auth_bastion:
+      ansible_connection: docker
+      ansible_user: root
+    ssh-cert-auth_laptop:
+      ansible_connection: docker
+      ansible_user: root
+
+  children:
+    ssh_cert_auth_containers:
+      hosts:
+        ssh-cert-auth_app-server:
+        ssh-cert-auth_bastion:
+        ssh-cert-auth_laptop:

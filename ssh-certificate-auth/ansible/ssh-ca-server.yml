@@ -1,0 +1,5 @@
+- name: Set up the SSH Certificate Authentication (ssh-cert-auth) CA server.
+  hosts: ssh_ca_servers
+  roles:
+    - role: ssh-ca-server
+      become: yes
