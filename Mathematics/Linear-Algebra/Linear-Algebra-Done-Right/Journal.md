@@ -50,3 +50,10 @@ This document records down my study activities for future reflection. The notes,
 08:00 ~ 08:30 (30m)
 
 1. Studied _1.C Subspaces_.
+
+## 2023-04-22 (Sat)
+
+21:06 ~ 22:14 (1h7m)
+
+1. Studied _1.35 Examples subspaces_ (a) and (b) (and then realized I needed to review more fundamental mathematical knowledge such as the meaning of "continuous real-valued functions" and "differentiable real-valued functions".)
+2. When studying the example (b), I realized I didn't fully understand the definition of _1.23 Notation F^S_ so also reviewed that.

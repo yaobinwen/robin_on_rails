@@ -54,7 +54,9 @@ Done Right}. I use it for a few purposes:
 
 \chapter{Vector Spaces}
 
-\section*{Overview}
+% ------------------------------
+\section{Overview}
+% ------------------------------
 
 This chapter starts with the definition of \emph{complex numbers} because
 complex numbers are a superset of real numbers. Once we properly define complex
@@ -67,7 +69,9 @@ A complex number is an element of a \emph{list}, and a list is used to denote a
 complex numbers are discussed, we will move onto defining lists, vectors, and
 vector spaces.
 
-\section*{Review Questions}
+% ------------------------------
+\section{Review Questions}
+% ------------------------------
 
 (See the end of this chapter for the review question answers.)
 
@@ -85,6 +89,9 @@ vector spaces.
   \item What is $\mathbf{F}^S$?
   \item In the definition of $\mathbf{F}^S$, what does $S$ stand for? What is
     an element in $\mathbf{F}^S$?
+  \item Does the definition of $\mathbf{F}^S$ imply that the function
+    $0: S \rightarrow \mathbf{F}$ is an element in $\mathbf{F}^S$? Why or why
+    not?
   \item In section ``1.29 The number 0 times a vector'', the textbook proves
     the property $0v = 0$ for every $v \in V$ without using the scalar
     multiplication in $\mathbf{F}^n$ in section 1.17. Why not use that? Should
@@ -96,7 +103,9 @@ vector spaces.
     multiplicative identity $1$?
 \end{enumerate}
 
-\section*{1.1 Definition: Complex numbers}
+% ------------------------------
+\section{1.1 Definition: Complex numbers}
+% ------------------------------
 
 We {define} a \textbf{\emph{complex number}} as follows (see
 ``1.1 Definition''):
@@ -126,7 +135,9 @@ We {define} a \textbf{\emph{complex number}} as follows (see
     \end{itemize}
 \end{itemize}
 
-\section*{1.3 Properties of complex arithmetic}
+% ------------------------------
+\section{1.3 Properties of complex arithmetic}
+% ------------------------------
 
 The following properties can be proved according to the definition of complex
 numbers and the addition and multiplication:
@@ -180,7 +191,9 @@ prove the properties of complex arithmetic, we need to use the properties of
 real arithmetic (i.e., communtativity, associativity, etc. for real numbers).
 Example 1.4 shows this method.
 
-\section*{1.5 Definition: $-\alpha$, subtraction, $1/\alpha$, division}
+% ------------------------------
+\section{1.5 Definition: $-\alpha$, subtraction, $1/\alpha$, division}
+% ------------------------------
 
 Let $\alpha, \beta \in \mathbf{C}$:
 
@@ -205,14 +218,18 @@ Let $\alpha, \beta \in \mathbf{C}$:
     \end{itemize}
 \end{itemize}
 
-\section*{1.6 Notation F}
+% ------------------------------
+\section{1.6 Notation F}
+% ------------------------------
 
 $\mathbf{F}$ stands for either $\mathbf{R}$ or $\mathbf{C}$.
 
 But because $\mathbf{C}$ is a superset of $\mathbf{R}$, when we think of
 $\mathbf{F}$, we can basically think of it as $\mathbf{C}$.
 
-\section*{1.6.1 Definition: $\alpha^m$}
+% ------------------------------
+\section{1.6.1 Definition: $\alpha^m$}
+% ------------------------------
 
 For $\alpha \in \mathbf{F}$ and $m \in \mathbf{N}$:
 
@@ -225,7 +242,9 @@ Thus for all $\alpha, \beta \in \mathbf{F}$, $m, n \in \mathbf{N}$:
   \item $(\alpha\beta)^m = \alpha^m\beta^m$
 \end{itemize}
 
-\section*{1.8 Definition: \textit{list}, \textit{length}}
+% ------------------------------
+\section{1.8 Definition: \textit{list}, \textit{length}}
+% ------------------------------
 
 For $n \in \mathbf{N}$, a \textbf{\textit{list}} of \textbf{\textit{length n}}
 is an \textbf{ordered} collection of \textit{n} \textbf{elements}. It's denoted
@@ -246,7 +265,9 @@ only if:
   \item $x_i = y_i$ for $i = 1, 2, ..., n$
 \end{itemize}
 
-\section*{Lists and Sets}
+% ------------------------------
+\section{Lists and Sets}
+% ------------------------------
 
 Table compares lists and sets:
 \begin{table}[ht!]
@@ -265,7 +286,9 @@ Table compares lists and sets:
 \label{table:lists_sets_comp}
 \end{table}
 
-\section*{1.10 Definition: $\mathbf{F^n}$ and $0$}
+% ------------------------------
+\section{1.10 Definition: $\mathbf{F^n}$ and $0$}
+% ------------------------------
 
 We use $\mathbf{F}$ to denote either $\mathbf{R}$ or $\mathbf{C}$.
 
@@ -284,7 +307,9 @@ Let $\mathbf{0}$ denote the list of length $n$ whose coordinates are all $0$:
   \mathbf{0} = (0, 0, ..., 0)
 \]
 
-\section*{1.11 Note: $\mathbf{C^1}$ can be thought of as a plane}
+% ------------------------------
+\section{1.11 Note: $\mathbf{C^1}$ can be thought of as a plane}
+% ------------------------------
 
 On page 6, below Example 1.11, the textbook says: ``Similarly, $\mathbf{C}^1$
 can be thought of as a plane.''
@@ -293,13 +318,17 @@ It is so because $\mathbf{C}^1$ is the set of complex numbers, each of which
 consists of two parts: the real part and the imaginary part. Both parts are real
 numbers and they can form a 2D plane, hence ``as a plane''.
 
-\section*{1.12 Vectors}
+% ------------------------------
+\section{1.12 Vectors}
+% ------------------------------
 
 For $x \in \mathbf{F}^n$, we can view it as a point in the space $\mathbf{F}^n$,
 but we can also view it as an ``arrow'' in the same space. When we view it as
 an ``arrow'', we refer to it as a \textbf{\textit{vector}}.
 
-\section*{1.13 Definition: \textit{addition} in $\mathbf{F}^n$}
+% ------------------------------
+\section{1.13 Definition: \textit{addition} in $\mathbf{F}^n$}
+% ------------------------------
 
 Given
 
@@ -337,8 +366,10 @@ $-x \in \mathbf{F}^n$ such that
 
 In other words, if $x = (x_1, ..., x_n)$, then $-x = (-x_1, ..., -x_n)$.
 
-\section*{1.14 Definition:\
+% ------------------------------
+\section{1.14 Definition:\
   \textbf{\textit{scalar multiplication}} in $\mathbf{F}^n$}
+% ------------------------------
 
 For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
 
@@ -346,7 +377,9 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
   \lambda(x_1, ..., x_n) = (\lambda x_1, ..., \lambda x_n)
 \]
 
-\section*{1.18 Definition: \it{addition}, \it{scalar multiplication}}
+% ------------------------------
+\section{1.18 Definition: \it{addition}, \it{scalar multiplication}}
+% ------------------------------
 
 \begin{itemize}
   \item An \textbf{\textit{addition}} on a set $V$ is a function that assigns
@@ -356,7 +389,9 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
     and each $v \in V$.
 \end{itemize}
 
-\section*{1.19 Definition: \textbf{\textit{vector space}}}
+% ------------------------------
+\section{1.19 Definition: \textbf{\textit{vector space}}}
+% ------------------------------
 
 A \textbf{\textit{vector space}} is a set $V$ along with an \textit{addition}
 on $V$ and a \textit{scalar multiplication} on $V$ such that the following
@@ -390,7 +425,9 @@ $v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
   \item $(a + b)v = av + bv$
 \end{itemize}
 
-\section*{Properties 1.25 - 1.31}
+% ------------------------------
+\section{Properties 1.25 - 1.31}
+% ------------------------------
 
 \begin{itemize}
   \item 1.25: Unique additive identity: A vector space has a unique additive
@@ -409,12 +446,16 @@ $v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
   \item 1.31 The number $-1$ times a vector: $(-1)v = -v$ for every $v \in V$.
 \end{itemize}
 
-\section*{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
+% ------------------------------
+\section{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
+% ------------------------------
 
 Elements of a vector space are called \textbf{\textit{vector}} or
 \textbf{\textit{point}}.
 
-\section*{My understanding of vector space}
+% ------------------------------
+\section{My understanding of vector space}
+% ------------------------------
 
 \begin{itemize}
   \item Essentially, ``addition'' of two vectors is to connect the tail of the
@@ -433,7 +474,9 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     are called \textit{vector spaces}.
 \end{itemize}
 
-\section*{1.23 Notation $\mathbf{F}^S$}
+% ------------------------------
+\section{1.23 Notation $F^S$}
+% ------------------------------
 
 \begin{itemize}
   \item If $S$ is a set, then $\mathbf{F}^S$ denotes the set of
@@ -448,9 +491,29 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     for all $x \in S$.
 \end{itemize}
 
-\section*{My understanding of $\mathbf{F}^S$}
+% ------------------------------
+\section{1.24 Example $\mathbf{F}^S$ is a vector space}
+% ------------------------------
 
 \begin{itemize}
+  \item If $S$ is a \textbf{nonempty set}, then $\mathbf{F}^S$ (with the
+   operations of addition and scalar multiplication as defined in section 1.23)
+   is a vector space over $\mathbf{F}$.
+  \item The additive identity of $\mathbf{F}^S$ is the function $0:
+    S \rightarrow \mathbf{F}$ defined by
+      \[ 0(x) = 0 \]
+    for all $x \in S$.
+  \item For $f \in \mathbf{F}^S$, the additive inverse of $f$ is the function
+    $-f: S \rightarrow \mathbf{F}$ defined by
+      \[ (-f)(x) = -f(x) \]
+    for all $x \in S$.
+\end{itemize}
+
+% ------------------------------
+\section{My understanding of $\mathbf{F}^S$} \label{F^S understanding}
+% ------------------------------
+
+\begin{enumerate}
   \item Note that the elements in $\mathbf{F}^S$ are \textbf{functions}.
     According to the definition of $\mathbf{F}^S$, the only condition these
     functions must satisfy is they map from $S$ to $\mathbf{F}$.
@@ -460,6 +523,26 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     fact, it's possible that all the element in $S$ are just mapped to one
     element in $\mathbf{F}$. Again, the point is the mapping itself does not
     matter, as long as the mapping is from $S$ to $\mathbf{F}$.
+  \item \label{mapping rules} Because the mapping rule doesn't matter, that
+    means \textbf{all possible mappings} (i.e., all possible functions) from
+    $S$ to $\mathbf{F}$ are included in $\mathbf{F}^S$. For example:
+    \begin{enumerate}
+      \item Function $f_1: x \rightarrow x$ for all $x \in S$
+      \item Function $f_2: x \rightarrow x + 1.339$ for all $x \in S$
+      \item Function $f_3: x \rightarrow 2x^3 + 9\pi$ for all $x \in S$
+      \item Function $f_4: x \rightarrow 1$ for all $x \in S$
+      \item Function $f_5:$
+        \[
+          x \rightarrow \begin{cases}
+            1, & if x = 13.5 \\
+            0,  & if x \neq 13.5 \\
+          \end{cases}
+        \]
+        for all $x \in S$.
+      \item Function $f_6: x \rightarrow 0$ for all $x \in S$
+      \item etc.
+    \end{enumerate}
+    Notice that $f_6$ is the \textbf{additive identity} in $\mathbf{F}$.
   \item The type of elements of $S$ doesn't matter either, according to the
     definition. For example, the elements in $S$ don't have to be numbers. They
     can be shapes like $\{ \clubsuit, \diamondsuit, \heartsuit, \spadesuit \}$.
@@ -478,9 +561,11 @@ Elements of a vector space are called \textbf{\textit{vector}} or
         used to denote two different functions, just in the same way that $f$
         and $g$ can denote different functions.
     \end{itemize}
-\end{itemize}
+\end{enumerate}
 
-\section*{Review Question Answers}
+% ------------------------------
+\section{Review Question Answers}
+% ------------------------------
 
 \begin{enumerate}
   \item See definition 1.19 in the textbook.
@@ -499,7 +584,8 @@ Elements of a vector space are called \textbf{\textit{vector}} or
   \item See definition 1.23 in the textbook.
   \item $S$ stands for the set of the variable (i.e., the input parameter). An
     element in $\mathbf{F}^S$ is a function that maps from $S$ to $\mathbf{F}$.
-  \item Because the scalar multiplication in section 1.17 is only defined for
+  \item See the section \ref{F^S understanding}, item \ref{mapping rules}.
+    \item Because the scalar multiplication in section 1.17 is only defined for
     $\mathbf{F}^n$, but the property ``1.29 The number 0 times a vector'' is a
     general property in any vector space $V$ which does not have to be
     $\mathbf{F}^n$. When $V$ is not $\mathbf{F}^n$, the scalar multiplication
@@ -513,7 +599,9 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     mentioned in the three conditions.
  \end{enumerate}
 
-\section*{Progress tracker}
+% ------------------------------
+\section{Progress tracker}
+% ------------------------------
 
 As of 2023-02-21, I'm on page 10: Digression on Fields
 
