@@ -426,6 +426,51 @@ $v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
 \end{itemize}
 
 % ------------------------------
+\section{What do communtativity and associativity mean for additions on vector
+  spaces?}
+% ------------------------------
+
+The \textbf{additions} a vector space $V$ has the properties of communtativity
+and associativity. What that means essentially is, for $u, v, w \in V$, one can
+calculate the the \textbf{addition} of $u, v, w$ in \textbf{any order} with
+\textbf{any association}. In other words, all the following calculations are
+equal:
+
+\begin{itemize}
+  \item $u + v + w$
+  \item $u + w + v$
+  \item $u + (v + w)$
+  \item $v + u + w$
+  \item $v + (u + w)$
+  \item $w + v + u$
+  \item etc.
+\end{itemize}
+
+It's easy to prove that. But to prove it, we need to explicitly mention a rule:
+\[ u + v + w = (u + v) + w \]
+
+Namely, $u + v$ is just a simpler form of writing $(u + v)$ because there is no
+ambiguity in the order of calculation. With that said, we have:
+
+\begin{equation*}
+  \begin{split}
+    u + v + w &= (u + v) + w \\
+              &= u + (v + w) \\
+              &= u + (w + v) \\
+              &= (u + w) + v = u + w + v \\
+              &= (w + u) + v \\
+              &= w + (u + v) \\
+              &= w + (v + u) \\
+              &= (w + v) + u \\
+              &= w + v + u \\
+              &= \ldots 
+  \end{split}
+\end{equation*}
+
+The trick is to use the \textbf{communtativity} and \textbf{associativity}
+repeatedly.
+
+% ------------------------------
 \section{Properties 1.25 - 1.31}
 % ------------------------------
 
@@ -603,7 +648,9 @@ Elements of a vector space are called \textbf{\textit{vector}} or
 \section{Progress tracker}
 % ------------------------------
 
-As of 2023-02-21, I'm on page 10: Digression on Fields
+As of 2023-04-25, I'm on page 20: \textit{1.39 Sum of subspaces is the smallest
+containing subspace}. In the next study session, I need to prove it because the
+textbook doesn't provide the full proof.
 
 \chapter*{References}
 \addcontentsline{toc}{chapter}{References}

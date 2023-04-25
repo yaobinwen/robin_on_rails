@@ -57,3 +57,9 @@ This document records down my study activities for future reflection. The notes,
 
 1. Studied _1.35 Examples subspaces_ (a) and (b) (and then realized I needed to review more fundamental mathematical knowledge such as the meaning of "continuous real-valued functions" and "differentiable real-valued functions".)
 2. When studying the example (b), I realized I didn't fully understand the definition of _1.23 Notation F^S_ so also reviewed that.
+
+## 2023-04-25 (Tue)
+
+07:02 ~ 08:41 (1h39m)
+
+1. I studied the subject _Sums of Subspaces_. When I tried to prove _1.39 Sum of subspaces is the smallest containing subspace_, I went back to the definition of vector spaces to enhance my understanding of the implication of the commutativity and asscociativity on vector spaces.
