@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
 \usepackage{hyperref}
+\usepackage{csquotes}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -607,6 +608,175 @@ Elements of a vector space are called \textbf{\textit{vector}} or
         and $g$ can denote different functions.
     \end{itemize}
 \end{enumerate}
+
+% ------------------------------
+\section{1.32 Definition \textit{subspace}}
+% ------------------------------
+
+A subset $U$ of $V$ is called a \textbf{\textit{subspace}} of $V$ if $U$ is
+also a vector space (using the same addition and scalar multiplication as on
+$V$).
+
+% ------------------------------
+\section{1.34 Conditions for a subspace}
+% ------------------------------
+
+A subset $U$ of $V$ is a subspace of $V$ \textbf{if and only if} $U$ satisfies
+the following three conditions:
+
+\begin{itemize}
+  \item \textbf{additive identity}: $0 \in U$
+  \item \textbf{closed under addition}: $u, w \in U$ implies $u + w \in U$.
+  \item \textbf{closed under scalar multiplication}: $\lambda \in \mathbf{F}$
+    and $u \in U$ implies $\lambda u \in U$.
+\end{itemize}
+
+% ------------------------------
+\section{1.36 Definition \textbf{\textit{sum of subsets}}}
+% ------------------------------
+
+\textbf{NOTE}: This definition is about \textbf{\textit{subsets}}, not
+subspaces.
+
+Suppose $U_1, \ldots, U_m$ are \textbf{subsets} of $V$. The \textbf{sum} of
+$U_1, \ldots, U_m$, denoted $U_1 + \ldots + U_m$, is the set of \textbf{all
+possible} sums of elements of $U_1, \ldots, U_m$. More precisely,
+
+\[
+U_1 + \ldots + U_m = \{ u_1 + \ldots + u_m: u_1 \in U_1, \ldots, u_m \in U_m \}
+\]
+
+% ------------------------------
+\section{1.39 Sum of subspaces is the smallest containing subspace}
+% ------------------------------
+
+Suppose $U_1, \ldots, U_m$ are subspaces of $V$. Then $U_1 + \ldots + U_m$ is
+the \textit{smallest subspace} of $V$ containing $U_1, \ldots, U_m$.
+
+Proof: The proof consists of a few parts.
+
+Part 1: Prove that $U_1 + \ldots + U_m$ is a subspace of $V$.
+
+Firstly, let's prove that the additive identity $0 \in U_1 + \ldots + U_m$.
+Because $U_1, \ldots, U_m$ are subspaces of $V$, according to the conditions of
+subspaces, we know that the additive identity $0$ of $V$ must be in all of
+$U_1, \ldots, U_m$. In other words:
+
+\begin{align*}
+      0 & \in U_1 \\
+      0 & \in U_2 \\
+        & \ldots \\
+  + \ 0 & \in U_m \\
+  = \ 0 & \in U_1 + U_2 + \ldots + U_m
+\end{align*}
+
+So we can see that additive identity $0 \in U_1 + \ldots + U_m$.
+
+Secondly, let's prove that addition is closed under $U_1 + \ldots + U_m$. Let's
+use $W$ to denote $U_1 + \ldots + U_m$, and the two elements $w_1, w_2 \in W$
+can be denoted as follows:
+
+\[
+  w_1 = u_{11} + \ldots + u_{m1}, u_{11} \in U_1, \ldots, u_{m1} \in U_m
+\]
+
+and
+
+\[
+  w_2 = u_{12} + \ldots + u_{m2}, u_{12} \in U_1, \ldots, u_{m2} \in U_m
+\]
+
+So $w_1 + w_2 = (u_{11} + \ldots + u_{m1}) + (u_{12} + \ldots + u_{m2})$.
+
+Because $u_{11}, \ldots, u_{m1}, u_{12}, \ldots, u_{m2} \in V$, the addition of
+these elements can be performed in any order with any association. Therefore:
+
+\begin{align*}
+  w_1 + w_2 & = (u_{11} + \ldots + u_{m1}) + (u_{12} + \ldots + u_{m2}) \\
+            & = u_{11} + \ldots + u_{m1} + u_{12} + \ldots + u_{m2} \\
+            & = (u_{11} + u_{12}) + \ldots + (u_{m1} + u_{m2})
+\end{align*}
+
+Because $u_{11}, u_{12} \in U_1$ and $U_1$ is a subspace, that means $u_{11} +
+u_{12} \in U_1$. The same can be applied to $u_{i1}, u_{i2}$ so we know
+$u_{i1} + u_{i2} \in U_i$ where $1 \leq i \leq m$.
+
+Therefore, we can tell that $w_1 + w_2$ is the sum of $u_i \in U_i$ where
+$1 \leq i \leq m$, so $w_1 + w_2 \in U_1 + \ldots + U_m$. So addition is closed
+under $U_1 + \ldots + U_m$.
+
+Thirdly, let's prove that scalar multiplication is closed under $U_1 + \ldots +
+U_m$ using the denotation above. For $\lambda \in \mathbf{F}$, we have
+
+\[
+  \lambda w_1 = \lambda (u_{11} + \ldots + u_{m1})
+\]
+
+Because $u_{11}, \ldots, u_{m1} \in V$, the distributive property holds, so
+
+\begin{align*}
+  \lambda w_1 & = \lambda (u_{11} + \ldots + u_{m1}) \\
+              & = \lambda u_{11} + \ldots + \lambda u_{m1}
+\end{align*}
+
+Because $u_{11} \in U_1$ and $U_1$ is a subspace, that means $\lambda u_{11}
+\in U_1$ because of the closure on scalar multiplication. The same can be
+applied to $\lambda u_{i1}$ so we know $\lambda u_{i1} \in U_i$ where $1 \leq i
+\leq m$.
+
+Therefore, we can tell that $\lambda w_1$ is the sum of $\lambda u_{i1}$ where
+$1 \leq i \leq m$, so $\lambda w_1 \in U_1 + \ldots + U_m$. So scalar
+multiplication is closed under $U_1 + \ldots + U_m$.
+
+Part 2: Prove that $U_1 + \ldots + U_m$ is the \textit{smallest} subspace of
+$V$ containing $U_1, \ldots, U_m$.
+
+Firstly, the textbook proves that $U_1, \ldots, U_m$ are all contained in
+$U_1 + \ldots + U_m$. The textbook says:
+
+\begin{displayquote}
+  to see this, consider sums $u_1 + \ldots + u_m$ where all except one of the
+  $u$'s are 0.
+\end{displayquote}
+
+What the textbook means is: Consider the sums $u_1 + u_2 + \ldots + u_m$ where
+$u_2, \ldots, u_m$ are all the additive identity $0$. As a result, $u_1$ plus a
+$m-1$ number of $0$ still produce $u_1$. Because $u_1$ means any arbitrary
+element in $U_1$, that means $u_1 + u_2 + \ldots + u_m$ is essentially any
+arbitrary element in $U_1$, so all the possible selection of $u_1$ will result
+in the entire set $U_1$, which means the set $U_1$ is contained in $U_1 +
+\ldots + U_m$. Then we can apply the same process to $u_i$ where $2 \leq i \leq
+m$ to prove that the set $U_i$ is contained in $U_1 + \ldots + U_m$ where $2
+\leq i \leq m$. Therefore, we can prove that $U_1, \ldots, U_m$ are all
+contained in $U_1 + \ldots + U_m$.
+
+Secondly, the textbook proves that every subspace of $V$ containing $U_1,
+\ldots, U_m$ also contains $U_1 + \ldots + U_m$. The textbook says:
+
+\begin{displayquote}
+  ...because subspaces must contain all finite sums of their elements
+\end{displayquote}
+
+What the textbook means is: Now we are considering a subspace of $V$ that
+must contain $U_1, \ldots, U_m$. Let's denote this subspace with $U$. Because
+$U$ is a subspace, it must be closed under addition, which means $\forall u, w
+\in U$, we have $u + w \in U$. Because $U_1$ and $U_2$ are contained in $U$,
+$u_1 \in U_1 \Rightarrow u_1 \in U$, and $u_2 \in U_1 \Rightarrow u_2 \in U$,
+therefore, $u_1 + u_2 \in U$. Let's denote $u_1 + u_2$ as $w_{u_1+u_2}$, so we
+have $w_{u_1+u_2} \in U$. Now, because $U_3$ is contained in $U$, $\forall u_3
+\in U_3 \Rightarrow u_3 \in U$. Therefore, $w_{u_1+u_2} + u_3 \in U \Rightarrow
+(u_1 + u_2) + u_3 \in U \Rightarrow u_1 + u_2 + u_3 \in U$. We can apply the
+same process for $u_i$ where $4 \leq i \leq m$. Once we get to $m$, we have
+$u_1 + u_2 + \ldots + u_m \in U$. This means $\forall u_1 + u_2 + \ldots + u_m
+\in U$, so we know $U_1 + \ldots + U_m \subseteq U$. In other words, every
+subspace of $V$ containing $U_1, \ldots, U_m$ also contains $U_1 + \ldots +
+U_m$. In other words, if a subset of $V$ does not contain $U_1 + \ldots + U_m$,
+it can't be a subspace of $V$ containing $U_1, \ldots, U_m$. Therefore, any
+subset $W \subset U_1 + \ldots + U_m$ is not such a subspace. The smallest
+subset of $V$ that contains $U_1 + \ldots + U_m$ is $U_1 + \ldots + U_m$
+itself. Because $U_1 + \ldots + U_m$ is also a subspace of $V$ containing $U_1,
+\ldots, U_m$, we know $U_1 + \ldots + U_m$ is the \textit{smallest subspace} of
+$V$ containing $U_1, \ldots, U_m$.
 
 % ------------------------------
 \section{Review Question Answers}

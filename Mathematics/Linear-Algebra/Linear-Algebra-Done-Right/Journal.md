@@ -63,3 +63,10 @@ This document records down my study activities for future reflection. The notes,
 07:02 ~ 08:41 (1h39m)
 
 1. I studied the subject _Sums of Subspaces_. When I tried to prove _1.39 Sum of subspaces is the smallest containing subspace_, I went back to the definition of vector spaces to enhance my understanding of the implication of the commutativity and asscociativity on vector spaces.
+
+## 2023-04-26 (Wed)
+
+07:36 ~ 09:03 (1h27m)
+
+1. I caught up with the notes.
+2. I worked on the detailed proof of _1.39 Sum of subspaces is the smallest containing subspace_ (because the textbook doesn't show the details).
