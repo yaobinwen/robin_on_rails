@@ -102,6 +102,9 @@ vector spaces.
     it a subspace of $V$?
   \item Among all the conditions that $U$ must satisfy, what about the
     multiplicative identity $1$?
+  \item What is the sum of subsets?
+  \item What is a direct sum?
+  \item How is direct sum different from sum of subsets?
 \end{enumerate}
 
 % ------------------------------
@@ -779,6 +782,32 @@ itself. Because $U_1 + \ldots + U_m$ is also a subspace of $V$ containing $U_1,
 $V$ containing $U_1, \ldots, U_m$.
 
 % ------------------------------
+\section{1.40 Definition \textbf{\textit{direct sum}}}
+% ------------------------------
+
+Suppose $U_1, \ldots, U_m$ are subspaces of $V$:
+\begin{itemize}
+  \item The sum $U_1 + \ldots + U_m$ is called a \textbf{\textit{direct sum}}
+    if each element of $U_1 + \ldots + U_m$ can be written in \textbf{only one
+    way} as a sum $u_1 + \ldots + u_m$, where each $u_j$ is in $U_j$.
+  \item If $U_1 + \ldots + U_m$ is a direct sum, then $U_1 \oplus \ldots \oplus
+    U_m$ denotes $U_1 + \ldots + U_m$, with the $\oplus$ notation serving as an
+    indication that this is a direct sum.
+\end{itemize}
+
+Example: Suppose $U$ is the subpsace of $\mathbf{F}^3$ of those vectors whose
+last coordinate equals $0$, and $W$ is the subspace of $\mathbf{F}^3$ of those
+vectors whose first two coordinates equal $0$:
+\[
+  U = {(x, y, 0) \in \mathbf{F}^3: x, y \in \mathbf{F}}
+\]
+and
+\[
+  W = {(0, 0, z) \in \mathbf{F}^3: x, y \in \mathbf{F}}
+\]
+Then $\mathbf{F}^3 = U \oplus W$.
+
+% ------------------------------
 \section{Review Question Answers}
 % ------------------------------
 
@@ -812,7 +841,14 @@ $V$ containing $U_1, \ldots, U_m$.
     set $\mathbf{F}$ (which is implied in the textbook due to notation 1.28),
     so the multiplicative identity has nothing to do with $U$, so it is not
     mentioned in the three conditions.
- \end{enumerate}
+  \item See section 1.36 in the textbook.
+  \item See section 1.40 in the textbook.
+  \item A direct sum denotes a special case of sum of subsets. In regular sums
+    of subsets, an element in $U_1 + \ldots + U_m$ may have one or more
+    possible ways to add the elements from $U_1, \ldots, U_m$. But in direct
+    sums, an element in $U_1 + \ldots + U_m$ has exactly one way to add the
+    elements from $U_1, \ldots, U_m$.
+\end{enumerate}
 
 % ------------------------------
 \section{Progress tracker}

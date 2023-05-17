@@ -70,3 +70,10 @@ This document records down my study activities for future reflection. The notes,
 
 1. I caught up with the notes.
 2. I worked on the detailed proof of _1.39 Sum of subspaces is the smallest containing subspace_ (because the textbook doesn't show the details).
+
+## 2023-05-16 (Tue)
+
+07:13 ~ 08:00 (47m), 21:15 ~ 21:55 (40m)
+
+1. After not studying linear algebra for almost 3 weeks, I reviewed the concept of sums of subsets and direct sums.
+2. Made notes.
