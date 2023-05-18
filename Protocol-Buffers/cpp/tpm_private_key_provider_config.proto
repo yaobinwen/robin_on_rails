@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package ywen;
+
+message TPMPrivateKeyProviderConfig {
+  string idkey_file = 1;
+  string idkey_auth_type = 2;
+  string idkey_auth = 3;
+  string srk_auth_type = 4;
+  string srk_auth = 5;
+}

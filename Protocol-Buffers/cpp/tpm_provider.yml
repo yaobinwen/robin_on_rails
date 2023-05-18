@@ -1,0 +1,8 @@
+providerName: tpm_provider_ywen
+typedConfig:
+  "@type": type.googleapis.com/ywen.TPMPrivateKeyProviderConfig
+  idkey_file: aaa
+  idkey_auth_type: bbb
+  idkey_auth: ccc
+  srk_auth_type: ddd
+  srk_auth: eee

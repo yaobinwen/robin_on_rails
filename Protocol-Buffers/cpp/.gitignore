@@ -1,0 +1,11 @@
+# The executable
+*.out
+
+# protobuf outputs
+*.pb.*
+
+# Object files
+*.o
+
+# The output JSON file.
+tpm_provider_output.json
