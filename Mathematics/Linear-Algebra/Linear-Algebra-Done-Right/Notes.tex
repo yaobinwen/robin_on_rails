@@ -795,7 +795,7 @@ Suppose $U_1, \ldots, U_m$ are subspaces of $V$:
     indication that this is a direct sum.
 \end{itemize}
 
-Example: Suppose $U$ is the subpsace of $\mathbf{F}^3$ of those vectors whose
+Example 1.41: Suppose $U$ is the subpsace of $\mathbf{F}^3$ of those vectors whose
 last coordinate equals $0$, and $W$ is the subspace of $\mathbf{F}^3$ of those
 vectors whose first two coordinates equal $0$:
 \[
@@ -806,6 +806,124 @@ and
   W = {(0, 0, z) \in \mathbf{F}^3: x, y \in \mathbf{F}}
 \]
 Then $\mathbf{F}^3 = U \oplus W$.
+
+Proof: Suppose any element $(x, y, z)$ in $U+W$ can be expressed in two ways:
+\begin{enumerate}
+  \item $(x, y, z) = (x_1, y_1, 0) + (0, 0, z_1) = (x_1 + 0, y_1 + 0, 0 + z_1)$
+  \item $(x, y, z) = (x_2, y_2, 0) + (0, 0, z_2) = (x_2 + 0, y_2 + 0, 0 + z_2)$
+\end{enumerate}
+
+So we have:
+\begin{enumerate}
+  \item $x_1 + 0 = x = x_2 + 0 \Rightarrow x_1 = x_2$
+  \item $y_1 + 0 = y = y_2 + 0 \Rightarrow y_1 = y_2$
+  \item $z_1 + 0 = z = z_2 + 0 \Rightarrow z_1 = z_2$
+\end{enumerate}
+
+Therefore, $(x, y, z)$ has only one way to be expressed, so $U+W$ is a direct
+sum and can be denoted as $U \oplus W$.
+
+% ------------------------------
+\section{Example 1.43: A question}
+% ------------------------------
+
+See the textbook for the example description and proof.
+
+The point of this example is to show that $U_1 + U_2 + U_3$ is not a direct
+sum. According to the definition of direct sum, a direct sum is defined on the
+subspaces within a certain vector space $V$. However, the defintion does not
+say that the direct sum of the subspaces must be equal to the entire vector
+space $V$.
+
+Therefore, I was confused by the proof of this example that's provided by the
+textbook, because the paragraph after ``However'' seems to change the question
+from proving that $U_1 + U_2 + U_3$ is not a direct sum to that
+``$\mathbf{F}^3$ does not equal the direct sum of $U_1, U_2, U_3$.''
+
+If we want to prove that $U_1 + U_2 + U_3$ is not a direct sum, we only need to
+find one counter-example, which the proof already suggests: For any element
+$(x, y, z)$ in $U_1 + U_2 + U_3$, we can find at least two expressions:
+
+\begin{enumerate}
+  \item $(x, y, z) = (x, y, 0) + (0, 0, z) + (0, 0, 0)$, and
+  \item $(x, y, z) = (x, y + 1, 0) + (0, 0, z + 1) + (0, -1, -1)$
+\end{enumerate}
+
+This proves that there is no unique way to write the sum, so $U_1 + U_2 + U_3$
+is not a direct sum.
+
+% ------------------------------
+\section{1.44 Condition for a direct sum}
+% ------------------------------
+
+Suppose $U_1, \ldots, U_m$ are subspaces of $V$. Then $U_1 + \ldots + U_m$ is a
+direct sum \textbf{if and only if} the only way to write $0$ as a sum $u_1 +
+\ldots + u_m$, where each $u_j$ is in $U_j$, is by taking each $u_j$ equal to 0.
+
+A note about the proof: While studying the proof, when I saw the following
+expressions:
+
+\begin{itemize}
+  \item $v = u_1 + \ldots + u_m$, and
+  \item $v = v_1 + \ldots + v_m$
+\end{itemize}
+
+I started to think about the similar expressions in integers like (which caused
+confusion to me):
+
+\begin{itemize}
+  \item $2 = 0 + 2$
+  \item $2 = 2 + 0$
+\end{itemize}
+
+When I read the proof step ``Substracting these two equations'', I thought:
+``What if I change the order of the elements and then substract the elements in
+the changed order? This is addition, so I can change the order of them, right?
+Think about the example of $2 = 0 + 2 = 2 + 0$. If I do $0 - 2$ and $2 - 0$, I
+will get $(-2) + (2)$ which is still $0$, but I can't prove that $0$ and $2$
+are euqal.''
+
+This surely looks rediculous, but it took me a little while to realize my
+mistake: The example $2 = 0 + 2 = 2 + 0$ is not appropriate. In this example,
+the additive operands $0$ and $2$ both belong to the same set $\mathbf{N}$.
+Therefore, they can be added and subtracted. However, in the case of $u_1 +
+\ldots + u_m$ and $v_1 + \ldots + v_m$, only $u_1$ and $v_1$ belong to the same
+set $U_1$. $u_1$ and $v_2$ belong to different sets. As a result, although we
+can change the order of addition:
+
+\begin{itemize}
+  \item $v = u_1 + \ldots + u_m$, and
+  \item $v = v_m + \ldots + v_1$
+\end{itemize}
+
+we can't subtract $v_m$ from $u_1$ because they belong to different sets. In
+other words, to make the subtraction work, we have to subtract $v_1$ from $u_1$,
+$\ldots$, $v_m$ from $u_m$. This is why $2 - 2$ can result in at least two
+forms (there can be more): $(0 + 2) - (2 + 0) = (-2 + 2)$ and $(0 + 2) -
+(0 + 2) = (0 + 0)$. But $v - v$ will surely result in exactly one form that is
+mentioned in the textbook:
+
+\[
+  0 = (u_1 - v_1) + \ldots + (u_m - v_m)
+\]
+
+% ------------------------------
+\section{1.45 Direct sum of \textbf{\textit{two}} subspaces}
+% ------------------------------
+
+Suppose $U$ and $W$ are subspaces of $V$. Then $U + W$ is a direct sum
+\textbf{if and only if} $U \cap W = {0}$.
+
+\textbf{NOTE}: This is only applicable to \textbf{\textit{exactly two}}
+subspaces, as the last paragraph in the textbook says:
+
+\begin{displayquote}
+  The result above deals only with the case of two subspaces. When asking about
+  a possible direct sum with more than two subspaces, it is \textbf{not enough}
+  to test that each pair of the subspaces intersect only at 0. To see this,
+  consider Example 1.43. In that nonexample of a direct sum, we have $U_1 \cap
+  U_2 = U_1 \cap U_3 = U_2 \cap U_3 = {0}.$
+\end{displayquote}
 
 % ------------------------------
 \section{Review Question Answers}

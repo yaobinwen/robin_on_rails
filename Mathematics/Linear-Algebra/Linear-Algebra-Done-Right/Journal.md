@@ -77,3 +77,21 @@ This document records down my study activities for future reflection. The notes,
 
 1. After not studying linear algebra for almost 3 weeks, I reviewed the concept of sums of subsets and direct sums.
 2. Made notes.
+
+## 2023-05-17 (Wed)
+
+08:30 ~ 09:19 (48m)
+
+1. Studied direct sum.
+
+## 2023-05-18 (Thu)
+
+07:43 ~ 08:52 (1h8m)
+
+1. Studied direct sum.
+
+## 2023-05-19 (Fri)
+
+11:00 ~ 13:07 (2h7m)
+
+1. Made notes about direct sum.
