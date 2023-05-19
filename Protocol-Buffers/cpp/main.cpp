@@ -50,7 +50,11 @@ void readFile(string const &fpath) {
     tls::v3::PrivateKeyProvider provider;
 
     // See https://protobuf.dev/reference/cpp/api-docs/google.protobuf.util.json_util/
-    util::JsonStringToMessage(oss.str(), &provider);
+    util::Status ret = util::JsonStringToMessage(oss.str(), &provider);
+
+    // NOTE(ywen): `ret` contains a message that describes the error. Printing
+    // it out can help with debugging.
+    cout << "JsonStringToMessage return value: " << ret << endl;
 
     const ::google::protobuf::Any & any = provider.typed_config();
 

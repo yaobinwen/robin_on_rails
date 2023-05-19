@@ -1,0 +1,13 @@
+{
+  "providerName": "tpm_provider_ywen",
+  "typedConfig": {
+    "@type": "type.googleapis.com/google.protobuf.Struct",
+    "value": {
+      "idkeyFile": "aaa",
+      "idkeyAuthType": "bbb",
+      "idkeyAuth": "ccc",
+      "srkAuthType": "ddd",
+      "srkAuth": "eee"
+    }
+  }
+}
