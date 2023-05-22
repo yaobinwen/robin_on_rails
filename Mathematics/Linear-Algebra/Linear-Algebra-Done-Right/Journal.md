@@ -95,3 +95,9 @@ This document records down my study activities for future reflection. The notes,
 11:00 ~ 13:07 (2h7m)
 
 1. Made notes about direct sum.
+
+## 2023-05-21 (Sun)
+
+20:43 ~ 21:35 (51m)
+
+1. Studied Section 2.A: _Linear Combinations and Span_.
