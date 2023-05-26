@@ -101,3 +101,9 @@ This document records down my study activities for future reflection. The notes,
 20:43 ~ 21:35 (51m)
 
 1. Studied Section 2.A: _Linear Combinations and Span_.
+
+## 2023-05-26 (Fri)
+
+14:22 ~ 15:36 (1h13m)
+
+1. Studied the sections from 2.10 finite-dimensional vector space to 2.15 infinite-dimensional vector space. But I still need to do more exercises to solidify my understanding.

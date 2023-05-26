@@ -1097,8 +1097,95 @@ is still in the span of $v_1, \ldots, v_m$. Therefore, we can reach the
 conclusion that $span(v_1, \ldots, v_m)$ is closed under scalar multiplication.
 
 % ------------------------------
+\section{2.8 Definition \textbf{\textit{spans}} (as a verb)}
+% ------------------------------
+
+If $span(v_1, \ldots, v_m)$ equals $V$, we say that $v_1, \ldots, v_m$ \textbf{
+\textit{spans}} $V$.
+
+Example: The following vectors
+
+\[
+  (1, 0, \ldots, 0), (1, 0, \ldots, 0), (0, \ldots, 0, 1)
+\]
+
+spans $\mathbf{F}^n$.
+
+% ------------------------------
+\section{2.10 Definition \textbf{\textit{finite-dimensional vector space}}}
+% ------------------------------
+
+A vector space is called \textbf{\textit{finite-dimensional}} if some list of
+vectors in it spans the space.
+
+Pay close attention to the wording:
+
+\begin{enumerate}
+  \item The use of ``some list ...'' instead of ``some lists ...'' means:
+  \begin{enumerate}
+    \item It is just one list.
+    \item As long as such a list exists, the definition holds.
+  \end{enumerate}
+  \item A \textit{list}, by definition, has finite length.
+  \item This is a list of \textit{vectors}.
+\end{enumerate}
+
+% ------------------------------
+\section{2.11 Definition \textbf{\textit{polynomial}}, $\mathcal{P}(\mathbf{F})$}
+% ------------------------------
+
+\begin{itemize}
+  \item A function $p: \mathbf{F} \rightarrow \mathbf{F}$ is called a \textbf{
+    \textit{polynomial}} with coefficients in $\mathbf{F}$ if there exist $a_0,
+    \ldots, a_m \in \mathbf{F}$ such that
+    \[
+      p(z) = a_0 + a_{1}z + a_{2}z^2 + \dots + a_{m}z^m
+    \]
+    for all $z \in \mathbf{F}$.
+  \item $\mathcal{P}(\mathbf{F})$ is the set of all polynomials with
+    coefficients in $\mathbf{F}$.
+\end{itemize}
+
+% ------------------------------
+\section{2.12 Definition \textbf{\textit{degree of a polynomial}}, deg $p$}
+% ------------------------------
+
+\begin{itemize}
+  \item A polynomial $p \in \mathcal{P}(\mathbf{F})$ is said to have \textbf{
+    \textit{degree}} $m$ if there exist scalars $a_0, a_1, \ldots, a_m \in
+    \mathbf{F}$ with $a_m \neq 0$ such that
+    \[
+      p(z) = a_0 + a_{1}z + \dots + a_{m}z^m
+    \]
+    for all $z \in \mathbf{F}$. If $p$ has degree $m$, we write deg $p$ = $m$.
+  \item The polynomial that is identically 0 is said to have degree $-\infty$.
+\end{itemize}
+
+We define the degree of the polynomial $0$ as $-\infty$ because we want to use
+the convention that $-\infty < m$ in the definition of $\mathcal{P}_m(\mathbf{
+F})$ in order to include the polynomial $0$ into it.
+
+% ------------------------------
+\section{2.13 Definition $\mathcal{P}_m(\mathbf{F})$}
+% ------------------------------
+
+For $m$ a nonnegative integer, $\mathcal{P}_m(\mathbf{F})$ denotes the set of
+all polynomials with coefficients in $\mathbf{F}$ and degree at most $m$.
+
+% ------------------------------
+\section{2.15 Definition \textbf{\textit{infinite-dimensional vector space}}}
+% ------------------------------
+
+A vector space is called \textbf{\textit{infinite-dimensional}} if it is not
+finite-dimensional.
+
+Example: $\mathcal{P}(\mathbf{F})$ is infinite-dimensional.
+
+% ------------------------------
 \section{Review Question Answers}
 % ------------------------------
+
+(TODO)
 
 % ------------------------------
 \section{Progress tracker}
