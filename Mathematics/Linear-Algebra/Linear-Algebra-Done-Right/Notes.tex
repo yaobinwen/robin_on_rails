@@ -1029,6 +1029,74 @@ Examples:
 \end{itemize}
 
 % ------------------------------
+\section{Definition \textbf{\textit{span}}}
+% ------------------------------
+
+The set of all linear combinations of a list of vectors $v_1, \ldots, v_m$ in
+$V$ is called the \textbf{\textit{span}} of $v_1, \ldots, v_m$, denoted
+$span(v_1, \ldots, v_m)$. In other words,
+
+\[
+  span(v_1, \ldots, v_m) = {a_1v_1 + \ldots + a_mv_m: a_1, \ldots, a_m \in
+  \mathbf{F}}
+\]
+
+Examples:
+
+\begin{itemize}
+  \item $(17, -4, 2) \in span\bigl((2, 1, -3), (1, -2, 4)\bigr)$
+  \item $(17, -4, 5)$ is not a linear combination of $(2, 1, -3)$ and
+    $(1, -2, 4)$ because there do not exist numbers $a_1, a_2 \in \mathbf{F}$
+    such that $(17, -4, 2) = a_1 \cdot (2, 1, -3) + a_2 \cdot (1, -2, 4)$.
+\end{itemize}
+
+% ------------------------------
+\section{Definition \textbf{\textit{span of empty list}}}
+% ------------------------------
+
+The span of the empty list $()$ is defined to be ${0}$.
+
+% ------------------------------
+\section{Span is the smallest containing subspace}
+% ------------------------------
+
+The span of a list of vectors in $V$ is the smallest subspace of $V$ containing
+all the vectors in the list.
+
+The textbook has provided the proof so I won't repeat it here. I only want to
+explain one step further.
+
+In the proof, the textbook says:
+
+\begin{displayquote}
+  Furthermore, $span(v_1, \ldots, v_m)$ is closed under scalar multiplication,
+  because
+  \[
+    \lambda(a_1v_1 + \dots + a_mv_m) = \lambda a_1v_1 + \dots + \lambda a_mv_m
+  \]
+\end{displayquote}
+
+The proof is correct, but it doesn't clearly show the readers the detailed
+reasoning process. The full process is as follows:
+
+\begin{align}
+  \lambda(a_1v_1 + \dots + a_mv_m)
+    & = \lambda(a_1v_1) + \dots + \lambda (a_mv_m) \\
+    & = (\lambda a_1)v_1 + \dots + (\lambda a_m)v_m
+\end{align}
+
+Remember $v_1, \ldots, v_m$ are all elements in $V$ which is a vector space,
+so the arithmetic operations have the distributive property according to the
+definition of vector space (see 1.19 vector space). Therefore $(2.1)$ holds.
+$(2.2)$ holds because of the associativity on a vector space (see 1.19 vector
+space).
+
+Because $\lambda, a_1, \ldots, a_m \in \mathbf{F}$, their multiplications are
+still in the set $\mathbf{F}$, so $(\lambda a_1)v_1 + \dots + (\lambda a_m)v_m$
+is still in the span of $v_1, \ldots, v_m$. Therefore, we can reach the
+conclusion that $span(v_1, \ldots, v_m)$ is closed under scalar multiplication.
+
+% ------------------------------
 \section{Review Question Answers}
 % ------------------------------
 
