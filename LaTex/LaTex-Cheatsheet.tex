@@ -1,0 +1,49 @@
+\documentclass[12pt, letterpaper, oneside]{article}
+\usepackage{amsmath}
+\usepackage{csquotes}
+
+\begin{document}
+
+\section{Parentheses}
+
+\[\Biggl(\biggl(\Bigl(\bigl((hello)\bigr)\Bigr)\biggr)\Biggr)\]
+
+\[\Biggl[\biggl[\Bigl[\bigl[[hello]\bigr]\Bigr]\biggr]\Biggr]\]
+
+\[\Biggl\{\biggl\{\Bigl\{\bigl\{\{hello\}\bigr\}\Bigr\}\biggr\}\Biggr\}\]
+
+\[
+  \Biggl \langle \biggl \langle \Bigl \langle \bigl \langle
+    \langle
+      hello
+    \rangle
+  \bigr \rangle \Bigr \rangle \biggr \rangle \Biggr \rangle
+\]
+
+\section{Quotation}
+
+This section demonstrates how to display a quote:
+
+\begin{displayquote}
+  This is the quoted part.
+\end{displayquote}
+
+This paragraph is below the quoted part.
+
+\section{Alignment}
+
+\begin{align*}
+  0 & \in U_1 \\
+  0 & \in U_2 \\
+    & \ldots \\
++ \ 0 & \in U_m \\
+= \ 0 & \in U_1 + U_2 + \ldots + U_m
+\end{align*}
+
+\begin{align*}
+  w_1 + w_2 & = (u_{11} + \ldots + u_{m1}) + (u_{12} + \ldots + u_{m2}) \\
+            & = u_{11} + \ldots + u_{m1} + u_{12} + \ldots + u_{m2} \\
+            & = (u_{11} + u_{12}) + \ldots + (u_{m1} + u_{m2})
+\end{align*}
+
+\end{document}
