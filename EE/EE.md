@@ -118,6 +118,81 @@ For my own reference:
 - `J` (joule) is the unit of energy.
 - `W` (watt) is the unit of power (i.e., the rate of energy transfer). Therefore, $1W = 1J/s$.
 
+## 6. Energy band theory in solids
+
+### 6.1 Energy band
+
+In a single isolated atom, the electrons on each orbit have definite energy associated with them. But in solids, because the atoms are close to each other, the energy levels of the **outermost electrons** are affected by the neighboring atoms. (Note that the energy levels of the electrons on the inner orbits are not affected much by the neighboring atoms.)
+
+When two isolated atoms come close to each other, the electrons on the outermost orbit are attracted by the nucleus of the other atom. Some of them can be even shared by the two atoms. Because of this additional force, the energy levels of the electrons on the outermost orbit may not be the same anymore, but could be higher or lower than the original energy level.
+
+Think about two `Cl` atoms. Each atom has 6 valence electrons. When these two atoms are far away enough, the energy level of the 6 valence electrons are the same. When the two atoms get close enough, they share 2 valence electrons to form a covalent bond. The energy level of the two shared electrons may be different from the other 4 electrons.
+
+In other words, the electrons on the same orbit exhibit different energy levels. The grouping of different energy levels is called **energy band**.
+
+Note that an energy band can contain **multiple energy levels** (hence the word "grouping").
+
+### 6.2 Three important energy bands
+
+There are a number of energy bands in solids but three of them are important to understanding the behaviors of solids:
+- Valance band:
+  - This band contains the the energy levels of the **valence electrons**.
+  - The electrons in this band have lower energy than the electrons in the conduction band.
+  - The electrons in this band are (loosely) bound to the atom's nucleus so they are **not free to move**.
+- Conduction band:
+  - This band contains the energy levels of the **free electrons**.
+  - When external energy is applied to the electrons in the valence band, the electrons can jump into the conduction band and become free electrons.
+  - Free electrons can move freely; free movement of electrons produces electricity. In other words, free electrons can conduct electricity, hence the name "conduction band".
+  - Because the electrons in this band received external energy, they have higher energy than the electrons in the valence band.
+  - The electrons in this band are **free to move**, so they are not bound to the atom's nucleus.
+- Forbidden band (i.e., forbidden gap):
+  - The forbidden band separates the valence band and the conduction band.
+  - In solids, electrons cannot stay in the forbidden band because there are no allowed energy levels for the electrons, because electrons can "only take on certain discrete values of energy"(see [_Energy level_](https://en.wikipedia.org/wiki/Energy_level)).
+  - Forbidden band is the major factor to classify solids as _insulators_, _semiconductors_, and _conductors_.
+
+See the following figure ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/images/energy-band-theory-in-solids.png)):
+
+![three energy bands](./EE/energy-band-three.png)
+
+### 6.3 Insulators
+
+The materials that have a large forbidden gap are called **insulators**. See the figure below ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/images/insulator.png)). As a result, under normal conditions, the electrons in the valence band cannot jump into the conduction band. However, when a sufficiently large amount of energy is applied, the valence electrons can still gain enough energy to jump into the conduction band to conduct electricity. This is called [_electrical breakdown_](https://en.wikipedia.org/wiki/Electrical_breakdown).
+
+![energy band insulator](./EE/energy-band-insulator.png)
+
+### 6.4 Conductors
+
+The materials in which the valence band and the conduction band overlap each other are called **conductors**. See the figure below ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/images/conductor.png)). In other words, there is no forbidden gap in conductors. As a result, a small amount of energy is sufficient to turn valence electrons into free electrons. As a result, under normal conditions, the conduction band is almost full of free electrons, hence the conductivity of these materials.
+
+![energy band conductor](./EE/energy-band-conductor.png)
+
+### 6.5 Semiconductors
+
+The materials whose electrical conductivity is between insulators and conductors are called **semiconductors**. See the figure below ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/images/semiconductor.png)). The forbidden gap is small. At low temperature, the valence electrons don't have enough energy to jump into the conduction band, so they are not free to move and behave like insulators. As temperature goes higher, more valence electrons jump into the conduction band and can move freely, so they behave like conductors.
+
+![energy band semiconductor](./EE/energy-band-semiconductor.png)
+
+## 7. Electric current
+
+TODO: Make notes for [Electric current](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/electriccurrent-howelectriccurrentproduced.html)
+
+(I tend to defer the study of this section because it needs the concept of "hole" which is not covered until semiconductor.)
+
+Questions:
+- Why are holes in conductors negligible but must be considered in semiconductors?
+
+## 8. Electron hole
+
+An **electron hole**, or simply called a **hole**, refers to the absence of an electron in a particular place in an atom. Therefore:
+- A hole is not a physical particle in the way that an electron is.
+- A hole is positively charged.
+- Holes can move from atom to atom in semiconductors as electrons leave their positions. Therefore, holes move in the opposite directions as electrons.
+
+See the following figure ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/images/hole.png)).
+
+![hole](./EE/hole.png)
+
+
 ## Other terms
 
 - [Electric field](https://www.physics-and-radio-electronics.com/electromagnetics/electrostatics/electric-field.html)
