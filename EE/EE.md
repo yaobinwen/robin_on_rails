@@ -192,6 +192,68 @@ See the following figure ([original link](https://www.physics-and-radio-electron
 
 ![hole](./EE/hole.png)
 
+## 9. Intrinsic & extrinsic semiconductors
+
+### 9.1 Overview
+
+| Name | Pure? | Aliases | Neutral in charge? | Conductivity | Examples |
+|:----:|:-----:|:-------:|:------------------:|:------------:|:--------:|
+| intrinsic | Yes | undoped; I-type | Yes ($E = H$) | Relatively lower | Si; Ge |
+| extrinsic | No | doped; N-type, P-type | No ($E \neq H$) | Relatively higher | P; B |
+
+Notes:
+- `E`: The number of electrons in the conduction band.
+- `H`: The number of electron holes in the valence band.
+
+### 9.2 Intrinsic semiconductors
+
+The atomic structures of Si and Ge are as follows ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/intrinsic-semiconductor/images/silicon-and-germanium.png)):
+
+![Si and Ge](./EE/silicon-and-germanium.png)
+
+The covalent bonding in Si and Ge is also similar: Every atom forms 4 covalent bonds with the neighboring 4 atoms. See the figures below:
+
+| Material | Illustration |
+|:--------:|:------------:|
+| Silicon | <img src="./EE/covalent-bond-in-silicon.png" width="80%" height="80%" /> |
+| Germanium | <img src="./EE/covalent-bond-in-germanium.png" width="80%" height="80%" /> |
+
+TODO: Study the following sections:
+- Electron and hole current
+- Conduction in intrinsic semiconductor
+- Conventional current
+- Intrinsic carrier concentration
+- Fermi level in intrinsic semiconductor
+
+### 9.3 Extrinsic semiconductors
+
+Extrinsic semiconductors = intrinsic semiconductors + impurities (i.e., mixed in materials).
+
+Impurities have two types: pentavalent and trivalent. See the figure below ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/extrinsic-semiconductor/images/types-of-impurities.png)).
+
+![impurity types](./EE/types-of-impurities.png)
+
+They are compared as follows (using `Si` as example):
+
+| Impurity | Valence E. | Examples | Type | Illustration |
+|:--------:|:----------:|:--------:|:----:|:------------:|
+| Pentavalent | 5 | P, As, Sb | N(egative)-type | <img src="./EE/extrinsic-semiconductor-n-type.png" /> |
+| Trivalent | 3 | B, G, In, Al | P(ositive)-type | <img src="./EE/extrinsic-semiconductor-p-type.png" /> |
+
+Here are some additional notes that are not covered by the table above:
+- Pentavalent impurity is called "donors" because they donate free electrons.
+- Trivalent impurity is called "acceptors" because their present results in holes so they can accept electrons to fill the holes.
+- Note that the extrinsic semiconductors, not matter N- or P-type, are still **neutral in charge** overall, because every involved atom is neutral in charge, there is no way that the entire semiconductor becomes un-neutral in charge suddenly. Use the pentavalent impurity as an example. Although one such atom donates one free electron (negative), the nucleus itself also has one more proton (positive), so they cancel each other.
+
+Conduction in comparison:
+
+| Impurity | Type | Major carrier | Minor carrier | Illustration |
+|:--------:|:----:|:-------------:|:-------------:|:------------:|
+| Pentavalent | N-type | free electrons | holes | <img src="./EE/conduction-in-n-type.png" /> |
+| Trivalent | P-type | holes | free electrons | <img src="./EE/conduction-in-p-type.png" /> |
+
+Notes:
+- The particles that contribute the majority of the electricity charge are called the major carrier; the particles that contribute the minority of the electricity charge are called the minor carrier.
 
 ## Other terms
 
