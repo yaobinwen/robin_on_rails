@@ -166,11 +166,21 @@ The materials in which the valence band and the conduction band overlap each oth
 
 ![energy band conductor](./EE/energy-band-conductor.png)
 
+For conductors, even at low temperatures, a small number of free electrons are present in the conduction band; at the room temperature, a large number of free electrons are present in the conduction band.
+
+When the external energy (e.g, heat, light) is applied to the conductor, the atoms start vibrating at fixed positions and the free electrons moving in the conduction band will collide with these atoms. Due to this collision, the free electrons will lose their kinetic energy. This causes a reduction in the flow of free electrons that carry the electrical current from one place to another place. Reduction in current flow means increase in resistance. Therefore, **the resistance of a conductor increases with the increase in the temperature**. See the following figure ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/images/positivetemperature.png)).
+
+![conductor resistance to temperature](./EE/resistance-to-temperature-conductor.png)
+
 ### 6.5 Semiconductors
 
 The materials whose electrical conductivity is between insulators and conductors are called **semiconductors**. See the figure below ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/introduction/images/semiconductor.png)). The forbidden gap is small. At low temperature, the valence electrons don't have enough energy to jump into the conduction band, so they are not free to move and behave like insulators. As temperature goes higher, more valence electrons jump into the conduction band and can move freely, so they behave like conductors.
 
 ![energy band semiconductor](./EE/energy-band-semiconductor.png)
+
+For semiconductors, the resistance decreases as the temperature increases. See the following figure ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/images/negativetemperaturecoefficent.png)).
+
+![semiconductor resistance to temperature](./EE/resistance-to-temperature-semiconductor.png)
 
 ## 7. Electric current
 
@@ -255,6 +265,34 @@ Conduction in comparison:
 Notes:
 - The particles that contribute the majority of the electricity charge are called the major carrier; the particles that contribute the minority of the electricity charge are called the minor carrier.
 
+## 10. Law of mass action
+
+The law of mass action:
+
+> The product of number of electrons in the conduction band and the number of holes in the valence band is constant at a fixed temperature and is independent of amount of donor and acceptor impurity added.
+>
+> $$
+> np = {n_i}^2 = C
+> $$
+> where
+> - $n_i$ is the intrinsic carrier concentration.
+> - $n$ is the number of electrons in conduction band.
+> - $p$ is the number of holes in valence band.
+> - $C$ is a constant.
+
+## 11. Drift current & diffusion current
+
+### 11.1 Drift current
+
+The flow of charge carriers, which is due to the applied voltage or electric field is called **drift current**.
+
+### 11.2 Diffusion current
+
+The process by which, charge carriers (electrons or holes) in a semiconductor moves from a region of higher concentration to a region of lower concentration is called diffusion.
+
 ## Other terms
 
 - [Electric field](https://www.physics-and-radio-electronics.com/electromagnetics/electrostatics/electric-field.html)
+- [Charge carrier](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/majority-and-minority-carriers.html): The particle that carries electrical charge.
+- [Generation of carriers](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/generation-and-recombination.html): When valence electrons absorb energy and jump into the conduction band, they become free electrons which are a type of charge carriers. Meanwhile, the electron holes they create are another type of charge carriers.
+- [Recombination of carriers](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/generation-and-recombination.html): The process by which free electrons and the holes get eliminated is called recombination of carriers.
