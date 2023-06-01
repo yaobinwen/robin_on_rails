@@ -288,7 +288,34 @@ The flow of charge carriers, which is due to the applied voltage or electric fie
 
 ### 11.2 Diffusion current
 
-The process by which, charge carriers (electrons or holes) in a semiconductor moves from a region of higher concentration to a region of lower concentration is called diffusion.
+When a semiconductor is not uniformly doped, the free electrons that are introduced by the doping material do not distribute evenly. This non-uniform distribution creates two regions:
+- **Higher concentration region**: The region in which there are more electrons.
+- **Lower concentration region**: The region in which there are less electrons.
+
+Because electrons all have the negative charge, when they get close to each other, they repel each other. Therefore, the electrons in the higher concentration region repel each other more in two aspects: they repel each other with a higher force (because they are closer compared to the free electrons in the lower concentration region); they repel each other more frequently (because they get closer to each other more often than those in the lower concentration region). As a result, on average, the free electrons in the higher concentration region gradually move to the lower concentration region to make the free electrons evenly distributed.
+
+The process by which charge carriers (electrons or holes) in a semiconductor moves from a region of higher concentration to a region of lower concentration is called **diffusion**, and the current that's produced during the diffusion is called **diffusion current**. See the following figure ([original link](https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/semiconductor/images/diffusion-current2.png)).
+
+![diffusion current](./EE/diffusion-current.png)
+
+### 11.3 Summary
+
+- **Both** drift current and diffusion current occur in semiconductors.
+- Diffusion current does not require an external voltage or electric field.
+- Diffusion current **does not exist** in conductors.
+- Diffusion current and drift current can be in the same or the opposite direction.
+
+## 12. Ohm's law
+
+$$
+I = \frac{V}{R}
+$$
+
+where
+
+- `V` = Voltage applied to a conductor.
+- `I` = Electric current flowing through the conductor.
+- `R` = Resistance of the conductor.
 
 ## Other terms
 
