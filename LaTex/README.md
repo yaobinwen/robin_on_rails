@@ -13,6 +13,7 @@
   - [ShareLaTeX Templates](https://www.sharelatex.com/templates/)
   - [TeXample](http://www.texample.net/)
   - [LaTeX Cookbook](http://latex-cookbook.net/)
+- [pgf – A Portable Graphic Format for TeX](https://github.com/pgf-tikz/pgf)
 
 ## ! LaTeX Error: File `filename.sty' not found
 

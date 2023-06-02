@@ -1,6 +1,8 @@
 \documentclass[12pt, letterpaper, oneside]{article}
 \usepackage{amsmath}
 \usepackage{csquotes}
+\usepackage{tikz}
+% \usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 
 \begin{document}
 
@@ -45,5 +47,12 @@ This paragraph is below the quoted part.
             & = u_{11} + \ldots + u_{m1} + u_{12} + \ldots + u_{m2} \\
             & = (u_{11} + u_{12}) + \ldots + (u_{m1} + u_{m2})
 \end{align*}
+
+\section{Graph}
+
+\begin{tikzpicture}
+  \node at (0, 2) [circle, draw] {};
+  \node at (10, 0) [circle, draw] {};
+\end{tikzpicture}
 
 \end{document}
