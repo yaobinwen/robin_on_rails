@@ -1,0 +1,41 @@
+digraph LADR {
+    node_complex_num [label = "Complex Numbers";shape = rectangle;];
+    node_real_num [label = "Real Numbers";shape = rectangle;];
+    node_F [label = "F";];
+    node_list [label = "List";shape = rectangle;];
+    node_Fn [label = "F^n";];
+    node_zero [label = "0";];
+    node_vector [label = "vector";shape = rectangle;];
+    node_V [label = "V";];
+    node_addition_in_Fn [label = "addition\n(in F^n)";shape = rectangle;];
+    node_scalar_mul_in_Fn [label = "scalar multiplication\n(in F^n)";shape = rectangle;];
+    node_addition [label = "addition";shape = rectangle;];
+    node_scalar_mul [label = "scalar multiplication";shape = rectangle;];
+    node_vs [label = "Vector Space";shape = rectangle;];
+    node_sub_vs [label = "Subspace";shape = rectangle;];
+    node_FS [label = "F^S";];
+    node_sum_subsets [label = "sum of subsets";shape = rectangle;];
+    node_direct_sum [label = "direct sum";shape = rectangle;];
+    
+    node_complex_num -> node_F;
+    node_real_num -> node_F;
+    node_F -> node_Fn;
+    node_list -> node_Fn;
+    node_F -> node_zero;
+    node_list -> node_zero;
+    node_F -> node_scalar_mul;
+    node_F -> node_addition_in_Fn;
+    node_Fn -> node_addition_in_Fn;
+    node_F -> node_scalar_mul_in_Fn;
+    node_Fn -> node_scalar_mul_in_Fn;
+    node_Fn -> node_vector;
+    
+    node_addition -> node_vs;
+    node_scalar_mul -> node_vs;
+    node_V -> node_vs;
+    
+    node_vs -> node_FS;
+    node_vs -> node_sub_vs;
+    node_vs -> node_sum_subsets;
+    node_sum_subsets -> node_direct_sum;
+}
