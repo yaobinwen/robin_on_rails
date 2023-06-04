@@ -107,3 +107,15 @@ This document records down my study activities for future reflection. The notes,
 14:22 ~ 15:36 (1h13m)
 
 1. Studied the sections from 2.10 finite-dimensional vector space to 2.15 infinite-dimensional vector space. But I still need to do more exercises to solidify my understanding.
+
+## 2023-06-03 (Sat)
+
+12:51 ~ 13:41 (50m), 15:57 ~ 17:40 (1h42m)
+
+1. Looked back at Chapter 1 to figure out the relations among the key concepts. I also worked out the initial draft of `Relations.dot` to visualize the relations among the key concepts.
+
+## 2023-06-04 (Sun)
+
+08:00 ~ 10:00 (2h), 11:30 ~ 13:35 (2h5m)
+
+1. Rewrote the notes for Chapter 1. Previously, the topics were all arranged in a linear structure so it was difficult to see how they are related. Now I grouped related topics into the same sections to make the notes easier to grasp the key points.

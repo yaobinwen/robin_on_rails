@@ -4,10 +4,12 @@
 % "Note that this method make the margins of all the pages the same. In
 % `twoside`, the margins are different for the odd and the even pages".
 \documentclass[12pt, letterpaper, oneside]{book}
+\usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
-\usepackage{hyperref}
 \usepackage{csquotes}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -55,24 +57,9 @@ Done Right}. I use it for a few purposes:
 
 \chapter{Vector Spaces}
 
-% ------------------------------
-\section{Overview}
-% ------------------------------
-
-This chapter starts with the definition of \emph{complex numbers} because
-complex numbers are a superset of real numbers. Once we properly define complex
-numbers, we can focus on them because the properties will also hold for real
-numbers. "In linear algebra," as the textbook says, "better theorems and more
-insight emerge if complex numbers are investigated along with real numbers."
-
-A complex number is an element of a \emph{list}, and a list is used to denote a
-\emph{vector}, and vectors make up \emph{vector spaces}. Therefore, after
-complex numbers are discussed, we will move onto defining lists, vectors, and
-vector spaces.
-
-% ------------------------------
+% =============================================================================
 \section{Review Questions}
-% ------------------------------
+% =============================================================================
 
 (See the end of this chapter for the review question answers.)
 
@@ -107,9 +94,246 @@ vector spaces.
   \item How is direct sum different from sum of subsets?
 \end{enumerate}
 
-% ------------------------------
-\section{1.1 Definition: Complex numbers}
-% ------------------------------
+% =============================================================================
+\section{Overview}
+% =============================================================================
+
+Overall, this chapter is all about the following key concepts:
+
+\begin{itemize}
+  \item $\mathbf{F}$: The unification of $\mathbf{R}$ and $\mathbf{C}$.
+  \item \textbf{\textit{list}}.
+  \item $\mathbf{F}^n$, which introduces \textbf{\textit{vector}} (on
+    $\mathbf{F}^n$).
+  \item A \textbf{\textit{vector space}} can be based on any set, not
+    particularly on $\mathbf{F}^n$, but $\mathbf{F}^n$ and $\mathbf{F^S}$ are
+    two important vector spaces.
+  \item \textbf{\textit{Subspace}}
+  \item \textbf{\textit{Direct sum}}
+\end{itemize}
+
+One needs to clearly understand not only these concepts but, more importantly,
+also the relations among these concepts, especially which one is built on top
+of which others.
+
+% =============================================================================
+\section{Arithmetics and properties (on numbers)}
+% =============================================================================
+
+% ******************************
+\subsection{Abstract arithmetic operations}
+% ******************************
+
+To some extent, we don't have to define arithmetics on top of numbers. If we
+want, we can define arithmetics on any set of objects, such as ``$\{ \clubsuit,
+\diamondsuit, \heartsuit, \spadesuit \}$''. Later when we examine the concept
+of vector spaces, we will see that a vector space is not necessarily based on a
+set of numbers.
+
+However, numeric sets still play an important role, and because we are quite
+familiar with arithmetics that are defined on numeric sets, it's often helpful
+(and more tangible) to use arithmetics on numeric sets to comprehend them and
+think about their properties.
+
+In this section, I will use $S$ to denote the set of objects (not necessarily
+numbers) to discuss the arithmetics and properties. I will use the real numbers
+$R$ to provide examples.
+
+% ******************************
+\subsection{Addition and multiplication}
+% ******************************
+
+Usually, we care about two arithmetic operations:
+
+\begin{itemize}
+  \item \textbf{Addition}: $\forall a, b \in S$, define $a + b$.
+  \item \textbf{Multiplication}: $\forall a, b \in S$, define $a \cdot b$.
+\end{itemize}
+
+Because it's all up to us to define the rules of arithmetic operations, we can
+define them in any ways that please us. For example, if $S$ is $\{ \clubsuit,
+\diamondsuit, \heartsuit, \spadesuit \}$, we can define the following
+arithmetic operations:
+
+\begin{itemize}
+  \item Additions:
+    \begin{enumerate}
+      \item $\clubsuit + \clubsuit = \clubsuit$
+      \item $\clubsuit + \diamondsuit = \heartsuit$
+      \item etc.
+    \end{enumerate}
+  \item Multiplications:
+    \begin{enumerate}
+      \item $\spadesuit \cdot \spadesuit = \clubsuit$
+      \item $\spadesuit \cdot \heartsuit = \diamondsuit$
+      \item etc.
+    \end{enumerate}
+\end{itemize}
+
+However, such definitions can be pointless and have no value is real world.
+Oftentimes, people prefer the definition of arithmetic operations that have
+certain properties that can help them solve real world problems.
+
+(Disclaimer: The following examples are derived from the replies by ChatGPT. I
+did some quick verification and thought the replies were reasonable so I used
+them. I myself am not at all a historian of mathematics so the examples above
+could still be wrong.)
+
+For example, in the ancient time, people may run into situations in which they
+needed to combine or accumulate different quantities of objects. They gradually
+realized that the combination or accumulation process of different objects can
+be viewed as an abstract process of "adding things together", hence \textit{
+addition}. The definition of addition had practical life meaning that helped
+the ancient people finish their daily management work.
+
+Similarly, the ancient people may encounter situations in which they needed to
+calculate quantities that were repeated, such as multiple rows of objects.
+ChatGPT gave me the following examples:
+
+\begin{displayquote}
+  For instance, ancient agricultural societies needed to determine the total
+  amount of crops produced based on the number of fields or the number of rows
+  and columns in each field. Merchants had to calculate the total value of
+  goods by multiplying the quantity of items by their respective prices.
+  Architects and builders needed to measure and calculate the areas of
+  structures or lands, which involved scaling and multiplying dimensions.
+
+  As people encountered these practical situations, they likely developed
+  intuitive methods for combining or scaling quantities, leading to the
+  discovery of multiplication as a formal mathematical operation.
+\end{displayquote}
+
+The conclusion is: Although we can define addition and multiplication in
+whatever way we want, we usually prefer those that have some practical
+foundations. (Well, I believe mathematics was initially derived from people's
+everyday life, but later it became more like a "game of logic" and many
+concepts were developed that showed no practical value at the time they were
+invented, and only to find values years later.)
+
+% ******************************
+\subsection{Arithmetic properties}
+% ******************************
+
+If defined appropriately, the arithmetic operations can display the following
+properties:
+
+\begin{itemize}
+  \item \textbf{Commutativity (on addition)}:
+    \[ a + b = b + a, \forall a, b \in S \]
+    For example: In $R$, $1 + 2 = 2 + 1$
+  \item \textbf{Commutativity (on multiplication)}:
+    \[ a \cdot b = b \cdot a, \forall a, b \in S \]
+    For example: In $R$, $1 \cdot 2 = 2 \cdot 1$
+  \item \textbf{Associativity (on addition)}:
+    \[ (a + b) + c = a + (b + c), \forall a, b, c \in S \]
+    For example: In $R$, $(1 + 2) + 3 = 1 + (2 + 3)$
+  \item \textbf{Associativity (on multiplication)}:
+    \[ (a \cdot b) \cdot c = a \cdot (b \cdot c), \forall a, b, c \in S \]
+    For example: In $R$, $(1 \cdot 2) \cdot 3 = 1 \cdot (2 \cdot 3)$
+  \item \textbf{Identity (on addition)}:
+    \[ \exists z \in S, a + z = a, \forall a \in S \]
+    For example: In $R$, $0$ is the additive identity.
+  \item \textbf{Identity (on multiplication)}:
+    \[ \exists o \in S, a \cdot o = a, \forall a \in S \]
+    For example: In $R$, $1$ is the multiplicative identity.
+  \item \textbf{Inverse (on addition)}:
+    \begin{itemize}
+      \item For every $a \in S$, there exists a unique $b \in S$ such that
+        $a + b = z$, where $z$ is the additive identity in $S$.
+      \item For example: In $R$, $-1$ is the additive inverse of $1$ because
+        $1 + (-1) = 0$ (which is the additive identity).
+      \item We denote the additive inverse as ``$-a$''.
+    \end{itemize}
+  \item \textbf{Inverse (on multiplication)}:
+    \begin{itemize}
+      \item For every $a \in S$ (and $a \neq z$), there exists a unique $b \in
+        S$ such that $a \cdot b = o$, where $o$ is the multiplicative identity
+        in $S$.
+      \item For example: In $R$, $\frac{1}{2}$ is the multiplicative inverse of
+        $2$ because $2 \cdot \frac{1}{2} = 1$ (which is the multiplicative
+        identity).
+      \item We denote the multiplicative inverse as ``$\frac{1}{a}$''.
+    \end{itemize}
+  \item \textbf{Distribution}:
+    \[ a \cdot (b + c) = a \cdot b + a \cdot c, \forall a, b, c \in S \]
+    For example: In $R$, $2 \cdot (1 + 3) = 2 \cdot 1 + 2 \cdot 3$.
+\end{itemize}
+
+% ******************************
+\subsection{The two identities and two inverses}
+% ******************************
+
+When defining additions and multiplications, people notice that the set $S$ may
+have two elements that play a special role in the arithmetics:
+
+\begin{itemize}
+  \item \textbf{Additive identity}: We denote it as $z$ (i.e., ``zero'').
+  \item \textbf{Multiplicative identity}: We denote it as $o$ (i.e., ``one'').
+\end{itemize}
+
+The \textbf{additive inverse} and \textbf{multiplicative inverse} are defined
+based upon them:
+
+\begin{itemize}
+  \item \textbf{Additive inverse}: An element $b \in S$ that "pulls" another
+    element $a \in S$ back to the additive identity $z$ is called the additive
+    inverse of $a$.
+  \item \textbf{Multiplicative inverse}: An element $b \in S$ that "flattens"
+    another element $a \in S$ to the multiplicative identity $o$ is called the
+    multiplicative inverse.
+\end{itemize}
+
+These two inverses play an important role in defining the other two arithmetic
+operations: subtraction and division.
+
+% ******************************
+\subsection{subtraction and division}
+% ******************************
+
+\textbf{\textit{Subtraction}} of $a, b \in S$ is defined as the addition of $a$
+and the additive inverse of $b$:
+\[ a - b = a + (-b)\]
+
+\textbf{\textit{Division}} of $a, b \in S$ is defined as the multiplication of
+$a$ and the multiplicative inverse of $b$:
+\[ \frac{a}{b} = a \cdot \frac{1}{b} \]
+
+The arithmetic operations \textit{subtraction} and \textit{division} are
+defined around the additive identity and multiplicative identity.
+
+For $\forall a \in S$, if there exists a unique element $b \in S$ such that
+$a + b = z$ where $z$ is the additive identity on $S$, we call $b$ is the
+
+% =============================================================================
+\section{$\mathbf{F}$: Unification of $\mathbf{R}$ and $\mathbf{C}$}
+% =============================================================================
+
+This chapter starts with defining complex numbers (denoted by $\mathbf{C}$) and
+the addition and multiplication on them (see Definition 1.1).
+
+If you look at the definition of complex numbers, you will notice that complex
+numbers completely include real numbers. In other words, real numbers are a
+sub-set of complex numbers. So the complex numbers are already a unification of
+both real numbers and the non-real complex numbers. \textbf{Then why don't we
+just use $\mathbf{C}$ to represent both? Why do we want to use $\mathbf{F}$?}
+
+It turns out to be that we want to unify not only the numbers themselves, but
+also the arithmetic operations on them. Abstract algebra defines the concept of
+"fields". Generally speaking, a \textbf{\textit{field}} is a mathematical
+structure that consists of a set of elements along with two binary operations
+(\textit{addition} and \textit{multiplication}) that satisfy certain properties.
+It's not the topic of this book, but if there is a chance, we will learn that
+both $\mathbf{R}$ and $\mathbf{C}$, along with the addition and multiplication
+defined on them, are examples of fields. Therefore, we want to unify
+$\mathbf{R}$ and $\mathbf{C}$ from the perspective of fields. That's why the
+textbook also wants to discuss the arithmetics.
+
+To do that, we need to show that addition and multiplication on complex numbers
+show the same properties as the addition and multiplication on real numbers.
+
+% ******************************
+\subsection{1.1 Definition: Complex numbers}
+% ******************************
 
 We {define} a \textbf{\emph{complex number}} as follows (see
 ``1.1 Definition''):
@@ -125,23 +349,19 @@ We {define} a \textbf{\emph{complex number}} as follows (see
     \[ \mathbf{C} = \{a + bi: a, b \in \mathbf{R}\} \]
   \item \textbf{Addition}: Let $\alpha = (a + bi)$, $\beta = (c + di)$, where
     $a, b, c, d \in \mathbf{R}$, we have:
-    \[ \alpha + \beta = (a + bi) + (c + di) = (a + c) + (b + d)i \]
-    \begin{itemize}
-      \item This also tells us that if $\alpha, \beta \in \mathbf{C}$, then
-        $\alpha + \beta \in \mathbf{C}$
-    \end{itemize}
+    \[
+      \alpha + \beta = (a + bi) + (c + di) = (a + c) + (b + d)i \in \mathbf{C}
+    \]
   \item \textbf{Multiplication}: Let $\alpha = (a + bi)$, $\beta = (c + di)$,
     where $a, b, c, d \in \mathbf{R}$, we have:
-    \[ \alpha\beta = (a + bi)(c + di) = (ac - bd) + (ad + bc)i \]
-    \begin{itemize}
-      \item This also tells us that if $\alpha, \beta \in \mathbf{C}$, then
-        $\alpha\beta \in \mathbf{C}$
-    \end{itemize}
+    \[
+      \alpha\beta = (a + bi)(c + di) = (ac - bd) + (ad + bc)i \in \mathbf{C}
+    \]
 \end{itemize}
 
-% ------------------------------
-\section{1.3 Properties of complex arithmetic}
-% ------------------------------
+% ******************************
+\subsection{1.3 Properties of complex arithmetic}
+% ******************************
 
 The following properties can be proved according to the definition of complex
 numbers and the addition and multiplication:
@@ -192,15 +412,12 @@ numbers and the addition and multiplication:
 
 NOTE(ywen): Complex numbers are defined based upon real numbers. In order to
 prove the properties of complex arithmetic, we need to use the properties of
-real arithmetic (i.e., communtativity, associativity, etc. for real numbers).
+real arithmetic (i.e., commutativity, associativity, etc. for real numbers).
 Example 1.4 shows this method.
 
-% ------------------------------
-\section{
-  1.5 Definition: $-\alpha$, subtraction, $1/\alpha$, division
-  ($\alpha \in \mathbf{C}$)
-}
-% ------------------------------
+% ******************************
+\subsection{1.5 Definition: $-\alpha$, $1/\alpha$ ($\alpha \in \mathbf{C}$)}
+% ******************************
 
 Let $\alpha, \beta \in \mathbf{C}$:
 
@@ -210,14 +427,23 @@ Let $\alpha, \beta \in \mathbf{C}$:
     \begin{itemize}
       \item Note that here $0 \in \mathbf{R}$
     \end{itemize}
-  \item \textbf{\textit{Subtraction}} on $\mathbf{C}$ is defined by
-    \[ \beta - \alpha = \beta + (-\alpha) \]
   \item For $\alpha \neq 0$, define $1/\alpha$ as the \textbf{multiplicative
     inverse} of $\alpha$ such that
     \[ \alpha(1/\alpha) = 1 \]
     \begin{itemize}
       \item Note that here $1 \in \mathbf{R}$
     \end{itemize}
+\end{itemize}
+
+% ******************************
+\subsection{1.5 Definition: subtraction, division (on $\mathbf{C}$)}
+% ******************************
+
+Let $\alpha, \beta \in \mathbf{C}$:
+
+\begin{itemize}
+  \item \textbf{\textit{Subtraction}} on $\mathbf{C}$ is defined by
+    \[ \beta - \alpha = \beta + (-\alpha) \]
   \item \textbf{\textit{Division}} on $\mathbf{C}$ is defined by
     \[ \beta/\alpha = \beta(1/\alpha) \]
     \begin{itemize}
@@ -225,33 +451,45 @@ Let $\alpha, \beta \in \mathbf{C}$:
     \end{itemize}
 \end{itemize}
 
-% ------------------------------
-\section{1.6 Notation F}
-% ------------------------------
+% ******************************
+\subsection{1.6.1 Definition: $\alpha^m$ ($\alpha \in \mathbf{C}$)}
+% ******************************
 
-$\mathbf{F}$ stands for either $\mathbf{R}$ or $\mathbf{C}$.
+(The textbook defines $\alpha ^m$ on top of $\mathbf{F}$. But if a definition
+is applicable to $\mathbf{F}$, it is also applicable to $\mathbf{C}$.)
 
-But because $\mathbf{C}$ is a superset of $\mathbf{R}$, when we think of
-$\mathbf{F}$, we can basically think of it as $\mathbf{C}$.
-
-% ------------------------------
-\section{1.6.1 Definition: $\alpha^m$ ($\alpha \in \mathbf{F}$)}
-% ------------------------------
-
-For $\alpha \in \mathbf{F}$ and $m \in \mathbf{N}$:
+For $\alpha \in \mathbf{C}$ and $m \in \mathbf{N}$, we define:
 
 \[ \alpha^m = \underbrace{\alpha\cdot\cdot\cdot\alpha}_{m \ times} \]
 
-Thus for all $\alpha, \beta \in \mathbf{F}$, $m, n \in \mathbf{N}$:
+Thus for all $\alpha, \beta \in \mathbf{C}$, $m, n \in \mathbf{N}$:
 
 \begin{itemize}
   \item $(\alpha^m)^n = \alpha^{mn}$
   \item $(\alpha\beta)^m = \alpha^m\beta^m$
 \end{itemize}
 
-% ------------------------------
-\section{1.8 Definition: \textit{list}, \textit{length}}
-% ------------------------------
+% ******************************
+\subsection{1.6 Notation F}
+% ******************************
+
+Through the previous sections, we can see that addition and multiplication that
+are defined on $\mathbf{R}$ and $\mathbf{C}$ display the same properties. Now
+we can unify them: $\mathbf{F}$ stands for either $\mathbf{R}$ or $\mathbf{C}$.
+
+(The symbol ``$\mathbf{F}$'' is usually used to denote a field.)
+
+% =============================================================================
+\section{\textbf{\textit{list}}}
+% =============================================================================
+
+The concept of \textit{list} is not built upon $\mathbf{F}$. It is defined
+separately, but later we will use \textit{list} and $\mathbf{F}$ to define
+$\mathbf{F}^n$.
+
+% ******************************
+\subsection{1.8 Definition: \textit{list}, \textit{length}}
+% ******************************
 
 For $n \in \mathbf{N}$, a \textbf{\textit{list}} of \textbf{\textit{length n}}
 is an \textbf{ordered} collection of \textit{n} \textbf{elements}. It's denoted
@@ -272,19 +510,19 @@ only if:
   \item $x_i = y_i$ for $i = 1, 2, ..., n$
 \end{itemize}
 
-% ------------------------------
-\section{Lists and Sets}
-% ------------------------------
+% ******************************
+\subsection{Lists and Sets}
+% ******************************
 
 Table compares lists and sets:
-\begin{table}[ht!]
+\begin{table}[H]
 \centering
-\begin{tabular}{||c c c ||} 
+\begin{tabular}{||c c c ||}
  \hline
-   & Lists & Sets \\ [0.5ex] 
+   & Lists & Sets \\ [0.5ex]
  \hline
  \hline
- Length & Finite & Finite or infinite \\ 
+ Length & Finite & Finite or infinite \\
  Order & Matters & Doesn't matter \\
  Repetition & Allows & Doesn't allow \\ [1ex]
  \hline
@@ -293,11 +531,16 @@ Table compares lists and sets:
 \label{table:lists_sets_comp}
 \end{table}
 
-% ------------------------------
-\section{1.10 Definition: $\mathbf{F^n}$ and $\mathbf{0}$}
-% ------------------------------
+% =============================================================================
+\section{$\mathbf{F}^n$}
+% =============================================================================
 
-We use $\mathbf{F}$ to denote either $\mathbf{R}$ or $\mathbf{C}$.
+Based on the concept of $\mathbf{F}$ and \textit{list}, we can define
+$\mathbf{F^n}$.
+
+% ******************************
+\subsection{1.10 Definition: $\mathbf{F^n}$ and $\mathbf{0}$}
+% ******************************
 
 We define $\mathbf{F^n}$ as the set of all lists of length $n$ of elements of
 $\mathbf{F}$:
@@ -314,9 +557,9 @@ Let $\mathbf{0}$ denote the list of length $n$ whose coordinates are all $0$:
   \mathbf{0} = (0, 0, ..., 0)
 \]
 
-% ------------------------------
-\section{1.11 Note: $\mathbf{C^1}$ can be thought of as a plane}
-% ------------------------------
+% ******************************
+\subsection{1.11 Note: $\mathbf{C^1}$ can be thought of as a plane}
+% ******************************
 
 On page 6, below Example 1.11, the textbook says: ``Similarly, $\mathbf{C}^1$
 can be thought of as a plane.''
@@ -325,17 +568,9 @@ It is so because $\mathbf{C}^1$ is the set of complex numbers, each of which
 consists of two parts: the real part and the imaginary part. Both parts are real
 numbers and they can form a 2D plane, hence ``as a plane''.
 
-% ------------------------------
-\section{1.12 Vectors}
-% ------------------------------
-
-For $x \in \mathbf{F}^n$, we can view it as a point in the space $\mathbf{F}^n$,
-but we can also view it as an ``arrow'' in the same space. When we view it as
-an ``arrow'', we refer to it as a \textbf{\textit{vector}}.
-
-% ------------------------------
-\section{1.13 Definition: \textit{addition} in $\mathbf{F}^n$}
-% ------------------------------
+% ******************************
+\subsection{1.13 Definition: \textit{addition} in $\mathbf{F}^n$}
+% ******************************
 
 Given
 
@@ -373,10 +608,11 @@ $-x \in \mathbf{F}^n$ such that
 
 In other words, if $x = (x_1, ..., x_n)$, then $-x = (-x_1, ..., -x_n)$.
 
-% ------------------------------
-\section{1.14 Definition:\
-  \textbf{\textit{scalar multiplication}} in $\mathbf{F}^n$}
-% ------------------------------
+% ******************************
+\subsection{
+  1.14 Definition:\textbf{\textit{scalar multiplication}} in $\mathbf{F}^n$
+}
+% ******************************
 
 For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
 
@@ -384,9 +620,34 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
   \lambda(x_1, ..., x_n) = (\lambda x_1, ..., \lambda x_n)
 \]
 
-% ------------------------------
-\section{1.18 Definition: \it{addition}, \it{scalar multiplication}}
-% ------------------------------
+% =============================================================================
+\section{Vectors (in $\mathbf{F}^n$)}
+% =============================================================================
+
+For $x \in \mathbf{F}^n$, we can view it as a point in the space $\mathbf{F}^n$,
+but we can also view it as an ``arrow'' in the same space. When we view it as
+an ``arrow'', we refer to it as a \textbf{\textit{vector}}.
+
+% =============================================================================
+\section{Vector space}
+% =============================================================================
+
+In general, \textbf{\textit{vector spaces}} are not defined on $\mathbf{F}^n$
+particularly. In fact, a vector space can be a set of objects along with
+addition and scalar multiplication that meet certain conditions. Therefore, in
+a general sense, we \textit{should not} assume that a vector space is
+$\mathbf{F}^n$. However, $\mathbf{F}^n$ is an important vector space that we
+will discuss a lot in the future.
+
+We will use the symbol $\mathbf{V}$ to denote the general set.
+
+% ******************************
+\subsection{1.18 Definition: \it{addition}, \it{scalar multiplication}}
+% ******************************
+
+In order to define vector spaces in a general sense (i.e., not particularly on
+$\mathbf{F}^n$), we need to firstly define \textit{addition} and \textit{scalar
+multiplication} in a general sense:
 
 \begin{itemize}
   \item An \textbf{\textit{addition}} on a set $V$ is a function that assigns
@@ -396,9 +657,9 @@ For $\lambda \in \mathbf{F}$ and $(x_1, ..., x_n) \in \mathbf{F}^n$, we define
     and each $v \in V$.
 \end{itemize}
 
-% ------------------------------
-\section{1.19 Definition: \textbf{\textit{vector space}}}
-% ------------------------------
+% ******************************
+\subsection{1.19 Definition: \textbf{\textit{vector space}}}
+% ******************************
 
 A \textbf{\textit{vector space}} is a set $V$ along with an \textit{addition}
 on $V$ and a \textit{scalar multiplication} on $V$ such that the following
@@ -432,12 +693,13 @@ $v + w = 0$. \textbf{Note} this doesn't require uniqueness of $w$.
   \item $(a + b)v = av + bv$
 \end{itemize}
 
-% ------------------------------
-\section{What do communtativity and associativity mean for additions on vector
-  spaces?}
-% ------------------------------
+% ******************************
+\subsection{
+  What do commutativity and associativity mean for additions on vector spaces?
+}
+% ******************************
 
-The \textbf{additions} a vector space $V$ has the properties of communtativity
+The \textbf{additions} a vector space $V$ has the properties of commutativity
 and associativity. What that means essentially is, for $u, v, w \in V$, one can
 calculate the the \textbf{addition} of $u, v, w$ in \textbf{any order} with
 \textbf{any association}. In other words, all the following calculations are
@@ -474,12 +736,12 @@ ambiguity in the order of calculation. With that said, we have:
   \end{split}
 \end{equation*}
 
-The trick is to use the \textbf{communtativity} and \textbf{associativity}
+The trick is to use the \textbf{commutativity} and \textbf{associativity}
 repeatedly.
 
-% ------------------------------
-\section{Properties 1.25 - 1.31}
-% ------------------------------
+% ******************************
+\subsection{Properties 1.25 - 1.31}
+% ******************************
 
 \begin{itemize}
   \item 1.25: Unique additive identity: A vector space has a unique additive
@@ -498,16 +760,9 @@ repeatedly.
   \item 1.31 The number $-1$ times a vector: $(-1)v = -v$ for every $v \in V$.
 \end{itemize}
 
-% ------------------------------
-\section{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
-% ------------------------------
-
-Elements of a vector space are called \textbf{\textit{vector}} or
-\textbf{\textit{point}}.
-
-% ------------------------------
-\section{My understanding of vector space}
-% ------------------------------
+% ******************************
+\subsection{My understanding of vector space}
+% ******************************
 
 \begin{itemize}
   \item Essentially, ``addition'' of two vectors is to connect the tail of the
@@ -526,9 +781,16 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     are called \textit{vector spaces}.
 \end{itemize}
 
-% ------------------------------
-\section{1.23 Notation $F^S$}
-% ------------------------------
+% =============================================================================
+\section{Vector space $F^S$}
+% =============================================================================
+
+In addition to $\mathbf{F}^n$, $F^S$ is another important vector space that we
+will use in the future.
+
+% ******************************
+\subsection{1.23 Notation $F^S$}
+% ******************************
 
 \begin{itemize}
   \item If $S$ is a set, then $\mathbf{F}^S$ denotes the set of
@@ -543,9 +805,9 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     for all $x \in S$.
 \end{itemize}
 
-% ------------------------------
-\section{1.24 Example $\mathbf{F}^S$ is a vector space}
-% ------------------------------
+% ******************************
+\subsection{1.24 Example $\mathbf{F}^S$ is a vector space}
+% ******************************
 
 \begin{itemize}
   \item If $S$ is a \textbf{nonempty set}, then $\mathbf{F}^S$ (with the
@@ -561,9 +823,9 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     for all $x \in S$.
 \end{itemize}
 
-% ------------------------------
-\section{My understanding of $\mathbf{F}^S$} \label{F^S understanding}
-% ------------------------------
+% ******************************
+\subsection{My understanding of $\mathbf{F}^S$} \label{F^S understanding}
+% ******************************
 
 \begin{enumerate}
   \item Note that the elements in $\mathbf{F}^S$ are \textbf{functions}.
@@ -592,7 +854,7 @@ Elements of a vector space are called \textbf{\textit{vector}} or
         \]
         for all $x \in S$.
       \item Function $f_6: x \rightarrow 0$ for all $x \in S$
-      \item etc.
+      \item etc1.32 Definition.
     \end{enumerate}
     Notice that $f_6$ is the \textbf{additive identity} in $\mathbf{F}$.
   \item The type of elements of $S$ doesn't matter either, according to the
@@ -615,17 +877,39 @@ Elements of a vector space are called \textbf{\textit{vector}} or
     \end{itemize}
 \end{enumerate}
 
-% ------------------------------
-\section{1.32 Definition \textit{subspace}}
-% ------------------------------
+% =============================================================================
+\section{\textbf{V}, \textbf{vector}, and \textbf{point}}
+% =============================================================================
+
+% ******************************
+\subsection{1.20 Definition: \textbf{\textit{vector}}, \textbf{\textit{point}}}
+% ******************************
+
+Elements of a vector space are called \textbf{\textit{vector}} or
+\textbf{\textit{point}}.
+
+% ******************************
+\subsection{1.28 Notation \textbf{\textit{V}}}
+% ******************************
+
+For the rest of the book, \textbf{\textit{V}} denotes a vector space over
+$\mathbf{F}$.
+
+% =============================================================================
+\section{Subspaces}
+% =============================================================================
+
+% ******************************
+\subsection{1.32 Definition \textit{subspace}}
+% ******************************
 
 A subset $U$ of $V$ is called a \textbf{\textit{subspace}} of $V$ if $U$ is
 also a vector space (using the same addition and scalar multiplication as on
 $V$).
 
-% ------------------------------
-\section{1.34 Conditions for a subspace}
-% ------------------------------
+% ******************************
+\subsection{1.34 Conditions for a subspace}
+% ******************************
 
 A subset $U$ of $V$ is a subspace of $V$ \textbf{if and only if} $U$ satisfies
 the following three conditions:
@@ -637,9 +921,9 @@ the following three conditions:
     and $u \in U$ implies $\lambda u \in U$.
 \end{itemize}
 
-% ------------------------------
-\section{1.36 Definition \textbf{\textit{sum of subsets}}}
-% ------------------------------
+% ******************************
+\subsection{1.36 Definition \textbf{\textit{sum of subsets}}}
+% ******************************
 
 \textbf{NOTE}: This definition is about \textbf{\textit{subsets}}, not
 subspaces.
@@ -652,9 +936,9 @@ possible} sums of elements of $U_1, \ldots, U_m$. More precisely,
 U_1 + \ldots + U_m = \{ u_1 + \ldots + u_m: u_1 \in U_1, \ldots, u_m \in U_m \}
 \]
 
-% ------------------------------
-\section{1.39 Sum of subspaces is the smallest containing subspace}
-% ------------------------------
+% ******************************
+\subsection{1.39 Sum of subspaces is the smallest containing subspace}
+% ******************************
 
 Suppose $U_1, \ldots, U_m$ are subspaces of $V$. Then $U_1 + \ldots + U_m$ is
 the \textit{smallest subspace} of $V$ containing $U_1, \ldots, U_m$.
@@ -784,9 +1068,13 @@ itself. Because $U_1 + \ldots + U_m$ is also a subspace of $V$ containing $U_1,
 \ldots, U_m$, we know $U_1 + \ldots + U_m$ is the \textit{smallest subspace} of
 $V$ containing $U_1, \ldots, U_m$.
 
-% ------------------------------
-\section{1.40 Definition \textbf{\textit{direct sum}}}
-% ------------------------------
+% =============================================================================
+\section{Direct sum}
+% =============================================================================
+
+% ******************************
+\subsection{1.40 Definition \textbf{\textit{direct sum}}}
+% ******************************
 
 Suppose $U_1, \ldots, U_m$ are subspaces of $V$:
 \begin{itemize}
@@ -826,9 +1114,9 @@ So we have:
 Therefore, $(x, y, z)$ has only one way to be expressed, so $U+W$ is a direct
 sum and can be denoted as $U \oplus W$.
 
-% ------------------------------
-\section{Example 1.43: A question}
-% ------------------------------
+% ******************************
+\subsection{Example 1.43: A question}
+% ******************************
 
 See the textbook for the example description and proof.
 
@@ -855,9 +1143,9 @@ $(x, y, z)$ in $U_1 + U_2 + U_3$, we can find at least two expressions:
 This proves that there is no unique way to write the sum, so $U_1 + U_2 + U_3$
 is not a direct sum.
 
-% ------------------------------
-\section{1.44 Condition for a direct sum}
-% ------------------------------
+% ******************************
+\subsection{1.44 Condition for a direct sum}
+% ******************************
 
 Suppose $U_1, \ldots, U_m$ are subspaces of $V$. Then $U_1 + \ldots + U_m$ is a
 direct sum \textbf{if and only if} the only way to write $0$ as a sum $u_1 +
@@ -910,9 +1198,9 @@ mentioned in the textbook:
   0 = (u_1 - v_1) + \ldots + (u_m - v_m)
 \]
 
-% ------------------------------
-\section{1.45 Direct sum of \textbf{\textit{two}} subspaces}
-% ------------------------------
+% ******************************
+\subsection{1.45 Direct sum of \textbf{\textit{two}} subspaces}
+% ******************************
 
 Suppose $U$ and $W$ are subspaces of $V$. Then $U + W$ is a direct sum
 \textbf{if and only if} $U \cap W = {0}$.
@@ -928,9 +1216,9 @@ subspaces, as the last paragraph in the textbook says:
   U_2 = U_1 \cap U_3 = U_2 \cap U_3 = {0}.$
 \end{displayquote}
 
-% ------------------------------
+% =============================================================================
 \section{Review Question Answers}
-% ------------------------------
+% =============================================================================
 
 \begin{enumerate}
   \item See definition 1.19 in the textbook.
@@ -938,7 +1226,7 @@ subspaces, as the last paragraph in the textbook says:
     represent any vector space.
   \item The relationship is not defined. The vector space definition only
     defines commutativity for the addition on $u$ and $v$, but not the
-    communtativity on the multiplication.
+    commutativity on the multiplication.
   \item The relationship is not defined. The vector space definition only
     defines associativity on addition and scalar multiplication, but not on
     the general multiplication of vectors inside the vector space.
@@ -979,23 +1267,23 @@ subspaces, as the last paragraph in the textbook says:
 
 \chapter{Finite-Dimensional Vector Spaces}
 
-% ------------------------------
+% =============================================================================
 \section{Overview}
-% ------------------------------
+% =============================================================================
 
 TODO
 
-% ------------------------------
+% =============================================================================
 \section{Review Questions}
-% ------------------------------
+% =============================================================================
 
 (See the end of this chapter for the review question answers.)
 
 TODO
 
-% ------------------------------
+% =============================================================================
 \section{2.2 Notation \textbf{\textit{list of vectors}}}
-% ------------------------------
+% =============================================================================
 
 We will still write lists of numbers surrounded by parentheses; for example,
 $(2, -7, 8) \in \mathbf{F}^3$.
@@ -1005,9 +1293,9 @@ We will usually write lists of vectors \textbf{without surrounding parentheses}.
 For example, ``$(4, 1, 6), (9, 5, 7)$'' is a list of 2 vectors in
 $\mathbf{R}^3$.
 
-% ------------------------------
+% =============================================================================
 \section{2.3 Definition \textbf{\textit{linear combination}}}
-% ------------------------------
+% =============================================================================
 
 A \textbf{\textit{linear combination}} of a list $v_1, \ldots, v_m$ of vectors
 in $V$ is a vector of the form
@@ -1031,9 +1319,9 @@ Examples:
     such that $(17, -4, 2) = a_1 \cdot (2, 1, -3) + a_2 \cdot (1, -2, 4)$.
 \end{itemize}
 
-% ------------------------------
+% =============================================================================
 \section{Definition \textbf{\textit{span}}}
-% ------------------------------
+% =============================================================================
 
 The set of all linear combinations of a list of vectors $v_1, \ldots, v_m$ in
 $V$ is called the \textbf{\textit{span}} of $v_1, \ldots, v_m$, denoted
@@ -1053,15 +1341,15 @@ Examples:
     such that $(17, -4, 2) = a_1 \cdot (2, 1, -3) + a_2 \cdot (1, -2, 4)$.
 \end{itemize}
 
-% ------------------------------
+% =============================================================================
 \section{Definition \textbf{\textit{span of empty list}}}
-% ------------------------------
+% =============================================================================
 
 The span of the empty list $()$ is defined to be ${0}$.
 
-% ------------------------------
+% =============================================================================
 \section{Span is the smallest containing subspace}
-% ------------------------------
+% =============================================================================
 
 The span of a list of vectors in $V$ is the smallest subspace of $V$ containing
 all the vectors in the list.
@@ -1099,9 +1387,9 @@ still in the set $\mathbf{F}$, so $(\lambda a_1)v_1 + \dots + (\lambda a_m)v_m$
 is still in the span of $v_1, \ldots, v_m$. Therefore, we can reach the
 conclusion that $span(v_1, \ldots, v_m)$ is closed under scalar multiplication.
 
-% ------------------------------
+% =============================================================================
 \section{2.8 Definition \textbf{\textit{spans}} (as a verb)}
-% ------------------------------
+% =============================================================================
 
 If $span(v_1, \ldots, v_m)$ equals $V$, we say that $v_1, \ldots, v_m$ \textbf{
 \textit{spans}} $V$.
@@ -1114,9 +1402,9 @@ Example: The following vectors
 
 spans $\mathbf{F}^n$.
 
-% ------------------------------
+% =============================================================================
 \section{2.10 Definition \textbf{\textit{finite-dimensional vector space}}}
-% ------------------------------
+% =============================================================================
 
 A vector space is called \textbf{\textit{finite-dimensional}} if some list of
 vectors in it spans the space.
@@ -1133,9 +1421,9 @@ Pay close attention to the wording:
   \item This is a list of \textit{vectors}.
 \end{enumerate}
 
-% ------------------------------
+% =============================================================================
 \section{2.11 Definition \textbf{\textit{polynomial}}, $\mathcal{P}(\mathbf{F})$}
-% ------------------------------
+% =============================================================================
 
 \begin{itemize}
   \item A function $p: \mathbf{F} \rightarrow \mathbf{F}$ is called a \textbf{
@@ -1149,9 +1437,9 @@ Pay close attention to the wording:
     coefficients in $\mathbf{F}$.
 \end{itemize}
 
-% ------------------------------
+% =============================================================================
 \section{2.12 Definition \textbf{\textit{degree of a polynomial}}, deg $p$}
-% ------------------------------
+% =============================================================================
 
 \begin{itemize}
   \item A polynomial $p \in \mathcal{P}(\mathbf{F})$ is said to have \textbf{
@@ -1168,25 +1456,25 @@ We define the degree of the polynomial $0$ as $-\infty$ because we want to use
 the convention that $-\infty < m$ in the definition of $\mathcal{P}_m(\mathbf{
 F})$ in order to include the polynomial $0$ into it.
 
-% ------------------------------
+% =============================================================================
 \section{2.13 Definition $\mathcal{P}_m(\mathbf{F})$}
-% ------------------------------
+% =============================================================================
 
 For $m$ a nonnegative integer, $\mathcal{P}_m(\mathbf{F})$ denotes the set of
 all polynomials with coefficients in $\mathbf{F}$ and degree at most $m$.
 
-% ------------------------------
+% =============================================================================
 \section{2.15 Definition \textbf{\textit{infinite-dimensional vector space}}}
-% ------------------------------
+% =============================================================================
 
 A vector space is called \textbf{\textit{infinite-dimensional}} if it is not
 finite-dimensional.
 
 Example: $\mathcal{P}(\mathbf{F})$ is infinite-dimensional.
 
-% ------------------------------
+% =============================================================================
 \section{Review Question Answers}
-% ------------------------------
+% =============================================================================
 
 (TODO)
 
