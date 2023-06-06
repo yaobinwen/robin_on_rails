@@ -22,7 +22,13 @@
 
 \chapter{Vector Spaces}
 
-\section{Question 1}
+% =============================================================================
+\section{EXERCISES 1.A}
+% =============================================================================
+
+% ******************************
+\subsection{Question 1}
+% ******************************
 
 Description: Suppose $a$ and $b$ are real numbers, not both 0. Find real numbers $c$ and $d$
 such that
@@ -51,8 +57,8 @@ Case 1: $a = 0$, $b \neq 0$
 $\Rightarrow$
 
 \begin{empheq}[left=\empheqlbrace]{align*}
-  &-bd = 1 \\
-  &bc = 0
+  -bd &= 1 \\
+  bc &= 0
 \end{empheq}
 
 $\Rightarrow$
@@ -92,5 +98,132 @@ $\Rightarrow$
 \end{empheq}
 
 (Done)
+
+% ******************************
+\subsection{Question 2}
+% ******************************
+
+Description: Show that \[ \frac{-1 + \sqrt{3}i}{2} \] is a cube root of $1$
+(meaning that its cube equals $1$).
+
+Solution:
+
+\begin{equation*}
+  \begin{split}
+    (\frac{-1 + \sqrt{3}i}{2})^3
+    & = (\frac{-1 + \sqrt{3}i}{2})^2 \cdot \frac{-1 + \sqrt{3}i}{2} \\
+    & = \frac{1}{4}\bigl[ (-1)^2 - \sqrt{3}i - \sqrt{3}i + 3i^2 \bigr] \cdot
+      \frac{-1 + \sqrt{3}i}{2} \\
+    & = \frac{1}{4}\bigl[ 1 - 2\sqrt{3}i - 3 \bigr] \cdot
+      \frac{-1 + \sqrt{3}i}{2} \\
+    & = -\frac{1 + \sqrt{3}i}{2} \cdot \frac{-1 + \sqrt{3}i}{2} \\
+    & = -\frac{1}{4}\bigl(-1 + \sqrt{3}i - \sqrt{3}i + 3i^2 \bigr) \\
+    & = -\frac{1}{4} \cdot (-1 - 3) \\
+    & = -\frac{1}{4} \cdot (-4) \\
+    & = 1
+  \end{split}
+\end{equation*}
+
+$\therefore$: $\frac{-1 + \sqrt{3}i}{2}$ is a cube root of $1$.
+
+% ******************************
+\subsection{Question 3}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 4}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 5}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 6}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 7}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 8}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 9}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 10}
+% ******************************
+
+TODO
+
+% ******************************
+\subsection{Question 11}
+% ******************************
+
+Explain why there does not exist $\lambda \in \mathbf{C}$ such that
+\[\lambda(2-3i, 5+4i, -6+7i) = (12-5i, 7+22i, -32-9i) \]
+
+Solution:
+
+According to the definition of $\mathbf{F}^n$, $(2-3i, 5+4i, -6+7i)$ and
+$(12-5i, 7+22i, -32-9i)$ are two lists when $n=3$.
+
+Because $\lambda \in \mathbf{C}$ and $\mathbf{F}$ can denote $\mathbf{C}$,
+we have $\lambda \in \mathbf{F}$.
+
+Therefore, the expression $\lambda(2-3i, 5+4i, -6+7i)$ is a \textit{scalar
+multiplication} on $\mathbf{F}^3$, so we have:
+
+\[
+  \lambda(2-3i, 5+4i, -6+7i) = (\lambda(2-3i), \lambda(5+4i), \lambda(-6+7i))
+\]
+
+\begin{equation*}
+  \begin{split}
+    \lambda(2-3i, 5+4i, -6+7i)
+    & = (\lambda(2-3i), \lambda(5+4i), \lambda(-6+7i)) \\
+    & = (2\lambda - 3\lambda i, 5\lambda + 4\lambda i, -6\lambda + 7\lambda i)
+  \end{split}
+\end{equation*}
+
+To make it equal to $(12-5i, 7+22i, -32-9i)$, we must have:
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  2\lambda - 3\lambda i & = 12-5i \\
+  5\lambda + 4\lambda i & = 7+22i \\
+  -6\lambda + 7\lambda i & = -32-9i
+\end{empheq}
+
+This can be further reduced as:
+
+\begin{empheq}[left=\empheqlbrace]{align*}
+  2\lambda & = 12 \\
+  -3\lambda &= -5 \\
+  5\lambda & = 7 \\
+  4\lambda & = 22 \\
+  -6\lambda & = -32 \\
+  7\lambda & = -9
+\end{empheq}
+
+Unfortunately, we can't find a single $\lambda$ that satisfies all of the
+equations above. Therefore, such a $\lambda$ doesn't exist.
 
 \end{document}

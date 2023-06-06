@@ -119,3 +119,9 @@ This document records down my study activities for future reflection. The notes,
 08:00 ~ 10:00 (2h), 11:30 ~ 13:35 (2h5m)
 
 1. Rewrote the notes for Chapter 1. Previously, the topics were all arranged in a linear structure so it was difficult to see how they are related. Now I grouped related topics into the same sections to make the notes easier to grasp the key points.
+
+## 2023-06-05 (Mon)
+
+21:52 ~ 22:45 (53m)
+
+1. Worked on Exercises 1.A to refresh my memory on Chapter 1A.
