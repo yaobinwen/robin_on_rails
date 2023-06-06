@@ -1,6 +1,7 @@
 \documentclass[12pt, letterpaper, oneside]{article}
 \usepackage{amsmath}
 \usepackage{csquotes}
+\usepackage{float}
 \usepackage{tikz}
 % \usetikzlibrary{arrows.meta,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 
@@ -47,6 +48,25 @@ This paragraph is below the quoted part.
             & = u_{11} + \ldots + u_{m1} + u_{12} + \ldots + u_{m2} \\
             & = (u_{11} + u_{12}) + \ldots + (u_{m1} + u_{m2})
 \end{align*}
+
+\section{Table}
+
+Table compares lists and sets:
+\begin{table}[H]
+\centering
+\begin{tabular}{||c c c ||}
+ \hline
+   & Lists & Sets \\ [0.5ex]
+ \hline
+ \hline
+ Length & Finite & Finite or infinite \\
+ Order & Matters & Doesn't matter \\
+ Repetition & Allows & Doesn't allow \\ [1ex]
+ \hline
+\end{tabular}
+\caption{Compare lists and sets}
+\label{table:lists_sets_comp}
+\end{table}
 
 \section{Graph}
 
