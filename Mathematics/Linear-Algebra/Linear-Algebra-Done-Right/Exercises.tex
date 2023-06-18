@@ -4,6 +4,7 @@
 \usepackage{empheq}
 \usepackage[letterpaper, textwidth=7.5in, textheight=8in]{geometry}
 \usepackage{csquotes}
+\usepackage{parskip}
 
 \title{Exercises in \textit{Linear Algebra Done Right}}
 \author{Yaobin Wen}
@@ -225,5 +226,189 @@ This can be further reduced as:
 
 Unfortunately, we can't find a single $\lambda$ that satisfies all of the
 equations above. Therefore, such a $\lambda$ doesn't exist.
+
+% ******************************
+\subsection{Question 12}
+% ******************************
+
+Show that $(x + y) + z = x + (y + z)$ for all $x, y, z \in \mathbf{F}^n$.
+
+Solution:
+
+Because $x, y, z \in \mathbf{F}^n$, according to the definition of
+$\mathbf{F}^n$, we know that:
+
+\[ x = (x_1, \ldots, x_n), x_j \in \mathbf{F}, j = 1, \ldots, n \]
+\[ y = (y_1, \ldots, y_n), y_j \in \mathbf{F}, j = 1, \ldots, n \]
+\[ z = (z_1, \ldots, z_n), z_j \in \mathbf{F}, j = 1, \ldots, n \]
+
+Because $x_j, y_j, z_j \in \mathbf{F}$, their addition satisfies the property
+of associativity, i.e.,
+
+\[ (a + b) + c = a + (b + c), a, b, c \in \mathbf{F} \]
+
+Therefore, according to the definition of addition on $\mathbf{F}^n$, we have:
+
+\begin{equation*}
+  \begin{split}
+    (x + y) + z
+    & = \bigl((x_1, \ldots, x_n) + (y_1, \ldots, y_n)\bigr) +
+      (z_1, \ldots, z_n) \\
+    & = (x_1 + y_1, \ldots, x_n + y_n) + (z_1, \ldots, z_n) \\
+    & = \bigl((x_1 + y_1), \ldots, (x_n + y_n)\bigr) + (z_1, \ldots, z_n) \\
+    & = \bigl((x_1 + y_1) + z_1, \ldots, (x_n + y_n) + z_n\bigr) \\
+    & = \bigl(x_1 + (y_1 + z_1), \ldots, x_n + (y_n + z_n)\bigr) \\
+    & = (x_1, \ldots, x_n) + \bigl((y_1 + z_1), \ldots, (y_n + z_n)\bigr) \\
+    & = (x_1, \ldots, x_n) + \bigl(y_1 + z_1, \ldots, y_n + z_n\bigr) \\
+    & = (x_1, \ldots, x_n) + \bigl((y_1, \ldots, y_n) +
+      (z_1, \ldots, z_n)\bigr) \\
+    & = x + (y + z)
+  \end{split}
+\end{equation*}
+
+% ******************************
+\subsection{Question 13}
+% ******************************
+
+Show that $(ab)x = a(bx)$ for all $x \in \mathbf{F}^n$ and all $a, b \in
+\mathbf{F}$
+
+Solution:
+
+Because $x \in \mathbf{F}^n$, according to the definition of $\mathbf{F}^n$, we
+know that:
+
+\[ x = (x_1, \ldots, x_n), x_j \in \mathbf{F}, j = 1, \ldots, n \]
+
+Because $a, b, x_j \in \mathbf{F}$, their multiplication satisfies the property
+of associativity, i.e.,
+
+\[ (ab)x_j = a(b x_j), a, b, x_j \in \mathbf{F} \]
+
+Because $a, b \in \mathbf{F}$, we have $ab \in \mathbf{F}$. Therefore, $(ab)x$
+is the case of scalar multiplication on $\mathbf{F}^n$. Therefore, according to
+the definition of scalar multiplication on $\mathbf{F}^n$, we have:
+
+\begin{equation*}
+  \begin{split}
+    (ab)x
+    & = (ab)(x_1, \ldots, x_n) \\
+    & = \bigl((ab)x_1, \ldots, (ab)x_n\bigr) \\
+    & = \bigl(a(b x_1), \ldots, a(b x_n)\bigr) \\
+    & = a(b x_1, \ldots, b x_n) \\
+    & = a\bigl(b(x_1, \ldots, x_n)\bigr) \\
+    & = a(bx)
+  \end{split}
+\end{equation*}
+
+% ******************************
+\subsection{Question 14}
+% ******************************
+
+Show that $1x = x$ for all $x \in \mathbf{F}^n$.
+
+Solution:
+
+Because we have never defined the multiplication of two elements in
+$\mathbf{F}^n$ throughout the entire chapter, and because so far we have only
+defined scalar multiplication on $\mathbf{F}^n$, we have $1$ must be a scalar
+in $\mathbf{F}$.
+
+Because $x \in \mathbf{F}^n$, according to the definition of $\mathbf{F}^n$, we
+know that:
+
+\[ x = (x_1, \ldots, x_n), x_j \in \mathbf{F}, j = 1, \ldots, n \]
+
+Because $1$ is the multiplicative identity in $\mathbf{F}$, we know that
+
+\[ 1a = a, \forall a \in \mathbf{F} \]
+
+Therefore, according to the definition of scalar multiplication on
+$\mathbf{F}^n$, we have:
+
+\begin{equation*}
+  \begin{split}
+    1x
+    & = 1(x_1, \ldots, x_n) \\
+    & = (1 x_1, \ldots, 1 x_n) \\
+    & = (x_1, \ldots, x_n) \\
+    & = x
+  \end{split}
+\end{equation*}
+
+% ******************************
+\subsection{Question 15}
+% ******************************
+
+Show that $\lambda(x + y) = \lambda x + \lambda y$ for all $\lambda \in
+\mathbf{F}$ and all $x, y \in \mathbf{F}^n$.
+
+Solution:
+
+Because $x, y \in \mathbf{F}^n$, according to the definition of $\mathbf{F}^n$,
+we know that:
+
+\[ x = (x_1, \ldots, x_n), x_j \in \mathbf{F}, j = 1, \ldots, n \]
+\[ y = (y_1, \ldots, y_n), y_j \in \mathbf{F}, j = 1, \ldots, n \]
+
+Because $\lambda, x_j, y_j \in \mathbf{F}$, the distributive property holds:
+
+\[ \lambda(x_j + y_j) = \lambda x_j + \lambda y_j \]
+
+Therefore, according to the addition and scalar multiplication on
+$\mathbf{F}^n$, we have:
+
+\begin{equation*}
+  \begin{split}
+    \lambda(x + y)
+    & = \lambda \bigl((x_1, \ldots, x_n) + (y_1, \ldots, y_n)\bigr) \\
+    & = \lambda (x_1 + y_1, \ldots, x_n + y_n) \\
+    & = \bigl(\lambda(x_1 + y_1), \ldots, \lambda(x_n + y_n)\bigr) \\
+    & = \bigl(\lambda x_1 + \lambda y_1, \ldots,
+      \lambda x_n + \lambda y_n\bigr) \\
+    & = (\lambda x_1, \ldots, \lambda x_n) +
+      (\lambda y_1, \ldots, \lambda y_n) \\
+    & = \lambda x + \lambda y
+  \end{split}
+\end{equation*}
+
+% ******************************
+\subsection{Question 16}
+% ******************************
+
+Show that $(a + b)x = ax + bx$ for all $a, b \in \mathbf{F}$ and all $x \in
+\mathbf{F}^n$.
+
+Solution:
+
+Because $x \in \mathbf{F}^n$, according to the definition of $\mathbf{F}^n$, we
+know that:
+
+\[ x = (x_1, \ldots, x_n), x_j \in \mathbf{F}, j = 1, \ldots, n \]
+
+Because $a, b, x_j \in \mathbf{F}$, their arithmetics satisfy the commutativity
+and distributive property:
+
+\begin{equation*}
+  \begin{split}
+    (a + b)x_j
+    & = x_j (a + b) \\
+    & = x_j a + x_j b \\
+    & = a x_j + b x_j
+  \end{split}
+\end{equation*}
+
+Therefore, according to the scalar multiplication on $\mathbf{F}^n$, we have:
+
+\begin{equation*}
+  \begin{split}
+    (a + b)x
+    & = (a + b)(x_1, \ldots, x_n) \\
+    & = \bigl((a + b)x_1, \ldots, (a + b)x_n\bigr) \\
+    & = (a x_1 + b x_1, \ldots, a x_n + b x_n) \\
+    & = (a x_1, \ldots, a x_n) + (b x_1, \ldots, b x_n) \\
+    & = ax + bx
+  \end{split}
+\end{equation*}
 
 \end{document}
