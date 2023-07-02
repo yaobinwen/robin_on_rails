@@ -317,6 +317,16 @@ where
 - `I` = Electric current flowing through the conductor.
 - `R` = Resistance of the conductor.
 
+## 13 Diodes
+
+### 13.1 P-N junction and diode
+
+A **P-N junction** is formed when an N-type semiconductor is joined with a P-type semiconductor, as illustrated as follows ([original link]()). "The region where the P-type and N-type semiconductors are joined is called P-N junction. It is also defined as the boundary between the P-type and N-type semiconductors."
+
+![P-N junction formation](./EE/p-n-junction-formation.png)
+
+The P-N junction forms a popular semiconductor device known as **diode**.
+
 ## Other terms
 
 - [Electric field](https://www.physics-and-radio-electronics.com/electromagnetics/electrostatics/electric-field.html)
