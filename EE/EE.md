@@ -327,6 +327,10 @@ A **P-N junction** is formed when an N-type semiconductor is joined with a P-typ
 
 The P-N junction forms a popular semiconductor device known as **diode**.
 
+### 13.2 Zero-bias P-N junction
+
+A P-N junction in which no external voltage is applied is called **zero-bias P-N junction**, also called **unbiased P-N junction**.
+
 ## Other terms
 
 - [Electric field](https://www.physics-and-radio-electronics.com/electromagnetics/electrostatics/electric-field.html)
