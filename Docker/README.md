@@ -47,7 +47,7 @@ To use `docker login` without it complaining on a machine with no GUI, you have 
 
 Also you should not try to do the build on a machine with only 512MB of RAM or Bad Things™ will happen.
 
-## How to Examine the Contents in a Registry?
+## How to examine the contents in a registry?
 
 Refer to [7]. Suppose the Docker Registry is running at `http://192.168.16.209:5000` (if it's running on `https`, `docker login` may be required). Then:
 
