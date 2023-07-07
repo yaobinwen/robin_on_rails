@@ -43,7 +43,7 @@ The container's configuration can be found at `/var/lib/docker/containers/<conta
 
 ## `docker login`
 
-To use `docker login` without it complaining on a machine with no GUI, you have to build `docker-credential-pass` from Docker's "credential helpers" repository, install it in `/usr/local/bin`, configure it in `~/.docker/config.json`, and then install `pass` and run `pass init`. `pass` assumes that you have GPG up and running with the GPG agent caching your passphrase.
+To use `docker login` without it complaining on a machine with no GUI, you have to build `docker-credential-pass` from [docker/docker-credential-helpers](https://github.com/docker/docker-credential-helpers), install it in `/usr/local/bin`, configure it in `~/.docker/config.json`, and then install `pass` and run `pass init`. `pass` assumes that you have GPG up and running with the GPG agent caching your passphrase.
 
 Also you should not try to do the build on a machine with only 512MB of RAM or Bad Things™ will happen.
 
