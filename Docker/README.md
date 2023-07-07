@@ -47,7 +47,7 @@ To use `docker login` without it complaining on a machine with no GUI, you have 
 
 Also you should not try to do the build on a machine with only 512MB of RAM or Bad Things™ will happen.
 
-## How to examine the contents in a registry?
+## How to list the contents in a registry?
 
 Refer to [7]. Suppose the Docker Registry is running at `http://192.168.16.209:5000` (if it's running on `https`, `docker login` may be required). Then:
 
@@ -76,6 +76,79 @@ List image tags: `curl --silent --request GET http://192.168.16.209:5000/v2/ywen
 ```
 
 Get the manifests of `ywen/image_1:tag1`: `curl --silent --request GET http://192.168.16.209:5000/v2/ywen/image_1/manifests/tag1 | jq .`
+
+## How to delete an image in a registry?
+
+The registry must be configured to allow deleting images. This can be done in two ways:
+- 1). Setting the environment variable `REGISTRY_STORAGE_DELETE_ENABLED=true` when starting the registry. For example, the Docker command can be:
+```shell
+docker run \
+  --restart=always \
+  --name=registry \
+  -v /var/lib/registry:/var/lib/registry \
+  -e REGISTRY_STORAGE_DELETE_ENABLED=true \
+  registry:2
+```
+- 2). Or set it in the [registry's configuration](https://docs.docker.com/registry/configuration/#delete):
+```yaml
+delete:
+  enabled: true
+```
+
+To delete an image, you must obtain the **digest** of the image. As noted in [7]:
+
+> **Note** When deleting a manifest from a registry version 2.3 or later, the following header must be used when HEAD or GET-ing the manifest to obtain the correct digest to delete:
+> ```
+> Accept: application/vnd.docker.distribution.manifest.v2+json
+> ```
+
+To tell the version of the Docker registry, run `sudo docker exec -it registry-container-name registry --version`:
+
+```
+$ sudo docker exec -it registry registry --version
+registry github.com/docker/distribution 2.8.2
+```
+
+It's version `2.8.2`, later than `2.3`, so I'll need to use the `Accept` header in the HTTP request. The full command is:
+
+```
+curl -I -sS -H "Accept: application/vnd.docker.distribution.manifest.v2+json" http://192.168.16.209:5000/v2/ywen/image_1/manifests/tag1
+```
+
+This command generates the output below:
+
+```
+HTTP/1.1 200 OK
+Content-Length: 1776
+Content-Type: application/vnd.docker.distribution.manifest.v2+json
+Docker-Content-Digest: sha256:1bb74ab3a9f24b84bdd633b82dc2c500ff8b08cb60871b326f9a6588b6a9ae1c
+Docker-Distribution-Api-Version: registry/2.0
+Etag: "sha256:1bb74ab3a9f24b84bdd633b82dc2c500ff8b08cb60871b326f9a6588b6a9ae1c"
+X-Content-Type-Options: nosniff
+Date: Fri, 07 Jul 2023 17:52:16 GMT
+```
+
+To only print out the image digest, run the `curl` command through `awk`:
+
+```
+curl -I -sS -H "Accept: application/vnd.docker.distribution.manifest.v2+json" http://192.168.16.209:5000/v2/ywen/image_1/manifests/tag1 | awk '$1 == "Docker-Content-Digest:" { print $2 }'
+```
+
+This time it prints:
+
+```
+sha256:1bb74ab3a9f24b84bdd633b82dc2c500ff8b08cb60871b326f9a6588b6a9ae1c
+```
+
+Run `curl -v -sS -X DELETE "http://192.168.16.209:5000/v2/ywen/image_1/manifests/sha256:1bb74ab3a9f24b84bdd633b82dc2c500ff8b08cb60871b326f9a6588b6a9ae1c` to delete the image. Note `sha256:` must be included.
+
+You should get `202 Accepted` in the response.
+
+Then you should not see the images when you list them again `curl -sS http://localhost:5000/v2/mvs/health-monitor/tags/list | jq .` (or you will still see it but obtaining its manifest will return the error `MANIFEST_UNKNOWN` and I haven't learned why).
+
+## How to do garbage collection in a registry?
+
+Run `registry garbage-collect /etc/docker/registry/config.yml`. If the registry is a Docker container, run `sudo docker exec -it registry-container-name registry garbage-collect /etc/docker/registry/config.yml`. You may need to replace `/etc/docker/registry/config.yml` with the actual configuration path.
 
 ## References:
 - [1] [Documentation: Make clear instructions for getting a core file, when container crashes](https://github.com/moby/moby/issues/11740)
