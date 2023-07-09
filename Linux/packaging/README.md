@@ -1,6 +1,6 @@
 # Packaging
 
-## Overview
+## 1. Overview
 
 (**NOTE:** This document is still under continuous construction so what you are reading has not met the goal I set for it.)
 
@@ -17,7 +17,7 @@ Here is the brief description of the contained folders and files:
   - `prep-pkg-repo.py` sets up the simple Debian package server and it uses the GPG keys in `gpgkeys` to sign the packages.
 - `dpkg-ecosystem.py` is an atempt to draw the dependency graph of all the Debian packaging tools.
 
-## Big Picture of Packaging
+## 2. Big Picture of Packaging
 
 If you need to prepare a Debian package, the reference [1] (Debian New Maintainers' Guide) and [2] (Debian Policy Manual) are the official documents for learning all the needed knowledge. Consult them whenever you have a question of how to do a task.
 
@@ -28,7 +28,7 @@ The manual pages of each tool are another official source of information:
 - [Ubuntu Manpage Repository](http://manpages.ubuntu.com/)
   - [Here](http://manpages.ubuntu.com/manpages/trusty/) is the link for all the manpages in different languages (using `trusty` as an example). The English version is contained in the folders like `man1`, `man2`, ..., `man9`.
 
-## How to Find A Package
+## 3. How to Find A Package
 
 Try on the [official Ubuntu Package Search](https://packages.ubuntu.com/).
 
@@ -48,13 +48,38 @@ Once you get into the page of a specific package, such as the [libboost-filesyst
 
 **NOTE:** Remember to check the `-updates` repository, such as `trusty-updates` or `bionic-updates`, and see if there is an updated version of the same package. For example, the `libboost1.54_1.54.0-4ubuntu3` is available in `trusty`, but there is an updated version `libboost1.54_1.54.0-4ubuntu3.1` in `trusty-updates`, and usually both `trusty` and `trusty-updates` are configured in the APT source list. Therefore, if you only look at the `trusty` repository, you may overlook the updated package and end up using the wrong version.
 
-## Figure Out Package Dependencies
+## 4. Figure Out Package Dependencies
 
 The tools `debtree` and `apt-rdepends` can help figure out the dependencies of the packages.
 
 `debtree` is briefly introduced [here](https://askubuntu.com/a/261808), and its manpage is [here](http://manpages.ubuntu.com/manpages/bionic/man1/debtree.1.html).
 
 `apt-rdepends`'s manpage is [here](http://manpages.ubuntu.com/manpages/bionic/man1/apt-rdepends.1.html).
+
+## 5. How to download the source code of an official package?
+
+The official Ubuntu Package Server provides the websites of the packages where you can download the source code. However, the easier way is to use `apt-get source` to download the package's source code. The benefit of this method is you are guaranteed to download the source code that's used to build the executable you use on Ubuntu.
+
+Follow the steps below to use `apt-get source` to download the source code:
+- 1). Edit `/etc/apt/sources.list` to enable the source code repositories, i.e., those starting with `deb-src`. For example:
+```
+# See http://help.ubuntu.com/community/UpgradeNotes for how to upgrade to
+# newer versions of the distribution.
+deb http://us.archive.ubuntu.com/ubuntu/ bionic main restricted
+deb-src http://us.archive.ubuntu.com/ubuntu/ bionic main restricted
+```
+- 2). Run `sudo apt-get update` to update the index.
+- 3). Run `apt-get source <package-name>` to download the source code and apply the patches automatically. Take `netcat` for example. Running `apt-get source netcat` does the following things automatically:
+  - a). Download the source tarball `netcat_1.10.orig.tar.bz2` in the current directory. (The command also downloads the [`.dsc` file](https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-debiansourcecontrolfiles) which describes the source package.)
+  - b). Download the `debian` tarball `netcat_1.10-41.1.debian.tar.xz` in the current directory.
+  - c). Extract the source code from the source tarball into the current directory.
+  - d). Extract the `debian` packaging files from the `debian` tarball and put them into the extracted source code directory automatically.
+  - e). Apply the `debian/patches` automatically.
+- 4). Now the code is ready to be built. Enter the source code directory and run `debuild -us -uc` can build the code.
+
+Regarding `apt-get source`: The default behavior is to download and unpack the source tarball to make it ready for building. However, you can specify two CLI options to change the behavior:
+- 1). `--download-only` (e.g., `apt-get source netcat --download-only`) to only download the source tarball, the `.dsc` file, and the `debian` tarball.
+- 2). `--build` (e.g., `apt-get source netcat --build`) to download, unpack, and also build the source code.
 
 ## The `debhelper` Tool Suite
 
