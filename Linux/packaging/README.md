@@ -81,6 +81,33 @@ Regarding `apt-get source`: The default behavior is to download and unpack the s
 - 1). `--download-only` (e.g., `apt-get source netcat --download-only`) to only download the source tarball, the `.dsc` file, and the `debian` tarball.
 - 2). `--build` (e.g., `apt-get source netcat --build`) to download, unpack, and also build the source code.
 
+## 6. How to manually apply the patches to the source code?
+
+Once you download the source code (see section 5 above), you can apply the patches to see how the official Ubuntu release deals with the source code. There are two ways to apply the patches:
+- 1). Run `dpkg-source --extract <filename.dsc> [output-directory]` (e.g., `dpkg-source --extract netcat_1.10-41.1.dsc netcat-1.10`).
+  - a). You can also run `dpkg-source --no-check --extract <filename.dsc> [output-directory]` if you don't want to verify the signature in the `.dsc` file.
+- 2). If you want to apply the patches one by one, you can follow the steps below:
+  - a). Unpack the source tarball and the `debian` tarball.
+  - b). Move the `debian` folder into the source code folder. So the folder structure should look like the following (using `netcat` as an example):
+```
+├── netcat-1.10 (<== Extracted source code folder)
+│   ├── Changelog
+│   ├── data
+│   ├── debian (<== The `debian` folder is moved here)
+│   ├── generic.h
+│   ├── Makefile
+│   ├── netcat.blurb
+│   ├── netcat.c
+│   ├── README
+│   ├── scripts
+│   └── stupidh
+├── netcat_1.10-41.1.debian.tar.xz
+├── netcat_1.10-41.1.dsc
+├── netcat_1.10.orig.tar.bz2
+```
+  - c). `cd` into the source code folder, such as `cd netcat-1.10`.
+  - d). Run `patch -p1 ./debian/patches/<patch-file-name>` to apply the specific patch to the source code.
+
 ## The `debhelper` Tool Suite
 
 The `debhelper` tool suite is introduced [here](https://manpages.debian.org/stretch/debhelper/debhelper.7.en.html). Note that this is the manpage of Debian _stretch_ which is the latest version as of 2018/08/30. Here is its _Description_ section:
