@@ -244,5 +244,16 @@ class TestMockSideEffect(_TestMockBase):
         self.assertEqual(m(), 'k1')
 
 
+class TestMockReturnValue(_TestMockBase):
+    def test_return_value(self):
+        m = mock.Mock(return_value=1099)
+        self.assertEqual(m(), 1099)
+
+        # If given a list, `return_value` returns the whole list instead of
+        # each value in the list at each call.
+        m = mock.Mock(return_value=[1099])
+        self.assertListEqual(m(), [1099])
+
+
 if __name__ == '__main__':
     unittest.main()
