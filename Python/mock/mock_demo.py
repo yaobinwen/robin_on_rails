@@ -238,10 +238,8 @@ class TestMockSideEffect(_TestMockBase):
         self.assertRaises(StopIteration, m)
 
         m = mock.Mock(side_effect={'k1':1, 'k2':2})
-        # NOTE(ywen): dict is iterable but the order is not intuitive. Use with
-        # caution.
-        self.assertEqual(m(), 'k2')
         self.assertEqual(m(), 'k1')
+        self.assertEqual(m(), 'k2')
 
 
 class TestMockReturnValue(_TestMockBase):
