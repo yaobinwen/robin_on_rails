@@ -47,6 +47,42 @@ To use `docker login` without it complaining on a machine with no GUI, you have 
 
 Also you should not try to do the build on a machine with only 512MB of RAM or Bad Things™ will happen.
 
+## Self-signed CA certificates
+
+On the client side, when logging in a Docker registry that uses a self-signed CA certificate, `docker login` may report the error like
+
+> x509: certificate signed by unknown authority
+
+The document [_Verify repository client with certificates_](https://docs.docker.com/engine/security/certificates/) says:
+
+> A custom certificate is configured by creating a directory under `/etc/docker/certs.d` using the same name as the registry's hostname, such as `localhost`. All `*.crt` files are added to this directory as CA roots.
+>
+> The presence of one or more `<filename>.key/cert` pairs indicates to Docker that there are custom certificates required for access to the desired repository.
+>
+>>Note: If multiple certificates exist, each is tried in alphabetical order. If there is a 4xx-level or 5xx-level authentication error, Docker continues to try with the next certificate.
+
+An example configuration is as follows:
+
+```
+/etc/docker/certs.d/            <-- Certificate directory
+    └── localhost:5000          <-- Hostname:port
+       ├── client.cert          <-- Client certificate
+       ├── client.key           <-- Client key
+       └── ca.crt               <-- Root CA that signed the registry certificate, in PEM
+```
+
+I'm not sure if the CA certificate must be named as `ca.crt`. The words "All `*.crt` files are added to this directory as CA roots" seem to suggest that, if there are multiple CA certificates (as a chain), they can all be put under this folder with different filenames as long as their extensions are all `.crt`. In other words, maybe the following configuration also works:
+
+```
+/etc/docker/certs.d/            <-- Certificate directory
+    └── localhost:5000          <-- Hostname:port
+       ├── client.cert          <-- Client certificate
+       ├── client.key           <-- Client key
+       ├── root-ca.key          <-- Root CA certificate
+       ├── intermediate-ca.key  <-- Intermediate CA certificate
+       └── org-ca.crt           <-- Organization's CA that signed the registry certificate, in PEM
+```
+
 ## How to list the contents in a registry?
 
 Refer to [7]. Suppose the Docker Registry is running at `http://192.168.16.209:5000` (if it's running on `https`, `docker login` may be required). Then:
