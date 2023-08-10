@@ -4,7 +4,7 @@ from google.protobuf import json_format
 from sandbox.v0.author_pb2 import Author
 
 
-def _main():
+def _author_demo():
     author = Author(
         name="John Doe",
         email="john@doe.com",
@@ -32,6 +32,10 @@ def _main():
     print("author parsed from json_str1: ", author_from_json_str1)
     author_from_json_str2 = json_format.Parse(json_str2, message=Author())
     print("author parsed from json_str2: ", author_from_json_str2)
+
+
+def _main():
+    _author_demo()
 
 
 def entry_point():
