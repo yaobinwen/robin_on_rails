@@ -2,6 +2,7 @@ import json
 
 from google.protobuf import json_format
 from sandbox.v0.author_pb2 import Author
+from sandbox.v0.school_pb2 import Student, Teacher, Class, School
 
 
 def _author_demo():
@@ -34,8 +35,33 @@ def _author_demo():
     print("author parsed from json_str2: ", author_from_json_str2)
 
 
+def _school_demo():
+    """This demo focuses on dealing with repeated fields.
+    """
+    s_ada = Student(name="Ada")
+    s_bob = Student(name="Bob")
+    t_zach = Teacher(name="Zach")
+    class1 = Class(id="class_1")
+    class1.head_teacher.CopyFrom(t_zach)
+
+    # `append` doesn't work if the field is a message type, so we have to use
+    # either `add` or `extend`.
+    class1.students.extend([s_ada, s_bob])
+
+    t_mike = Teacher(name="Mike")
+    class2 = Class(id="class_2", head_teacher=t_mike)
+    class2.students.add().name="Linda"
+    class2.students.add().name="Nicolas"
+
+    school1 = School(name="school demo", classes=[class1, class2])
+
+    json_str = json_format.MessageToJson(message=school1)
+    print(json_str)
+
+
 def _main():
     _author_demo()
+    _school_demo()
 
 
 def entry_point():

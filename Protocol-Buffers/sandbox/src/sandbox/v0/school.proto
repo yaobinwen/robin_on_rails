@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package school;
+
+/// Information of a student.
+message Student {
+  /// Name
+  string name = 1;
+}
+
+/// Information of a teacher.
+message Teacher {
+  /// Name
+  string name = 1;
+}
+
+/// A class of students.
+message Class {
+  /// ID of the class.
+  string id = 1;
+
+  /// The head teacher.
+  Teacher head_teacher = 2;
+
+  /// The students of this class.
+  repeated Student students = 3;
+}
+
+/// A school of many classes.
+message School {
+  /// Name of the school.
+  string name = 1;
+
+  /// The classes in the school.
+  repeated Class classes = 2;
+}
