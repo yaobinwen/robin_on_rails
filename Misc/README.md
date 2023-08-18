@@ -28,6 +28,7 @@
 - [卡瓦邦噶！](https://www.kawabangga.com/)
 - [plantegg](https://plantegg.github.io/)
 - [Björn Fahller: Playful Programming](https://playfulprogramming.blogspot.com/)
+- [Home Page for David Drysdale](https://www.lurklurk.org/)
 
 ## Organizational blogs or maillists
 
