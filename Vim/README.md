@@ -48,6 +48,38 @@ Examples:
 - `s/the/THE/cg`: On the current line, replace all `the` with `THE` and confirm with the user at every occurrence.
 - `%s/the/THE/cg`: In the current entire file, replace all `the` with `THE` and confirm with the user at every occurrence. Note that words like `nonetheless` will be replaced as `noneTHEless`.
 
+## Split and navigate windows
+
+Splitting:
+- Split horizontally: `:sp [file path]`.
+- Split vertically: `:vsp [file path]`.
+
+Navigating:
+- `Ctrl-w-w` navigates through the windows.
+- `Ctrl-w-W` navigates through the windows in the opposite direction as `Ctrl-w-w`.
+- `Ctrl-w-N-w` jumps to the Nth window.
+- `Ctrl+w +p`: Previous, last accessed window.
+- `Ctrl+w +t`: Top-left window.
+- `Ctrl+w +b`: Bottom-right window.
+
+Reordering:
+- `Ctrl+w +r`: Shift the current window forward (i.e., changing its position).
+- `Ctrl+w +R`: Shift the current window backward.
+
+Resizing:
+- `Ctrl+w+N++`: Vertically increase.
+- `Ctrl+w+N+-`: Vertically decrease.
+- `Ctrl+w+N+>`: Horizontally increase.
+- `Ctrl+w+N+<`: Horizontally decrease.
+
+Closing:
+- `quit` or `close`: Close the current window.
+- `quitall`: Close Vim.
+- `only`: Close other windows and only leave the current window.
+
+Buffer list:
+- `buffers`
+
 ---
 
 (To be continued)
