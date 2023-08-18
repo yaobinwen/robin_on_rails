@@ -1,0 +1,50 @@
+- name: Demo how to rename a directory on the target machine.
+  gather_facts: yes
+  hosts: all
+  tasks:
+    - name: Get the unprivileged user's home directory.
+      user:
+        name: "{{lookup('env', 'USER')}}"
+      register: unprivileged_user
+
+    - name: Create a folder of files.
+      file:
+        state: directory
+        path: /tmp/ansible-demo-rename-dir
+        mode: "0o755"
+        owner: "{{unprivileged_user.uid}}"
+        group: "{{unprivileged_user.group}}"
+
+    - name: Create a bunch of files.
+      file:
+        state: touch
+        path: /tmp/ansible-demo-rename-dir/{{item}}
+        mode: "0o644"
+        owner: "{{unprivileged_user.uid}}"
+        group: "{{unprivileged_user.group}}"
+      loop:
+        - a
+        - b
+        - c
+
+    - name: Get the status of the target path.
+      stat:
+        path: /tmp/ansible-demo-rename-dir
+      register: target_path_stat
+
+    - name: Fail if the target path exists but is not a directory.
+      when: target_path_stat.stat.exists and not target_path_stat.stat.isdir
+      fail:
+        msg: "{{target_path_stat.stat.path}} exists but is not a directory."
+
+    - name: >
+        If the target directory exists, copy the entire tree to the new
+        location.
+      when: target_path_stat.stat.exists and target_path_stat.stat.isdir
+      copy:
+        src: "{{target_path_stat.stat.path}}/"
+        remote_src: true
+        dest: "{{target_path_stat.stat.path}}.bak"
+        mode: preserve
+        owner: "{{unprivileged_user.uid}}"
+        group: "{{unprivileged_user.group}}"
