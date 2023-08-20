@@ -1,0 +1,52 @@
+# Registers (32-bit)
+
+- General registers
+  - Data registers
+    - `EAX` (32 bits): Accumulator: used in input/output and most arithmetic instructions.
+      - `AX` (16 bits)
+        - `AH` (8 bits)
+        - `AL` (8 bits)
+    - `EBX` (32 bits): Base (in terms of addressing): used in indexed addressing.
+      - `BX` (16 bits)
+        - `BH` (8 bits)
+        - `BL` (8 bits)
+    - `ECX` (32 bits): Count:  stores the loop count in iterative operations.
+      - `CX` (16 bits)
+        - `CH` (8 bits)
+        - `CL` (8 bits)
+    - `EDX` (32 bits): Data: also used in input/output operation, with AX register along with DX for multiply and divide operations involving large values.
+      - `DX` (16 bits)
+        - `DH` (8 bits)
+        - `DL` (8 bits)
+  - Pointer registers:
+    - `EIP` (32 bits): Instruction pointer: stores the offset address of the next instruction to be executed; used with the `CS` register (as `CS:IP`) to provide the complete address of the current instruction in the code segment.
+      - `IP` (16 bits)
+    - `ESP` (32 bits): Stack pointer: provides the offset value within the program stack; used with the `SS` register (as `SS:SP`) to point to the current position of data or address within the program stack.
+      - `SP` (16 bits)
+    - `EBP` (32 bits): Base pointer: mainly helps in referencing the parameter variables passed to a subroutine; the address in SS register is combined with the offset in BP to get the location of the parameter; BP can also be combined with DI and SI as base register for special addressing.
+      - `BP` (16 bits)
+  - Index registers:
+    - `ESI` (32 bits): Source index: used as source index for string operations.
+      - `SI` (16 bits)
+    - `EDI` (32 bits): Destination index: used as destination index for string operations.
+      - `DI` (16 bits)
+- Control registers:
+  - **Overflow Flag (OF)**: It indicates the overflow of a high-order bit (leftmost bit) of data after a signed arithmetic operation.
+  - **Direction Flag (DF)**: It determines left or right direction for moving or comparing string data. When the DF value is 0, the string operation takes left-to-right direction and when the value is set to 1, the string operation takes right-to-left direction.
+  - **Interrupt Flag (IF)**: It determines whether the external interrupts like keyboard entry, etc., are to be ignored or processed. It disables the external interrupt when the value is 0 and enables interrupts when set to 1.
+  - **Trap Flag (TF)**: It allows setting the operation of the processor in single-step mode. The DEBUG program we used sets the trap flag, so we could step through the execution one instruction at a time.
+  - **Sign Flag (SF)**: It shows the sign of the result of an arithmetic operation. This flag is set according to the sign of a data item following the arithmetic operation. The sign is indicated by the high-order of leftmost bit. A positive result clears the value of SF to 0 and negative result sets it to 1.
+  - **Zero Flag (ZF)**: It indicates the result of an arithmetic or comparison operation. A nonzero result clears the zero flag to 0, and a zero result sets it to 1.
+  - **Auxiliary Carry Flag (AF)**: It contains the carry from bit 3 to bit 4 following an arithmetic operation; used for specialized arithmetic. The AF is set when a 1-byte arithmetic operation causes a carry from bit 3 into bit 4.
+  - **Parity Flag (PF)**: It indicates the total number of 1-bits in the result obtained from an arithmetic operation. An even number of 1-bits clears the parity flag to 0 and an odd number of 1-bits sets the parity flag to 1.
+  - **Carry Flag (CF)**: It contains the carry of 0 or 1 from a high-order bit (leftmost) after an arithmetic operation. It also stores the contents of last bit of a shift or rotate operation.
+- Segment registers:
+  - `CS`: Code segment:
+  - `DS`: Data segment
+  - `SS`: Stack segment
+  - `ES`: Extra segment
+  - `FS`: Extra segment
+  - `GS`: Extra segment
+
+Questions:
+- Look up more about control registers.
