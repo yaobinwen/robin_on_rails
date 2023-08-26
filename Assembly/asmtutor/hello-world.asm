@@ -6,15 +6,39 @@
 SECTION .data
 ; NOTE(ywen): This is really not "assigning a variable". `msg` is actually just
 ; the starting address of the string.
-msg     db      'Hello, brave new World!', 0Ah     ; assign msg variable with your message string
+msg     db      'Hello, brave brand new World!', 0Ah     ; assign msg variable with your message string
 
 SECTION .text
 global  _start
 
 _start:
 
-    mov     ebx, msg        ; move the address of our message string into EBX
-    mov     eax, ebx        ; move the address in EBX into EAX as well (Both now point to the same segment in memory)
+    mov     eax, msg    ; move the address of our message string into EAX
+    call    strlen      ; call our function to calculate the length of the string
+
+    mov     edx, eax    ; EAX now equals the number of bytes in our string
+    mov     ecx, msg    ; move the memory address of our message string into ecx
+    mov     ebx, 1      ; write to the STDOUT file
+    mov     eax, 4      ; invoke SYS_WRITE (kernel opcode 4)
+    int     80h
+
+    mov     ebx, 0      ; return 0 status on exit - 'No Errors'
+    mov     eax, 1      ; invoke SYS_EXIT (kernel opcode 1)
+    int     80h
+
+; Calculate the length of the given string.
+;
+; Args:
+; - eax: The address of the string.
+;
+; Returns:
+; - eax: The length of the string.
+strlen:
+    ; push the value in EBX onto the stack to preserve it while we use EBX in
+    ; this function
+    push    ebx
+
+    mov     ebx, eax        ; move the address of our message string into EBX
  
 nextchar:
     ; NOTE(ywen):
@@ -32,12 +56,8 @@ finished:
                             ; when you subtract one memory address from another of the same type
                             ; the result is number of segments between them - in this case the number of bytes
 
-    mov     edx, eax    ; EAX now equals the number of bytes in our string
-    mov     ecx, msg    ; move the memory address of our message string into ecx
-    mov     ebx, 1      ; write to the STDOUT file
-    mov     eax, 4      ; invoke SYS_WRITE (kernel opcode 4)
-    int     80h
+    ; Resume the original value of EBX.
+    pop     ebx
 
-    mov     ebx, 0      ; return 0 status on exit - 'No Errors'
-    mov     eax, 1      ; invoke SYS_EXIT (kernel opcode 1)
-    int     80h
+    ; Return to where the function was called.
+    ret
