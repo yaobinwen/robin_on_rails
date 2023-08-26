@@ -82,6 +82,37 @@ sprint:
 
 
 ; -----------------------------------------------------------------------------
+; Print the given string to stdout, with a new-line at the end.
+;
+; Args:
+; - eax: The address of the string.
+;
+; Returns: N/A
+sprint_lf:
+    ; `sprint` will handle the saving and restoring of the registers so we
+    ; don't need to worry about that.
+
+    ; `sprint` uses the same input registers so we can call it directly to
+    ; print the original string.
+    call  sprint
+
+    ; We are going to use EAX so we need to save its current value.
+    push  eax
+
+    mov   eax, 0Ah
+    ; Now we push 0Ah to the top of the stack which is pointed to by ESP.
+    push  eax
+    mov   eax, esp
+    call  sprint
+    pop   eax
+
+    ; Pop the original value of EAX.
+    pop   eax
+
+    ret
+
+
+; -----------------------------------------------------------------------------
 ; Print the string to stdout
 ;
 ; Args:

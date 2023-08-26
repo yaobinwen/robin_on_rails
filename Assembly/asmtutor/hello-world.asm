@@ -17,9 +17,9 @@ global  _start
 _start:
 
     mov     eax, msg1   ; move the address of our message string into EAX
-    call    sprint      ; call our function to calculate the length of the string
+    call    sprint_lf   ; call our function to calculate the length of the string
 
     mov     eax, msg2   ; move the address of our message string into EAX
-    call    sprint      ; call our function to calculate the length of the string
+    call    sprint_lf   ; call our function to calculate the length of the string
 
     call    sys_exit
