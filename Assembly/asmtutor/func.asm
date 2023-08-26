@@ -121,19 +121,35 @@ sprint_lf:
 ;
 ; Returns: N/A
 sys_print_stdout:
+    push    ebx
+    push    eax
+
     mov     ebx, 1
     mov     eax, 4
     int     80h
+
+    pop     eax
+    pop     ebx
 
     ret
 
 ; -----------------------------------------------------------------------------
 ; Exit program and restore resources
 sys_exit:
+    ; This function causes the program to exit, so we don't really have to save
+    ; the registers because we are quitting anyway, but it's a good habbit to
+    ; remember to save and restore the registers in a function to minimize the
+    ; side effects.
+    push    ebx
+    push    eax
+
     ; return 0 status on exit - 'No Errors'
     mov     ebx, 0
     ; invoke SYS_EXIT (kernel opcode 1)
     mov     eax, 1
     int     80h
+
+    pop     eax
+    pop     ebx
 
     ret
