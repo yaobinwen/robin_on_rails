@@ -80,6 +80,16 @@ Closing:
 Buffer list:
 - `buffers`
 
+## Indentation
+
+- Insert mode:
+  - Tab and Backspace
+  - `Ctrl-t`: Indent forward (increase indentation)
+  - `Ctrl-d`: Indent backward (decrease indentation)
+- Visual mode:
+  - `>`: Increase indentation
+  - `<`: Decrease indentation
+
 ---
 
 (To be continued)
