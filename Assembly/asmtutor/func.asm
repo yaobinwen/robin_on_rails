@@ -113,6 +113,88 @@ sprint_lf:
 
 
 ; -----------------------------------------------------------------------------
+; Print an integer.
+;
+; Args:
+; - eax: The number to print.
+;
+; Returns: N/A
+int_print:
+  ; Save the current values of the registers that we need to use in this
+  ; function.
+  push eax
+  push ecx
+  push edx
+  push esi
+
+  ; ECX counts how many digits there are in the number.
+  mov ecx, 0
+
+  mov esi, 10
+
+divideLoop:
+  ; We need to set EDX as 0 because `idiv` treats EDX:EAX as the dividend.
+  mov edx, 0
+
+  ; Divide EDX:EAX by ESI. The quotient is in EAX and the remainder is in EDX.
+  idiv esi
+
+  ; Convert the number in EDX into its corresponding ASCII representation.
+  add edx, 48
+  push edx
+
+  ; We did one loop of calculation, so increase the counter.
+  inc ecx
+
+  cmp eax, 0
+  jnz divideLoop
+
+printLoop:
+  mov eax, esp
+  call sprint
+  pop eax
+
+  dec ecx
+  cmp ecx, 0
+  jnz printLoop
+
+  pop esi
+  pop edx
+  pop ecx
+  pop eax
+
+  ret
+
+
+; -----------------------------------------------------------------------------
+; Print an integer with a line feed at the end.
+;
+; Args:
+; - eax: The number to print.
+;
+; Returns: N/A
+int_print_lf:
+
+    ; `int_print` uses the same input registers so we can call it directly to
+    ; print the original string.
+    call  int_print
+
+    ; We are going to use EAX so we need to save its current value.
+    push  eax
+
+    mov   eax, 0Ah
+    ; Now we push 0Ah to the top of the stack which is pointed to by ESP.
+    push  eax
+    mov   eax, esp
+    call  sprint
+    pop   eax
+
+    ; Pop the original value of EAX.
+    pop   eax
+
+    ret
+
+; -----------------------------------------------------------------------------
 ; Print the string to stdout
 ;
 ; Args:
