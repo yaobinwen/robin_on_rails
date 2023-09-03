@@ -13,16 +13,16 @@ slen:
 
     mov     ebx, eax        ; move the address of our message string into EBX
  
-nextchar:
+.nextchar:
     ; NOTE(ywen):
     ; - `[]` dereferences the address to fetch the content.
     ; - `byte` specifies the width of the content to fetch (i.e., in the size of a byte).
     cmp     byte [eax], 0   ; compare the byte pointed to by EAX at this address against zero (Zero is an end of string delimiter)
-    jz      finished        ; jump (if the zero flagged has been set) to the point in the code labeled 'finished'
+    jz      .finished       ; jump (if the zero flagged has been set) to the point in the code labeled 'finished'
     inc     eax             ; increment the address in EAX by one byte (if the zero flagged has NOT been set)
-    jmp     nextchar        ; jump to the point in the code labeled 'nextchar'
+    jmp     .nextchar       ; jump to the point in the code labeled 'nextchar'
  
-finished:
+.finished:
     sub     eax, ebx        ; subtract the address in EBX from the address in EAX
                             ; remember both registers started pointing to the same address (see line 15)
                             ; but EAX has been incremented one byte for each character in the message string
@@ -132,7 +132,7 @@ int_print:
 
   mov esi, 10
 
-divideLoop:
+.divideLoop:
   ; We need to set EDX as 0 because `idiv` treats EDX:EAX as the dividend.
   mov edx, 0
 
@@ -147,16 +147,16 @@ divideLoop:
   inc ecx
 
   cmp eax, 0
-  jnz divideLoop
+  jnz .divideLoop
 
-printLoop:
+.printLoop:
   mov eax, esp
   call sprint
   pop eax
 
   dec ecx
   cmp ecx, 0
-  jnz printLoop
+  jnz .printLoop
 
   pop esi
   pop edx
