@@ -300,6 +300,12 @@ The format of the files can be found in [`deb-shlibs(5)`](https://man7.org/linux
 
 Also see my question: [_What is the detailed process of resolving `${shlibs:Depends}` when creating a Debian package?_](https://askubuntu.com/q/1086226/514711).
 
+## Reproducible Builds
+
+See [Reproducible Builds](https://reproducible-builds.org/).
+
+The [Continuous tests](https://reproducible-builds.org/citests/) page lists the test results of all the monitored operating systems. The one I am interested in is [for Debian](https://tests.reproducible-builds.org/debian/reproducible.html). See its [Categorized issues](https://tests.reproducible-builds.org/debian/index_issues.html) for all the possible issues about build reproducibility.
+
 ## FAQ
 
 ### Q1: What does 'patch unexpectedly ends in middle of line' mean?
