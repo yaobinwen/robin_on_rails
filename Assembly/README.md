@@ -34,3 +34,6 @@ And it looks like different assemblers may use different syntax. For example, NA
 
 I will use NASM so I will learn NASM's syntax. I will use [NASM's documentation](https://www.nasm.us/xdoc/2.16.01/html/nasmdoc0.html) as my primary learning resource. The choice of NASM is mostly a coincidence: I realized the assembly code I've seen so far is mostly written in NASM syntax so it is the most familiar one to me. But whenever possible, I will also learn GAS syntax as much as needed.
 
+## 3. Guide
+
+See [Guide.md](./Guide.md).
