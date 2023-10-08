@@ -132,7 +132,7 @@ The letters of acronyms and initialisms like `ASCII` and `HTML` are always rende
 
 ## 3. Declaration: Variables
 
-Referred chapters: 2.4
+Referred chapters: 2.3, 2.3.1
 
 The general form:
 - 1). The general form: `var name type = expression`.
@@ -167,3 +167,49 @@ const (
 - 2). Even if the user-defined types have the same underlying types, they **cannot be compared or combined in arithmetic expressions**, in order to avoid errors due to implicit type conversion.
   - a). To compare or combine them, use an explicit conversion like `Celsius(t)` or `Fahrenheit(t)`.
 - 3). "In any case, a conversion never fails at run time."
+
+## 5. Assignment
+
+Referred chapters: 2.4, 2.4.1, 2.4.2
+
+```go
+x = 1   // named variable
+*p =  true  // indirect variable
+person.name = "bob" // struct field
+count[x] = count[x] * scale // array or slice or map element
+```
+
+## 6. Pointers
+
+Referred chapters: 2.3.2
+
+- `&x`: address of `x`.
+- `*p`: dereference `p`.
+- Type of pointer is `* type` (unlike C which is `type *`).
+- `nil` is `NULL`.
+- **Fine to return address of a local variable.**
+
+## 7. `new` function
+
+- `new` is a syntactic convenience of allocating memory, so the following two functions are identical:
+
+```go
+func newInt_1() *int {
+  return new(int)
+}
+
+func newInt_2() *int {
+  var dummy int
+  return &dummy
+}
+```
+
+- `new` is a function, not a keyword.
+- `new` can be hidden by name overriding.
+
+## 8. Lifetime of vairables
+
+- A new instance is created each time the declaration statement is executed.
+- A variable "dies" when it becomes unreachable.
+- Package-level variables live the entire execution of the program.
+- The Go compiler may analyze the code to decide if a variable should be put on heap (if the variable _escapes from_ the function) or on stack (if the variable does not _escape from_ the function).
