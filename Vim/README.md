@@ -90,6 +90,13 @@ Buffer list:
   - `>`: Increase indentation
   - `<`: Decrease indentation
 
+## Insert Unicode characters
+
+- Press `i` or `a` into insert mode.
+- Press `Ctrl-v`. A `^` will appear at the cursor.
+- For code points in the range of `0~ffff`, press `u` (lower case), followed by the code point, followed by `ESC`. For example, `u2122<ESC>` for `™`.
+- For code points in the range higher than `ffff`, press `U` (upper case), followed by the code point, followed by `ESC`. For example, `u1f37b<ESC>` for `🍻`.
+
 ---
 
 (To be continued)
