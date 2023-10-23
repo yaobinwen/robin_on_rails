@@ -48,7 +48,6 @@
 
 ## Others (Tech)
 
-- [Compiler Explorer](https://godbolt.org/)
 - [Cantor’s Attic](https://neugierde.github.io/cantors-attic/)
 - [Neo4j native graph data](https://neo4j.com/product/): A database that takes the relationships between data as the first-class citizen.
 - [Apache TinkerPop](http://tinkerpop.apache.org/): "Apache TinkerPop™ is a graph computing framework for both graph databases (OLTP) and graph analytic systems (OLAP)."
@@ -69,7 +68,6 @@
 - [Gephi: The Open Graph Viz Platform](https://gephi.org/)
 - [Sigma](http://sigmajs.org/): A JavaScript library dedicated to graph drawing.
 - [DevDocs](https://devdocs.io/) "combines multiple API documentations in a fast, organized, and searchable interface."
-- [yUML](https://yuml.me/): Define UML diagrams in text and generate them.
 - [Glottolog](https://glottolog.org/): Comprehensive reference information for the world's languages, especially the lesser known languages.
 - [Butterick's PRACTICAL TYPOGRAPHY](https://practicaltypography.com/)
 - [beau­tiful racket](https://beautifulracket.com/), especially these two articles:
@@ -92,6 +90,7 @@
 - [The V language](https://vlang.io/)
 - [Nuklear: A single-header ANSI C immediate mode cross-platform GUI library](https://github.com/Immediate-Mode-UI/Nuklear)
 - [Online Hacker Simulator](https://hacker-simulator.com/)
+- [Try Hack Me](https://tryhackme.com/)
 
 ## Others (non-tech)
 
