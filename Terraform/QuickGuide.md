@@ -1,14 +1,14 @@
 # Terraform: Quick Recap
 
-## Basic Syntax
+## 1. Basic Syntax
 
 Terraform configuration is written in the _Terraform language_.
 
-### Arguments
+### 1.1 Arguments
 
 In the form of `argument_name = argument_value`, such as `image_id = "abc123"`.
 
-### Blocks
+### 1.2 Blocks
 
 Example:
 
@@ -30,7 +30,7 @@ A **block** consists of:
   - Arguments
   - Nested blocks
 
-### Identifiers
+### 1.3 Identifiers
 
 **Identifiers** can contain:
 - letters
@@ -38,7 +38,7 @@ A **block** consists of:
 - underscore (`_`)
 - hyphens (`-`)
 
-### Comments
+### 1.4 Comments
 
 ```
 # Single line comment
@@ -48,11 +48,11 @@ line
 comments */
 ```
 
-### Style Conventions
+### 1.5 Style Conventions
 
 See _[Style Conventions_](https://www.terraform.io/language/syntax/style) for more details. Or use the command `terraform fmt`.
 
-## Files
+## 2. Files
 
 | File Feature | Value | Notes |
 |:-------------|:-----:|:------|
@@ -60,7 +60,7 @@ See _[Style Conventions_](https://www.terraform.io/language/syntax/style) for mo
 | Encoding | UTF-8 ||
 | Line ending | Unix style (LF) | Windows style (CRLF) is also acceptable |
 
-## Modules
+## 3. Modules
 
 > A _module_ is a collection of `.tf` files kept together in a directory.
 >
@@ -68,19 +68,19 @@ See _[Style Conventions_](https://www.terraform.io/language/syntax/style) for mo
 >
 > Terraform evaluates all of the configuration files in a module, effectively treating the **entire module as a single document**. Separating various blocks into different files is purely for the convenience of readers and maintainers, and has no effect on the module's behavior.
 
-## Root Module and Child Modules
+## 4. Root Module and Child Modules
 
 A complete Terraform configuration consists of:
 - A **single root module**, which is the working directory where Terraform is called.
 - A **tree of child modules**.
 
-## Override Files
+## 5. Override Files
 
 Most of the time, every `.tf` file should define a distinct set of configuration objects. It is an error when two files attempt to define the same object.
 
 However, one can use files that are named as  `*_override.tf` (or just `override.tf`) to allow overriding configuration. But these cases should be rare in practice. Refer to [_Override Files_](https://www.terraform.io/language/files/override) for more details.
 
-## Dependency Lock File
+## 6. Dependency Lock File
 
 A Terraform configuration may use two kinds of external dependencies from outside:
 - **Providers** which are plugins for Terraform to interact with external systems such as AWS, Google Cloud, etc.
@@ -90,11 +90,11 @@ The _dependency lock files_ are used to lock down the versions to make sure the 
 
 The dependency lock files should be **check into version control system**.
 
-## Resources
+## 7. Resources
 
 A _resource_ describes an infrastructural object, such as a virtual network, a compute instance, or a higher-level component such as a DNS record.
 
-### Syntax
+### 7.1 Syntax
 
 ```
 resource <TYPE> <LOCAL_NAME> {
@@ -104,13 +104,13 @@ resource <TYPE> <LOCAL_NAME> {
 }
 ```
 
-### Scope
+### 7.2 Scope
 
 `LOCAL_NAME` is used to "refer to this resource from elsewhere **in the same Terraform module** but has no significance outside that module's scope."
 
 The tuple `(<TYPE>, <LOCAL_NAME>)` must be unique within the same module. This makes sense, because within the same module, every resource instance must be unique.
 
-### Behaviors
+### 7.3 Behaviors
 
 A resource, when applied, can have four behaviors:
 
@@ -129,19 +129,19 @@ The resources can have meta-arguments:
 - `lifecycle`, for lifecycle customizations
 - `provisioner`, for taking extra actions after resource creation
 
-### Access
+### 7.4 Access
 
 To access the arguments of a resource, use the expression `<TYPE>.<LOCAL_NAME>.<ARGUMENT_NAME>`
 
-### Dependencies
+### 7.5 Dependencies
 
 Most of the time, the dependencies among resources can be figured out automatically by the reference of one by the other. However, if needed, one can use the meta-argument `depends_on` to explicitly specify the dependency.
 
-### Local-only
+### 7.6 Local-only
 
 Most of the resources are on the remote infrastructure provider such as AWS. However, there can be **local-only resources**, such as private keys, self-signed TLS certificates, random IDs.
 
-## Data Sources
+## 8. Data Sources
 
 > _Data sources_ allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
 
@@ -159,12 +159,11 @@ data "aws_ami" "example" {
 }
 ```
 
-## Providers
+## 9. Providers
 
 _Providers_ provide the APIs to interact with the actual infrastructure providers, such as AWS, Google Cloud, etc.
 
 Terraform interacts with the providers to manage the _resources_ and _data_ that the providers provide.
- in-place
 
 ## Best Practices
 
