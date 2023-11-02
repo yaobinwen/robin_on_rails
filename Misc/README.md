@@ -91,6 +91,8 @@
 - [Nuklear: A single-header ANSI C immediate mode cross-platform GUI library](https://github.com/Immediate-Mode-UI/Nuklear)
 - [Online Hacker Simulator](https://hacker-simulator.com/)
 - [Try Hack Me](https://tryhackme.com/)
+- [Learn X in Y minutes](https://learnxinyminutes.com/)
+  - [Hyperpolyglot](https://hyperpolyglot.org/)
 
 ## Others (non-tech)
 
