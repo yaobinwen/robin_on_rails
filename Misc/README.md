@@ -93,6 +93,8 @@
 - [Try Hack Me](https://tryhackme.com/)
 - [Learn X in Y minutes](https://learnxinyminutes.com/)
   - [Hyperpolyglot](https://hyperpolyglot.org/)
+- [Small Technology Foundation](https://small-tech.org/)
+  - [Codebase](https://codeberg.org/small-tech)
 
 ## Others (non-tech)
 
