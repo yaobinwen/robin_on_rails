@@ -4,7 +4,8 @@
 
 [`systemd`](https://github.com/systemd/systemd) has two sites for documentation:
 
-- [1] [systemd.io](https://systemd.io)
+- [1] [systemd.io](https://systemd.io):
+  - This site has a series of blogs _The systemd for Administrators Blog Series_ for admins to start with.
 - [2] [systemd System and Service Manager](https://www.freedesktop.org/wiki/Software/systemd/)
 
 I prefer [1], although [1] also links to some of the pages on [2].
