@@ -53,7 +53,7 @@ Legend:
 | 💯 | [5737](https://datatracker.ietf.org/doc/html/rfc5737) | IPv4 Address Blocks Reserved for Documentation | Informational ||
 | 💯 | [6202](https://datatracker.ietf.org/doc/html/rfc6202) |Known Issues and Best Practices for the Use of Long Polling and Streaming in Bidirectional HTTP| Informational ||
 | ⏹ | [6598](https://datatracker.ietf.org/doc/html/rfc6598) | IANA-Reserved IPv4 Prefix for Shared Address Space | Best Current Practice ||
-| ⏹ | [6890](https://datatracker.ietf.org/doc/html/rfc6890) | Special-Purpose IP Address Registries | Best Current Practice ||
+| 💯 | [6890](https://datatracker.ietf.org/doc/html/rfc6890) | Special-Purpose IP Address Registries | Best Current Practice ||
 | 💯 | [7100](https://tools.ietf.org/html/rfc7100) | Retirement of the "Internet Official Protocol Standards" Summary Document| BEST CURRENT PRACTICE ||
 | ⏹ | [7230](https://tools.ietf.org/html/rfc7230) | Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing |||
 | ⏹ | [7405](https://tools.ietf.org/html/rfc7405) | Case-Sensitive String Support in ABNF | PROPOSED STANDARD ||
