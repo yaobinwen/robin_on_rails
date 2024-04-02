@@ -6,9 +6,37 @@ https://docs.python.org/3/library/datetime.html
 This document is referred to as `DOC` in the code.
 """
 
+import sys
 import unittest
 
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
+
+
+PY_3 = sys.version_info.major == 3
+PY_MINOR_VERSION = sys.version_info.minor
+
+
+class Test_date(unittest.TestCase):
+    def test_date(self):
+        """Demo of `datetime.date`.
+
+        https://docs.python.org/3/library/datetime.html#datetime.date
+        """
+        d = date(year=2023, month=11, day=18)
+        self.assertEqual(d.year, 2023)
+        self.assertEqual(d.month, 11)
+        self.assertEqual(d.day, 18)
+
+    @unittest.skipIf(PY_3 and PY_MINOR_VERSION < 7, reason="Python version is too low")
+    def test_fromisoformat(self):
+        """Demo of `datetime.date.fromisoformat()`.
+
+        https://docs.python.org/3/library/datetime.html#datetime.date.fromisoformat
+        """
+        d = date.fromisoformat("2023-11-18")
+        self.assertEqual(d.year, 2023)
+        self.assertEqual(d.month, 11)
+        self.assertEqual(d.day, 18)
 
 
 class Test_datetime(unittest.TestCase):
@@ -72,6 +100,24 @@ class Test_datetime(unittest.TestCase):
         print(f"    utcnow: {utcnow}")
         print(f"now_in_utc: {now_in_utc}")
 
+    def test_timestamp(self):
+        """Demo of `datetime.datetime.timestamp()`
+
+        https://docs.python.org/3/library/datetime.html#datetime.datetime.timestamp
+        """
+        dt = datetime(
+            year=2024,
+            month=1,
+            day=31,
+            hour=12,
+            minute=25,
+            second=47,
+            tzinfo=timezone.utc,
+        )
+        # Timestamp is a float.
+        self.assertIsInstance(dt.timestamp(), float)
+        self.assertEqual(int(dt.timestamp()), 1706703947)
+
 
 class Test_timedelta(unittest.TestCase):
     def test_init(self):
@@ -101,6 +147,34 @@ class Test_timedelta(unittest.TestCase):
         ms_to_us = (2010 % 1000) * 1000
         self.assertEqual(td.microseconds, 20 + ms_to_us)
 
+    def test_calculated_from_datetime(self):
+        """Demo of calculating time delta from two `datetime` objects.
+        """
+        dt1 = datetime(
+            year=2024,
+            month=4,
+            day=1,
+            hour=16,
+            minute=0,
+            second=0,
+            microsecond=0,
+            tzinfo=timezone.utc,    # Use UTC for less ambiguity.
+        )
+        dt2 = datetime(
+            year=2024,
+            month=4,
+            day=1,
+            hour=16,
+            minute=0,
+            second=14,
+            microsecond=393,
+            tzinfo=timezone.utc,    # Use UTC for less ambiguity.
+        )
+        td = dt2 - dt1
+        self.assertEqual(td.days, 0)
+        self.assertEqual(td.seconds, 14)
+        self.assertEqual(td.microseconds, 393)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
