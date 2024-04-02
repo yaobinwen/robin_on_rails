@@ -29,6 +29,10 @@
 - [plantegg](https://plantegg.github.io/)
 - [Björn Fahller: Playful Programming](https://playfulprogramming.blogspot.com/)
 - [Home Page for David Drysdale](https://www.lurklurk.org/)
+- [DjoProject](https://blog.djoproject.net/)
+  - I ran into this blog via this article: [Configuring a dualstack IPv4/IPv6 OpenVNP 2.4 server](https://blog.djoproject.net/2019/10/19/configuring-a-dualstack-ipv4-ipv6-openvnp-2-4-server/)
+- [Gabriel Rüeck](https://caipirinha.spdns.org/wp/)
+  - I ran into this blog via this article: [Setting up Dual Stack VPNs](https://caipirinha.spdns.org/wp/?p=734)
 
 ## Organizational blogs or maillists
 
