@@ -55,6 +55,11 @@ The _common file model_ is capable of representing all supported file systems:
 
 >  The purpose of each namespace is to wrap a particular global system resource in an abstraction that makes it appear to the processes within the namespace that they have their own isolated instance of the global resource. One of the overall goals of namespaces is to support the implementation of containers, a tool for lightweight virtualization (as well as other purposes) that provides a group of processes with the illusion that they are the only processes on the system.
 
+## sysctl
+
+- [ip-sysctl](https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt)
+- Tool: [Sysctl Explorer](https://sysctl-explorer.net/)
+
 ## References
 
 - [1] Technical articles online:
