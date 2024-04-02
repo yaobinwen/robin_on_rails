@@ -6,3 +6,4 @@ all:
     localhost:
       # "localhost" doesn't require an SSH connection.
       ansible_connection: local
+      ansible_python_interpreter: auto
