@@ -6,6 +6,37 @@
 
 ---
 
+## Should AI be under human control?
+
+Searching key words "should ai be under human's control":
+- [On the purpose of meaningful human control of AI](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9868906/)
+- [The Future of Human Agency](https://www.pewresearch.org/internet/2023/02/24/the-future-of-human-agency/)
+- [Can the development of artificial intelligence and robotics escape the human control?](https://www.researchgate.net/post/Can-the-development-of-artificial-intelligence-and-robotics-escape-the-human-control)
+- [Ensuring Human Control over AI-Infused Systems](https://www.nationalacademies.org/news/2022/04/ensuring-human-control-over-ai-infused-systems)
+- [Should Artificial Intelligence Be Regulated?](https://issues.org/perspective-artificial-intelligence-regulated/)
+- [Who is controlling whom? Reframing “meaningful human control” of AI systems in security](https://link.springer.com/article/10.1007/s10676-023-09686-x)
+- [Should We Stop Developing AI For The Good Of Humanity?](https://www.forbes.com/sites/bernardmarr/2023/05/03/should-we-stop-developing-ai-for-the-good-of-humanity/?sh=7191bfb82943)
+- [Artificial Intelligence and the Future of Humans](https://www.pewresearch.org/internet/2018/12/10/artificial-intelligence-and-the-future-of-humans/)
+- [Giving AI direct control over anything is a bad idea – here’s how it could do us real harm](https://theconversation.com/giving-ai-direct-control-over-anything-is-a-bad-idea-heres-how-it-could-do-us-real-harm-210168)
+- [The AI Control Problem (and why you should know about it)](https://wearebrain.com/blog/the-ai-control-problem-and-why-you-should-know-about-it)
+- [There is no proof that AI can be controlled, according to extensive survey](https://www.eurekalert.org/news-releases/1032090)
+- [AI—The good, the bad, and the scary](https://eng.vt.edu/magazine/stories/fall-2023/ai.html)
+- [Experts say humans could be wrestling AI for control by 2035](https://aimagazine.com/articles/experts-say-humans-could-be-wrestling-ai-for-control-by-2035)
+- [AI Should Augment Human Intelligence, Not Replace It](https://hbr.org/2021/03/ai-should-augment-human-intelligence-not-replace-it)
+- [Human control of artificial intelligence](https://www.tudelft.nl/en/delft-outlook/articles/human-control-of-artificial-intelligence)
+- [Why Experts Say We Should Control AI, Now](https://www.lifewire.com/why-experts-say-we-should-control-ai-now-5095953)
+- [12 Risks and Dangers of Artificial Intelligence (AI)](https://builtin.com/artificial-intelligence/risks-of-artificial-intelligence)
+- [The impact of artificial intelligence on human society and bioethics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7605294/)
+- [Maintaining Control Over AI](https://issues.org/debating-human-control-over-artificial-intelligence-forum-shneiderman/)
+
+---
+
+## Logic-based artificial intelligence
+
+- [Logic-Based Artificial Intelligence](https://plato.stanford.edu/entries/logic-ai/)
+
+---
+
 A few days ago, [Cognition](https://twitter.com/cognition_labs) introduced ["Devin, the first AI software engineer"](https://twitter.com/cognition_labs/status/1767548763134964000). Being a software engineer myself, this kind of news seems to be very bad news to me.
 
 On the surface, it looks like there will be a job crisis to most, if not all, of the software engineers. But I believe there is an opportunity inside a crisis: The development of A.I. pushes us to rethink of the meaning of life, so this is probably the best opportunity to find the thing that really matters.
