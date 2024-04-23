@@ -1,0 +1,12 @@
+// This file is used to learn how to use the `map` type in Proto3.
+
+syntax = "proto3";
+
+package protobufs.v0;
+
+import "protobufs/v0/building.proto";
+
+message Management {
+  // Mapping from manager's name to his/her responsible building.
+  map<string, Building> managers = 1;
+};

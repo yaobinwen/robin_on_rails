@@ -1,0 +1,18 @@
+// This file is used to learn how to access a message's fields in Proto3.
+
+syntax = "proto3";
+
+package protobufs.v0;
+
+enum State {
+  STATE_UNSPECIFIED = 0;
+  STATE_NY = 32;
+}
+
+message Address {
+  string street = 1;
+  string apartment = 2;
+  string city = 3;
+  State state = 4;
+  string zip = 5;
+};

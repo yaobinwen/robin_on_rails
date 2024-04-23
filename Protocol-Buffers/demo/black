@@ -1,0 +1,1 @@
+black -t py36 *.py

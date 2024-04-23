@@ -1,0 +1,11 @@
+// This file is used to learn how to use the `map` type in Proto3.
+
+syntax = "proto3";
+
+package protobufs.v0;
+
+message Building {
+  string name = 1;
+  string address = 2;
+  uint32 years_since_built = 3;
+};

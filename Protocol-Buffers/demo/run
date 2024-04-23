@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Compile the protobuf files.
+protoc --python_out=. ./protobufs/v0/*.proto || exit
+
+find . \
+  -maxdepth 1 \
+  ! -name "*_pb2.py" \
+  -name "*.py" \
+  -print \
+  -exec python3 {} \;
+
+# vim: set expandtab shiftwidth=4:
