@@ -8,4 +8,9 @@ message Building {
   string name = 1;
   string address = 2;
   uint32 years_since_built = 3;
+
+  oneof lock {
+    string passcode = 4;
+    uint64 access_key = 5;
+  };
 };

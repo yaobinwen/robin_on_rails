@@ -6,7 +6,11 @@ package protobufs.v0;
 
 enum State {
   STATE_UNSPECIFIED = 0;
-  STATE_NY = 32;
+  STATE_AL = 1;   // Alabama
+  STATE_AK = 2;   // Alaska
+  STATE_AZ = 3;   // Arizona
+  STATE_AR = 4;   // Arkansas
+  STATE_NY = 32;  // New York
 }
 
 message Address {
