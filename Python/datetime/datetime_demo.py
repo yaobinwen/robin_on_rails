@@ -112,11 +112,12 @@ class Test_datetime(unittest.TestCase):
             hour=12,
             minute=25,
             second=47,
+            microsecond=123,
             tzinfo=timezone.utc,
         )
         # Timestamp is a float.
         self.assertIsInstance(dt.timestamp(), float)
-        self.assertEqual(int(dt.timestamp()), 1706703947)
+        self.assertAlmostEqual(dt.timestamp(), 1706703947.000123)
 
 
 class Test_timedelta(unittest.TestCase):
