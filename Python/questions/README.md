@@ -1,11 +1,5 @@
 # Python Questions
 
-1. unit test in C++
-2. used argparse
-3. He knows typing of Python, so he still has quite some knowledge about Python
-4. cross-platform docker image
-
-
 ## Basic Questions
 
 (A general sense about Python.)
