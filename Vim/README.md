@@ -15,6 +15,7 @@ This document is my own cheatsheet of using `Vim`.
 
 This section lists the operations (usually shortcuts) that can be explained in one line. For operations that need more details to understand, see the subsequent sections.
 
+- `gg`: Move to **beginning of file**.
 - `Shift + G`: Move to **end of file**.
 - `daw`: Delete word around cursor.
 - `caw`: Delete word around cursor and put to "insert" mode, i.e., "change the word".
