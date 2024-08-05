@@ -1,0 +1,8 @@
+- name: Demo how to pass a list of strings using `--extra-vars` on the command line.
+  gather_facts: no
+  hosts: all
+  tasks:
+    - name: Print a string.
+      debug:
+        msg: "string: {{item}}"
+      loop: "{{str_list}}"
