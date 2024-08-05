@@ -258,3 +258,9 @@ Check if Ansible variable is True or False:
 - shell: echo "The variable 'bar' is 'False'"
   when: bar|bool == False
 ```
+
+## 10.
+
+NOTE(ywen): `ansible_env` doesn't seem to be updated to reflect the current
+user's environment if the current user was switch from the login user by
+`ansible_become` and `ansible_become_user`.
