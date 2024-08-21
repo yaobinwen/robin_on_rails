@@ -7,5 +7,5 @@ docker run \
   --name my-running-script \
   -v "$PWD":/usr/src/myapp \
   -w /usr/src/myapp \
-  python:3.11 \
+  python:3.12 \
   python "$PY_FILE"
