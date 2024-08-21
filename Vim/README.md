@@ -49,6 +49,10 @@ Examples:
 - `s/the/THE/cg`: On the current line, replace all `the` with `THE` and confirm with the user at every occurrence.
 - `%s/the/THE/cg`: In the current entire file, replace all `the` with `THE` and confirm with the user at every occurrence. Note that words like `nonetheless` will be replaced as `noneTHEless`.
 
+## Substitute binary chars
+
+- Remove all the `0x00` characters in a text file without confirmation: `%s/\%x00//g`.
+
 ## Split and navigate windows
 
 Splitting:
