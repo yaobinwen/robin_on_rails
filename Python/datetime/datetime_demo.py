@@ -100,6 +100,23 @@ class Test_datetime(unittest.TestCase):
         print(f"    utcnow: {utcnow}")
         print(f"now_in_utc: {now_in_utc}")
 
+    def test_strptime(self):
+        """Demo of `datetime.datetime.strptime()`
+
+        https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime
+        """
+        dt = datetime.strptime(
+            "2024-07-13T02:38:38.388392-0400", "%Y-%m-%dT%H:%M:%S.%f%z"
+        )
+        self.assertEqual(dt.year, 2024)
+        self.assertEqual(dt.month, 7)
+        self.assertEqual(dt.day, 13)
+        self.assertEqual(dt.hour, 2)
+        self.assertEqual(dt.minute, 38)
+        self.assertEqual(dt.second, 38)
+        self.assertEqual(dt.microsecond, 388392)
+        self.assertEqual(dt.tzinfo, timezone(offset=timedelta(hours=-4), name="EST"))
+
     def test_timestamp(self):
         """Demo of `datetime.datetime.timestamp()`
 
@@ -159,7 +176,7 @@ class Test_timedelta(unittest.TestCase):
             minute=0,
             second=0,
             microsecond=0,
-            tzinfo=timezone.utc,    # Use UTC for less ambiguity.
+            tzinfo=timezone.utc,  # Use UTC for less ambiguity.
         )
         dt2 = datetime(
             year=2024,
@@ -169,7 +186,7 @@ class Test_timedelta(unittest.TestCase):
             minute=0,
             second=14,
             microsecond=393,
-            tzinfo=timezone.utc,    # Use UTC for less ambiguity.
+            tzinfo=timezone.utc,  # Use UTC for less ambiguity.
         )
         td = dt2 - dt1
         self.assertEqual(td.days, 0)
