@@ -24,6 +24,11 @@ Legend:
 
 | Status | RFC Index | RFC Title | Status | Notes |
 |:------:|:---------:|:----------|:------:|:------|
+| 💯 | [1](https://datatracker.ietf.org/doc/html/rfc1) | Host Software | Legacy ||
+| 💯 | [2](https://datatracker.ietf.org/doc/html/rfc2) | Host Software | Legacy ||
+| 💯 | [3](https://datatracker.ietf.org/doc/html/rfc3) | DOCUMENTATION CONVENTIONS | Legacy ||
+| 💯 | [4](https://datatracker.ietf.org/doc/html/rfc4) | Network Timetable | Legacy | This was a time schedule of implementing the networks amongst a few universities. |
+| ⏳ | [5](https://datatracker.ietf.org/doc/html/rfc5) | DEL (Decode-Encode Language) | Legacy ||
 | ❌ | ~~[608](https://tools.ietf.org/html/rfc608)~~ | ~~HOST NAMES ON-LINE~~ || **Obsolete** |
 | ❌ | ~~[810](https://tools.ietf.org/html/rfc810)~~ | ~~DoD INTERNET HOST TABLE SPECIFICATION~~ || **Obsolete** |
 | 💯 | [814](https://tools.ietf.org/html/rfc814) | NAME, ADDRESSES, PORTS, AND ROUTES | Informational ||
@@ -61,3 +66,4 @@ Legend:
 | ⏹ | [8190](https://datatracker.ietf.org/doc/html/rfc8190) | Updates to the Special-Purpose IP Address Registries | Best Current Practice ||
 | ⏹ | [8446](https://tools.ietf.org/html/rfc8446) | The Transport Layer Security (TLS) Protocol Version 1.3 | PROPOSED STANDARD ||
 | 💯 | [9111](https://www.rfc-editor.org/rfc/rfc9111) | HTTP Caching | Standards Track ||
+| ⏳ | [9293](https://datatracker.ietf.org/doc/html/rfc9293) | Transmission Control Protocol (TCP) | Standards Track ||
