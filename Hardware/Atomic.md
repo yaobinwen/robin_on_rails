@@ -4,7 +4,8 @@ Refer to the question [_How are atomic operations implemented at a hardware leve
 
 A comment says the _Volume 3A: System Programming Guide, Part 1_, chapter 8 _MULTIPLE-PROCESSOR MANAGEMENT_ describes locked atomic operations.
 
-[This answer](https://stackoverflow.com/a/14761050/630364) mentions an article [_Implementing Scalable Atomic Locks for Multi-Core Intel® EM64T and IA32 Architectures_](https://software.intel.com/en-us/articles/implementing-scalable-atomic-locks-for-multi-core-intel-em64t-and-ia32-architectures) by Intel that doesn't seem to exist anymore, nor could I find it on the [Internet Archive](https://archive.org/).
+[This answer](https://stackoverflow.com/a/14761050/630364) mentions an article [_Implementing Scalable Atomic Locks for Multi-Core Intel® EM64T and IA32 Architectures_](https://software.intel.com/en-us/articles/implementing-scalable-atomic-locks-for-multi-core-intel-em64t-and-ia32-architectures) by Intel that doesn't seem to exist anymore.
+However, the Internet Archive captured it in [2009](https://web.archive.org/web/20090227095314/http://software.intel.com:80/en-us/articles/implementing-scalable-atomic-locks-for-multi-core-intel-em64t-and-ia32-architectures/).
 
 However, a portion of this mentioned article is quoted in [this Quora answer](https://qr.ae/pvsXUS):
 
