@@ -256,8 +256,14 @@ class BaseEventLoop(events.AbstractEventLoop):
         self._timer_cancelled_count = 0
         self._closed = False
         self._stopping = False
+
+        # NOTE(ywen): `_ready` has the tasks that can run immediately.
         self._ready = collections.deque()
+
+        # NOTE(ywen): `_scheduled` means the tasks that are scheduled to run
+        # later, not now.
         self._scheduled = []
+
         self._default_executor = None
         self._internal_fds = 0
         # Identifier of the thread running the event loop, or None if the
@@ -1385,9 +1391,15 @@ class BaseEventLoop(events.AbstractEventLoop):
 
         timeout = None
         if self._ready or self._stopping:
+            # NOTE(ywen): When some task is ready to run or the event loop is
+            # being stopped, we need to handle it as soon as possible without
+            # waiting for any timeout, hence `timeout = 0`.
             timeout = 0
         elif self._scheduled:
             # Compute the desired timeout.
+            # NOTE(ywen): Otherwise, we don't have anything to run at this
+            # moment and need to wait a little bit. So we need to calculate
+            # how long we should wait for.
             when = self._scheduled[0]._when
             timeout = min(max(0, when - self.time()), MAXIMUM_SELECT_TIMEOUT)
 
@@ -1412,7 +1424,10 @@ class BaseEventLoop(events.AbstractEventLoop):
                            'poll %.3f ms took %.3f ms: timeout',
                            timeout * 1e3, dt * 1e3)
         else:
+            # NOTE(ywen): As long as we are not in the debugging mode, we always
+            # execute this `else` branch no matter if timeout is 0 or > 0.
             event_list = self._selector.select(timeout)
+
         self._process_events(event_list)
 
         # Handle 'later' callbacks that are ready.
@@ -1420,9 +1435,22 @@ class BaseEventLoop(events.AbstractEventLoop):
         while self._scheduled:
             handle = self._scheduled[0]
             if handle._when >= end_time:
+                # NOTE(ywen): This means this callback is scheduled to run later
+                # than the current `end_time`, so we should leave it alone.
+                # QUESTION(ywen): But why do we only check the first scheduled
+                # task? What if there are multiple ones? (Probably the scheduled
+                # tasks are sorted in the order that the earliest task comes
+                # first, so if the earliest task is not ready to run, the
+                # remaining ones must not be ready either.)
                 break
             handle = heapq.heappop(self._scheduled)
+
+            # NOTE(ywen): It's no longer scheduled because it's ready, so we
+            # change its `_scheduled` state to `False`.
             handle._scheduled = False
+
+            # NOTE(ywen): Append the current ready-to-run task to the `_ready`
+            # queue.
             self._ready.append(handle)
 
         # This is the only place where callbacks are actually *called*.
