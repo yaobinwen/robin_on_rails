@@ -433,10 +433,18 @@ def wrap_future(future, *, loop=None):
     return new_future
 
 
-try:
-    import _asyncio
-except ImportError:
-    pass
+# NOTE(ywen): My hack of using the standard Python library's `Future`.
+import os
+_YWEN_USE_PY_STDLIB_ASYNCIO_FUTURES = os.getenv("YWEN_USE_PY_STDLIB_ASYNCIO_FUTURES")
+
+if _YWEN_USE_PY_STDLIB_ASYNCIO_FUTURES is None:
+    try:
+        import _asyncio
+    except ImportError:
+        pass
+    else:
+        # _CFuture is needed for tests.
+        Future = _CFuture = _asyncio.Future
 else:
-    # _CFuture is needed for tests.
-    Future = _CFuture = _asyncio.Future
+    # NOTE(ywen): Do not try to import the dynamic `asyncio` module at all.
+    pass

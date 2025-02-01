@@ -265,13 +265,21 @@ class Task(futures.Future):
 _PyTask = Task
 
 
-try:
-    import _asyncio
-except ImportError:
-    pass
+# NOTE(ywen): My hack of using the standard Python library's `Task`.
+import os
+_YWEN_USE_PY_STDLIB_ASYNCIO_TASKS = os.getenv("YWEN_USE_PY_STDLIB_ASYNCIO_TASKS")
+
+if _YWEN_USE_PY_STDLIB_ASYNCIO_TASKS is None:
+    try:
+        import _asyncio
+    except ImportError:
+        pass
+    else:
+        # _CTask is needed for tests.
+        Task = _CTask = _asyncio.Task
 else:
-    # _CTask is needed for tests.
-    Task = _CTask = _asyncio.Task
+    # NOTE(ywen): Do not try to import the dynamic `asyncio` module at all.
+    pass
 
 
 # wait() and as_completed() similar to those in PEP 3148.
