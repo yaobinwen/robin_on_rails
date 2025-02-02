@@ -3,6 +3,8 @@
 Documents:
 - [Python 3.6: 18.5. asyncio — Asynchronous I/O, event loop, coroutines and tasks](https://docs.python.org/3.6/library/asyncio.html)
 
+The sub-directory [`python3.6/asyncio`](./python3.6/asyncio/) contains the annotated code of the `asyncio` package in Python 3.6.9. Look for `NOTE(ywen)` comments.
+
 > Note that tasks are futures, and everything said about futures also applies to tasks.
 
 
